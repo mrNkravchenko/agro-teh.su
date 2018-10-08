@@ -1,0 +1,60 @@
+﻿/* 
+_____________________________________________________________________________________________________________________________________________________
+
+	Обратный звонок
+_____________________________________________________________________________________________________________________________________________________
+
+*/
+
+#zvonok {
+	position: fixed;
+	top: 35%;
+	right: 0;
+	width: 25px;
+	height: 182px;
+	padding: 28px 0 0 0;
+	text-align: center;
+	background: #e00b1f;
+
+	-webkit-transition-duration: 1.5s;
+	-moz-transition-duration: 1.5s;
+	-o-transition-duration: 1.5s;
+	transition-duration: 1.5s;
+	-webkit-border-radius: 5px 0 0 5px;
+	-moz-border-radius: 5px 0 0 5px;
+	border-radius: 5px 0 0 5px;
+	z-index:30000;
+	box-shadow: 0 0 5px;
+}
+#zvonok_inner {
+	position: fixed;
+	top: 35%;
+	right: -285px;
+	background: #fff;
+	padding: 25px 10px 25px 25px;
+	width: 250px;
+	height: 160px;
+	-webkit-transition-duration: 1.5s;
+	-moz-transition-duration: 1.5s;
+	-o-transition-duration: 1.5s;
+	transition-duration: 1.5s;
+	text-align: left;
+	-webkit-border-radius: 0 0 0 0;
+	-moz-border-radius: 0 0 0 0;
+	border-radius: 0 0 0 0;
+	z-index:30000;
+	box-shadow: 0 0 5px;
+}
+
+#zvonok:hover {
+	right: 285px;
+}
+#zvonok:hover #zvonok_inner {
+	right: 0;
+}
+
+@media only screen and (max-width: 767px) {
+	#zvonok {
+	display: none !important;
+	}
+}
