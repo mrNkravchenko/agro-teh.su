@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Complectation index{% endblock %}
+
+{% block body %}
+    <h1>Complectation index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Created</th>
+                <th>Updated</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for complectation in complectations %}
+            <tr>
+                <td>{{ complectation.id }}</td>
+                <td>{{ complectation.description }}</td>
+                <td>{{ complectation.price }}</td>
+                <td>{{ complectation.created ? complectation.created|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ complectation.updated ? complectation.updated|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('complectation_show', {'id': complectation.id}) }}">show</a>
+                    <a href="{{ path('complectation_edit', {'id': complectation.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('complectation_new') }}">Create new</a>
+{% endblock %}

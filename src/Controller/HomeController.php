@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Tech;
+use function dump;
 use function exif_imagetype;
 use function file_exists;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -11,17 +13,23 @@ use function var_dump;
 class HomeController extends AbstractController
 {
     /**
-     * @Route("/")
+     * @Route("/", name="app_home")
      */
     public function index()
     {
+        $techs = $this->getDoctrine()->getRepository('App:Tech')->findAll();
+        $techsCategory = $this->getDoctrine()->getRepository('App:TechCategory')->findAll();
+
         return $this->render('home/index.html.twig', [
             'title' => 'Сельхозтехника в Ростовской области, производитель АГРО-ТЕХ',
+            'techs' => $techs,
+            'techsCategory' => $techsCategory,
+
         ]);
     }
 
     /**
-     * @Route("/{slug}")
+     * @Route("/{slug}", name="app_home_show", requirements={"slug"="voprosy-po-stroitelstvu-angarov-selhoztehnike|about|callback|contacts|politika-konfidencialnosti"})
      * @param $slug
      *
      * @return \Symfony\Component\HttpFoundation\Response

@@ -1,0 +1,50 @@
+{% extends 'base_angar.html.twig' %}
+
+{% block title %}Angar{% endblock %}
+
+{% block body %}
+    <h1>Angar</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ angar.id }}</td>
+            </tr>
+            <tr>
+                <th>Width</th>
+                <td>{{ angar.width }}</td>
+            </tr>
+            <tr>
+                <th>Length</th>
+                <td>{{ angar.length }}</td>
+            </tr>
+            <tr>
+                <th>Square</th>
+                <td>{{ angar.square }}</td>
+            </tr>
+            <tr>
+                <th>Costumer</th>
+                <td>{{ angar.costumer }}</td>
+            </tr>
+            <tr>
+                <th>Address_id</th>
+                <td>{{ angar.addressId }}</td>
+            </tr>
+            <tr>
+                <th>Created</th>
+                <td>{{ angar.created ? angar.created|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Updated</th>
+                <td>{{ angar.updated ? angar.updated|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('angar_index') }}">back to list</a>
+
+    <a href="{{ path('angar_edit', {'id': angar.id}) }}">edit</a>
+
+    {{ include('angar/_delete_form.html.twig') }}
+{% endblock %}

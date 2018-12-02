@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Angar{% endblock %}
+
+{% block body %}
+    <h1>Create new Angar</h1>
+
+    {{ include('angar/_form.html.twig') }}
+
+    <a href="{{ path('angar_index') }}">back to list</a>
+{% endblock %}

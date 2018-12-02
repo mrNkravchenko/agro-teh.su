@@ -1,0 +1,86 @@
+<header id="header"><!-- Шапка сайта -->
+
+    <div class="container"><!-- 1080 px -->
+
+        <div class="full-width columns">
+
+            <div id="logo"><!-- Лого -->
+                <a href="/"><img src="{{ asset('assets/img/logo.png') }}" alt="АГРО-ТЕХ"></a>
+            </div>
+
+            <nav id="navigation"><!-- Блок навигации в шапке сайта -->
+
+                <div id="primary-nav">
+
+                    <ul id="main-menu">
+
+                        <li><a href="{{ path('app_home') }}">
+                                <span class="uppercase">Главная</span>
+                            </a>
+                        </li>
+
+                        <li class="hides"><a
+                                    href="{{ path('app_home_show', {'slug': 'about'}) }}">
+                                <span class="uppercase">О компании</span>
+                            </a>
+                        </li>
+
+                        <li class="sf-mega-parent cursor_text">
+                            <a href="{{ path('selhoztehnika') }}">
+                                <span class="uppercase cursor_text">Сельхозтехника</span>
+                            </a>
+                            <div class="sf-mega">
+                                <div class="sf-mega-table">
+                                    {% for category in techs_category %}
+                                        {#{{ dump() }}#}
+                                        <div class="sf-mega-section width-210px">
+                                            <p class="pmenu colored-text-1 mb-15px">{{ category.name }}</p>
+                                            <ul class="arrow-list">
+
+                                                    {% for tech in tech_serv.findBy({category: {
+                                                        'id': category.id
+                                                    } }) %}
+                                                        <li>
+                                                            <a href="{{ path('selhoztehnika_show', {'url': tech.url}) }}">
+                                                                {{ tech.shortName }}
+                                                            </a>
+                                                        </li>
+                                                    {% endfor %}
+
+                                            </ul>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <li>
+                            <a href="{{ path('app_home_show', {'slug' : 'angary'}) }}">
+                                <span class="uppercase">Ангары</span>
+                            </a>
+                        </li>
+
+                        <li><a href="{{ path('app_home_show', {'slug' : 'contacts'}) }}">
+                                <span class="uppercase">Контакты</span>
+                            </a>
+                        </li>
+
+
+                        <li class="hidden"><a
+                                    href="{{ path('app_home_show', {'slug' : 'voprosy-po-stroitelstvu-angarov-selhoztehnike'}) }}">
+                                <span class="uppercase">Обратный звонок</span>
+                            </a>
+                        </li>
+
+                    </ul><!-- /main-menu -->
+
+                </div><!-- /primary-nav -->
+
+            </nav><!-- /Блок навигации в шапке сайта -->
+
+        </div><!-- /full-width columns -->
+
+    </div><!-- /container 1080px -->
+
+</header><!-- /Шапка сайта -->

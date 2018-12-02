@@ -1,0 +1,145 @@
+<div class="clearfix"></div>
+<!-- The sidebar -->
+{#<div class="sidebar-block light gradient no-border bx_shadow mb-30px">
+    <div class="sidebar">
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'performance')">Производительность</button>
+            <button class="tablinks" onclick="openTab(event, 'description')">Описание</button>
+            <button class="tablinks" onclick="openTab(event, 'manual')">Устройство и работа</button>
+            <button class="tablinks" onclick="openTab(event, 'complectations')">Комплектации и цены</button>
+            <button class="tablinks" onclick="openTab(event, 'feedbacks')">Отзывы</button>
+        </div>
+    </div>
+
+    <!-- Page content -->
+    <div class="content">
+        <!-- Tab content -->
+        <div id="performance" class="tabcontent">
+            <table>
+                {% for row in table %}
+
+
+                    <tr>
+
+                        {% if row[0] is defined %}
+                            <td colspan="2">{{ row[0] }}</td>
+                        {% else %}
+                            {% for column in row %}
+                                <td>{{ ((row | keys) | reverse)[0] }}</td>
+                                <td>{{ column }}</td>
+                            {% endfor %}
+                        {% endif %}
+
+                    </tr>
+
+                {% endfor %}
+            </table>
+        </div>
+
+        <div id="description" class="tabcontent">
+            {{ description | striptags }}
+        </div>
+
+        <div id="manual" class="tabcontent">
+            {{ manual | striptags }}
+        </div>
+
+        <div id="complectations" class="tabcontent">
+            {% if complectations is not null %}
+                {% for item in complectations %}
+                    <div>
+                        {{ item.description }}
+                    </div>
+                    <div>
+                        {{ item.price }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+
+        <div id="feedbacks" class="tabcontent">
+            К сожадению для данного товара нет отзыва
+        </div>
+    </div>
+</div>#}
+
+<div>
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation"><a class="active" href="#performance" aria-controls="performance" role="tab" data-toggle="tab">Производительность</a></li>
+        <li role="presentation"><a href="#description" aria-controls="description" role="tab" data-toggle="tab">Описание</a></li>
+        <li role="presentation"><a href="#manual" aria-controls="manual" role="tab" data-toggle="tab">Устройство и работа</a></li>
+        <li role="presentation"><a href="#complectations" aria-controls="complectations" role="tab" data-toggle="tab">Комплектации и цены</a></li>
+        <li role="presentation"><a href="#feedbacks" aria-controls="feedbacks" role="tab" data-toggle="tab">Отзывы</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content" style="display: block;">
+        <div role="tabpanel" class="tab-pane active" id="performance">
+            <table>
+                {% for row in table %}
+
+
+                    <tr>
+
+                        {% if row[0] is defined %}
+                            <td colspan="2">{{ row[0] }}</td>
+                        {% else %}
+                            {% for column in row %}
+                                <td>{{ ((row | keys) | reverse)[0] }}</td>
+                                <td>{{ column }}</td>
+                            {% endfor %}
+                        {% endif %}
+
+                    </tr>
+
+                {% endfor %}
+            </table>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="description">
+            {{ description | striptags }}
+        </div>
+        <div role="tabpanel" class="tab-pane" id="manual">
+            {{ manual | striptags }}
+        </div>
+        <div role="tabpanel" class="tab-pane" id="complectations">
+            {% if complectations is not null %}
+                {% for item in complectations %}
+                    <div>
+                        {{ item.description }}
+                    </div>
+                    <div>
+                        {{ item.price }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div role="tabpanel" class="tab-pane" id="feedbacks">
+            К сожадению для данного товара нет отзыва
+        </div>
+    </div>
+
+</div>
+
+
+<div class="align-center mb-20"><a href="#" class="button large colored">Купить или узнать больше информаци</a></div>
+
+
+{% if video is not empty %}
+    <div class="row mb-50px">
+        <section class="flexslider mb-10px" data-animation="fade" data-slideshow="yes" data-direction-nav="yes">
+            <ul class="slides">
+
+                {% for item in video %}
+                    <noscript><div class="hidden"></noscript>
+                    <div class="video-container mb-70px">
+                        <iframe width="760" height="427" class="frame-scale-with-grid" src="{{ item.video }}?wmode=transparent&amp;rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <noscript></div></noscript><!-- /hidden-->
+                {% endfor %}
+
+            </ul>
+        </section>
+    </div>
+{% endif %}

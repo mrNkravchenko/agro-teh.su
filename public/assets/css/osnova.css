@@ -121,12 +121,12 @@ h3.underlined.dotted, h4.underlined.dotted, h5.underlined.dotted, h6.underlined.
 h3.underlined.double, h4.underlined.double, h5.underlined.double, h6.underlined.double { border-bottom-width: 2px; }
 h3.underlined.colored, h4.underlined.colored, h5.underlined.colored, h6.underlined.colored { border-bottom-color: #c3c9cf; }
 h3.underlined.dashed, h4.underlined.dashed, h5.underlined.dashed, h6.underlined.dashed {
-	background: url(../i/27.png) repeat-x left bottom;
+	background: url(../assets/img/27.png) repeat-x left bottom;
 	border: none;
 	padding-bottom: 6px;
 }
 h3.underlined.dashed.colored, h4.underlined.dashed.colored, h5.underlined.dashed.colored, h6.underlined.dashed.colored {
-	background-image: url(../i/02.png);
+	background-image: url(../assets/img/02.png);
 }
 
 h4, h5 { position: relative; }
@@ -196,9 +196,9 @@ hr {
 	text-align: right;
 	margin-bottom: 0;
 	border: none;
-	background: url(../i/27.png) repeat-x 0 0;
+	background: url(../assets/img/27.png) repeat-x 0 0;
 }
-.divider-dashline.colored { background-image: url(../i/02.png); }
+.divider-dashline.colored { background-image: url(../assets/img/02.png); }
 .divider-pattern {
 	position: relative;
 	height: 3px;
@@ -207,13 +207,13 @@ hr {
 	background-repeat: repeat-x;
 	background-position: 0 0;
 }
-.divider-pattern.streaks { background-image: url(../i/28.png); }
+.divider-pattern.streaks { background-image: url(../assets/img/28.png); }
 .divider-pattern.streaks.colored {
-	background-image: url(../i/03.png);
+	background-image: url(../assets/img/03.png);
 }
-.divider-pattern.wave { background-image: url(../i/78.png); }
+.divider-pattern.wave { background-image: url(../assets/img/78.png); }
 .divider-pattern.wave.colored {
-	background-image: url(../i/04.png);
+	background-image: url(../assets/img/04.png);
 }
 
 /*

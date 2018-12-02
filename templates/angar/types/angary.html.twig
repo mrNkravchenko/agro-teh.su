@@ -1,0 +1,897 @@
+{% extends 'base_angar.html.twig' %}
+
+{% block title %}Строительство быстровозводимых бескаркасных арочных ангаров{% endblock %}
+
+{% block h1 %}Строительство ангаров{% endblock %}
+
+{% block mainSlider %}
+    <div class="row mb-70px">
+        <section class="flexslider mb-10px" data-animation="fade" data-slideshow="yes" data-direction-nav="yes">
+            <ul class="slides">
+                <li>
+                    <img src="{{ asset('assets/img/content/stroitelstvo-angarov/beskarkasnye-angary.jpg') }}" alt="" name="beskarkasnye-angary" class="scroll-to-name">
+                </li>
+                <li>
+                    <img src="{{ asset('assets/img/content/stroitelstvo-angarov/karkasno-tenovye-angary.jpg') }}" alt="" name="karkasno-tenovye-angary" class="scroll-to-name">
+                </li>
+                <li>
+                    <img src="{{ asset('assets/img/content/stroitelstvo-angarov/beskarkasnye-navesy.jpg') }}" alt="" name="beskarkasnye-angary" class="scroll-to-name">
+                </li>
+                <li>
+                    <img src="{{ asset('assets/img/content/stroitelstvo-angarov/karkasno-tenovye-navesy.jpg') }}" alt="" name="karkasno-tenovye-angary" class="scroll-to-name">
+                </li>
+                <li>
+                    <img src="{{ asset('assets/img/content/stroitelstvo-angarov/uteplenie-penopoliuretanom.jpg') }}" alt="" name="uteplenie-penopoliuretanom" class="scroll-to-name">
+                </li>
+            </ul>
+        </section>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <blockquote class="mb-35px">
+        <p class="dark-black remove-bottom">
+            ООО "АГРО-ТЕХ" имеет большой опыт проектирования и строительства быстровозводимых металлических сооружений. Ежегодно компания строит и сдает в эксплуатацию десятки тысяч квадратных метров бескаркасных арочных конструкций.
+        </p>
+    </blockquote>
+
+    <!--						<img src="-/stroitelstvo-angarov/postroennye/001.jpg" alt="" class="scale-with-grid mb-50px">-->
+    <a href="{{ path('gallery') }}">
+        <img src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/001.jpg') }}" alt="" class="scale-with-grid mb-50px">
+    </a>
+
+    <div class="info-box light gradient no-border mb-35px">
+        <p class="middle-font-size mb-20px">
+            Строительство быстровозводимых бескаркасных арочных сооружений:
+        </p>
+
+        <ul class="check-list colored remove-bottom">
+            <li>зернохранилища (зернотоки);</li>
+            <li>овощехранилища (хранилища для лука, картофелехранилища);</li>
+            <li>ангары для скота и птицы (свинарники, телятники, овчарни, птичники);</li>
+            <li>авиационные ангары (типовые и по индивидуальному проекту);</li>
+            <li>производственные помещения, гаражи, навесы (укрытия для сельхозтехники, сенохранилища);</li>
+            <li>торговые и выставочные павильоны, офисные помещения</li>
+            <li>ангары для социальной сферы, в том числе - спортзалы, крытые бассейны и прочие объекты; </li>
+            <li>иные конструкции бытового и производственного назначения</li>
+        </ul>
+
+    </div>
+
+    <a name="beskarkasnoe-arochnoe-stroitelstvo"></a>
+    <a href="{{ path('angary_types', {'type' : 'beskarkasnoe-arochnoe-stroitelstvo'}) }}" class="button large colored mb-35px">Бескаркасное строительство</a>
+
+    </div><!-- /full-width columns -->
+
+
+    <div id="glr-wrapper" class="medium-col-space no-bg no-sep long-description clearfix">
+
+        <div class="row">
+
+            <!-- 1/2 -->
+            <div class="one-half columns glr-item-preview">
+                <article>
+                    <div class="item-picture" data-type="image">
+                        <img src="{{ asset('assets/img/content/stroitelstvo-angarov/raznovidnosti/001s.jpg') }}" alt="">
+                        <div class="image-overlay">
+                            <a href="{{ asset('assets/img/content/stroitelstvo-angarov/raznovidnosti/001.jpg') }}" data-rel="prettyPhoto" title="От 12 до 28 метров. Идеальная по форме конструкция для хранения зерновых культур. "><span class="zoom"></span></a>
+                        </div>
+                    </div>
+                    <div class="item-description mb-12px">
+                        <p class="large-font-size black mb-5px">
+                            Зернохранилище
+                        </p>
+                        <!--noindex-->
+                        <p class="small-font-size">
+                            От 12 до 28 метров. Идеальная по форме конструкция для хранения зерновых культур.
+                        </p>
+                        <!--/noindex-->
+                    </div>
+                </article>
+            </div>
+
+            <!-- 1/2 -->
+            <div class="one-half columns glr-item-preview">
+                <article>
+                    <div class="item-picture" data-type="image">
+                        <img src="{{ asset('assets/img/content/stroitelstvo-angarov/raznovidnosti/002s.jpg') }}" alt="">
+                        <div class="image-overlay">
+                            <a href="{{ asset('assets/img/content/stroitelstvo-angarov/raznovidnosti/002.jpg') }}" data-rel="prettyPhoto" title="От 12 до 28 метров. Различные варианты утепления. Возможны вставки поликарбоната."><span class="zoom"></span></a>
+                        </div>
+                    </div>
+                    <div class="item-description mb-12px">
+                        <p class="large-font-size black mb-5px">
+                            Цех, гараж
+                        </p>
+                        <!--noindex-->
+                        <p class="small-font-size">
+                            От 12 до 28 метров. Различные варианты утепления. Возможны вставки поликарбоната.
+                        </p>
+                        <!--/noindex-->
+                    </div>
+                </article>
+            </div>
+
+        </div>
+        <div class="row">
+
+            <!-- 1/2 -->
+            <div class="one-half columns glr-item-preview">
+                <article>
+                    <div class="item-picture" data-type="image">
+                        <img src="{{ asset('assets/img/content/stroitelstvo-angarov/raznovidnosti/003s.jpg') }}" alt="">
+                        <div class="image-overlay">
+                            <a href="{{ asset('assets/img/content/stroitelstvo-angarov/raznovidnosti/003.jpg') }}" data-rel="prettyPhoto" title="От 12 до 28 метров. Утепление пенополиуретаном, монтаж системы вентиляции."><span class="zoom"></span></a>
+                        </div>
+                    </div>
+                    <div class="item-description mb-12px">
+                        <p class="large-font-size black mb-5px">
+                            Овощехранилище
+                        </p>
+                        <!--noindex-->
+                        <p class="small-font-size">
+                            От 12 до 28 метров. Утепление пенополиуретаном, монтаж системы вентиляции.
+                        </p>
+                        <!--/noindex-->
+                    </div>
+                </article>
+            </div>
+
+            <!-- 1/2 -->
+            <div class="one-half columns glr-item-preview">
+                <article>
+                    <div class="item-picture" data-type="image">
+                        <img src="{{ asset('assets/img/content/stroitelstvo-angarov/raznovidnosti/004s.jpg') }}" alt="">
+                        <div class="image-overlay">
+                            <a href="{{ asset('assets/img/content/stroitelstvo-angarov/raznovidnosti/004.jpg') }}" data-rel="prettyPhoto" title="От 12 до 28 метров. Подъем арки боковыми стойками либо фундаментом. Вставки поликарбоната."><span class="zoom"></span></a>
+                        </div>
+                    </div>
+                    <div class="item-description mb-12px">
+                        <p class="large-font-size black mb-5px">
+                            Для скота и птицы
+                        </p>
+                        <!--noindex-->
+                        <p class="small-font-size">
+                            От 12 до 28 метров. Подъем арки боковыми стойками либо фундаментом. Вставки поликарбоната.</p>
+                        <!--/noindex-->
+                    </div>
+                </article>
+            </div>
+
+        </div>
+        <div class="row">
+
+            <!-- 1/2 -->
+            <div class="one-half columns glr-item-preview">
+                <article>
+                    <div class="item-picture" data-type="image">
+                        <img src="{{ asset('assets/img/content/stroitelstvo-angarov/raznovidnosti/005s.jpg') }}" alt="">
+                        <div class="image-overlay">
+                            <a href="{{ asset('assets/img/content/stroitelstvo-angarov/raznovidnosti/005.jpg') }}" data-rel="prettyPhoto" title="От 12 до 28 метров. Естественное освещение - прозрачный поликарбонат. Ворота по всей ширине."><span class="zoom"></span></a>
+                        </div>
+                    </div>
+                    <div class="item-description mb-12px">
+                        <p class="large-font-size black mb-5px">
+                            Авиаангар
+                        </p>
+                        <!--noindex-->
+                        <p class="small-font-size">
+                            От 12 до 28 метров. Естественное освещение - прозрачный поликарбонат. Ворота по всей ширине.
+                        </p>
+                        <!--/noindex-->
+                    </div>
+                </article>
+            </div>
+
+            <!-- 1/2 -->
+            <div class="one-half columns glr-item-preview">
+                <article>
+                    <div class="item-picture" data-type="image">
+                        <img src="{{ asset('assets/img/content/stroitelstvo-angarov/raznovidnosti/006s.jpg') }}" alt="">
+                        <div class="image-overlay">
+                            <a href="{{ asset('assets/img/content/stroitelstvo-angarov/raznovidnosti/006.jpg') }}" data-rel="prettyPhoto" title="От 12 до 28 метров. Вставки поликарбоната для освещения. Возможны тамбуры. "><span class="zoom"></span></a>
+                        </div>
+                    </div>
+                    <div class="item-description mb-12px">
+                        <p class="large-font-size black mb-5px">
+                            Склад, производство
+                        </p>
+                        <!--noindex-->
+                        <p class="small-font-size">
+                            От 12 до 28 метров. Вставки поликарбоната для освещения. Возможны тамбуры.
+                        </p>
+                        <!--/noindex-->
+                    </div>
+                </article>
+            </div>
+
+        </div>
+        <div class="row">
+
+            <!-- 1/2 -->
+            <div class="one-half columns glr-item-preview">
+                <article>
+                    <div class="item-picture" data-type="image">
+                        <img src="{{ asset('assets/img/content/stroitelstvo-angarov/raznovidnosti/007s.jpg') }}" alt="">
+                        <div class="image-overlay">
+                            <a href="{{ asset('assets/img/content/stroitelstvo-angarov/raznovidnosti/007.jpg') }}" data-rel="prettyPhoto" title="Ширина от 12 до 18 метров. Возможно перепрофилирование в ангар арочного типа."><span class="zoom"></span></a>
+                        </div>
+                    </div>
+                    <div class="item-description mb-12px">
+                        <p class="large-font-size black mb-5px">
+                            Сенохранилище
+                        </p>
+                        <!--noindex-->
+                        <p class="small-font-size">
+                            Ширина от 12 до 18 метров. Возможно перепрофилирование в ангар арочного типа.
+                        </p>
+                        <!--/noindex-->
+                    </div>
+                </article>
+            </div>
+
+            <!-- 1/2 -->
+            <div class="one-half columns glr-item-preview">
+                <article>
+                    <div class="item-picture" data-type="image">
+                        <img src="{{ asset('assets/img/content/stroitelstvo-angarov/raznovidnosti/008s.jpg') }}" alt="">
+                        <div class="image-overlay">
+                            <a href="{{ asset('assets/img/content/stroitelstvo-angarov/raznovidnosti/008.jpg') }}" data-rel="prettyPhoto" title="Ширина каждой арки от 12 до 18 метров. Допустимо перепрофилирование в двойной ангар."><span class="zoom"></span></a>
+                        </div>
+                    </div>
+                    <div class="item-description mb-12px">
+                        <p class="large-font-size black mb-5px">
+                            Автостоянка
+                        </p>
+                        <!--noindex-->
+                        <p class="small-font-size">
+                            Ширина каждой арки от 12 до 18 метров. Допустимо перепрофилирование в двойной ангар.
+                        </p>
+                        <!--/noindex-->
+                    </div>
+                </article>
+            </div>
+
+        </div>
+        <div class="row">
+
+            <!-- 1/2 -->
+            <div class="one-half columns glr-item-preview">
+                <article>
+                    <div class="item-picture" data-type="image">
+                        <img src="{{ asset('assets/img/content/stroitelstvo-angarov/raznovidnosti/009s.jpg') }}" alt="">
+                        <div class="image-overlay">
+                            <a href="{{ asset('assets/img/content/stroitelstvo-angarov/raznovidnosti/009.jpg') }}" data-rel="prettyPhoto" title="От 12 до 18 метров. Вариант с торцами."><span class="zoom"></span></a>
+                        </div>
+                    </div>
+                    <div class="item-description mb-12px">
+                        <p class="large-font-size black mb-5px">
+                            Укрытие для скота
+                        </p>
+                        <!--noindex-->
+                        <p class="small-font-size">
+                            От 12 до 18 метров. Вариант с торцами.
+                        </p>
+                        <!--/noindex-->
+                    </div>
+                </article>
+            </div>
+
+            <!-- 1/2 -->
+            <div class="one-half columns glr-item-preview">
+                <article>
+                    <div class="item-picture" data-type="image">
+                        <img src="{{ asset('assets/img/content/stroitelstvo-angarov/raznovidnosti/010s.jpg') }}" alt="">
+                        <div class="image-overlay">
+                            <a href="{{ asset('assets/img/content/stroitelstvo-angarov/raznovidnosti/010.jpg') }}" data-rel="prettyPhoto" title="От 12 до 18 метров. Вариант без торцов."><span class="zoom"></span></a>
+                        </div>
+                    </div>
+                    <div class="item-description mb-12px">
+                        <p class="large-font-size black mb-5px">
+                            Укрытие спецтехники
+                        </p>
+                        <!--noindex-->
+                        <p class="small-font-size">
+                            От 12 до 18 метров. Вариант без торцов.
+                        </p>
+                        <!--/noindex-->
+                    </div>
+                </article>
+            </div>
+
+        </div>
+        <div class="row">
+
+            <!-- 1/2 -->
+            <div class="one-half columns glr-item-preview">
+                <article>
+                    <div class="item-picture" data-type="image">
+                        <img src="{{ asset('assets/img/content/stroitelstvo-angarov/raznovidnosti/011s.jpg') }}" alt="">
+                        <div class="image-overlay">
+                            <a href="{{ asset('assets/img/content/stroitelstvo-angarov/raznovidnosti/011.jpg') }}" data-rel="prettyPhoto" title="От 9 до 12 метров. Торцы могут быть с металлическими воротами (крепление на сваях)."><span class="zoom"></span></a>
+                        </div>
+                    </div>
+                    <div class="item-description mb-12px">
+                        <p class="large-font-size black mb-5px">
+                            Тентовый универсал
+                        </p>
+                        <!--noindex-->
+                        <p class="small-font-size">
+                            От 9 до 12 метров. Торцы могут быть с металлическими воротами (крепление на сваях).
+                        </p>
+                        <!--/noindex-->
+                    </div>
+                </article>
+            </div>
+
+            <!-- 1/2 -->
+            <div class="one-half columns glr-item-preview">
+                <article>
+                    <div class="item-picture" data-type="image">
+                        <img src="{{ asset('assets/img/content/stroitelstvo-angarov/raznovidnosti/012s.jpg') }}" alt="">
+                        <div class="image-overlay">
+                            <a href="{{ asset('assets/img/content/stroitelstvo-angarov/raznovidnosti/012.jpg') }}" data-rel="prettyPhoto" title="От 9 до 12 метров. Опционально металлические ворота по всей ширине. "><span class="zoom"></span></a>
+                        </div>
+                    </div>
+                    <div class="item-description mb-12px">
+                        <p class="large-font-size black mb-5px">
+                            Авиационный (тент)
+                        </p>
+                        <!--noindex-->
+                        <p class="small-font-size">
+                            От 9 до 12 метров. Опционально металлические ворота по всей ширине.
+                        </p>
+                        <!--/noindex-->
+                    </div>
+                </article>
+            </div>
+
+        </div>
+        <div class="row">
+
+            <!-- 1/2 -->
+            <div class="one-half columns glr-item-preview">
+                <article>
+                    <div class="item-picture" data-type="image">
+                        <img src="{{ asset('assets/img/content/stroitelstvo-angarov/raznovidnosti/013s.jpg') }}" alt="">
+                        <div class="image-overlay">
+                            <a href="{{ asset('assets/img/content/stroitelstvo-angarov/raznovidnosti/013.jpg') }}" data-rel="prettyPhoto" title="От 9 до 12 метров. Торцы - лес и металл, купол - частично лес, тент. Фундамент - 50 см. "><span class="zoom"></span></a>
+                        </div>
+                    </div>
+                    <div class="item-description mb-12px">
+                        <p class="large-font-size black mb-5px">
+                            Тентовый для скота и птицы
+                        </p>
+                        <!--noindex-->
+                        <p class="small-font-size">
+                            От 9 до 12 метров. Торцы - лес и металл, купол - частично лес, тент. Фундамент - 50 см.
+                        </p>
+                        <!--/noindex-->
+                    </div>
+                </article>
+            </div>
+
+            <!-- 1/2 -->
+            <div class="one-half columns glr-item-preview">
+                <article>
+                    <div class="item-picture" data-type="image">
+                        <img src="{{ asset('assets/img/content/stroitelstvo-angarov/raznovidnosti/014s.jpg') }}" alt="">
+                        <div class="image-overlay">
+                            <a href="{{ asset('assets/img/content/stroitelstvo-angarov/raznovidnosti/014.jpg') }}" data-rel="prettyPhoto" title="Ширина от 9 до 12 метров. Возможность перепрофилирования в ангар."><span class="zoom"></span></a>
+                        </div>
+                    </div>
+                    <div class="item-description mb-12px">
+                        <p class="large-font-size black mb-5px">
+                            Навес каркасно-тентовый
+                        </p>
+                        <!--noindex-->
+                        <p class="small-font-size">
+                            Ширина от 9 до 12 метров. Возможность перепрофилирования в ангар.
+                        </p>
+                        <!--/noindex-->
+                    </div>
+                </article>
+            </div>
+
+        </div>
+
+    </div><!-- /glr-wrapper -->
+
+    <div class="full-width columns">
+
+        <blockquote class="mb-35px">
+            <p class="dark-black remove-bottom">
+                Арочные ангары получили широкое распространение в более чем 60 странах мира. Их популярность во многом определяется высоким спросом на недорогие производственные и складские площади.
+            </p>
+        </blockquote>
+
+        <div class="info-box colored-1 rounded mb-35px">
+            <p class="middle-font-size remove-bottom">
+                Технология позволяет в сжатые сроки и с минимальным бюджетом построить ангар под потребности конкретного заказчика в удобном для него месте.
+            </p>
+        </div>
+
+        <blockquote class="mb-35px">
+            <p class="dark-black remove-bottom">
+                Строительство металлического арочного ангара связано с его сооружением из профиля оцинкованной рулонной листовой стали, выполняющего роль несущей конструкции.
+            </p>
+        </blockquote>
+
+        <!--						<img src="-/stroitelstvo-angarov/postroennye/002.jpg" alt="" class="scale-with-grid mb-50px">-->
+        <a href="{{ path('gallery') }}">
+            <img src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/002.jpg') }}" alt="" class="scale-with-grid mb-50px">
+        </a>
+
+        <div class="info-box colored-1 rounded mb-35px">
+            <p class="middle-font-size remove-bottom">
+                Технология возведения ангаров арочного типа обладает рядом существенных преимуществ, связанных как непосредственно с самим строительством, так и с последующей эксплуатацией данных сооружений. Это и сравнительно небольшой вес несущей конструкции, и скорость, и высокий уровень технологичности монтажа на любом грунте, отсутствие работ "мокрого" строительства, практичность, долговечность, привлекательный внешний вид строений.
+            </p>
+        </div>
+        <a name="arochnye-angary"></a>
+        <a href="{{ path('angary_types', {'type' : 'arochnye-angary'}) }}" class="button large colored mb-70px">Арочные ангары</a>
+
+
+        <p class="psevdo_h2 mb-40px" id="beskarkasnye-angary">
+            Стоимость возведения арочных конструкций
+        </p>
+
+        <div class="info-box colored-1 rounded mb-50px">
+            <p class="middle-font-size remove-bottom">
+                Ценовое предложение ООО "Агро-Тех" на текущий момент является одним из наиболее выгодных на российском отраслевом рынке бескаркасных металлических конструкций.
+            </p>
+        </div>
+
+    </div><!-- /full-width columns -->
+
+    <div id="glr-wrapper" class="medium-col-space no-bg no-sep long-description clearfix">
+
+        <div class="row">
+
+            <!-- 1/2 -->
+            <div class="one-half columns glr-item-preview">
+                <article>
+                    <div class="item-picture" data-type="image">
+                        <img src="{{ asset('assets/img/content/stroitelstvo-angarov/tsena/01.jpg') }}" alt="">
+                    </div>
+                    <div class="item-description mb-12px">
+                        <p class="large-font-size black">
+                            Ангар бескаркасный
+                        </p>
+                        <p class="">
+                            Цена - от <span class="large-font-size colored-text-2">&nbsp;2500</span>&nbsp; руб. за кв. м
+                        </p>
+                    </div>
+                </article>
+            </div>
+
+            <!-- 1/2 -->
+            <div class="one-half columns glr-item-preview">
+                <article>
+                    <div class="item-picture" data-type="image">
+                        <img src="{{ asset('assets/img/content/stroitelstvo-angarov/tsena/02.jpg') }}" alt="">
+                    </div>
+                    <div class="item-description mb-12px">
+                        <p class="large-font-size black">
+                            Навес бескаркасный
+                        </p>
+                        <p class="">
+                            Цена - от <span class="large-font-size colored-text-2">&nbsp;2400</span>&nbsp; руб. за кв. м
+                        </p>
+                    </div>
+                </article>
+            </div>
+
+        </div>
+        <div class="row mb-30px">
+
+            <!-- 1/2 -->
+            <div class="one-half columns glr-item-preview">
+                <article>
+                    <div class="item-picture" data-type="image">
+                        <img src="{{ asset('assets/img/content/stroitelstvo-angarov/tsena/03.jpg') }}" alt="">
+                    </div>
+                    <div class="item-description mb-12px">
+                        <p class="large-font-size black">
+                            Ангар тентовый
+                        </p>
+                        <p class="">
+                            Цена - от <span class="large-font-size colored-text-2">&nbsp;2500</span>&nbsp; руб. за кв. м
+                        </p>
+                    </div>
+                </article>
+            </div>
+
+            <!-- 1/2 -->
+            <div class="one-half columns glr-item-preview">
+                <article>
+                    <div class="item-picture" data-type="image">
+                        <img src="{{ asset('assets/img/content/stroitelstvo-angarov/tsena/04.jpg') }}" alt="">
+                    </div>
+                    <div class="item-description mb-12px">
+                        <p class="large-font-size black">
+                            Навес тентовый
+                        </p>
+                        <p class="">
+                            Цена - от <span class="large-font-size colored-text-2">&nbsp;2200</span>&nbsp; руб. за кв. м
+                        </p>
+                    </div>
+                </article>
+            </div>
+
+        </div>
+
+    </div><!-- /glr-wrapper -->
+
+    <div class="full-width columns">
+
+    <p class="psevdo_h2 mb-40px">
+        Ангары арочного типа - этапы&nbsp;строительства
+    </p>
+
+    <div class="info-box light gradient no-border mb-35px">
+        <p class="middle-font-size mb-20px">
+            Возведение бескаркасного арочного ангара осуществляется в несколько этапов:
+        </p>
+
+        <ul class="check-list colored remove-bottom">
+            <li>разметка - определение положения предполагаемого сооружения, бурение отверстий под трубы, завоз металла, бетонирование;</li>
+            <li>"ноль" - подготовка строительной площадки к возведению ангара;</li>
+            <li>изготовление либо доставка необходимого профиля и установка купола в виде арки;</li>
+            <li>установка торцевых стенок, ворот, врезка окон и, в случае необходимости, боковых тамбуров;</li>
+            <li>установка опалубки, заливка бетоном, демонтаж опалубки, наружная гидроизоляция;</li>
+            <li>утепление ангара (по желанию клиента).</li>
+        </ul>
+    </div>
+
+    <a name="tehnologia-stroitelstva-beskarkasnyh-angarov"></a>
+    <a href="{{ path('angary_types', {'type' : 'tehnologia-stroitelstva-beskarkasnyh-angarov'}) }}" class="button large colored mb-35px">Технология строительства</a>
+    <!--						<a href="https://agrotehstroy.ru/gallery" class="button large colored mb-35px">Фото рабочих моментов</a>-->
+
+    <!--						<img src="-/stroitelstvo-angarov/postroennye/003.jpg" alt="" class="scale-with-grid mb-70px">-->
+    <a href="{{ path('gallery') }}">
+        <img src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/003.jpg') }}" alt="" class="scale-with-grid mb-70px">
+    </a>
+
+    <p class="psevdo_h2 mb-40px">
+        Строительство зернохранилищ и овощехранилищ
+    </p>
+
+    <blockquote class="mb-35px">
+        <p class="dark-black remove-bottom">
+            Оптимальная организация условий хранения сельскохозяйственной продукции является актуальным вопросом для аграрных предприятий.
+        </p>
+    </blockquote>
+
+    <div class="info-box light gradient no-border mb-50px">
+        <p class="middle-font-size remove-bottom">
+            Устаревшие хранилища, амбары, склады и прочие сооружения уже не соответствуют современным требованиям, а многие из них и просто непригодны для использования.
+        </p>
+    </div>
+
+    <a href="{{ path('gallery') }}">
+        <img src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/004.jpg') }}" alt="" class="scale-with-grid mb-40px">
+    </a>
+    <blockquote class="mb-35px">
+        <p class="dark-black remove-bottom">
+            Хранилища нового образца должны быть долговечными, превосходящими своих предшественников по санитарно-гигиеническим характеристикам, а также по технологичности и рентабельности.
+        </p>
+    </blockquote>
+    <a name="stroitelstvo-zernohranilishh-i-ovoshehranilishh"></a>
+    <a href="{{ path('angary_types' ,{'type' : 'stroitelstvo-zernohranilishh-i-ovoshehranilishh'}) }}" class="button large colored mb-70px">Зерно- и овощехранилища</a>
+
+    <p class="psevdo_h2 mb-40px">
+        Авиационные ангары
+    </p>
+
+    <blockquote class="mb-35px">
+        <p class="dark-black remove-bottom">
+            В последние годы во многих странах мира наблюдается повышение интереса к частной авиации. И Россия здесь не является исключением.
+        </p>
+    </blockquote>
+
+    <div class="info-box colored-1 rounded mb-50px">
+        <p class="middle-font-size remove-bottom">
+            Учитывая постоянно растущую потребность в ангарах для малой авиации, ООО "Агро-Тех" предлагает ряд проверенных временем конструктивных решений для различных типов частных самолетов и вертолетов.
+        </p>
+    </div>
+
+    <a href="{{ path('gallery') }}">
+        <img src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/005.jpg') }}" alt="" class="scale-with-grid mb-40px">
+    </a>
+    <blockquote class="mb-35px">
+        <p class="dark-black remove-bottom">
+            Многолетний опыт предприятия позволяет гарантировать высокое качество изготовления и монтажа данных сооружений.
+        </p>
+    </blockquote>
+
+    <div class="info-box colored-1 rounded mb-35px">
+        <p class="middle-font-size remove-bottom">
+            Помимо готовых (типовых) вариантов, компания осуществляет проектирование и монтаж ангаров под потребности и финансовые возможности конкретного заказчика.
+        </p>
+    </div>
+    <a name="aviatsionnye-angary"></a>
+    <a href="{{ path('angary_types', {'type' : 'aviatsionnye-angary'}) }}" class="button large colored mb-70px">Авиационные ангары</a>
+
+
+    <p class="psevdo_h2 mb-40px">
+        Каркасные и бескаркасные ангары
+    </p>
+
+    <blockquote class="mb-35px">
+        <p class="dark-black remove-bottom">
+            Ни для кого не секрет, что каждый заказчик стремится получить надежное и качественное помещение, не прибегая к значительным финансовым затратам.
+        </p>
+    </blockquote>
+
+    <div class="info-box colored-1 rounded mb-40px">
+        <p class="middle-font-size remove-bottom">
+            В этой связи все большую популярность приобретают быстровозводимые ангары из ЛМК (легких металлоконструкций).
+        </p>
+    </div>
+
+    <div class="row mb-50px">
+        <section class="flexslider mb-10px" data-animation="fade" data-slideshow="yes" data-direction-nav="no">
+            <ul class="slides">
+                <li>
+                    <img src="{{ asset('assets/img/content/stroitelstvo-angarov/sravnenie/001.jpg') }}" alt="">
+                </li>
+                <li>
+                    <img src="{{ asset('assets/img/content/stroitelstvo-angarov/sravnenie/002.jpg') }}" alt="">
+                </li>
+            </ul>
+        </section>
+    </div>
+
+    <blockquote class="mb-35px">
+        <p class="dark-black remove-bottom">
+            В сегменте плодоовощных и зерновых хранилищ, а также различных промышленных складов серьезно конкурируют каркасные (с применением металлического каркаса) и бескаркасные (арочного типа) сооружения.
+        </p>
+    </blockquote>
+    <a name="karkasnye-i-beskarkasnye-angary"></a>
+    <a href="{{ path('angary_types', {'type' : 'karkasnye-i-beskarkasnye-angary'}) }}" class="button large colored mb-70px">Каркасные, бескаркасные ангары</a>
+
+    <p class="psevdo_h2 mb-40px">
+        Технология строительства арочных ангаров
+    </p>
+
+    <blockquote class="mb-35px">
+        <p class="dark-black remove-bottom">
+            Строительство арочного ангара возможно практически на любом грунте. Относительно небольшой вес конструкции позволяет обходиться без фундамента глубокого заложения.
+        </p>
+    </blockquote>
+
+    <a href="{{ path('gallery') }}">
+        <img src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/006.jpg') }}" alt="" class="scale-with-grid mb-50px">
+    </a>
+
+    <div class="info-box colored-1 rounded mb-35px">
+        <p class="middle-font-size remove-bottom">
+            Темпы строительства бескаркасных арочных сооружений беспрецедентно высокие. Например, конструкция ангара площадью 1000 кв. м. возводится за пять рабочих дней. А полный цикл (от "нуля" до сдачи "под ключ") осуществляется бригадой строителей численностью 10-12 человек за 20-25 дней.
+        </p>
+    </div>
+
+    <blockquote class="mb-35px">
+        <p class="dark-black remove-bottom">
+            Профилирование листа происходит на высокотехнологичном оборудовании американского производства (MIC Industries), а также на высокопроизводительных машинах серии МБС "Радуга". Этот комплекс представляет собой мини-заводы, начинающие свою работу непосредственно по прибытии к месту монтажа.
+        </p>
+    </blockquote>
+
+    <a href="{{ path('gallery') }}">
+        <img src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/007.jpg') }}" alt="" class="scale-with-grid mb-50px">
+    </a>
+
+    <div class="info-box colored-1 rounded mb-35px">
+        <p class="middle-font-size remove-bottom">
+            Прокатывая рулонную оцинкованную сталь толщиной от 0,7 мм до 1,4 мм данные машины формируют самонесущие гофрированные панели (на данном этапе происходит гибка металла). Преимуществом используемого оборудования является возможность "плавного" регулирования радиуса арки, что позволяет варьировать ширину сооружения от 12 до 28 метров.
+        </p>
+    </div>
+
+    <blockquote class="mb-35px">
+        <p class="dark-black remove-bottom">
+            При помощи забортовочной машины изготовленные детали сшиваются между собой прочным водонепроницаемым швом. Такой способ делает конструкцию ангара практически монолитным и полностью герметичным. Арочные секции с помощью автокрана устанавливаются в вертикальной плоскости, соединяясь между собой также с помощью забортовочной машины. По мере необходимости применяется различная строительная техника универсального типа.
+        </p>
+    </blockquote>
+
+    <a href="{{ path('gallery') }}">
+        <img src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/008.jpg') }}" alt="" class="scale-with-grid mb-50px">
+    </a>
+
+    <div class="info-box colored-1 rounded mb-35px">
+        <p class="middle-font-size remove-bottom">
+            Арочные панели могут использоваться для строительства быстровозводимого сооружения в целом, либо для арочной кровли, имеющей в основании боковые стенки.
+        </p>
+    </div>
+
+    <blockquote class="mb-35px">
+        <p class="dark-black remove-bottom">
+            Оригинальный способ крепления арок придает особую прочность конструкции и отвечает всем требованиям безопасности при стихийном внешнем воздействии - ветровом, снеговом, сейсмическом.
+        </p>
+    </blockquote>
+
+    <div class="info-box colored-1 rounded mb-35px">
+        <p class="middle-font-size remove-bottom">
+            При строительстве бескаркасного ангара самонесущие арки перекрывают пролеты до 20-28 метров шириной без каких-либо промежуточных колонн, стоек или балок. Это позволяет использовать полезную площадь здания наиболее эффективно. При этом длина ангара может быть любой, без каких-либо ограничений.
+        </p>
+    </div>
+
+    <a name="preimushhestva-beskarkasnogo-stroitelstva"></a>
+    <a href="{{ path('angary_types', {'type' : 'preimushhestva-beskarkasnogo-stroitelstva'}) }}" class="button large colored mb-70px">Основные преимущества</a>
+
+    <p class="psevdo_h2 mb-40px" id="karkasno-tenovye-angary">
+        Каркасно-тентовые ангары
+    </p>
+
+    <blockquote class="mb-35px">
+        <p class="dark-black remove-bottom">
+            Тентовый ангар представляет собой быстровозводимую конструкцию, состоящую из несущего металлического каркаса и тентовой ткани, выполняющей роль обшивки.
+        </p>
+    </blockquote>
+
+    <div class="info-box colored-1 rounded mb-50px">
+        <p class="middle-font-size remove-bottom">
+            Компания "Агро-Тех" разработала типовой проект каркасно-тентового ангара, имеющего широкую область применения.
+        </p>
+    </div>
+
+    <a href="{{ path('gallery') }}">
+        <img src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/009.jpg') }}" alt="" class="scale-with-grid mb-50px">
+    </a>
+
+    <div class="info-box light gradient no-border mb-35px">
+        <p class="middle-font-size mb-20px">
+            Конструкция ангара состоит из следующих основных частей:
+        </p>
+
+        <ul class="check-list colored remove-bottom">
+            <li>разбираемого несущего каркаса из стальных, окрашенных труб;</li>
+            <li>тентовой оболочки (включает в себя основной купол и торцевые зашивки).</li>
+        </ul>
+    </div>
+
+    <div class="info-box colored-1 rounded mb-35px">
+        <p class="middle-font-size remove-bottom">
+            Ширина каркасно-тентовой конструкции может достигать 12 метров. Фронтальная зашивка предусматривает наличие входа, тыльная зашивка - глухая.
+        </p>
+    </div>
+
+    <blockquote class="mb-70px">
+        <p class="dark-black remove-bottom">
+            Оболочка центрального купола изготовлена из высококачественной тентовой ткани канадского производства (NOVA), торцевые зашивки - из ткани ПВХ.
+        </p>
+    </blockquote>
+
+    <p class="psevdo_h2 mb-40px" id="uteplenie-penopoliuretanom">
+        Утепление ангара
+    </p>
+
+    <blockquote class="mb-35px">
+        <p class="dark-black remove-bottom">
+            В зависимости от назначения ангара может возникнуть необходимость его утепления.
+        </p>
+    </blockquote>
+
+    <div class="info-box colored-1 rounded mb-35px">
+        <p class="middle-font-size remove-bottom">
+            ООО "Агро-Тех" имеет многолетний опыт утепления поверхностей как классическими, так и инновационными способами.
+        </p>
+    </div>
+
+    <blockquote class="mb-35px">
+        <p class="dark-black remove-bottom">
+            В частности, как строящиеся, так и уже существующие ангары утепляются эковатой, пенополиуретановыми плитами, а также другими материалами по согласованию с заказчиком.
+        </p>
+    </blockquote>
+
+    <a href="{{ path('gallery') }}">
+        <img src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/010.jpg') }}" alt="" class="scale-with-grid mb-50px">
+    </a>
+
+    <div class="info-box colored-1 rounded mb-35px">
+        <p class="middle-font-size remove-bottom">
+            Наиболее оптимальный способ утепления ангара - напыление слоя пенополиуретана. Данный материал обеспечивает пониженную теплопроводность, высокий срок службы, герметичность, качественную адгезию теплоизолятора к поверхностям различного типа, эффективное звукопоглощение.
+        </p>
+    </div>
+
+    <blockquote class="mb-35px">
+        <p class="dark-black remove-bottom">
+            Стоимость утепления пенополиуретаном зависит от множества факторов, в числе которых - качество сырья, температура окружающей среды, тип поверхности, качество используемого оборудования и т.д. В отличие от множества строительных компаний, работающих на установках отечественного производства, ООО "Агро-Тех" выполняет работы по утеплению пенополиуретаном с применением новейшего зарубежного оборудования.
+        </p>
+    </blockquote>
+
+    <a href="{{ path('gallery') }}">
+        <img src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/011.jpg') }}" alt="" class="scale-with-grid mb-50px">
+    </a>
+
+    <div class="info-box colored-1 rounded mb-35px">
+        <p class="middle-font-size mb-20px">
+            В настоящее время у нас действуют сезонные скидки, благодаря чему расценки на теплоизоляцию металлического ангара составляют:
+        </p>
+        <ul class="check-list colored remove-bottom">
+            <li>при слое толщиной 1 см - от <span class="large-font-size colored-text-2">&nbsp;200</span>&nbsp; руб. за&nbsp;1&nbsp;кв.&nbsp;м. площади напыления;</li>
+            <li>- // - &nbsp;&nbsp; 2 см - от <span class="large-font-size colored-text-2">&nbsp;400</span>&nbsp; руб. за&nbsp;1&nbsp;кв.&nbsp;м.</li>
+            <li>- // - &nbsp;&nbsp; 3 см - от <span class="large-font-size colored-text-2">&nbsp;600</span>&nbsp; руб. за&nbsp;1&nbsp;кв.&nbsp;м.</li>
+            <li>- // - &nbsp;&nbsp; 4 см - от <span class="large-font-size colored-text-2">&nbsp;800</span>&nbsp; руб. за&nbsp;1&nbsp;кв.&nbsp;м.</li>
+            <li>- // - &nbsp;&nbsp; 5 см - от <span class="large-font-size colored-text-2">&nbsp;1000</span>&nbsp; руб. за&nbsp;1&nbsp;кв.&nbsp;м.</li>
+        </ul>
+    </div>
+
+    <blockquote class="mb-35px">
+        <p class="dark-black remove-bottom">
+            Решая широкий круг задач по утеплению, компания "Агро-Тех" гарантирует высокое качество работ и короткие сроки их выполнения.
+        </p>
+    </blockquote>
+    <a name="uteplenie-penopoliuretanom"></a>
+    <a href="{{ path('angary_types', {'type' : 'uteplenie-penopoliuretanom'}) }}" class="button large colored mb-70px">Утепление пенополиуретаном</a>
+
+    <p class="psevdo_h2 mb-40px">
+        Комплектация ангара
+    </p>
+
+    <div class="info-box light gradient no-border mb-50px">
+        <p class="middle-font-size mb-20px">
+            Комплектация варьируется в соответствии с пожеланиями заказчика:
+        </p>
+
+        <ul class="check-list colored remove-bottom">
+            <li>окна из поликарбоната (арочная схема), ворота, тамбуры различного размера в необходимом заказчику количестве;</li>
+            <li>в ангаре дополнительно возможна постройка помещений бытового назначения;</li>
+            <li>в случае необходимости специалистами компании могут быть смонтированы системы отопления и вентиляции, а также произведена установка дополнительного освещения</li>
+        </ul>
+    </div>
+
+    <a href="{{ path('gallery') }}">
+        <img src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/012.jpg') }}" alt="" class="scale-with-grid mb-70px">
+    </a>
+
+    <p class="psevdo_h2 mb-40px">
+        Бескаркасные металлические&nbsp;ангары - особенности&nbsp;эксплуатации
+    </p>
+
+    <blockquote class="mb-35px">
+        <p class="dark-black remove-bottom">
+            Многопрофильность арочного ангара предоставляет широкие возможности его применения, делая достаточно свободным его перепрофилирование: одно и то же строение может использоваться как склад, животноводческий комплекс или производственное помещение.
+        </p>
+    </blockquote>
+
+    <div class="info-box colored-1 rounded mb-50px">
+        <p class="middle-font-size remove-bottom">
+            Применение в качестве исходного материала качественной оцинкованной стали и возможность покрытия поверхности специальной краской позволяет существенно повысить коррозионную стойкость конструкций и получить архитектурное решение в нужной цветовой гамме.
+        </p>
+    </div>
+
+    <a href="{{ path('gallery') }}">
+        <img src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/013.jpg') }}" alt="" class="scale-with-grid mb-50px">
+    </a>
+
+    <blockquote class="mb-35px">
+        <p class="dark-black remove-bottom">
+            Необходимо отметить и высокую сопротивляемость снеговым и ветровым нагрузкам. Металлические арочные ангары обладают достаточно высокой степенью прочности. По данным специалистов они выдерживают ветровую нагрузку до 200 км/час и снеговую нагрузку до 240 кг/кв. м, имея полезный срок службы порядка 30 лет.
+        </p>
+    </blockquote>
+
+    <div class="info-box colored-1 rounded mb-35px">
+        <p class="middle-font-size remove-bottom">
+            Более того, при условии соблюдения элементарных правил эксплуатации крупногабаритных металлических конструкций этот срок превышает 50 лет.
+        </p>
+    </div>
+
+    <a name="arochnye-angary-istoriya"></a>
+    <a href="{{ path('angary_types', {'type' : 'arochnye-angary-istoriya'}) }}" class="button large colored mb-70px">История ангаров</a>
+
+
+    <p class="psevdo_h2 mb-40px">
+        Оформление проектно-строительной документации на быстровозводимые сооружения арочного типа
+    </p>
+
+    <div class="info-box colored-1 rounded mb-35px">
+        <p class="middle-font-size remove-bottom">
+            Основное преимущество оформления проектно-строительной документации на быстровозводимые конструкции в том, что в зависимости от целей заказчика сооружение может иметь как статус временного строения, так и статус капитального.
+        </p>
+    </div>
+
+    <blockquote>
+        <p class="dark-black remove-bottom">
+            В случае необходимости специалисты ООО "Агро-Тех" предоставят подробную консультацию по данному вопросу. После выполнения всех работ компания выдает клиентам необходимую проектную, бухгалтерскую и строительную документацию по объекту.
+        </p>
+    </blockquote>
+{% endblock %}

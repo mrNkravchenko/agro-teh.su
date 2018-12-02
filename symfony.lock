@@ -80,11 +80,17 @@
     "egulias/email-validator": {
         "version": "2.1.6"
     },
+    "fancyapps/fancybox": {
+        "version": "v2.1.6"
+    },
     "fig/link-util": {
         "version": "1.0.0"
     },
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
+    },
+    "kriswallsmith/assetic": {
+        "version": "v1.0.5"
     },
     "monolog/monolog": {
         "version": "1.23.0"
@@ -121,6 +127,9 @@
     },
     "psr/simple-cache": {
         "version": "1.0.1"
+    },
+    "robloach/component-installer": {
+        "version": "0.2.3"
     },
     "sensio/framework-extra-bundle": {
         "version": "5.2",
@@ -390,6 +399,15 @@
             "branch": "master",
             "version": "3.3",
             "ref": "dae9b39fd6717970be7601101ce5aa960bf53d9a"
+        }
+    },
+    "symfony/webpack-encore-pack": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "8e81b0743207474b384548d9bc73fb03b218a9bf"
         }
     },
     "symfony/yaml": {

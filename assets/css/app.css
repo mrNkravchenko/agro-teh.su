@@ -1,0 +1,19 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "carousel.css";
+@import "foto.css";
+@import "lenta.css";
+
+@import "mng.css";
+
+/*@import "setka.css";*/
+@import "shrift.css";
+@import "shrifty-google.css";
+@import "zvonok.css";
+
+@import "~flexslider/flexslider.css";
+
+@import "jquery.fancybox.css";
+@import "hangar.css";
+
+@import "osnova.css";
+@import "maket.css";

@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AngarImage index{% endblock %}
+
+{% block body %}
+    <h1>AngarImage index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Name_md5</th>
+                <th>Path</th>
+                <th>Path_thumbnail</th>
+                <th>First</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for angar_image in angar_images %}
+            <tr>
+                <td>{{ angar_image.id }}</td>
+                <td>{{ angar_image.name }}</td>
+                <td>{{ angar_image.nameMd5 }}</td>
+                <td>{{ angar_image.path }}</td>
+                <td>{{ angar_image.pathThumbnail }}</td>
+                <td>{{ angar_image.first ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('angar_image_show', {'id': angar_image.id}) }}">show</a>
+                    <a href="{{ path('angar_image_edit', {'id': angar_image.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('angar_image_new') }}">Create new</a>
+{% endblock %}

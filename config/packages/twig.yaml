@@ -2,3 +2,7 @@ twig:
     default_path: '%kernel.project_dir%/templates'
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
+    globals:
+        tech_serv: '@App\Repository\TechRepository'
+        tech_category_serv: '@App\Repository\TechCategoryRepository'
+        angar_category_serv: '@App\Repository\AngarCategoryRepository'

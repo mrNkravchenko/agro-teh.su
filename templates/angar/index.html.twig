@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Angar index{% endblock %}
+
+{% block body %}
+    <h1>Angar index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Width</th>
+                <th>Length</th>
+                <th>Square</th>
+                <th>Costumer</th>
+                <th>Address_id</th>
+                <th>Created</th>
+                <th>Updated</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for angar in angars %}
+            <tr>
+                <td>{{ angar.id }}</td>
+                <td>{{ angar.width }}</td>
+                <td>{{ angar.length }}</td>
+                <td>{{ angar.square }}</td>
+                <td>{{ angar.costumer }}</td>
+                <td>{{ angar.addressId }}</td>
+                <td>{{ angar.created ? angar.created|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ angar.updated ? angar.updated|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('angar_show', {'id': angar.id}) }}">show</a>
+                    <a href="{{ path('angar_edit', {'id': angar.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('angar_new') }}">Create new</a>
+{% endblock %}

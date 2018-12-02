@@ -1,0 +1,127 @@
+{% extends 'base.html.twig' %}
+{#{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .sidebar-block {
+            display: block;
+            width: 100%;
+            height: 100%;
+            float: left;
+        }
+        /* Style the tab */
+        .tab {
+            float: left;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+            width: 20%;
+            height: 400px;
+        }
+
+        /* Style the buttons that are used to open the tab content */
+        .tab button {
+            display: block;
+            background-color: inherit;
+            color: black;
+            padding: 22px 16px;
+            width: 100%;
+            border: none;
+            outline: none;
+            text-align: left;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        /* Create an active/current "tab button" class */
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+            display: none;
+            float: left;
+            padding: 0px 12px;
+            /*border: 1px solid #ccc;*/
+            width: 76%;
+            border-left: none;
+            height: 400px;
+            overflow-y: auto!important;
+        }
+    </style>
+{% endblock %}#}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+{% endblock %}
+{% block title %}{{ title }}{% endblock %}
+{% block h1 %}{{ name }}{% endblock %}
+{% block mainSlider %}
+
+    <div class="row mb-50px">
+        <section class="flexslider mb-10px" data-animation="fade" data-slideshow="yes" data-direction-nav="yes">
+            <ul class="slides">
+                <li>
+                    <img src="/{{ tech.image }}" alt="{{ name }}">
+                </li>
+                {% for slide in slider %}
+                <li>
+                    <img src="/{{ slide.path }}" alt="{{ name }}">
+                </li>
+                {% endfor %}
+
+            </ul>
+        </section>
+    </div>
+
+{% endblock %}
+{% block content %}{{ content | raw }}{% endblock %}
+
+{#{% block javascripts %}
+{{ parent() }}
+
+    #}{#<script>
+        $('#myTabs a').click(function (e) {
+            e.preventDefault()
+            $(this).tab('show')
+        })
+    </script>#}{#
+    #}{#<script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            // default tab active [0]
+            const tabs = document.getElementsByClassName('tablinks');
+            const tabsContent = document.getElementsByClassName('tabcontent');
+
+            tabsContent[0].style.display = "block";
+            tabs[0].className += " active";
+
+        });
+
+        function openTab(evt, cityName) {
+            // Declare all variables
+            var i, tabcontent, tablinks;
+
+            // Get all elements with class="tabcontent" and hide them
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+    </script>#}{#
+{% endblock %}#}

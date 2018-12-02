@@ -1,0 +1,45 @@
+{
+  "devDependencies": {
+    "@symfony/webpack-encore": "^0.20.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "browser-sync": "^2.26.3",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "flexslider": "^2.7.1",
+    "jquery": "^3.3.1",
+    "webpack-notifier": "^1.6.0"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "dev-server": "encore dev-server",
+    "dev": "encore dev",
+    "watch": "encore dev --watch",
+    "build": "encore production"
+  },
+  "name": "agro-teh.su",
+  "version": "1.0.0",
+  "main": "webpack.config.js",
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrNkravchenko/agro-teh.su.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/mrNkravchenko/agro-teh.su/issues"
+  },
+  "homepage": "https://github.com/mrNkravchenko/agro-teh.su#readme",
+  "description": "",
+  "dependencies": {
+    "@fancyapps/fancybox": "^3.5.2",
+    "bootstrap": "<3.3.7",
+    "jquery.kladr": "^2.2.2",
+    "jquery.scrollto": "^2.1.2",
+    "popper.js": "^1.14.5",
+    "selectnav.js": "^0.1.0"
+  }
+}

@@ -1,0 +1,37 @@
+<footer id="footer" class="blank"></footer><!-- Подвал -->
+
+<footer id="footer-bottom">
+
+    <div class="container"><!-- 1080 px -->
+
+        <div class="nine columns">
+
+            <ul class="footer-nav clearfix"><!-- Меню в подвале -->
+                {% for category in tech_category_serv.findAll() %}
+                <li><a href="{{ path('category', {'url' : category.url}) }}">{{ category.name }}</a></li>
+                {% endfor %}
+            </ul>
+            <ul class="links clearfix align-left">
+                <li>
+                    Данный сайт не является публичной офертой и носит исключительно информационный характер
+                </li>
+            </ul>
+            <!--<div class="row clearfix">
+                <p class="text-on-centre small-font-size links">
+
+                </p>
+            </div>-->
+
+        </div>
+
+        <div class="three columns">
+            <ul class="links clearfix">
+                <li>© 2008-2018 ООО "АГРО-ТЕХ"</li>
+                <li><a href="{{ path('app_home_show', {'slug' : 'politika-konfidencialnosti'}) }}">Политика конфиденциальности</a></li>
+            </ul>
+        </div>
+
+
+    </div><!-- /1080 px -->
+
+</footer><!-- /Подвал -->

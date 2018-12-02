@@ -1,0 +1,21 @@
+{% extends 'base_angar.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        form {
+            width: 100%!important;
+        }
+        input, textarea {
+            width: 100%!important;
+        }
+    </style>
+{% endblock %}
+
+{% block title %}New Address{% endblock %}
+{% block h1 %}Create new Address{% endblock %}
+
+
+{% block content %}
+    {{ include('address/_form.html.twig') }}
+<a href="{{ path('address_index') }}">back to list</a>
+{% endblock %}

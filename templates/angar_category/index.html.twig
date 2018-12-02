@@ -1,0 +1,45 @@
+{% extends 'base_angar.html.twig' %}
+
+{% block title %}AngarCategory index{% endblock %}
+
+{% block content %}
+    <h1>AngarCategory index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Url</th>
+                <th>Image</th>
+                <th>Small_image</th>
+                <th>Created</th>
+                <th>Updated</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for angar_category in angar_categories %}
+            <tr>
+                <td>{{ angar_category.id }}</td>
+                <td>{{ angar_category.name }}</td>
+                <td>{{ angar_category.url }}</td>
+                <td>{{ angar_category.image }}</td>
+                <td>{{ angar_category.smallImage }}</td>
+                <td>{{ angar_category.created ? angar_category.created|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ angar_category.updated ? angar_category.updated|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('angar_category_show', {'url': angar_category.getUrl()}) }}">show</a>
+                    <a href="{{ path('angar_category_edit', {'id': angar_category.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('angar_category_new') }}">Create new</a>
+{% endblock %}

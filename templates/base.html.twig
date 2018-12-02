@@ -1,821 +1,328 @@
-{#<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
-</html>#}
-<!DOCTYPE html>
-<html class="js" lang="ru">
-<head>
-    <div class="fit-vids-style">&shy;<style> .fluid-width-video-wrapper {
-                width: 100%;
-                position: relative;
-                padding: 0;
-            }
+{% extends 'layout.html.twig' %}
+{% block main %}
+    <section id="main"><!-- Средний блок (все, что между шапкой и подвалом) -->
 
-            .fluid-width-video-wrapper iframe, .fluid-width-video-wrapper object, .fluid-width-video-wrapper embed {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-            } </style>
-    </div>
-    <script type="text/javascript" async="" src="https://mc.yandex.ru/metrika/tag.js"></script>
-    <script type="text/javascript">var yaParams = {ip: "109.165.86.81"};</script>
-    <script type="text/javascript">(function (d, w, c) {
-            (w[c] = w[c] || []).push(function () {
-                try {
-                    w.yaCounter47365036 = new Ya.Metrika2({
-                        id: 47365036,
-                        params: window.yaParams,
-                        clickmap: true,
-                        trackLinks: true,
-                        accurateTrackBounce: true,
-                        webvisor: true,
-                        ut: "noindex"
-                    });
-                } catch (e) {
-                }
-            });
-            var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () {
-                n.parentNode.insertBefore(s, n);
-            };
-            s.type = "text/javascript";
-            s.async = true;
-            s.src = "https://mc.yandex.ru/metrika/tag.js";
-            if (w.opera == "[object Opera]") {
-                d.addEventListener("DOMContentLoaded", f, false);
-            } else {
-                f();
-            }
-        })(document, window, "yandex_metrika_callbacks2"); </script>
-    <noscript>
-        <div><img src="https://mc.yandex.ru/watch/47365036?ut=noindex" style="position:absolute; left:-9999px;" alt=""/>
-        </div>
-    </noscript>
-    <!-- /Yandex.Metrika counter -->
+        <section id="page-title"><!-- Заголовок страницы -->
 
-    <!--[if IE 8 ]>
-    <html class="ie ie8 no-js" lang="ru"> <![endif]-->
-    <!--[if IE 9 ]>
-    <html class="ie ie9 no-js" lang="ru"> <![endif]-->
-    <!--[if (gt IE 9)|!(IE)]><!--><!--<![endif]-->
+            <div class="grid-bg">
+                <div class="container-fluid"><!-- 1080 px -->
 
-    <meta charset="utf-8">
-    <meta http-equiv="Cache-Control" content="max-age=43200, must-revalidate">
-    <meta http-equiv="Cache-Control" content="max-age=43200, proxy-revalidate">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+                    <div class="full-width columns">
 
-
-    <title>{% block title %}{% endblock %}</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <!-- CSS -->
-    {% block stylesheets %}
-        <link rel="stylesheet" href="{{ asset('assets/css/shrifty-google.css?ver=10') }}">
-        <link rel="stylesheet" href="{{ asset('assets/css/osnova.css?ver=10') }}">
-        <link rel="stylesheet" href="{{ asset('assets/css/setka.css?ver=10') }}">
-        <link rel="stylesheet" href="{{ asset('assets/css/maket.css?ver=10') }}">
-        <link rel="stylesheet" href="{{ asset('assets/css/shrift.css?ver=10') }}">
-        <link rel="stylesheet" href="{{ asset('assets/css/foto.css?ver=10') }}">
-        <link rel="stylesheet" href="{{ asset('assets/css/lenta.css?ver=10') }}">
-        <link rel="stylesheet" href="{{ asset('assets/css/mng.css?ver=10') }}">
-        <link rel="stylesheet" href="{{ asset('assets/css/zvonok.css?ver=10') }}">
-    {% endblock %}
-
-    {% block javascripts %}
-        <!-- Java Script -->
-        <script>document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, 'js');</script>
-        <!--[if lt IE 9]>
-        <script src="_/j/html5shiv.js"></script><![endif]-->
-    {% endblock %}
-
-
-</head>
-
-<body style="" class="no-touch-screen">
-
-<header id="header"><!-- Шапка сайта -->
-
-    <div class="container"><!-- 1080 px -->
-
-        <div class="full-width columns">
-
-            <div id="logo"><!-- Лого -->
-                <a href="/"><img src="{{ asset('assets/img/logo.png') }}" alt="logo"></a>
-            </div>
-
-            <nav id="navigation"><!-- Блок навигации в шапке сайта -->
-
-                <div id="primary-nav">
-
-                    <ul id="main-menu" class="sf-js-enabled sf-arrows">
-
-                        <li><a href="/" class="current">
-                                <span class="uppercase">Главная</span>
-                            </a>
-                        </li>
-
-                        <li class="hides"><a href="/about">
-                                <span class="uppercase">О компании</span>
-                            </a>
-                        </li>
-
-                        <li class="sf-mega-parent cursor_text"><a href="/selhoztehnika" class="sf-with-ul">
-                                <span class="uppercase cursor_text">Сельхозтехника</span>
-                            </a>
-                            <div class="sf-mega" style="display: none;">
-                                <div class="sf-mega-table">
-                                    <div class="sf-mega-section width-210px">
-                                        <p class="pmenu colored-text-1 mb-15px">Опрыскивающая техника</p>
-                                        <ul class="arrow-list">
-                                            <li><a href="/tech/opryskivatel-pritsepnoi-op-22">
-                                                    ОП-22 (24), 2000/3000
-                                                </a></li>
-                                            <li><a href="/tech/pritsepnoi-opryskivatel-op-18">
-                                                    ОП-18 (21), 2000/2500
-                                                </a></li>
-                                            <li><a href="/tech/opryskivatel-navesnoi-on-12">
-                                                    ОН-12/15, 800
-                                                </a></li>
-                                            <li><a href="/tech/opryskivatel-pritsepnoi-ventilyatornyi-opv-2000">
-                                                    ОПВ 2000, 820
-                                                </a></li>
-                                            <li><a href="/tech/opryskivatel-ventilyatornyi-sadovyi">
-                                                    ОНВ 330/600, 711
-                                                </a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="sf-mega-section width-190px">
-                                        <p class="pmenu colored-text-1 mb-15px">Разбрасыватели удобрений</p>
-                                        <ul class="arrow-list">
-                                            <li><a href="/tech/razbrasyvateli-udobreniy">
-                                                    МВУ 1100
-                                                </a></li>
-                                            <li><a href="/tech/mashiny-dlya-vneseniya-udobreniy">
-                                                    МВУ 500
-                                                </a></li>
-                                            <li><a href="/tech/samohodnyi-razbrasyvatel-udobreniy">
-                                                    Самоходный разбрасыватель удобрений
-                                                </a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="sf-mega-section width-210px">
-                                        <p class="pmenu colored-text-1 mb-15px">Прочая<br>сельхозтехника</p>
-                                        <ul class="arrow-list">
-
-                                            <li><a href="/tech/borona-pruzhinnaya">
-                                                    Борона пружинная
-                                                </a></li>
-                                            <li><a href="/tech/borona-rotatsionnaya">
-                                                    Борона ротационная
-                                                </a></li>
-
-                                            <li><a href="/tech/pritsep-pozharnyi-ppv-2500">
-                                                    Прицеп пожарный
-                                                </a></li>
-                                            <li><a href="/tech/podvoz-zhku-kas">
-                                                    Подвоз ЖКУ, КАС
-                                                </a></li>
-                                            <li><a href="/tech/podvoz-vody">
-                                                    Подвоз воды
-                                                </a></li>
-                                            <li><a href="/tech/rezervuary-dlya-vody">
-                                                    Резервуары воды
-                                                </a></li>
-
-                                            <li><a href="/tech/sistema-parallelnogo-vozhdeniya-agronavigator">
-                                                    Агронавигатор
-                                                </a></li>
-                                            <li><a href="/tech/telezhka-dlya-sbora-urozhaya">
-                                                    Сбор урожая
-                                                </a></li>
-                                            <li><a href="/tech/okzh">
-                                                    ОКЖ-5,6
-                                                </a></li>
-                                            <li><a href="/tech/grabli-voroshilki-senovoroshilka">
-                                                    Грабли ворошилки
-                                                </a></li>
-                                            <li><a href="/tech/opryskivatel-gerbitsidnyi">
-                                                    Гербицидник
-                                                </a></li>
-                                            <li><a href="/tech/agregat-kombinirovannyi-diskovyi">
-                                                    Агрегат дисковый
-                                                </a></li>
-                                            <li><a href="/tech/rasprodazha-selhoztehniki">
-                                                    Распродажа
-                                                </a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </li>
-
-                        <li><a href="/angary">
-                                <span class="uppercase">Ангары</span>
-                            </a>
-                        </li>
-
-                        <li><a href="/contacts">
-                                <span class="uppercase">Контакты</span>
-                            </a>
-                        </li>
-
-                        <noscript>
-                            <div class="hidden">
-                        </noscript>
-                        <li class="hide"><a href="/voprosy-po-stroitelstvu-angarov-selhoztehnike">
-                                <span class="uppercase">Обратный звонок</span>
-                            </a>
-                        </li>
-                        <noscript>
-                            </div>
-                        </noscript><!-- /hidden-->
-
-                </ul><select class="selectnav" id="selectnav1">
-                    <option value="">Выберите страницу...</option>
-                    <option value="http://agro-teh.su/" selected="">ГЛАВНАЯ</option>
-                    <option value="http://agro-teh.su/about">О КОМПАНИИ</option>
-                    <option value="http://agro-teh.su/selhoztehnika">СЕЛЬХОЗТЕХНИКА</option>
-                    <option value="http://agro-teh.su/tech/opryskivatel-pritsepnoi-op-22">--
-                        ОП-22 (24), 2000/3000
-                    </option>
-                    <option value="http://agro-teh.su/tech/pritsepnoi-opryskivatel-op-18">--
-                        ОП-18 (21), 2000/2500
-                    </option>
-                    <option value="http://agro-teh.su/tech/opryskivatel-navesnoi-on-12">--
-                        ОН-12/15, 800
-                    </option>
-                    <option value="http://agro-teh.su/tech/opryskivatel-pritsepnoi-ventilyatornyi-opv-2000">--
-                        ОПВ 2000, 820
-                    </option>
-                    <option value="http://agro-teh.su/tech/opryskivatel-ventilyatornyi-sadovyi">--
-                        ОНВ 330/600, 711
-                    </option>
-                    <option value="http://agro-teh.su/tech/razbrasyvateli-udobreniy">--
-                        МВУ 1100
-                    </option>
-                    <option value="http://agro-teh.su/tech/mashiny-dlya-vneseniya-udobreniy">--
-                        МВУ 500
-                    </option>
-                    <option value="http://agro-teh.su/tech/samohodnyi-razbrasyvatel-udobreniy">--
-                        Самоходный разбрасыватель удобрений
-                    </option>
-                    <option value="http://agro-teh.su/tech/borona-pruzhinnaya">--
-                        Борона пружинная
-                    </option>
-                    <option value="http://agro-teh.su/tech/borona-rotatsionnaya">--
-                        Борона ротационная
-                    </option>
-                    <option value="http://agro-teh.su/tech/pritsep-pozharnyi-ppv-2500">--
-                        Прицеп пожарный
-                    </option>
-                    <option value="http://agro-teh.su/tech/podvoz-zhku-kas">--
-                        Подвоз ЖКУ, КАС
-                    </option>
-                    <option value="http://agro-teh.su/tech/podvoz-vody">--
-                        Подвоз воды
-                    </option>
-                    <option value="http://agro-teh.su/tech/rezervuary-dlya-vody">--
-                        Резервуары воды
-                    </option>
-                    <option value="http://agro-teh.su/tech/sistema-parallelnogo-vozhdeniya-agronavigator">--
-                        Агронавигатор
-                    </option>
-                    <option value="http://agro-teh.su/tech/telezhka-dlya-sbora-urozhaya">--
-                        Сбор урожая
-                    </option>
-                    <option value="http://agro-teh.su/tech/okzh">--
-                        ОКЖ-5,6
-                    </option>
-                    <option value="http://agro-teh.su/tech/grabli-voroshilki-senovoroshilka">--
-                        Грабли ворошилки
-                    </option>
-                    <option value="http://agro-teh.su/tech/opryskivatel-gerbitsidnyi">--
-                        Гербицидник
-                    </option>
-                    <option value="http://agro-teh.su/tech/agregat-kombinirovannyi-diskovyi">--
-                        Агрегат дисковый
-                    </option>
-                    <option value="http://agro-teh.su/rasprodazha-selhoztehniki">--
-                        Распродажа
-                    </option>
-                    <option value="http://agro-teh.su/angary">АНГАРЫ</option>
-                    <option value="http://agro-teh.su/contacts">КОНТАКТЫ</option>
-                    <option value="http://agro-teh.su/voprosy-po-stroitelstvu-angarov-selhoztehnike">ОБРАТНЫЙ
-                        ЗВОНОК
-                    </option>
-                </select><!-- /main-menu -->
-
-        </div><!-- /primary-nav -->
-
-        </nav><!-- /Блок навигации в шапке сайта -->
-
-    </div><!-- /full-width columns -->
-
-    </div><!-- /container 1080px -->
-
-</header><!-- /Шапка сайта -->
-
-<section id="main"><!-- Средний блок (все, что между шапкой и подвалом) -->
-
-    <section id="page-title"><!-- Заголовок страницы -->
-
-        <div class="grid-bg">
-            <div class="container"><!-- 1080 px -->
-
-                <div class="full-width columns">
-
-                    <ul class="phone-line hide clearfix">
-
-                        <!--
-                        <img src="_/i/icon.png"  width="32" height="32" class="ic" alt="">
-                        -->
-                        +7 (928) 212-22-19
-                        <!--
-                            (863) 438-74-87, 438-80-74
-                        -->
-
-                    </ul>
-                    <h1>{% block h1 %}{% endblock %}</h1>
-
-                </div><!-- /full-width columns -->
-
-            </div><!-- /container 1080px -->
-        </div><!-- /grid-bg -->
-
-    </section><!-- /Заголовок страницы -->
-
-    {% block content %}{% endblock %}
-
-
-    <!-- Боковая колонка (правая) -->
-    <aside id="sidebar" class="one-fourth columns page-right-col">
-        <div class="widget remove-bottom" data-smallscreen="no">
-            <a href="/opryskivateli.php" title="Опрыскиватели">
-                <img src="-/_sb/opryskivateli.jpg" alt="" class="sb_img scale-with-grid remove-bottom">
-            </a>
-        </div>
-        <!--
-        <p class="menu-header">Опрыскиватели</p>
-        -->
-
-        <!-- Меню в боковой колонке -->
-        <div class="widget separator mb-50px" data-smallscreen="no">
-            <!-- показывать ли на мобильных устройствах: "yes" или "no" -->
-            <ul class="side-menu large-font-size rc">
-                <li><a href="/opryskivateli.php">
-                        <span>Опрыскиватели</span>
-                    </a></li>
-                <li><a href="/opryskivatel-pritsepnoi-op-22.php">
-                        ОП-22, 2000/3000
-                    </a></li>
-                <li><a href="/pritsepnoi-opryskivatel-op-18.php">
-                        ОП-18, 2000/2500
-                    </a></li>
-                <li><a href="/opryskivatel-navesnoi-on-12.php">
-                        ОН-12/15, 800
-                    </a></li>
-                <li><a href="/opryskivatel-pritsepnoi-ventilyatornyi-opv-2000.php">
-                        ОПВ 2000, 820
-                    </a></li>
-                <li><a href="/opryskivatel-ventilyatornyi-sadovyi.php">
-                        ОНВ 330/600, 711
-                    </a></li>
-            </ul>
-        </div>
-        <!--  ----------------------------------------------------------------------------------------------------------  -->
-        <div class="widget remove-bottom" data-smallscreen="no">
-            <a href="/razbrasyvateli.php" title="Разбрасыватели">
-                <img src="-/_sb/razbrasyvateli.jpg" alt="" class="sb_img scale-with-grid remove-bottom">
-            </a>
-        </div>
-        <!--
-        <p class="menu-header">Разбрасыватели удобрений</p>
-        -->
-
-        <!-- Меню в боковой колонке -->
-        <div class="widget separator mb-50px" data-smallscreen="no">
-            <!-- показывать ли на мобильных устройствах: "yes" или "no" -->
-            <ul class="side-menu large-font-size rc">
-                <li><a href="/razbrasyvateli.php">
-                        <span>Разбрасыватели</span>
-                    </a></li>
-                <li><a href="/razbrasyvateli-udobreniy.php">
-                        МВУ 1100
-                    </a></li>
-                <li><a href="/mashiny-dlya-vneseniya-udobreniy.php">
-                        МВУ 500
-                    </a></li>
-                <li><a href="/samohodnyi-razbrasyvatel-udobreniy.php">
-                        Самоходный разбрасыватель удобрений
-                    </a></li>
-            </ul>
-        </div>
-        <!--  ----------------------------------------------------------------------------------------------------------  -->
-        <div class="widget remove-bottom" data-smallscreen="no">
-            <a href="/borony.php" title="Бороны">
-                <img src="-/_sb/borony.jpg" alt="" class="sb_img scale-with-grid remove-bottom">
-            </a>
-        </div>
-        <!--
-        <p class="menu-header">Бороны</p>
-        -->
-
-        <!-- Меню в боковой колонке -->
-        <div class="widget separator mb-50px" data-smallscreen="no">
-            <!-- показывать ли на мобильных устройствах: "yes" или "no" -->
-            <ul class="side-menu large-font-size rc">
-                <li><a href="/borony.php">
-                        <span>Бороны</span>
-                    </a></li>
-                <li><a href="/borona-pruzhinnaya.php">
-                        Борона пружинная
-                    </a></li>
-                <li><a href="/borona-rotatsionnaya.php">
-                        Борона ротационная
-                    </a></li>
-            </ul>
-        </div>
-        <!--  ----------------------------------------------------------------------------------------------------------  -->
-        <div class="widget remove-bottom" data-smallscreen="no">
-            <a href="/podvoz-vody-zhku-kas.php" title="Подвоз воды, ЖКУ, КАС">
-                <img src="-/_sb/podvoz-vody-zhku-kas.jpg" alt="" class="sb_img scale-with-grid remove-bottom">
-            </a>
-        </div>
-        <!--
-        <p class="menu-header">Подвоз жидкости</p>
-        -->
-
-        <!-- Меню в боковой колонке -->
-        <div class="widget separator mb-50px" data-smallscreen="no">
-            <!-- показывать ли на мобильных устройствах: "yes" или "no" -->
-            <ul class="side-menu large-font-size rc">
-                <li><a href="/podvoz-vody-zhku-kas.php">
-                        <span>Вода, ЖКУ, КАС</span>
-                    </a></li>
-                <li><a href="/pritsep-pozharnyi-ppv-2500.php">
-                        Прицеп пожарный
-                    </a></li>
-                <li><a href="/podvoz-zhku-kas.php">
-                        Подвоз ЖКУ, КАС
-                    </a></li>
-                <li><a href="/podvoz-vody.php">
-                        Подвоз воды
-                    </a></li>
-                <li><a href="/rezervuary-dlya-vody.php">
-                        Резервуары воды
-                    </a></li>
-            </ul>
-        </div>
-        <!--  ----------------------------------------------------------------------------------------------------------  -->
-        <div class="widget remove-bottom" data-smallscreen="no">
-            <a href="/prochaya-selhoztehnika.php" title="Прочая сельхозтехника">
-                <img src="-/_sb/prochaya-selhoztehnika.jpg" alt="" class="sb_img scale-with-grid remove-bottom">
-            </a>
-        </div>
-        <!--
-        <p class="menu-header">Прочая сельхозтехника</p>
-        -->
-
-        <!-- Меню в боковой колонке -->
-        <div class="widget separator mb-70px" data-smallscreen="no">
-            <!-- показывать ли на мобильных устройствах: "yes" или "no" -->
-            <ul class="side-menu large-font-size rc">
-                <li><a href="/prochaya-selhoztehnika.php">
-                        <span>Прочая техника</span>
-                    </a></li>
-                <li><a href="/sistema-parallelnogo-vozhdeniya-agronavigator.php">
-                        Агронавигатор
-                    </a></li>
-                <li><a href="/telezhka-dlya-sbora-urozhaya.php">
-                        Сбор урожая
-                    </a></li>
-                <li><a href="/okzh.php">
-                        ОКЖ-5,6
-                    </a></li>
-                <li><a href="/grabli-voroshilki-senovoroshilka.php">
-                        Грабли ворошилки
-                    </a></li>
-                <li><a href="/opryskivatel-gerbitsidnyi.php">
-                        Гербицидник
-                    </a></li>
-                <li><a href="/agregat-kombinirovannyi-diskovyi.php">
-                        Агрегат дисковый
-                    </a></li>
-                <li><a href="/rasprodazha-selhoztehniki.php">
-                        Распродажа
-                    </a></li>
-            </ul>
-        </div>
-        <!--  ----------------------------------------------------------------------------------------------------------  -->
-
-
-        <div class="widget" data-smallscreen="no">
-            <a href="/angary.php">
-                <img src="-/_sb/angary.jpg" alt="" class="sb_img scale-with-grid mb-70px">
-            </a>
-        </div>
-
-        <div class="widget" data-smallscreen="no">
-            <a href="/sistema-parallelnogo-vozhdeniya-agronavigator.php">
-                <img src="-/_sb/wm.jpg" alt="" class="sb_img scale-with-grid mb-70px">
-            </a>
-        </div>
-
-        <div class="widget" data-smallscreen="no">
-            <a href="/rasprodazha-selhoztehniki.php">
-                <img src="-/_sb/rasprodazha-selhoztehniki.jpg" alt="" class="sb_img scale-with-grid mb-70px">
-            </a>
-        </div>
-
-
-        <div class="widget" data-smallscreen="no">
-            <a href="/agronomu-na-zametku.php">
-                <img src="-/agronomu/agronom.jpg" alt="" class="sb_img scale-with-grid mb-80px">
-            </a>
-        </div>
-        <!--noindex-->
-
-        <noscript>
-            <div class="hidden">
-        </noscript>
-        <div class="widget mb-50px" data-smallscreen="no">
-
-            <section class="carousel-container testimonials-holder">
-
-                <div class="carousel-frame">
-
-                    <ul style="width: 2400px; height: auto; left: -1200px; transition: left 0.3s ease-in-out 0s;"
-                        class="testimonials-carousel clearfix carousel-slider initiated" data-autoplay="5000"
-                        data-circular="yes">
-
-                        <li class="carousel-slide" style="width: 220px;">
-                            <a href="/angary.php">
-                                <img src="-/angary/angary-zernohranilishha-ovoshhehranilishha-sklady.jpg" alt=""
-                                     class="sb_img scale-with-grid mb-5px">
-                                <p class="small-font-size black remove-bottom">Зернохранилища, овощехранилища,
-                                    склады.</p>
-                            </a>
-                        </li>
-                        <li class="carousel-slide" style="width: 220px;">
-                            <a href="/angary.php">
-                                <img src="-/angary/angary-aviatsionnye.jpg" alt=""
-                                     class="sb_img scale-with-grid mb-5px">
-                                <p class="small-font-size black remove-bottom">Ангары авиационные.</p>
-                            </a>
-                        </li>
-                        <li class="carousel-slide" style="width: 220px;">
-                            <a href="/angary.php">
-                                <img src="-/angary/angary-svinarniki-korovniki-ptichniki.jpg" alt=""
-                                     class="sb_img scale-with-grid mb-5px">
-                                <p class="small-font-size black remove-bottom">Свинарники, коровники, птичники.</p>
-                            </a>
-                        </li>
-                        <li class="carousel-slide" style="width: 220px;">
-                            <a href="/angary.php">
-                                <img src="-/angary/beskarkasnye-arochnye-navesy.jpg" alt=""
-                                     class="sb_img scale-with-grid mb-5px">
-                                <p class="small-font-size black remove-bottom">Бескаркасные арочные навесы - М1.</p>
-                            </a>
-                        </li>
-                        <li class="carousel-slide" style="width: 220px;">
-                            <a href="/angary.php">
-                                <img src="-/angary/beskarkasnye-metallicheskie-navesy-dvojnye.jpg" alt=""
-                                     class="sb_img scale-with-grid mb-5px">
-                                <p class="small-font-size black remove-bottom">Бескаркасные металлические навесы
-                                    (двойные) - М2.</p>
-                            </a>
-                        </li>
-                        <li class="carousel-slide" style="width: 220px;">
-                            <a href="/angary.php">
-                                <img src="-/angary/beskarkasnye-arochnye-navesy-fundament-tortsy.jpg" alt=""
-                                     class="sb_img scale-with-grid mb-5px">
-                                <p class="small-font-size black remove-bottom">Бескаркасные арочные навесы (фундамент,
-                                    торцы) - М3.</p>
-                            </a>
-                        </li>
-                        <li class="carousel-slide" style="width: 220px;">
-                            <a href="/angary.php">
-                                <img src="-/angary/tentovye-angary-universalnogo-tipa.jpg" alt=""
-                                     class="sb_img scale-with-grid mb-5px">
-                                <p class="small-font-size black remove-bottom">Тентовые ангары универсального типа.</p>
-                            </a>
-                        </li>
-                        <li class="carousel-slide" style="width: 220px;">
-                            <a href="/angary.php">
-                                <img src="-/angary/tentovye-angary-dlya-maloj-aviatsii.jpg" alt=""
-                                     class="sb_img scale-with-grid mb-5px">
-                                <p class="small-font-size black remove-bottom">Тентовые ангары для малой авиации.</p>
-                            </a>
-                        </li>
-                        <li class="carousel-slide" style="width: 220px;">
-                            <a href="/angary.php">
-                                <img src="-/angary/tentovye-angary-svinarniki-korovniki.jpg" alt=""
-                                     class="sb_img scale-with-grid mb-5px">
-                                <p class="small-font-size black remove-bottom">Тентовые ангары - свинарники,
-                                    коровники.</p>
-                            </a>
-                        </li>
-                        <li class="carousel-slide" style="width: 220px;">
-                            <a href="/angary.php">
-                                <img src="-/angary/navesy-karkasno-tentovye.jpg" alt=""
-                                     class="sb_img scale-with-grid mb-5px">
-                                <p class="small-font-size black remove-bottom">Навесы каркасно-тентовые.</p>
-                            </a>
-                        </li>
-
-                    </ul>
-
-                </div>
-
-                <div class="carousel-nav" aria-hidden="true" style="display: block;"><span class="carousel-prev"
-                                                                                           role="button"
-                                                                                           tabindex="0"></span><span
-                            class="carousel-next" role="button" tabindex="0"></span></div>
-            </section>
-
-        </div>
-        <noscript></div></noscript><!-- /hidden-->
-        <!--/noindex-->
-
-        <div class="widget" data-smallscreen="no">
-            <a href="/sistema-parallelnogo-vozhdeniya-agronavigator.php">
-                <img src="-/_sb/masha.jpg" alt="" class="sb_img scale-with-grid">
-            </a>
-        </div>
-    </aside>
-    <!-- /Боковая колонка -->
-
-    </div><!-- /Макет с боковой колонкой справа -->
-
-    </div><!-- /1080 px -->
-
-    <div class="stripe bottom"><!-- Страйп (фоновая полоса) -->
-        <div class="container"><!-- 1080 px -->
-
-            <!-- Функциональные тематические блоки с иконкой слева(средний размер) -->
-            <section class="feature-boxes medium-col-space left-icon-box medium-icon">
-
-                <div class="row">
-
-                    <div class="one-third columns">
-                        <article>
-                            <i class="fa fa-flag fa-fw colored-text-1"></i>
-                            <div>
-                                <p class="small-font-size"><a href="/o-kompanii-agro-teh.php"
-                                                              class="middle-font-size black">О компании</a><br>(сферы
-                                    деятельности)
-                                </p>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="one-third columns">
-                        <article>
-                            <i class="fa fa-home fa-fw colored-text-1"></i>
-                            <div>
-                                <p class="small-font-size"><a href="/kontakty.php" class="middle-font-size black">Наши
-                                        координаты</a><br>(точки продаж)
-                                </p>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="one-third columns">
-                        <article>
-                            <i class="fa fa-mobile-phone fa-fw colored-text-1"></i>
-
-                            <div>
-                                <p class="remove-bottom black">+7 &nbsp;(928)&nbsp; 212 - 22 - 19<br>
-                                    +7 &nbsp;(928)&nbsp; 778 - 92 - 80</p>
-                            </div>
+                        <ul class="phone-line clearfix">
 
                             <!--
-                            <div>
-                                <p class="remove-bottom black">+7 (928) 212-2219<span class="hide">, 778-9280</span><br />
-                                +7 (863) 438-74-87<span class="hide">, 438-80-74</span></p>
+                            <img src="_/i/icon.png"  width="32" height="32" class="ic" alt="">
+                            -->
+                            +7 (928) 212-22-19
+                            <!--
+                                (863) 438-74-87, 438-80-74
+                            -->
+
+                        </ul>
+
+                        <h1 class="h1 clearfix">{% block h1 %}{% endblock %}</h1>
+
+                    </div><!-- /full-width columns -->
+
+                </div><!-- /container 1080px -->
+            </div><!-- /grid-bg -->
+
+        </section><!-- /Заголовок страницы -->
+
+        <section id="page-content" class="sidebar-layout"><!-- Содержимое страницы -->
+
+            <div class="container"><!-- 1080 px -->
+
+                <div class="columns-wrapper sb-right"><!-- Макет с боковой колонкой справа -->
+
+                    <!-- Основной контент страницы (левый блок) -->
+                    <section id="main-content" class="three-fourths columns page-left-col"><!-- 840 px -->
+                        <div class="full-width columns">
+
+                            {% block mainSlider %}{% endblock %}
+
+
+                            {% block content %}{% endblock %}
+                            <!----------------------------------------------------------------------------------------------------------------------------------------------->
+
+                            <div class="clear mb-70px"></div>
+
+                            <div class="full-width columns">
+                                <div class="info-box light gradient no-border bx_shadow">
+                                    <p class="psevdo_h2 text-on-centre mb-5px">Обратный звонок</p>
+                                    <p class="text-on-centre mb-25px">в течении 5 минут - работаем&nbsp;с&nbsp;8-00&nbsp;до&nbsp;17-00</p>
+
+                                    <!-- Форма -->
+                                    <form method="post" id="comment-form" class="form">
+                                        <div>
+                                            <input name="tlfn" type="text" maxlength="18" value="" placeholder="Номер телефона"
+                                                   pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" required/>
+                                        </div>
+                                        <div>
+                                    <textarea name="message" maxlength="100" placeholder="Что интересует?"
+                                              required></textarea>
+                                        </div>
+
+                                        <div class="fantome">
+                                            <input name="your-name" type="text" value="" id="your-name"
+                                                   placeholder="Контактное лицо"/>
+                                        </div>
+
+                                        <div class="fantome">
+                                            <input id="your-city" name="your-city" type="text" value="" placeholder="Город"/>
+                                        </div>
+
+                                        <div id="submit-button">
+                                            <input name="submit" type="submit" value="Отправить"
+                                                   class="button large colored mb-25px"
+                                                   onclick="document.getElementById('your-city').value = 'TGN';">
+                                        </div>
+
+                                    </form>
+                                    <!-- /Форма -->
+
+                                    <!-- Оповещение формы -->
+                                    <?=(!empty($message))? ''.$message.'': ''?>
+                                    <!-- /Оповещение формы -->
+
+                                </div>
+                            </div><!-- /full-width columns -->
+
+                    </section><!-- /840 px -->
+                    <!-- /Основной контент страницы (левый блок) -->
+
+                    <!-- Боковая колонка (правая) -->
+                    <aside id="sidebar" class="one-fourth columns page-right-col">
+                        {% for category in tech_category_serv.findAll() %}
+                            <div class="widget remove-bottom" data-smallscreen="no">
+                                <a href="{{ path('category', {'url': category.url }) }}" title="{{ category.name }}">
+                                    <img src="/{{ category.sideBarImage }}" alt="{{ category.name }}" class="sb_img scale-with-grid remove-bottom">
+                                </a>
                             </div>
-                             -->
 
-                        </article>
-                    </div>
+                            <!-- Меню в боковой колонке -->
+                            <div class="widget separator mb-50px" data-smallscreen="no">
+                                <!-- показывать ли на мобильных устройствах: "yes" или "no" -->
+                                <ul class="side-menu large-font-size rc">
+                                    <li><a href="{{ path('category', {'url' : category.url}) }}">
+                                            <span>{{ category.name }}</span>
+                                        </a></li>
+                                    {% for tech in tech_serv.findBy({category: {
+                                        'id': category.id
+                                    } }) %}
+                                        <li>
+                                            <a href="{{ path('selhoztehnika_show', {'url': tech.url}) }}">
+                                                {{ tech.shortName }}
+                                            </a>
+                                        </li>
 
-                </div>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            <!--  ----------------------------------------------------------------------------------------------------------  -->
+                        {% endfor %}
 
-            </section>
+                        <div class="widget" data-smallscreen="no">
+                            <a href="{{ path('angary') }}">
+                                <img src="{{ asset('assets/img/content/_sb/angary.jpg') }}" alt="" class="sb_img scale-with-grid mb-70px">
+                            </a>
+                        </div>
 
-            <!-- /Функциональные тематические блоки -->
+                        <div class="widget" data-smallscreen="no">
+                            <a href="{{ path('selhoztehnika_show', {'url' : 'sistema-parallelnogo-vozhdeniya-agronavigator'}) }}">
+                                <img src="{{ asset('assets/img/content/_sb/wm.jpg') }}" alt="" class="sb_img scale-with-grid mb-70px">
+                            </a>
+                        </div>
 
-            <noscript>
-                <div class="hidden">
-            </noscript>
-            <span class="scroll-top">
+                        <div class="widget" data-smallscreen="no">
+                            <a href="{{ path('category', {'url' : 'rasprodazha-selhoztehniki'}) }}">
+                                <img src="{{ asset('assets/img/content/_sb/rasprodazha-selhoztehniki.jpg') }}" alt="" class="sb_img scale-with-grid mb-70px">
+                            </a>
+                        </div>
+
+
+                        <a href="{{ path('articles') }}">
+                            <img src="{{ asset('assets/img/content/agronomu/agronom.jpg') }}" alt="" class="sb_img scale-with-grid mb-80px">
+                        </a>
+
+                        <!--noindex-->
+
+                        <div class="widget mb-50px" data-smallscreen="no">
+
+                            <section class="carousel-container testimonials-holder">
+
+                                <div class="carousel-frame">
+
+                                    <ul style="width: 960px; height: auto; left: -720px; transition: left 0.3s ease-in-out 0s;"
+                                        class="testimonials-carousel clearfix carousel-slider initiated" data-autoplay="5000"
+                                        data-circular="yes">
+
+                                        <li class="carousel-slide" style="width: 220px;">
+                                            <a href="{{ path('angary') }}">
+                                                <img src="{{ asset('assets/img/content/angary/angary-zernohranilishha-ovoshhehranilishha-sklady.jpg') }}" alt=""
+                                                     class="sb_img scale-with-grid mb-5px">
+                                                <p class="small-font-size black remove-bottom">Зернохранилища, овощехранилища,
+                                                    склады.</p>
+                                            </a>
+                                        </li>
+                                        <li class="carousel-slide" style="width: 220px;">
+                                            <a href="{{ path('angary') }}">
+                                                <img src="{{ asset('assets/img/content/angary/angary-aviatsionnye.jpg') }}" alt=""
+                                                     class="sb_img scale-with-grid mb-5px">
+                                                <p class="small-font-size black remove-bottom">Ангары авиационные.</p>
+                                            </a>
+                                        </li>
+                                        <li class="carousel-slide" style="width: 220px;">
+                                            <a href="{{ path('angary') }}">
+                                                <img src="{{ asset('assets/img/content/angary/angary-svinarniki-korovniki-ptichniki.jpg') }}" alt=""
+                                                     class="sb_img scale-with-grid mb-5px">
+                                                <p class="small-font-size black remove-bottom">Свинарники, коровники, птичники.</p>
+                                            </a>
+                                        </li>
+                                        <li class="carousel-slide" style="width: 220px;">
+                                            <a href="{{ path('angary') }}">
+                                                <img src="{{ asset('assets/img/content/angary/beskarkasnye-arochnye-navesy.jpg') }}" alt=""
+                                                     class="sb_img scale-with-grid mb-5px">
+                                                <p class="small-font-size black remove-bottom">Бескаркасные арочные навесы - М1.</p>
+                                            </a>
+                                        </li>
+                                        <li class="carousel-slide" style="width: 220px;">
+                                            <a href="{{ path('angary') }}">
+                                                <img src="{{ asset('assets/img/content/angary/beskarkasnye-metallicheskie-navesy-dvojnye.jpg') }}" alt=""
+                                                     class="sb_img scale-with-grid mb-5px">
+                                                <p class="small-font-size black remove-bottom">Бескаркасные металлические навесы
+                                                    (двойные) - М2.</p>
+                                            </a>
+                                        </li>
+                                        <li class="carousel-slide" style="width: 220px;">
+                                            <a href="{{ path('angary') }}">
+                                                <img src="{{ asset('assets/img/content/angary/beskarkasnye-arochnye-navesy-fundament-tortsy.jpg') }}" alt=""
+                                                     class="sb_img scale-with-grid mb-5px">
+                                                <p class="small-font-size black remove-bottom">Бескаркасные арочные навесы (фундамент,
+                                                    торцы) - М3.</p>
+                                            </a>
+                                        </li>
+                                        <li class="carousel-slide" style="width: 220px;">
+                                            <a href="{{ path('angary') }}">
+                                                <img src="{{ asset('assets/img/content/angary/tentovye-angary-universalnogo-tipa.jpg') }}" alt=""
+                                                     class="sb_img scale-with-grid mb-5px">
+                                                <p class="small-font-size black remove-bottom">Тентовые ангары универсального типа.</p>
+                                            </a>
+                                        </li>
+                                        <li class="carousel-slide" style="width: 220px;">
+                                            <a href="{{ path('angary') }}">
+                                                <img src="{{ asset('assets/img/content/angary/tentovye-angary-dlya-maloj-aviatsii.jpg') }}" alt=""
+                                                     class="sb_img scale-with-grid mb-5px">
+                                                <p class="small-font-size black remove-bottom">Тентовые ангары для малой авиации.</p>
+                                            </a>
+                                        </li>
+                                        <li class="carousel-slide" style="width: 220px;">
+                                            <a href="{{ path('angary') }}">
+                                                <img src="{{ asset('assets/img/content/angary/tentovye-angary-svinarniki-korovniki.jpg') }}" alt=""
+                                                     class="sb_img scale-with-grid mb-5px">
+                                                <p class="small-font-size black remove-bottom">Тентовые ангары - свинарники,
+                                                    коровники.</p>
+                                            </a>
+                                        </li>
+                                        <li class="carousel-slide" style="width: 220px;">
+                                            <a href="{{ path('angary') }}">
+                                                <img src="{{ asset('assets/img/content/angary/navesy-karkasno-tentovye.jpg') }}" alt=""
+                                                     class="sb_img scale-with-grid mb-5px">
+                                                <p class="small-font-size black remove-bottom">Навесы каркасно-тентовые.</p>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+
+                                </div>
+
+                            </section>
+
+                        </div>
+
+                        <!--/noindex-->
+
+                        <div class="widget" data-smallscreen="no">
+                            <a href="{{ path('selhoztehnika_show', {'url': 'sistema-parallelnogo-vozhdeniya-agronavigator'}) }}">
+                                <img src="{{ asset('assets/img/content/_sb/masha.jpg') }}" alt="" class="sb_img scale-with-grid">
+                            </a>
+                        </div>
+
+                    </aside>
+                    <!-- /Боковая колонка -->
+
+                </div><!-- /Макет с боковой колонкой справа -->
+
+            </div><!-- /1080 px -->
+
+            <div class="stripe bottom"><!-- Страйп (фоновая полоса) -->
+                <div class="container"><!-- 1080 px -->
+
+                    <!-- Функциональные тематические блоки с иконкой слева(средний размер) -->
+                    <section class="feature-boxes medium-col-space left-icon-box medium-icon">
+
+                        <div class="row">
+
+                            <div class="one-third columns">
+                                <article>
+                                    <i class="fa fa-flag fa-fw colored-text-1"></i>
+                                    <div>
+                                        <p class="small-font-size"><a href="{{ path('app_home_show', {'slug' : 'about'}) }}"
+                                                                      class="middle-font-size black">О компании</a><br/>(сферы
+                                            деятельности)
+                                        </p>
+                                    </div>
+                                </article>
+                            </div>
+
+                            <div class="one-third columns">
+                                <article>
+                                    <i class="fa fa-home fa-fw colored-text-1"></i>
+                                    <div>
+                                        <p class="small-font-size"><a href="{{ path('app_home_show', {'slug' : 'contacts'}) }}" class="middle-font-size black">Наши
+                                                координаты</a><br/>(точки продаж)
+                                        </p>
+                                    </div>
+                                </article>
+                            </div>
+
+                            <div class="one-third columns">
+                                <article>
+                                    <i class="fa fa-mobile-phone fa-fw colored-text-1"></i>
+
+                                    <div>
+                                        <p class="remove-bottom black">+7 &nbsp;(928)&nbsp; 212 - 22 - 19<br/>
+                                            +7 &nbsp;(928)&nbsp; 778 - 92 - 80</p>
+                                    </div>
+
+                                    <!--
+                                    <div>
+                                        <p class="remove-bottom black">+7 (928) 212-2219<span class="hide">, 778-9280</span><br />
+                                        +7 (863) 438-74-87<span class="hide">, 438-80-74</span></p>
+                                    </div>
+                                     -->
+
+                                </article>
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                    <!-- /Функциональные тематические блоки -->
+
+
+                    <span class="scroll-top">
 					<span class="arrow-top"></span>
 					<span>Наверх</span>
-				</span>
-            <noscript>
-        </div>
-        </noscript><!-- /hidden-->
-
-    </div><!-- /1080 px -->
-    </div><!-- /Страйп (фоновая полоса) -->
-
-</section><!-- /Содержимое страницы -->
-
-</section><!-- /Средний блок (все, что между шапкой и подвалом) -->
-
-<footer id="footer" class="blank"></footer><!-- Подвал -->
-
-<footer id="footer-bottom">
-
-    <div class="container"><!-- 1080 px -->
-
-        <div class="nine columns">
-
-            <ul class="footer-nav clearfix"><!-- Меню в подвале -->
-                <li><a href="/opryskivateli.php">Опрыскиватели</a></li>
-                <li><a href="/razbrasyvateli.php">Разбрасыватели удобрений</a></li>
-                <li><a href="/borony.php">Бороны</a></li>
-                <li><a href="/podvoz-vody-zhku-kas.php">Подвоз жидкости</a></li>
-                <li><a href="/prochaya-selhoztehnika.php">Прочая техника</a></li>
-
-            </ul>
-            <ul class="links clearfix align-left">
-                <li>
-                    Данный сайт не является публичной офертой и носит исключительно информационный характер
-                </li>
-            </ul>
-            <!--<div class="row clearfix">
-                <p class="text-on-centre small-font-size links">
-
-                </p>
-            </div>-->
-
-        </div>
-
-        <div class="three columns">
-
-            <ul class="links clearfix">
-                <li>© 2008-2018 ООО "АГРО-ТЕХ"</li>
-                <li><a href="/politika-konfidencialnosti.php">Политика конфиденциальности</a></li>
-
-            </ul>
-        </div>
+            </span>
 
 
-    </div><!-- /1080 px -->
+                </div><!-- /1080 px -->
+            </div><!-- /Страйп (фоновая полоса) -->
 
-</footer><!-- /Подвал -->
+        </section><!-- /Содержимое страницы -->
 
-<!-- JS -->
-<script src="_/j/respond.min.js"></script>
-<script src="_/j/selectnav.min.js"></script>
-<script src="_/j/html5media.min.js"></script>
-<script src="_/j/jquery.min.js"></script>
-<script src="_/j/detectmobilebrowser.js"></script>
-<script src="_/j/jquery.easing.min.js"></script>
-<script src="_/j/jquery.fitvids.min.js"></script>
-<script src="_/j/jquery.prettyPhoto.min.js"></script>
-<script src="_/j/jquery.flexslider.min.js"></script>
-<script src="_/j/jquery.carousel.min.js"></script>
-<script src="_/j/jquery-ui/jquery-ui.min.js"></script>
-<script src="_/j/animatescroll.js-master/animatescroll.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
-<script src="_/j/queryToSer.js"></script>
-<script src="_/j/custom.js?ver=10"></script>
-<script src="_/j/animatescroll.js-master/animatescroll.min.js"></script>
-
-<noscript>
-    <div class="hidden">
-</noscript>
-<div id="zvonok">
-    <img src="_/i/line.png" alt="">
-    <div id="zvonok_inner" class="">
-        <p class="psevdo_h2 mb-15px">
-            Нужна помощь?
-        </p>
-        <p class="mb-25px">
-            Оставьте контактный телефон.<br>Позвоним в течении 5 минут.
-        </p>
-        <p>
-            <a href="/voprosy-po-stroitelstvu-angarov-selhoztehnike.php" class="button large colored">Звоним?</a>
-        </p>
-    </div>
-</div>
-<noscript></div></noscript><!-- /hidden-->
-
-<iframe name="_ym_native" frameborder="0"
-        style="opacity: 0; border: 0px !important; width: 0px; height: 0px; position: absolute; left: 100%; bottom: 100%;"></iframe>
-<div class="_ym_zoom" style="bottom: 100%; position: fixed; width: 100vw;"></div>
-<div class="_ym_viewport" style="bottom: 100%; position: fixed; width: 100%; height: 100%;"></div>
-</body>
-</html>
+    </section><!-- /Средний блок (все, что между шапкой и подвалом) -->
+{% endblock %}
