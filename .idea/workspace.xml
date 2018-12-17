@@ -2,90 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9f483d2-b30c-4c15-8f43-79a0e6fcdc5c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/css/carousel.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/flexslider.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/foto.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/hangar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/jquery.fancybox.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/lenta.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/maket.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/mng.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/osnova.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/setka.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/shrift.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/shrifty-google.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/zvonok.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/custom.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/detectmobilebrowser.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/html5media.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/html5shiv.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/jquery.carousel.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/jquery.easing.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/jquery.fitvids.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/jquery.flexslider.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/jquery.prettyPhoto.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/mapGenerator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/queryToSer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/respond.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/selectnav.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/css/carousel.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/js/carousel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/TechType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/angar/angar.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/angar/types/angary.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/angar_category/angar_category.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/angar_category/arochnye-angary-istoriya.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/angar_category/arochnye-angary.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/angar_category/aviatsionnye-angary.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/angar_category/beskarkasnoe-arochnoe-stroitelstvo.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/angar_category/karkasnye-i-beskarkasnye-angary.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/angar_category/preimushhestva-beskarkasnogo-stroitelstva.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/angar_category/stroitelstvo-zernohranilish.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/angar_category/stroitelstvo-zernohranilishh-i-ovoshehranilishh.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/angar_category/tehnologia-stroitelstva-beskarkasnyh-angarov.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/angar_category/uteplenie-penopoliuretanom.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/base_angar.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/footer.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/gallery_image/gallery.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/head.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/header.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/home/politika-konfidencialnosti.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/layout.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/tech/content.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/tech/create.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/tech/new.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/tech/show.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/tech_category/content.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/tech_category/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/agro-teh.su.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/agro-teh.su.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/symfony2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/lenta.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/lenta.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/maket.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/maket.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/mng.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/mng.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/osnova.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/osnova.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/shrift.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/shrift.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/custom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/detectmobilebrowser.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/detectmobilebrowser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/respond.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/respond.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/selectnav.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/selectnav.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/LuckyController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/about.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/about.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/angary.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/angary.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/contacts.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/contacts.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/selhoztehnika.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/maket.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/maket.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/TechController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TechController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Performance.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Performance.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Tech.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Tech.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/tech/content.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/tech/content.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -108,56 +30,59 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost [2]" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost [2]" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost [2]" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="agrokass_agroteh: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost [2]" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="agrokass_agroteh: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="tech_feedback: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/tech/show.html.twig">
+        <entry file="file://$PROJECT_DIR$/src/Controller/TechFeedbackController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1905">
-              <caret line="127" selection-start-line="127" selection-end-line="127" />
+            <state relative-caret-position="195">
+              <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/js/app.js">
+        <entry file="file://$PROJECT_DIR$/src/Controller/TechController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="471">
-              <caret line="498" column="3" selection-start-line="498" selection-start-column="3" selection-end-line="498" selection-end-column="3" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state relative-caret-position="195">
+              <caret line="77" column="67" selection-start-line="77" selection-start-column="67" selection-end-line="77" selection-end-column="67" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assets/css/app.css">
+        <entry file="file://$PROJECT_DIR$/templates/tech/content.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/css/osnova.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5085" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/layout.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="220" column="24" selection-start-line="220" selection-start-column="24" selection-end-line="220" selection-end-column="24" />
+            <state relative-caret-position="360">
+              <caret line="85" column="50" lean-forward="true" selection-start-line="85" selection-start-column="50" selection-end-line="85" selection-end-column="50" />
               <folding>
-                <element signature="n#ul#0;n#div#0;n#nav#0;n#div#1;n#div#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#1;n#div#0;n#div#0;n#footer#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="e#50#2176#0#Twig" />
               </folding>
             </state>
           </provider>
@@ -166,46 +91,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/css/maket.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="3013" column="6" selection-start-line="3013" selection-start-column="4" selection-end-line="3013" selection-end-column="6" />
+            <state relative-caret-position="426">
+              <caret line="3468" column="18" selection-start-line="3468" selection-start-column="18" selection-end-line="3468" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
-              <folding>
-                <element signature="e#1044#18766#0#HTML" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../agro-teh-old/src/php/tseny.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../agro-teh-old/src/php/dbQuerry.php">
+        <entry file="file://$PROJECT_DIR$/assets/css/app.css">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/tech/content.html.twig">
+        <entry file="file://$PROJECT_DIR$/templates/angar/postroennue.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="28" selection-start-column="28" selection-end-column="28" />
-              <folding>
-                <element signature="e#50#2176#0#Twig" />
-              </folding>
+            <state relative-caret-position="195">
+              <caret line="52" column="12" selection-start-line="52" selection-start-column="12" selection-end-line="52" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -250,15 +151,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="99caa3ec-7ef9-409a-8ea6-ab2e7203e29f/schema/agrokass_agroteh/table/angar.sql" />
-        <option value="$PROJECT_DIR$/src/Entity/Angar.php" />
-        <option value="/run/user/1000/gvfs/smb-share:server=192.168.1.20,share=mrnkravchenko/Projects/agro-teh/src/_11.php" />
-        <option value="$PROJECT_DIR$/templates/home/index.html.twig" />
-        <option value="$PROJECT_DIR$/../agro-teh-old/src/php/logirovanie.php" />
-        <option value="$PROJECT_DIR$/../agro-teh-old/src/_/c/osnova.css" />
-        <option value="$PROJECT_DIR$/../agro-teh-old/src/_/c/maket.css" />
-        <option value="$PROJECT_DIR$/../agro-teh-old/src/index.php" />
-        <option value="$PROJECT_DIR$/../agro-teh-old/src/_/c/3dcarousel.css" />
         <option value="$PROJECT_DIR$/../agro-teh-old/src/_/j/jquery.gallery.js" />
         <option value="$PROJECT_DIR$/../agro-teh-old/src/_02.php" />
         <option value="$PROJECT_DIR$/../agro-teh-old/src/pritsepnoi-opryskivatel-op-18.php" />
@@ -273,15 +165,12 @@
         <option value="$PROJECT_DIR$/src/Controller/AngarController.php" />
         <option value="$PROJECT_DIR$/assets/css/hangar.css" />
         <option value="$PROJECT_DIR$/../agro-teh-old/src/tseny.php" />
-        <option value="$PROJECT_DIR$/../agro-teh-old/src/_01.php" />
-        <option value="$PROJECT_DIR$/../agro-teh-old/src/_06.php" />
         <option value="$PROJECT_DIR$/../agro-teh-old/src/_07.php" />
         <option value="$PROJECT_DIR$/../agro-teh-old/src/_10.php" />
         <option value="$PROJECT_DIR$/../agro-teh-old/src/_11.php" />
         <option value="$PROJECT_DIR$/../agro-teh-old/src/_08.php" />
         <option value="$PROJECT_DIR$/templates/base_angar.html.twig" />
         <option value="$PROJECT_DIR$/templates/angar/postroennue.html.twig" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/src/Repository/AngarImageRepository.php" />
         <option value="$PROJECT_DIR$/src/Entity/AngarImage.php" />
         <option value="$PROJECT_DIR$/src/Controller/AngarImageController.php" />
@@ -294,13 +183,25 @@
         <option value="$PROJECT_DIR$/templates/angar_category/angar_category.html.twig" />
         <option value="$PROJECT_DIR$/templates/tech/show.html.twig" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/templates/tech/content.html.twig" />
         <option value="$PROJECT_DIR$/assets/js/app.js" />
-        <option value="$PROJECT_DIR$/../agro-teh-old/src/php/tseny.php" />
         <option value="$PROJECT_DIR$/../agro-teh-old/src/php/config/myDb.php" />
         <option value="$PROJECT_DIR$/templates/layout.html.twig" />
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
         <option value="$PROJECT_DIR$/assets/css/app.css" />
+        <option value="$PROJECT_DIR$/src/Entity/Performance.php" />
+        <option value="$PROJECT_DIR$/../agro-teh-old/src/_01.php" />
+        <option value="$PROJECT_DIR$/../agro-teh-old/src/_06.php" />
+        <option value="$PROJECT_DIR$/../agro-teh-old/src/_/c/maket.css" />
+        <option value="$PROJECT_DIR$/../agro-teh-old/src/aktsiya-ispytay-tekhniku-v-dele-prezhde-chem-kupit.php" />
+        <option value="$PROJECT_DIR$/../agro-teh-old/src/php/tseny.php" />
+        <option value="/run/user/1000/gvfs/smb-share:server=192.168.1.20,share=mrnkravchenko/Projects/agrotehstroy.ru/public/.htaccess" />
+        <option value="$PROJECT_DIR$/src/Entity/Tech.php" />
+        <option value="$PROJECT_DIR$/src/Controller/TechFeedbackController.php" />
+        <option value="$PROJECT_DIR$/src/Controller/TechController.php" />
+        <option value="$PROJECT_DIR$/src/Entity/TechFeedback.php" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/assets/css/maket.css" />
+        <option value="$PROJECT_DIR$/templates/tech/content.html.twig" />
       </list>
     </option>
   </component>
@@ -447,7 +348,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -473,10 +373,52 @@
               <item name="assets" type="462c0819:PsiDirectoryNode" />
               <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="agro-teh.su" type="b2602c69:ProjectViewProjectNode" />
+              <item name="agro-teh" type="9c53a853:ProjectViewModuleGroupNode" />
+              <item name="agro-teh.su" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="agro-teh.su" type="b2602c69:ProjectViewProjectNode" />
+              <item name="agro-teh" type="9c53a853:ProjectViewModuleGroupNode" />
+              <item name="agro-teh.su" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="agro-teh.su" type="b2602c69:ProjectViewProjectNode" />
+              <item name="agro-teh" type="9c53a853:ProjectViewModuleGroupNode" />
+              <item name="agro-teh.su" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="angar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="agro-teh.su" type="b2602c69:ProjectViewProjectNode" />
+              <item name="agro-teh" type="9c53a853:ProjectViewModuleGroupNode" />
+              <item name="agro-teh.su" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="tech_feedback" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="agro-teh.su" type="b2602c69:ProjectViewProjectNode" />
+              <item name="agrotehstroy" type="9c53a853:ProjectViewModuleGroupNode" />
+            </path>
+            <path>
+              <item name="agro-teh.su" type="b2602c69:ProjectViewProjectNode" />
+              <item name="agrotehstroy" type="9c53a853:ProjectViewModuleGroupNode" />
+              <item name="agrotehstroy.ru" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="agro-teh.su" type="b2602c69:ProjectViewProjectNode" />
+              <item name="agrotehstroy" type="9c53a853:ProjectViewModuleGroupNode" />
+              <item name="agrotehstroy.ru" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -575,11 +517,19 @@
       <workItem from="1543344532727" duration="6254000" />
       <workItem from="1543430018706" duration="2304000" />
       <workItem from="1543519644799" duration="2527000" />
+      <workItem from="1543781400822" duration="2786000" />
+      <workItem from="1543954505823" duration="634000" />
+      <workItem from="1544122962706" duration="5515000" />
+      <workItem from="1544552959407" duration="1249000" />
+      <workItem from="1544822151533" duration="962000" />
+      <workItem from="1544873768005" duration="2626000" />
+      <workItem from="1544958598189" duration="12638000" />
+      <workItem from="1545069660896" duration="5469000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="320188000" />
+    <option name="totallyTimeSpent" value="352067000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -594,12 +544,12 @@
     <frame x="0" y="25" width="1280" height="952" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29092383" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22042139" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3296837" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3296837" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32928312" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -608,7 +558,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Migrations" order="10" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49756888" visible="true" weight="0.32806805" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49756888" visible="true" weight="0.32806805" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5024311" side_tool="true" weight="0.32846716" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.3296837" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -644,349 +594,334 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../agro-teh-old/src/_05.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../agro-teh-old/src/_03.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../agro-teh-old/src/php/logirovanie.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../agro-teh-old/src/php/proverka.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../agro-teh-old/src/php/zvonok.php">
+    <entry file="file://$PROJECT_DIR$/../agro-teh-old/src/_06.php_">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-624" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../agro-teh-old/src/tseny.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+        <state>
+          <caret column="20" selection-start-column="20" selection-end-line="8" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../agro-teh-old/src/php/writeToDB.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../agro-teh-old/src/_02.php">
+    <entry file="file://$PROJECT_DIR$/../agro-teh-old/src/_/c/maket.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="52965">
+          <caret line="3531" column="24" selection-start-line="3531" selection-start-column="24" selection-end-line="3531" selection-end-column="24" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1753">
+          <caret line="498" column="3" selection-start-line="498" selection-start-column="3" selection-end-line="498" selection-end-column="3" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#748#13616#0" />
+            <element signature="e#182#188#0" expanded="true" />
+            <element signature="e#189#195#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../agro-teh-old/src/php/tseny.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://99caa3ec-7ef9-409a-8ea6-ab2e7203e29f/schema/agrokass_agroteh/table/gallery_image" />
+    <entry file="file://$USER_HOME$/Загрузки/Без названия (1)">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/build/app.css">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/../agro-teh-old/src/_01.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="31" />
+        <state relative-caret-position="45">
+          <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../agro-teh-old/src/index.php">
+    <entry file="file://$PROJECT_DIR$/../agro-teh-old/src/aktsiya-ispytay-tekhniku-v-dele-prezhde-chem-kupit.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1725">
-          <caret line="115" column="42" selection-start-line="115" selection-start-column="42" selection-end-line="115" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../agro-teh-old/src/_07.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2145">
-          <caret line="143" column="62" selection-start-line="143" selection-start-column="62" selection-end-line="143" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../agro-teh-old/src/_10.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="89" selection-start-line="7" selection-start-column="89" selection-end-line="7" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../agro-teh-old/src/_11.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="141" selection-start-line="27" selection-start-column="141" selection-end-line="27" selection-end-column="141" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../agro-teh-old/src/_06.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4185">
-          <caret line="279" column="111" selection-start-line="279" selection-start-column="111" selection-end-line="279" selection-end-column="111" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../agro-teh-old/src/_08.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../agro-teh-old/src/_09.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Angar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="43" column="7" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/angar/show.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://99caa3ec-7ef9-409a-8ea6-ab2e7203e29f/schema/agrokass_agroteh/table/angar_image">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/AngarImageRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="57" column="91" selection-start-line="57" selection-start-column="91" selection-end-line="57" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/angar_category/edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="32" selection-start-column="32" selection-end-column="32" />
-          <folding>
-            <element signature="e#12#32#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/angar_category/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="37" column="53" selection-start-line="37" selection-start-column="53" selection-end-line="37" selection-end-column="53" />
-          <folding>
-            <element signature="e#12#32#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/angar_category/stroitelstvo-zernohranilish.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="32" selection-start-column="32" selection-end-column="32" />
-          <folding>
-            <element signature="e#12#32#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/angar_category/show.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="45" column="14" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
-          <folding>
-            <element signature="e#12#32#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../agro-teh-old/src/_.htaccess">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/angar/postroennue.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2280">
-          <caret line="152" column="14" selection-start-line="42" selection-end-line="152" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/AngarImage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1620">
-          <caret line="110" column="5" selection-start-line="110" selection-start-column="5" selection-end-line="110" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/AngarCategory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/AngarController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="35" column="7" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/AngarImageController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1245">
-          <caret line="90" selection-start-line="90" selection-end-line="90" />
+        <state relative-caret-position="660">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
         </state>
       </provider>
     </entry>
     <entry file="file:///run/user/1000/gvfs/smb-share:server=192.168.1.20,share=mrnkravchenko/Projects/agrotehstroy.ru/public/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+        <state relative-caret-position="495">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/angar_category/angar_category.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="562">
-          <caret line="125" column="156" selection-start-line="125" selection-start-column="156" selection-end-line="125" selection-end-column="156" />
-        </state>
-      </provider>
+    <entry file="file:///run/user/1000/gvfs/smb-share:server=192.168.1.20,share=mrnkravchenko/Projects/agrotehstroy.ru/public/robots.txt">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base_angar.html.twig">
+    <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="18" selection-start-column="18" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/angar/angar.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-          <folding>
-            <element signature="e#12#32#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/TechController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="69" column="42" selection-start-line="69" selection-start-column="42" selection-end-line="69" selection-end-column="42" />
-          <folding>
-            <element signature="e#1487#1511#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/bootstrap/dist/js/bootstrap.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state relative-caret-position="120">
+          <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/yarn.lock">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/layout.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="41" column="19" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
+        <state relative-caret-position="741">
+          <caret line="56" column="49" selection-start-line="56" selection-start-column="49" selection-end-line="56" selection-end-column="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/AngarCategoryController.php">
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/superglobals/_superglobals.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="51" column="69" selection-start-line="51" selection-start-column="69" selection-end-line="51" selection-end-column="69" />
+        <state relative-caret-position="265">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/185c2e54-d819-4e22-9cd7-f51a199766b8/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://185c2e54-d819-4e22-9cd7-f51a199766b8/schema/agrokass_agroteh/table/tech">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Performance.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/AngarImageRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/AngarImageController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="86" column="53" selection-start-line="86" selection-start-column="53" selection-end-line="86" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/AngarController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-549">
+          <caret line="35" column="7" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/GalleryImageController.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Video.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/TechImage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-90">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Complectation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/TechCategory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-225">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/tech_feedback/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/tech_feedback/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/tech/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/tech/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1905">
-          <caret line="127" selection-start-line="127" selection-end-line="127" />
+        <state relative-caret-position="-1215">
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../agro-teh-old/src/php/tseny.php">
+    <entry file="file://$PROJECT_DIR$/src/Form/TechFeedbackType.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/tech/new.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+        <state>
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/tech_feedback/_form.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="15" selection-start-column="15" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/tech/create.html.twig">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/tech_feedback/new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="47" column="35" lean-forward="true" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
+          <folding>
+            <element signature="e#1605#1620#1#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://99caa3ec-7ef9-409a-8ea6-ab2e7203e29f/schema/agrokass_agroteh/table/tech_feedback.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/TechType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-45" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Tech.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="458" selection-start-line="458" selection-end-line="458" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/TechFeedback.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+          <folding>
+            <element signature="e#30#62#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/TechFeedbackController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/TechController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="77" column="67" selection-start-line="77" selection-start-column="67" selection-end-line="77" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://99caa3ec-7ef9-409a-8ea6-ab2e7203e29f/schema/agrokass_agroteh/table/tech_feedback">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/angar/postroennue.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="52" column="12" selection-start-line="52" selection-start-column="12" selection-end-line="52" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/app.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/osnova.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-10119" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/maket.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="3468" column="18" selection-start-line="3468" selection-start-column="18" selection-end-line="3468" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/tech/content.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="28" selection-start-column="28" selection-end-column="28" />
+        <state relative-caret-position="360">
+          <caret line="85" column="50" lean-forward="true" selection-start-line="85" selection-start-column="50" selection-end-line="85" selection-end-column="50" />
           <folding>
             <element signature="e#50#2176#0#Twig" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../agro-teh-old/src/php/config/myDb.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/d0711b21-cf2c-45db-ad8d-15ecea177252/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../agro-teh-old/src/php/dbQuerry.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="220" column="24" selection-start-line="220" selection-start-column="24" selection-end-line="220" selection-end-column="24" />
-          <folding>
-            <element signature="n#ul#0;n#div#0;n#nav#0;n#div#1;n#div#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#footer#1;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
-          <folding>
-            <element signature="e#1044#18766#0#HTML" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="471">
-          <caret line="498" column="3" selection-start-line="498" selection-start-column="3" selection-end-line="498" selection-end-column="3" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/maket.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="3013" column="6" selection-start-line="3013" selection-start-column="4" selection-end-line="3013" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/osnova.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5085" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/app.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
         </state>
       </provider>
     </entry>

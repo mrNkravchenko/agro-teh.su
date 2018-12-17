@@ -114,6 +114,11 @@ class Tech
      */
     private $video;
 
+    /**
+     *@ORM\OneToMany(targetEntity="App\Entity\TechFeedback", mappedBy="tech")
+     */
+    private $feedback;
+
 
     /**
      * @ORM\Column(type="datetime")
@@ -429,6 +434,27 @@ class Tech
     public function setShortDescription($short_description): void
     {
         $this->short_description = $short_description;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFeedback()
+    {
+        return $this->feedback;
+    }
+
+    /**
+     * @param mixed $feedback
+     */
+    public function setFeedback($feedback): void
+    {
+        $this->feedback = $feedback;
+    }
+
+    public function __toString()
+    {
+        return (string) $this->name;
     }
 
 

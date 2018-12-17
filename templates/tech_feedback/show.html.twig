@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TechFeedback{% endblock %}
+
+{% block body %}
+    <h1>TechFeedback</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ tech_feedback.id }}</td>
+            </tr>
+            <tr>
+                <th>Feedback</th>
+                <td>{{ tech_feedback.feedback }}</td>
+            </tr>
+            <tr>
+                <th>Created</th>
+                <td>{{ tech_feedback.created ? tech_feedback.created|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Liked</th>
+                <td>{{ tech_feedback.liked }}</td>
+            </tr>
+            <tr>
+                <th>Not_liked</th>
+                <td>{{ tech_feedback.notLiked }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('tech_feedback_index') }}">back to list</a>
+
+    <a href="{{ path('tech_feedback_edit', {'id': tech_feedback.id}) }}">edit</a>
+
+    {{ include('tech_feedback/_delete_form.html.twig') }}
+{% endblock %}

@@ -23,7 +23,7 @@ class Performance
     private $tech;
 
     /**
-     * @ORM\Column(type="json_array")
+     * @ORM\Column(type="string")
      */
     private $performance;
 
