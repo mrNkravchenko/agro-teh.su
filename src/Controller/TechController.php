@@ -4,15 +4,21 @@ namespace App\Controller;
 
 
 use App\Entity\Tech;
+use App\Entity\TechFeedback;
+use App\Form\TechFeedbackType;
 use App\Form\TechType;
 use function array_push;
 use DateTime;
+use Doctrine\ORM\Mapping\Entity;
 use function dump;
 use function explode;
 use function implode;
 use function json_encode;
 use function strip_tags;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use function time;
@@ -40,7 +46,7 @@ class TechController extends AbstractController
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function show($url)
+    public function show($url, Request $request)
     {
 
         $tech = $this->getDoctrine()
@@ -55,11 +61,43 @@ class TechController extends AbstractController
         $complectations = $tech->getComplectation()->toArray();
         $slider = $tech->getSlider()->toArray();
         $video = $tech->getVideo()->toArray();
+        $feedbacks = $tech->getFeedback()->toArray();
+
+        $techFeedback = new TechFeedback();
+        $createFeedback = $this->createFormBuilder($techFeedback)
+            /*->setAction($this->generateUrl('tech_feedback_new'))*/
+            ->setMethod('POST')
+            /*->add('tech', EntityType::class, ['class'=> Tech::class])*/
+            ->add('feedback', TextareaType::class/*, ['label' => 'Ваш отзыв']*/)
+            ->add('save', SubmitType::class, ['label' => 'Оставить отзыв'])
+            ->getForm();
+
+        $createFeedback->handleRequest($request);
+
+//        $createFeedback->get('tech')->setData($tech);
+        if ($createFeedback->isSubmitted() && $createFeedback->isValid()) {
+
+//            $techFeedbackForm = $form->getData();
+            $dateTime = \DateTime::createFromFormat('Y-m-d H:i:s', date('Y-m-d H:i:s'));
+
+            $techFeedback->setTech($tech);
+            $techFeedback->setCreated($dateTime);
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($techFeedback);
+            $em->flush();
+
+            return $this->redirectToRoute('selhoztehnika_show', ['url' => $url]);
+        }
+
+//        $createFeedbackView = $this->renderView('tech_feedback/_form.html.twig', ['form' => $createFeedback->createView()]);
 
         $content = $this->renderView('tech/content.html.twig', [
             'table' => $tech->getParcePerformance(),
             'description' => $tech->getDescription(),
             'video' => $video,
+            'feedbacks' => $feedbacks,
+            'form_feedback' => $createFeedback->createView(),
             'manual' => $tech->getManual(),
             'complectations' => $complectations,
             'slider' => $slider,

@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TechFeedback index{% endblock %}
+
+{% block body %}
+    <h1>TechFeedback index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Feedback</th>
+                <th>Created</th>
+                <th>Liked</th>
+                <th>Not_liked</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tech_feedback in tech_feedbacks %}
+            <tr>
+                <td>{{ tech_feedback.id }}</td>
+                <td>{{ tech_feedback.feedback }}</td>
+                <td>{{ tech_feedback.created ? tech_feedback.created|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ tech_feedback.liked }}</td>
+                <td>{{ tech_feedback.notLiked }}</td>
+                <td>
+                    <a href="{{ path('tech_feedback_show', {'id': tech_feedback.id}) }}">show</a>
+                    <a href="{{ path('tech_feedback_edit', {'id': tech_feedback.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('tech_feedback_new') }}">Create new</a>
+{% endblock %}

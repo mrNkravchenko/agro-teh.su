@@ -3456,3 +3456,15 @@ p.underlined {
 	line-height: 32px;
 	}
 }
+
+.feedback {
+	word-break: break-word;
+}
+
+.tab-content .tech {
+	display: block;
+	max-height: 500px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding: 20px;
+}
