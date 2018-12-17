@@ -61,7 +61,7 @@ class TechController extends AbstractController
         $complectations = $tech->getComplectation()->toArray();
         $slider = $tech->getSlider()->toArray();
         $video = $tech->getVideo()->toArray();
-        $feedbacks = $tech->getFeedback()->toArray();
+        $feedbacks = (null !== $tech->getFeedback() && !empty($tech->getFeedback()))? $tech->getFeedback()->toArray() : [];
 
         $techFeedback = new TechFeedback();
         $createFeedback = $this->createFormBuilder($techFeedback)
