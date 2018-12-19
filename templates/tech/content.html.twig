@@ -71,6 +71,7 @@
         <li role="presentation"><a href="#description" aria-controls="description" role="tab" data-toggle="tab">Описание</a></li>
         <li role="presentation"><a href="#manual" aria-controls="manual" role="tab" data-toggle="tab">Устройство и работа</a></li>
         <li role="presentation"><a href="#complectations" aria-controls="complectations" role="tab" data-toggle="tab">Комплектации и цены</a></li>
+        <li role="presentation"><a href="#delivery" aria-controls="delivery" role="tab" data-toggle="tab">Доставка</a></li>
         <li role="presentation"><a href="#feedbacks" aria-controls="feedbacks" role="tab" data-toggle="tab">Отзывы <span class="badge alert-info">{{ feedbacks | length }}</span></a></li>
     </ul>
 
@@ -114,6 +115,9 @@
                     </div>
                 {% endfor %}
             {% endif %}
+        </div>
+        <div role="tabpanel" class="tab-pane" id="delivery">
+            Доставка
         </div>
         <div role="tabpanel" class="tab-pane tech" id="feedbacks">
 
