@@ -47,29 +47,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/TechFeedbackController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
+            <state relative-caret-position="360">
               <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/TechController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="63" column="33" selection-start-line="63" selection-start-column="33" selection-end-line="63" selection-end-column="33" />
+            <state relative-caret-position="750">
+              <caret line="70" column="80" selection-start-line="70" selection-start-column="80" selection-end-line="70" selection-end-column="80" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/tech/content.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="65" column="19" selection-start-line="65" selection-start-column="19" selection-end-line="65" selection-end-column="19" />
-              <folding>
-                <element signature="e#50#2176#0#Twig" />
-              </folding>
+            <state relative-caret-position="396">
+              <caret line="121" column="66" lean-forward="true" selection-start-line="121" selection-start-column="66" selection-end-line="121" selection-end-column="66" />
             </state>
           </provider>
         </entry>
@@ -311,83 +308,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="agro-teh.su" type="b2602c69:ProjectViewProjectNode" />
-              <item name="agro-teh" type="9c53a853:ProjectViewModuleGroupNode" />
-            </path>
-            <path>
-              <item name="agro-teh.su" type="b2602c69:ProjectViewProjectNode" />
-              <item name="agro-teh" type="9c53a853:ProjectViewModuleGroupNode" />
-              <item name="agro-teh.su" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="agro-teh.su" type="b2602c69:ProjectViewProjectNode" />
-              <item name="agro-teh" type="9c53a853:ProjectViewModuleGroupNode" />
-              <item name="agro-teh.su" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="agro-teh.su" type="b2602c69:ProjectViewProjectNode" />
-              <item name="agro-teh" type="9c53a853:ProjectViewModuleGroupNode" />
-              <item name="agro-teh.su" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="agro-teh.su" type="b2602c69:ProjectViewProjectNode" />
-              <item name="agro-teh" type="9c53a853:ProjectViewModuleGroupNode" />
-              <item name="agro-teh.su" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="agro-teh.su" type="b2602c69:ProjectViewProjectNode" />
-              <item name="agro-teh" type="9c53a853:ProjectViewModuleGroupNode" />
-              <item name="agro-teh.su" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="agro-teh.su" type="b2602c69:ProjectViewProjectNode" />
-              <item name="agro-teh" type="9c53a853:ProjectViewModuleGroupNode" />
-              <item name="agro-teh.su" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="agro-teh.su" type="b2602c69:ProjectViewProjectNode" />
-              <item name="agro-teh" type="9c53a853:ProjectViewModuleGroupNode" />
-              <item name="agro-teh.su" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="angar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="agro-teh.su" type="b2602c69:ProjectViewProjectNode" />
-              <item name="agro-teh" type="9c53a853:ProjectViewModuleGroupNode" />
-              <item name="agro-teh.su" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="tech_feedback" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="agro-teh.su" type="b2602c69:ProjectViewProjectNode" />
-              <item name="agrotehstroy" type="9c53a853:ProjectViewModuleGroupNode" />
-            </path>
-            <path>
-              <item name="agro-teh.su" type="b2602c69:ProjectViewProjectNode" />
-              <item name="agrotehstroy" type="9c53a853:ProjectViewModuleGroupNode" />
-              <item name="agrotehstroy.ru" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="agro-teh.su" type="b2602c69:ProjectViewProjectNode" />
-              <item name="agrotehstroy" type="9c53a853:ProjectViewModuleGroupNode" />
-              <item name="agrotehstroy.ru" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="ProjectPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -435,7 +356,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d9f483d2-b30c-4c15-8f43-79a0e6fcdc5c" name="Default Changelist" comment="" />
+      <changelist id="8f95bfcd-0e2f-4ff7-91d6-6f66d557278f" name="Default Changelist" comment="" />
       <created>1538912059955</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -495,11 +416,12 @@
       <workItem from="1544873768005" duration="2626000" />
       <workItem from="1544958598189" duration="12638000" />
       <workItem from="1545069660896" duration="7508000" />
+      <workItem from="1545246516621" duration="2801000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="354106000" />
+    <option name="totallyTimeSpent" value="356827000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -514,7 +436,7 @@
     <frame x="0" y="25" width="1280" height="952" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21474878" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21799028" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -830,7 +752,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/TechFeedbackController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
+        <state relative-caret-position="360">
           <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
         </state>
       </provider>
@@ -880,18 +802,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/tech/content.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="65" column="19" selection-start-line="65" selection-start-column="19" selection-end-line="65" selection-end-column="19" />
-          <folding>
-            <element signature="e#50#2176#0#Twig" />
-          </folding>
+        <state relative-caret-position="396">
+          <caret line="121" column="66" lean-forward="true" selection-start-line="121" selection-start-column="66" selection-end-line="121" selection-end-column="66" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/TechController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="63" column="33" selection-start-line="63" selection-start-column="33" selection-end-line="63" selection-end-column="33" />
+        <state relative-caret-position="750">
+          <caret line="70" column="80" selection-start-line="70" selection-start-column="80" selection-end-line="70" selection-end-column="80" />
         </state>
       </provider>
     </entry>
