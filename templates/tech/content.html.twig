@@ -54,7 +54,99 @@
             {% endif %}
         </div>
         <div role="tabpanel" class="tab-pane" id="delivery">
-            Доставка
+
+            <div>
+                <div class="text-center">
+                    Габаритные размеры для доставки:
+                </div>
+                <table id="good_dimentions" class="table table-bordered table-responsive" data-lenth="{{ dimentions.length }}" data-width="{{ dimentions.width }}" data-height="{{ dimentions.height }}" data-volume="{{ dimentions.volume }}" data-weight="{{ dimentions.weight }}" data-price="{{ price }}">
+                    <thead class="thead-inverse">
+                    <tr>
+                        <td>Длина, м</td>
+                        <td>Ширина, м</td>
+                        <td>Высота, м</td>
+                        <td>Объем, м3</td>
+                        <td>Вес, кг</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="info">
+                            <td>{{ dimentions.length }}</td>
+                            <td>{{ dimentions.width }}</td>
+                            <td>{{ dimentions.height }}</td>
+                            <td>{{ dimentions.volume }}</td>
+                            <td>{{ dimentions.weight }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-offset-3 col-md-6 mb-20px">
+                    <div>
+                        <input class="form-control" list="cityListKit" placeholder="Введите пункт назначения"/> {#onchange="yaCounter47365036.reachGoal('RASCHET', function () {console.log('Данные успешно отправлены')})#}
+                        <datalist id="cityListKit">
+                            <option value="Населенный пункт"></option>
+                        </datalist>
+                    </div>
+                </div>
+                <div class="col-md-offset-2 col-md-8 answerKit" hidden>
+                    <table class="table table-bordered table-responsive">
+                        <thead class="thead-inverse">
+                        <tr>
+                            <td>Срок доствки, дней</td>
+                            <td>Стоимость доставки, рублей</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="info">
+                            <td class="daysOfDelivery__td"></td>
+                            <td class="priceOfDeliveryKit__td"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            {#<div class="row">
+
+
+                <div class="one-half columns align-center fon2 cityListKit mb-35px">
+                    <p class="align-center">укажите регион доставки</p>
+                    <!--<input type="text" placeholder="Населенный пункт" id="cityList">-->
+                    <input list="cityListKit" class="align-center" placeholder="Введите пункт назначения"/> #}{#onchange="yaCounter47365036.reachGoal('RASCHET', function () {console.log('Данные успешно отправлены')})#}{#
+                    <datalist id="cityListKit">
+                        <option value="Населенный пункт"></option>
+                    </datalist>
+                </div>
+            </div>#}
+
+        </div><!-- /full-width columns -->
+
+
+        {#<div class="row answerKit" hidden>
+            <div class="one-half columns align-center fantome">
+                <label for="daysOfDelivery">Срок доставки, дней:</label>
+                <input type="text" class="align-center" id="daysOfDelivery" value="" disabled>
+            </div>
+            <div class="one-half columns align-center fantome">
+                <label for="priceOfDeliveryKit">Стоимость доставки:</label>
+                <input type="text" class="align-center" id="priceOfDeliveryKit" value="" disabled>
+            </div>
+        </div>#}
+
+
+        <div class="full-width columns">
+
+
+            <blockquote class="mb-35px">
+                <p class="colored-text-1 remove-bottom">
+                    Обратите внимание!
+                </p>
+                <p class="dark-black remove-bottom">
+                    Окончательную стоимость продукции для вашего региона можно уточнить у сотрудников отдела продаж или региональных представителей компании "АГРО-ТЕХ".
+                </p>
+            </blockquote>
+            <!--/noindex-->
         </div>
         <div role="tabpanel" class="tab-pane tech" id="feedbacks">
 
@@ -100,7 +192,7 @@
 </div>
 
 
-<div class="align-center mb-20"><a href="#" class="button large colored">Купить или узнать больше информаци</a></div>
+<div class="align-center mb-20px"><a href="#" class="button large colored">Купить или узнать больше информаци</a></div>
 
 
 {% if video is not empty %}

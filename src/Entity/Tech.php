@@ -105,6 +105,11 @@ class Tech
     private $complectation;
 
     /**
+     * @ORM\OneToOne(targetEntity="App\Entity\Dimensions", mappedBy="tech")
+     */
+    private $dimentions;
+
+    /**
      * @ORM\OneToMany(targetEntity="App\Entity\TechImage", mappedBy="tech")
      */
     private $slider;
@@ -455,6 +460,22 @@ class Tech
     public function __toString()
     {
         return (string) $this->name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDimentions()
+    {
+        return $this->dimentions;
+    }
+
+    /**
+     * @param mixed $dimentions
+     */
+    public function setDimentions($dimentions): void
+    {
+        $this->dimentions = $dimentions;
     }
 
 

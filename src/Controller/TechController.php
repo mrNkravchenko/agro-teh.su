@@ -8,10 +8,14 @@ use App\Entity\TechFeedback;
 use App\Form\TechFeedbackType;
 use App\Form\TechType;
 use function array_push;
+use function curl_init;
+use function curl_setopt;
+use const CURLOPT_RETURNTRANSFER;
 use DateTime;
 use Doctrine\ORM\Mapping\Entity;
 use function dump;
 use function explode;
+use http\Client\Response;
 use function implode;
 use function json_encode;
 use function strip_tags;
@@ -20,6 +24,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Client;
 use Symfony\Component\Routing\Annotation\Route;
 use function time;
 use function trim;
@@ -101,6 +106,8 @@ class TechController extends AbstractController
             'manual' => $tech->getManual(),
             'complectations' => $complectations,
             'slider' => $slider,
+            'dimentions' => $tech->getDimentions(),
+            'price' => $price,
         ]);
 
 //        dump($tech->getComplectation()->toArray());
@@ -228,6 +235,50 @@ class TechController extends AbstractController
     }
     public function delete(Request $request, Tech $id)
     {
+
+    }
+
+    /**
+     * @Route("/api/getTechDelivery", name="get_tech_delivery")
+     * @param Request $request
+     *
+     * @return \Symfony\Component\HttpFoundation\JsonResponse
+     * @throws \Exception
+     */
+    public function getTechDelivery(Request $request)
+    {
+
+        $params = $request->get('f');
+
+        if (!empty($params)) {
+
+
+
+            $url = "https://tk-kit.com/API.1.1?token=s46WVbB-PU1M6bu2hr4IPIV3DsmRb_94" . $params;
+
+
+            $ch = curl_init($url);
+
+
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+            $result = curl_exec($ch);
+
+            $info = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            $error = curl_error($ch);
+
+            curl_close($ch);
+//            var_dump($result);
+//            die;
+
+            return $this->json($result, 200, ['Content-Type' => 'application/json; charset=utf8']);
+//            return $result;
+
+
+        } else return $this->json(false, 404);
+
 
     }
 }
