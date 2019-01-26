@@ -1,0 +1,24 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block main %}
+<div class="container-fluid">
+    <h1>Register</h1>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="centered">
+                {{ form_start(registrationForm) }}
+                {{ form_row(registrationForm.email) }}
+                {{ form_row(registrationForm.plainPassword) }}
+
+                <button class="btn">Register</button>
+                {{ form_end(registrationForm) }}
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+{% endblock %}
