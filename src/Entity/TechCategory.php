@@ -44,6 +44,11 @@ class TechCategory
     /**
      * @ORM\Column(type="text", nullable=true)
      */
+    private $description;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
     private $content;
 
     /**
@@ -196,5 +201,21 @@ class TechCategory
     public function setSideBarImage($side_bar_image): void
     {
         $this->side_bar_image = $side_bar_image;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param mixed $description
+     */
+    public function setDescription($description): void
+    {
+        $this->description = $description;
     }
 }

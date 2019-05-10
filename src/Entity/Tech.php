@@ -14,7 +14,6 @@ use function parseArgs;
 use function PHPSTORM_META\type;
 use function strval;
 use Symfony\Component\Validator\Constraints as Assert;
-use function var_dump;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\TechRepository")
@@ -52,6 +51,21 @@ class Tech
      * @ORM\Column(type="string", length=255)
      */
     private $image;
+
+    /**
+     * @Assert\Image(mimeTypes={ "image/jpg", "image/jpeg", "image/gif", "image/png" })
+     */
+    private $image_bin;
+
+    /**
+     * @Assert\Image(mimeTypes={ "image/jpg", "image/jpeg", "image/gif", "image/png" })
+     */
+    private $small_image_bin;
+
+    /**
+     * @Assert\Image(mimeTypes={ "image/jpg", "image/jpeg", "image/gif", "image/png" })
+     */
+    private $mng_image_bin;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -103,6 +117,11 @@ class Tech
      * @ORM\OneToMany(targetEntity="App\Entity\Complectation", mappedBy="tech")
      */
     private $complectation;
+
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\Dimensions", mappedBy="tech")
+     */
+    private $dimentions;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\TechImage", mappedBy="tech")
@@ -457,5 +476,68 @@ class Tech
         return (string) $this->name;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getDimentions()
+    {
+        return $this->dimentions;
+    }
+
+    /**
+     * @param mixed $dimentions
+     */
+    public function setDimentions($dimentions): void
+    {
+        $this->dimentions = $dimentions;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImageBin()
+    {
+        return $this->image_bin;
+    }
+
+    /**
+     * @param mixed $image_bin
+     */
+    public function setImageBin($image_bin): void
+    {
+        $this->image_bin = $image_bin;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSmallImageBin()
+    {
+        return $this->small_image_bin;
+    }
+
+    /**
+     * @param mixed $small_image_bin
+     */
+    public function setSmallImageBin($small_image_bin): void
+    {
+        $this->small_image_bin = $small_image_bin;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMngImageBin()
+    {
+        return $this->mng_image_bin;
+    }
+
+    /**
+     * @param mixed $mng_image_bin
+     */
+    public function setMngImageBin($mng_image_bin): void
+    {
+        $this->mng_image_bin = $mng_image_bin;
+    }
 
 }

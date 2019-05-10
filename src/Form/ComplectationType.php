@@ -3,6 +3,8 @@
 namespace App\Form;
 
 use App\Entity\Complectation;
+use App\Entity\Tech;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -16,7 +18,12 @@ class ComplectationType extends AbstractType
             ->add('price')
             ->add('created')
             ->add('updated')
-            ->add('tech')
+            ->add('tech', EntityType::class, [
+                'class' => Tech::class,
+                'choice_label' => function ($tech) {
+                    return $tech->getName();
+                }
+            ])
         ;
     }
 

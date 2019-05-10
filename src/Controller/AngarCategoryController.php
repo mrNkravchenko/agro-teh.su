@@ -14,7 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AngarCategoryController extends AbstractController
 {
     /**
-     * @Route("/angary/category", name="angar_category_index", methods="GET")
+     * @Route("/manager/angary/category", name="angar_category_index", methods="GET")
      */
     public function index(AngarCategoryRepository $angarCategoryRepository): Response
     {
@@ -22,7 +22,7 @@ class AngarCategoryController extends AbstractController
     }
 
     /**
-     * @Route("/angary/category/new", name="angar_category_new", methods="GET|POST")
+     * @Route("/manager/angary/category/new", name="angar_category_new", methods="GET|POST")
      */
     public function new(Request $request): Response
     {
@@ -67,7 +67,7 @@ class AngarCategoryController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="angar_category_edit", methods="GET|POST", requirements={"id" = "\d+"})
+     * @Route("/manager/angary/category/{id}/edit", name="angar_category_edit", methods="GET|POST", requirements={"id" = "\d+"})
      */
     public function edit(Request $request, AngarCategory $angarCategory): Response
     {
@@ -87,10 +87,11 @@ class AngarCategoryController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="angar_category_delete", methods="DELETE", requirements={"id" = "\d+"})
+     * @Route("/manager/angary/category/delete/{id}", name="angar_category_delete", methods="DELETE", requirements={"id" = "\d+"})
      */
     public function delete(Request $request, AngarCategory $angarCategory): Response
     {
+        /*$this->denyAccessUnlessGranted('ROLE_USER', null, 'Unable to access this page!');*/
         if ($this->isCsrfTokenValid('delete'.$angarCategory->getId(), $request->request->get('_token'))) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($angarCategory);

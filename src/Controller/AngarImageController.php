@@ -6,18 +6,22 @@ use App\Entity\AngarImage;
 use App\Form\AngarImageType;
 use App\Repository\AngarImageRepository;
 use phpDocumentor\Reflection\Types\This;
+use App\Service\FileUploader;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * @Route("/angar/image")
- */
+///**
+// * @Route("/angar/image")
+// */
 class AngarImageController extends AbstractController
 {
+    const IMAGE_DIR = '';
+//    public $uploadDir = IMAGE_DIR;
+    public $imagePath = 'assets/img/hangars/';
     /**
-     * @Route("/", name="angar_image_index", methods="GET")
+     * @Route("/manager/angar/image", name="angar_image_index", methods="GET")
      */
     public function index(AngarImageRepository $angarImageRepository): Response
     {
@@ -25,9 +29,12 @@ class AngarImageController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="angar_image_new", methods="GET|POST")
+     * @Route("/manager/angar/image/new", name="angar_image_new", methods="GET|POST")
+     * @param Request $request
+     * @param FileUploader $fileUploader
+     * @return Response
      */
-    public function new(Request $request): Response
+    public function new(Request $request, FileUploader $fileUploader): Response
     {
         $angarImage = new AngarImage();
         $form = $this->createForm(AngarImageType::class, $angarImage);
@@ -35,6 +42,15 @@ class AngarImageController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $image = $angarImage->getImage();
+
+            $fileUploader->setParticularPath('hangars/'.$angarImage->getAngar()->getId().'/');
+            $fileParams = $fileUploader->upload($image);
+            $angarImage->setName($fileParams['name']);
+            $angarImage->setNameMd5($fileParams['name_md5']);
+            $angarImage->setPath('assets/img/hangars/'.$angarImage->getAngar()->getId().'/');
+            $angarImage->setPathThumbnail('assets/img/hangars/'.$angarImage->getAngar()->getId().'/thumbnail/');
+
             $em->persist($angarImage);
             $em->flush();
 
@@ -48,7 +64,7 @@ class AngarImageController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="angar_image_show", methods="GET")
+     * @Route("/manager/angar/image/{id}", name="angar_image_show", methods="GET")
      */
     public function show(AngarImage $angarImage): Response
     {
@@ -56,7 +72,7 @@ class AngarImageController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="angar_image_edit", methods="GET|POST")
+     * @Route("/manager/angar/image/{id}/edit", name="angar_image_edit", methods="GET|POST")
      */
     public function edit(Request $request, AngarImage $angarImage): Response
     {
@@ -76,7 +92,7 @@ class AngarImageController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/first", name="angar_image_set_first", methods="GET|POST")
+     * @Route("/angar/image/{id}/first", name="angar_image_set_first", methods="GET|POST")
      * @param AngarImage $angarImage
      *
      * @return Response
@@ -90,7 +106,7 @@ class AngarImageController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="angar_image_delete", methods="DELETE")
+     * @Route("/manager/manage/angar/image/{id}", name="angar_image_delete", methods="DELETE")
      */
     public function delete(Request $request, AngarImage $angarImage): Response
     {

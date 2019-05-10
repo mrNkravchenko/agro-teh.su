@@ -180,4 +180,9 @@ class Address
     {
         $this->angar = $angar;
     }
+
+    public function getFullAddress()
+    {
+        return $this->getRegion() . ' ' . $this->getRegionIndex() . ' ' . $this->getCity() . ' ' . $this->getDistrict() . ' ' . $this->getStreet() . ' ' . $this->getBuilding() . ' ' . $this->getZip();
+    }
 }

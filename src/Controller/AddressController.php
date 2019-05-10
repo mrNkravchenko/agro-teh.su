@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/address")
+ * @Route("/manager/address")
  */
 class AddressController extends AbstractController
 {
@@ -28,6 +28,7 @@ class AddressController extends AbstractController
      */
     public function new(Request $request): Response
     {
+
         $address = new Address();
         $form = $this->createForm(AddressType::class, $address);
         $form->handleRequest($request);

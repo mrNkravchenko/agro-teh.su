@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\GalleryImageRepository")
@@ -30,6 +31,8 @@ class GalleryImage
      * @ORM\Column(type="string", length=255)
      */
     private $path;
+
+    private $image;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -87,5 +90,21 @@ class GalleryImage
         $this->path_thumbnail = $path_thumbnail;
 
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param mixed $image
+     */
+    public function setImage($image): void
+    {
+        $this->image = $image;
     }
 }

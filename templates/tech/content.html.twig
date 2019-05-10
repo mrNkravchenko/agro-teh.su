@@ -1,181 +1,221 @@
-<div class="clearfix"></div>
-<!-- The sidebar -->
-{#<div class="sidebar-block light gradient no-border bx_shadow mb-30px">
-    <div class="sidebar">
-        <div class="tab">
-            <button class="tablinks" onclick="openTab(event, 'performance')">Производительность</button>
-            <button class="tablinks" onclick="openTab(event, 'description')">Описание</button>
-            <button class="tablinks" onclick="openTab(event, 'manual')">Устройство и работа</button>
-            <button class="tablinks" onclick="openTab(event, 'complectations')">Комплектации и цены</button>
-            <button class="tablinks" onclick="openTab(event, 'feedbacks')">Отзывы</button>
+<div class="tech-wrapper">
+    <div class="row m-0">
+        {#<div class="col-md-12">
+            <img src="{{ asset(tech.image) }}" class="img-fluid" alt="Responsive image">
+        </div>#}
+        <img src="{{ asset(tech.image) }}" class="img-fluid m-auto" alt="Responsive image">
+
+    </div>
+
+    <div class="row justify-content-center m-0 my-2 mt-4">
+        <ul class="nav nav-tabs justify-content-center w-100" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="performance-tab" data-toggle="tab" href="#performance" role="tab" aria-controls="performance" aria-selected="true">Производительность</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="false">Описание</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="designwork-tab" data-toggle="tab" href="#designwork" role="tab" aria-controls="designwork" aria-selected="false">Устройство и работа</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="configurationsprices-tab" data-toggle="tab" href="#configurationsprices" role="tab" aria-controls="configurationsprices" aria-selected="false">Комплектации и цены</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="delivery-tab" data-toggle="tab" href="#delivery" role="tab" aria-controls="delivery" aria-selected="false">Доставка</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="reviews-tab" data-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="false">Отзывы</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="row m-0 p-3">
+        <div class="tab-content col-12" id="myTabContent">
+            <div class="tab-pane fade show active" id="performance" role="tabpanel" aria-labelledby="performance-tab">
+                <table>
+                    {% for row in table %}
+                        <tr>
+                            {% if row[0] is defined %}
+                                <td colspan="2">{{ row[0] }}</td>
+                            {% else %}
+                                {% for column in row %}
+                                    <td>{{ ((row | keys) | reverse)[0] }}</td>
+                                    <td>{{ column }}</td>
+                                {% endfor %}
+                            {% endif %}
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <div class="tab-pane fade" id="description" role="tabpanel" aria-labelledby="description-tab">
+                {{ description | striptags }}
+            </div>
+            <div class="tab-pane fade" id="designwork" role="tabpanel" aria-labelledby="designwork-tab">
+                {{ manual | striptags }}
+            </div>
+            <div class="tab-pane fade" id="configurationsprices" role="tabpanel" aria-labelledby="configurationsprices-tab">
+
+                <div class="col-sm-12">
+                    <span>
+                        Цена в базовой комплектации - <span>{{ price|number_format(0, ".", ",") }}</span> рублей;
+                    </span>
+                </div>
+
+                {% if complectations is not null %}
+                    {% for item in complectations %}
+                        <div>
+                            {{ item.description }}
+                        </div>
+                        <div>
+                            {{ item.price }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <div class="tab-pane fade" id="delivery" role="tabpanel" aria-labelledby="delivery-tab">
+
+                {% if dimentions is not null %}
+                    <div class="col-12">
+                        <div class="text-center">
+                            Габаритные размеры для доставки:
+                        </div>
+
+                        <table id="good_dimentions" class="table table-bordered" data-length="{{ dimentions.length }}" data-width="{{ dimentions.width }}" data-height="{{ dimentions.height }}" data-volume="{{ dimentions.volume }}" data-weight="{{ dimentions.weight }}" data-price="{{ price }}">
+                            <thead class="table-info">
+                            <tr>
+                                <td>Длина, м</td>
+                                <td>Ширина, м</td>
+                                <td>Высота, м</td>
+                                <td>Объем, м3</td>
+                                <td>Вес, кг</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>{{ dimentions.length }}</td>
+                                <td>{{ dimentions.width }}</td>
+                                <td>{{ dimentions.height }}</td>
+                                <td>{{ dimentions.volume }}</td>
+                                <td>{{ dimentions.weight }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col">
+                            <div class="form-group form-row">
+                                <input class="col form-control mr-5" list="cityListKit" placeholder="Введите пункт назначения" {#onchange="yaCounter47365036.reachGoal('RASCHET', function () {console.log('Данные успешно отправлены')})"#}/>
+                                <datalist id="cityListKit">
+                                    <option value="Населенный пункт"></option>
+                                </datalist>
+                                <button type="submit" class="btn btn-primary send-kit" disabled>
+                                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" hidden></span>
+                                    <span data-type="title" data-ready="Рассчитать" data-request="Отправка...">Рассчитать</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="answerKit" style="display: none">
+                            <table class="table table-bordered">
+                                <thead class="table-info">
+                                    <tr>
+                                        <td>Срок доставки, дней</td>
+                                        <td>Стоимость доставки, рублей</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="daysOfDelivery__td"></td>
+                                        <td class="priceOfDeliveryKit__td"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                {% else %}
+                    <div>
+                        Для данного товара пока нет габаритных размеров, хотите узнать подробнее? Позвоните нам.
+                    </div>
+                {% endif %}
+
+            </div>
+            <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
+                <div class="col-md-12">
+                    {% if feedbacks | length > 0 %}
+                        {% for feedback in feedbacks %}
+                            <div class="row thumbnail mb-2 rounded card bg-info">
+                                <div class="card-title bg-info">
+                                    <p class="text-right">{{ feedback.created | date('d-m-Y H:i:s') }}</p>
+                                </div>
+                                <div class="feedback">
+                                    {{ feedback.feedback }}
+
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <div>
+                            Для данного товара нет отзыва, хотите оставить отзыв?
+                        </div>
+                    {% endif %}
+                </div>
+
+                {{ form_start(form_feedback) }}
+                <div class="alert-danger">
+                    {{ form_errors(form_feedback) }}
+                </div>
+                {{ form_label(form_feedback.feedback, 'Ваш отзыв') }}
+                {{ form_errors(form_feedback.feedback) }}
+                <div class="col-md-12">
+                    <div class="col-md-10">
+                        {{ form_widget(form_feedback.feedback, {'attr' : {'class' : "form-control", 'rows' : 3}}) }}
+                    </div>
+                    <div class="col-md-2">
+                        {{ form_widget(form_feedback.save, {'attr' : {'class' : 'btn btn-primary'}}) }}
+                    </div>
+                </div>
+
+                {{ form_end(form_feedback) }}
+            </div>
         </div>
     </div>
 
-    <!-- Page content -->
-    <div class="content">
-        <!-- Tab content -->
-        <div id="performance" class="tabcontent">
-            <table>
-                {% for row in table %}
+    <div class="align-center mb-20"><a href="#" class="button large colored">Купить или узнать больше информаци</a></div>
 
+    <div class="row m-0 my-5 bg-transparent">
+        <div class="col-md-12 p-0 px-5">
+            <h3 class="text-center my-3 text-white bg-primary">
+                Фото
+            </h3>
 
-                    <tr>
-
-                        {% if row[0] is defined %}
-                            <td colspan="2">{{ row[0] }}</td>
-                        {% else %}
-                            {% for column in row %}
-                                <td>{{ ((row | keys) | reverse)[0] }}</td>
-                                <td>{{ column }}</td>
-                            {% endfor %}
-                        {% endif %}
-
-                    </tr>
-
-                {% endfor %}
-            </table>
-        </div>
-
-        <div id="description" class="tabcontent">
-            {{ description | striptags }}
-        </div>
-
-        <div id="manual" class="tabcontent">
-            {{ manual | striptags }}
-        </div>
-
-        <div id="complectations" class="tabcontent">
-            {% if complectations is not null %}
-                {% for item in complectations %}
-                    <div>
-                        {{ item.description }}
-                    </div>
-                    <div>
-                        {{ item.price }}
+            <!-- Slick slider -->
+            <!-- To do: Check all point-->
+            <div class="tech-image-slide">
+                {% for slide in slider  %}
+                    <div class="px-2">
+                        <a class="tech-image" href="{{ asset(slide.path) }}">
+                            <img  src="{{ asset(slide.path) }}" class="card-img-top" alt="{{ tech.name }}">
+                        </a>
                     </div>
                 {% endfor %}
-            {% endif %}
-        </div>
 
-        <div id="feedbacks" class="tabcontent">
-            К сожадению для данного товара нет отзыва
+            </div>
         </div>
     </div>
-</div>#}
 
-<div class="mb-20px">
-
-    <!-- Nav tabs -->
-    <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation"><a class="active" href="#performance" aria-controls="performance" role="tab" data-toggle="tab">Производительность</a></li>
-        <li role="presentation"><a href="#description" aria-controls="description" role="tab" data-toggle="tab">Описание</a></li>
-        <li role="presentation"><a href="#manual" aria-controls="manual" role="tab" data-toggle="tab">Устройство и работа</a></li>
-        <li role="presentation"><a href="#complectations" aria-controls="complectations" role="tab" data-toggle="tab">Комплектации и цены</a></li>
-        <li role="presentation"><a href="#feedbacks" aria-controls="feedbacks" role="tab" data-toggle="tab">Отзывы <span class="badge alert-info">{{ feedbacks | length }}</span></a></li>
-    </ul>
-
-    <!-- Tab panes -->
-    <div class="tab-content" style="display: block;">
-        <div role="tabpanel" class="tab-pane active" id="performance">
-            <table>
-                {% for row in table %}
-
-
-                    <tr>
-
-                        {% if row[0] is defined %}
-                            <td colspan="2">{{ row[0] }}</td>
-                        {% else %}
-                            {% for column in row %}
-                                <td>{{ ((row | keys) | reverse)[0] }}</td>
-                                <td>{{ column }}</td>
-                            {% endfor %}
-                        {% endif %}
-
-                    </tr>
-
+    <div class="row m-0 my-5 bg-transparent">
+        <div class="col-md-12 p-5 h-100">
+            <h3 class="text-center my-3 text-white bg-primary">
+                Видео
+            </h3>
+            <div class="d-flex flex-wrap justify-content-between">
+                {% for item in video  %}
+                    <iframe height="300" class="mb-2" src="{{ item.video }}?wmode=transparent&amp;rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
                 {% endfor %}
-            </table>
-        </div>
-        <div role="tabpanel" class="tab-pane" id="description">
-            {{ description | striptags }}
-        </div>
-        <div role="tabpanel" class="tab-pane" id="manual">
-            {{ manual | striptags }}
-        </div>
-        <div role="tabpanel" class="tab-pane" id="complectations">
-            {% if complectations is not null %}
-                {% for item in complectations %}
-                    <div>
-                        {{ item.description }}
-                    </div>
-                    <div>
-                        {{ item.price }}
-                    </div>
-                {% endfor %}
-            {% endif %}
-        </div>
-        <div role="tabpanel" class="tab-pane tech" id="feedbacks">
-
-            {% if feedbacks | length > 0 %}
-                {% for feedback in feedbacks %}
-            <div class="row thumbnail mb-20px rounded panel panel-info">
-                    <div class="panel-title bg-info">
-                        <p class="text-right">{{ feedback.created | date('d-m-Y H:i:s') }}</p>
-                    </div>
-                    <div class="feedback">
-                        {{ feedback.feedback }}
-
-                    </div>
             </div>
-                {% endfor %}
-            {% else %}
-                <div>
-                    Для данного товара нет отзыва, хотите оставить отзыв?
-                </div>
-            {% endif %}
-            {{ form_start(form_feedback) }}
-            <div class="alert-danger">
-                {{ form_errors(form_feedback) }}
-            </div>
-            {{ form_label(form_feedback.feedback, 'Ваш отзыв') }}
-            {{ form_errors(form_feedback.feedback) }}
-            <div class="col-md-12">
-                <div class="col-md-10">
-                    {{ form_widget(form_feedback.feedback, {'attr' : {'class' : "form-control", 'rows' : 3}}) }}
-                </div>
-                <div class="col-md-2">
-                    {{ form_widget(form_feedback.save, {'attr' : {'class' : 'btn btn-primary'}}) }}
-                </div>
-            </div>
-
-            {{ form_end(form_feedback) }}
-        </div>
 
 
         </div>
     </div>
 
 </div>
-
-
-<div class="align-center mb-20"><a href="#" class="button large colored">Купить или узнать больше информаци</a></div>
-
-
-{% if video is not empty %}
-    <div class="row mb-50px">
-        <section class="flexslider mb-10px" data-animation="fade" data-slideshow="yes" data-direction-nav="yes">
-            <ul class="slides">
-
-                {% for item in video %}
-                    <noscript><div class="hidden"></noscript>
-                    <div class="video-container mb-70px">
-                        <iframe width="760" height="427" class="frame-scale-with-grid" src="{{ item.video }}?wmode=transparent&amp;rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <noscript></div></noscript><!-- /hidden-->
-                {% endfor %}
-
-            </ul>
-        </section>
-    </div>
-{% endif %}

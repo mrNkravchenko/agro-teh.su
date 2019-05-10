@@ -159,21 +159,21 @@ class Angar
         $this->images = $images;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getAddressId()
-    {
-        return $this->address_id;
-    }
-
-    /**
-     * @param mixed $address_id
-     */
-    public function setAddressId($address_id): void
-    {
-        $this->address_id = $address_id;
-    }
+//    /**
+//     * @return mixed
+//     */
+//    public function getAddressId()
+//    {
+//        return $this->address_id;
+//    }
+//
+//    /**
+//     * @param mixed $address_id
+//     */
+//    public function setAddressId($address_id): void
+//    {
+//        $this->address_id = $address_id;
+//    }
 
     /**
      * @return mixed

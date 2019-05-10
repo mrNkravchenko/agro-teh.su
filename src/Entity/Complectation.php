@@ -47,12 +47,12 @@ class Complectation
         return $this->id;
     }
 
-    public function getTech(): ?int
+    public function getTech()
     {
         return $this->tech;
     }
 
-    public function setTech(int $tech): self
+    public function setTech($tech): self
     {
         $this->tech = $tech;
 

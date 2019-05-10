@@ -1,0 +1,68 @@
+.main-content {
+    background-image: url("/assets/img/main-background.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-color: aliceblue;
+}
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right top, #fef9ff, #15427c);
+    z-index: 1049;
+    will-change: transform;
+}
+
+#preload-img {
+    animation: logo 15s linear infinite;
+}
+img {
+    opacity: 1;
+    transition: opacity .3s;
+}
+
+@keyframes logo {
+    from { transform: scale(1) }
+    to { transform: scale(3) }
+}
+
+.more-info {
+    background: rgba(153, 153, 153, 0.5);
+    top: 0;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    position: absolute;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.more-info:hover {
+    opacity: 100;
+    filter: alpha(opacity=10000);
+}
+
+.more-info__center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.line-height-18 {
+    line-height: 1.8em!important;
+}

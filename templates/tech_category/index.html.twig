@@ -1,20 +1,49 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello {{ controller_name }}!{% endblock %}
+{% block title %}TechCategory index{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <h1>TechCategory index</h1>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Title</th>
+                <th>Url</th>
+                <th>Small_image</th>
+                <th>Side_bar_image</th>
+                <th>Content</th>
+                <th>Created</th>
+                <th>Updated</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tech_category in tech_categories %}
+            <tr>
+                <td>{{ tech_category.id }}</td>
+                <td>{{ tech_category.name }}</td>
+                <td>{{ tech_category.title }}</td>
+                <td>{{ tech_category.url }}</td>
+                <td>{{ tech_category.smallImage }}</td>
+                <td>{{ tech_category.sideBarImage }}</td>
+                <td>{{ tech_category.content }}</td>
+                <td>{{ tech_category.created ? tech_category.created|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ tech_category.updated ? tech_category.updated|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('tech_category_show', {'id': tech_category.id}) }}">show</a>
+                    <a href="{{ path('tech_category_edit', {'id': tech_category.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'src/Controller/TechCategoryController.php'|file_link(0) }}">src/Controller/TechCategoryController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'templates/tech_category/index.html.twig'|file_link(0) }}">templates/tech_category/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <a href="{{ path('tech_category_new') }}">Create new</a>
 {% endblock %}

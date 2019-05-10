@@ -26,8 +26,8 @@
                 <td>{{ angar.width }}</td>
                 <td>{{ angar.length }}</td>
                 <td>{{ angar.square }}</td>
-                <td>{{ angar.costumer }}</td>
-                <td>{{ angar.addressId }}</td>
+                <td>{{ angar.costumer.getTitle }}</td>
+                <td>{{ angar.address.getFullAddress }}</td>
                 <td>{{ angar.created ? angar.created|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ angar.updated ? angar.updated|date('Y-m-d H:i:s') : '' }}</td>
                 <td>

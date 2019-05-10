@@ -6,3 +6,4 @@ twig:
         tech_serv: '@App\Repository\TechRepository'
         tech_category_serv: '@App\Repository\TechCategoryRepository'
         angar_category_serv: '@App\Repository\AngarCategoryRepository'
+        articles_serv: '@App\Repository\ArticlesRepository'

@@ -23,6 +23,9 @@
             <div class="hangars__type h2 alert-info info-box">
 
                     {{ angar.getCategory.getName }}
+                {% if is_granted("ROLE_ADMIN") %}
+                    <a href="{{ path('angar_edit', {'id':angar.getId()}) }}" class="btn btn-primary pull-right margin-left-medium" role="button">Редактировать</a>
+                {% endif %}
                 <a href="{{ path('angar_show_all') }}" class="btn btn-primary pull-right" role="button">Все ангары</a>
 
             </div>
@@ -90,10 +93,12 @@
                     <img src="{{ items.path }}{{ items.name_md5 }}" alt="..." class="img-responsive">
                 </div>#}
 
-                {% if items.getFirst() %}
-                    <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
-                {% else %}
-                    <a href="{{ path('angar_image_set_first', {'id' : items.getId()}) }}"><span class="glyphicon glyphicon-unchecked" aria-hidden="true"></span></a>
+                {% if is_granted("ROLE_ADMIN") %}
+                    {% if items.getFirst() %}
+                        <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+                    {% else %}
+                        <a href="{{ path('angar_image_set_first', {'id' : items.getId()}) }}"><span class="glyphicon glyphicon-unchecked" aria-hidden="true"></span></a>
+                    {% endif %}
                 {% endif %}
             </div>
         {% endfor %}

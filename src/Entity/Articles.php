@@ -31,6 +31,9 @@ class Articles
      */
     private $image;
 
+    private $image_bin;
+
+
     /**
      * @ORM\Column(type="string", length=255)
      */
@@ -80,12 +83,12 @@ class Articles
         return $this;
     }
 
-    public function getImage(): ?array
+    public function getImage(): ?string
     {
         return $this->image;
     }
 
-    public function setImage(array $image): self
+    public function setImage(string $image): self
     {
         $this->image = $image;
 
@@ -142,5 +145,21 @@ class Articles
     public function setContent($content): void
     {
         $this->content = $content;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImageBin()
+    {
+        return $this->image_bin;
+    }
+
+    /**
+     * @param mixed $image_bin
+     */
+    public function setImageBin($image_bin): void
+    {
+        $this->image_bin = $image_bin;
     }
 }

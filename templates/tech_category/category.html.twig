@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% set bodyClass = 'selhoztehnika ' ~ category.url %}
+
+{% block h1 %}
+    <h2 class="text-center bg-success text-white line-height-18 my-3">
+        {{ h1 }}
+    </h2>
+{% endblock %}
+
+{% block content %}
+
+    <div class="row px-2">
+        {% for tech in techs_of_category %}
+            <div class="col-md-4 pt-3">
+                <!--To do: Add width in ccs or use row and col!-->
+                <div class="card">
+                    <div class="more-info">
+                        <div class="more-info__center">
+                            <a class="btn btn-dark" href="{{ path('selhoztehnika_show', {'url' : tech.url}) }}">
+                                <span> Подробнее</span>
+                            </a>
+                        </div>
+                    </div>
+                    <img src="{{ asset(tech.smallImage) }}" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ tech.name }}</h5>
+                        {#<p class="card-text text-justify">
+                            {{ category.content|length > 70 ? category.content|slice(0,70) ~ '...' : category.content }}
+                        </p>#}
+                        {#<a href="{{ path('category', {'url' : category.url}) }}" class="btn btn-primary">Посмотреть</a>#}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+
+    </div>
+
+    <div class="callback p-4 my-4 text-justify">
+        {{ category.content | raw }}
+    </div>
+{% endblock %}
+
+{#
+{% for tech in techs %}
+<div class="info-box tight no-border shadow clearfix mb-30px">
+    <div class="width-250px image-left adapted-max-767px remove-bottom">
+        <img src="/{{ tech.getSmallImage() }}" alt="{{ tech.getName }}" class="scale-with-grid">
+    </div>
+    <div class="offset-right-10px">
+        <p class="group_title mb-20px">
+            <a href="{{ path('selhoztehnika_show', {'url' : tech.getUrl }) }}">
+                {{ tech.getName }}
+            </a></p>
+        <p class="small-font-size mb-10px">
+            {{ tech.getShortDescription }}
+        </p>
+        <a href="{{ path('selhoztehnika_show', {'url' : tech.getUrl }) }}" class="link-sm colored-text-2">
+            далее...
+            <span></span></a>
+    </div>
+</div>
+{% endfor %}
+
+{{ content | raw }}#}

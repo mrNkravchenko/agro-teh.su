@@ -1,19 +1,29 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
-@import "carousel.css";
-@import "foto.css";
-@import "lenta.css";
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
 
-@import "mng.css";
+/*Slick slider css*/
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+/*@import "carousel.css";*/
+/*@import "foto.css";*/
+/*@import "lenta.css";*/
+
+/*@import "mng.css";*/
 
 /*@import "setka.css";*/
-@import "shrift.css";
-@import "shrifty-google.css";
-@import "zvonok.css";
+/*@import "shrift.css";*/
+/*@import "shrifty-google.css";*/
+/*@import "zvonok.css";*/
 
 @import "~flexslider/flexslider.css";
 
 @import "jquery.fancybox.css";
 @import "hangar.css";
 
-@import "osnova.css";
-@import "maket.css";
+/*@import "osnova.css";*/
+/*@import "maket.css";*/
+
+@import "page/home.css";
+@import "page/tech/view.css";
+@import "base.css";

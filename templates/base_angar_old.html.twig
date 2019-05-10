@@ -1,0 +1,332 @@
+{% extends 'layout.html.twig' %}
+{% block main %}
+    <section id="main"><!-- Средний блок (все, что между шапкой и подвалом) -->
+
+        <section id="page-title"><!-- Заголовок страницы -->
+
+            <div class="grid-bg">
+                <div class="container"><!-- 1080 px -->
+
+                    <div class="full-width columns">
+
+                        <ul class="phone-line hide clearfix">
+
+                            <!--
+                            <img src="_/i/icon.png"  width="32" height="32" class="ic" alt="">
+                            -->
+                            +7 (928) 212-22-19
+                            <!--
+                                (863) 438-74-87, 438-80-74
+                            -->
+
+                        </ul>
+
+                        <h1>{% block h1 %}{% endblock %}</h1>
+
+                    </div><!-- /full-width columns -->
+
+                </div><!-- /container 1080px -->
+            </div><!-- /grid-bg -->
+
+        </section><!-- /Заголовок страницы -->
+
+        <section id="page-content" class="sidebar-layout"><!-- Содержимое страницы -->
+
+            <div class="container"><!-- 1080 px -->
+                {#<div class="full-width columns">
+
+                </div>#}
+
+
+                <div class="columns-wrapper sb-right"><!-- Макет с боковой колонкой справа -->
+
+                    <!-- Основной контент страницы (левый блок) -->
+                    <section id="main-content" class="three-fourths columns page-left-col"><!-- 840 px -->
+                        <div class="full-width columns">
+                            {% block mainSlider %}{% endblock %}
+
+
+                            {% block content %}{% endblock %}
+
+                            <!----------------------------------------------------------------------------------------------------------------------------------------------->
+
+                            <div class="clear mb-70px"></div>
+
+                            <div class="full-width columns">
+                                <div class="info-box light gradient no-border bx_shadow">
+                                    <p class="psevdo_h2 text-on-centre mb-5px">Обратный звонок</p>
+                                    <p class="text-on-centre mb-25px">в течении 5 минут - работаем&nbsp;с&nbsp;8-00&nbsp;до&nbsp;17-00</p>
+
+                                    <!-- Форма -->
+                                    <form method="post" id="comment-form" class="form">
+                                        <div>
+                                            <input name="tlfn" type="text" maxlength="18" value="" placeholder="Номер телефона"
+                                                   pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" required/>
+                                        </div>
+                                        <div>
+                                    <textarea name="message" maxlength="100" placeholder="Что интересует?"
+                                              required></textarea>
+                                        </div>
+
+                                        <div class="fantome">
+                                            <input name="your-name" type="text" value="" id="your-name"
+                                                   placeholder="Контактное лицо"/>
+                                        </div>
+
+                                        <div class="fantome">
+                                            <input id="your-city" name="your-city" type="text" value="" placeholder="Город"/>
+                                        </div>
+
+                                        <div id="submit-button">
+                                            <input name="submit" type="submit" value="Отправить"
+                                                   class="button large colored mb-25px"
+                                                   onclick="document.getElementById('your-city').value = 'TGN';">
+                                        </div>
+
+                                    </form>
+                                    <!-- /Форма -->
+
+                                    <!-- Оповещение формы -->
+                                    <?=(!empty($message))? ''.$message.'': ''?>
+                                    <!-- /Оповещение формы -->
+
+                                </div>
+                            </div><!-- /full-width columns -->
+
+                    </section><!-- /840 px -->
+                    <!-- /Основной контент страницы (левый блок) -->
+
+                    <!-- Боковая колонка (правая) -->
+                    <aside id="sidebar" class="one-fourth columns page-right-col">
+                        {% for category in angar_category_serv.findAll() %}
+                            <div class="widget remove-bottom" data-smallscreen="no">
+                                <a href="{{ path('angar_category_show', {'url': category.url }) }}" title="{{ category.name }}">
+                                    <img src="/{{ category.smallImage }}" alt="{{ category.name }}" class="sb_img scale-with-grid remove-bottom" width="220" height="95">
+                                </a>
+                            </div>
+
+                            <!-- Меню в боковой колонке -->
+                            <div class="widget separator mb-50px" data-smallscreen="no">
+                                <!-- показывать ли на мобильных устройствах: "yes" или "no" -->
+                                <ul class="side-menu large-font-size rc">
+                                    <li><a href="{{ path('angar_category_show', {'url' : category.url}) }}">
+                                            <span>{{ category.name }}</span>
+                                        </a></li>
+                                    {#{% for tech in tech_serv.findBy({category: {
+                                        'id': category.id
+                                    } }) %}
+                                        <li>
+                                            <a href="{{ path('selhoztehnika_show', {'url': tech.url}) }}">
+                                                {{ tech.shortName }}
+                                            </a>
+                                        </li>
+
+                                    {% endfor %}#}
+                                </ul>
+                            </div>
+                            <!--  ----------------------------------------------------------------------------------------------------------  -->
+                        {% endfor %}
+
+                        <div class="widget" data-smallscreen="no">
+                            <a href="{{ path('angary') }}">
+                                <img src="{{ asset('assets/img/content/_sb/angary.jpg') }}" alt="" class="sb_img scale-with-grid mb-70px">
+                            </a>
+                        </div>
+
+                        {#<div class="widget" data-smallscreen="no">
+                            <a href="{{ path('selhoztehnika_show', {'url' : 'sistema-parallelnogo-vozhdeniya-agronavigator'}) }}">
+                                <img src="{{ asset('assets/img/content/_sb/wm.jpg') }}" alt="" class="sb_img scale-with-grid mb-70px">
+                            </a>
+                        </div>
+
+                        <div class="widget" data-smallscreen="no">
+                            <a href="{{ path('category', {'url' : 'rasprodazha-selhoztehniki'}) }}">
+                                <img src="{{ asset('assets/img/content/_sb/rasprodazha-selhoztehniki.jpg') }}" alt="" class="sb_img scale-with-grid mb-70px">
+                            </a>
+                        </div>
+
+
+                        <a href="{{ path('articles') }}">
+                            <img src="{{ asset('assets/img/content/agronomu/agronom.jpg') }}" alt="" class="sb_img scale-with-grid mb-80px">
+                        </a>#}
+
+                        <!--noindex-->
+
+                        <div class="widget mb-50px" data-smallscreen="no">
+
+                            <section class="carousel-container testimonials-holder">
+
+                                <div class="carousel-frame">
+
+                                    <ul style="width: 960px; height: auto; left: -720px; transition: left 0.3s ease-in-out 0s;"
+                                        class="testimonials-carousel clearfix carousel-slider initiated" data-autoplay="5000"
+                                        data-circular="yes">
+
+                                        <li class="carousel-slide" style="width: 220px;">
+                                            <a href="{{ path('angary') }}">
+                                                <img src="{{ asset('assets/img/content/angary/angary-zernohranilishha-ovoshhehranilishha-sklady.jpg') }}" alt=""
+                                                     class="sb_img scale-with-grid mb-5px">
+                                                <p class="small-font-size black remove-bottom">Зернохранилища, овощехранилища,
+                                                    склады.</p>
+                                            </a>
+                                        </li>
+                                        <li class="carousel-slide" style="width: 220px;">
+                                            <a href="{{ path('angary') }}">
+                                                <img src="{{ asset('assets/img/content/angary/angary-aviatsionnye.jpg') }}" alt=""
+                                                     class="sb_img scale-with-grid mb-5px">
+                                                <p class="small-font-size black remove-bottom">Ангары авиационные.</p>
+                                            </a>
+                                        </li>
+                                        <li class="carousel-slide" style="width: 220px;">
+                                            <a href="{{ path('angary') }}">
+                                                <img src="{{ asset('assets/img/content/angary/angary-svinarniki-korovniki-ptichniki.jpg') }}" alt=""
+                                                     class="sb_img scale-with-grid mb-5px">
+                                                <p class="small-font-size black remove-bottom">Свинарники, коровники, птичники.</p>
+                                            </a>
+                                        </li>
+                                        <li class="carousel-slide" style="width: 220px;">
+                                            <a href="{{ path('angary') }}">
+                                                <img src="{{ asset('assets/img/content/angary/beskarkasnye-arochnye-navesy.jpg') }}" alt=""
+                                                     class="sb_img scale-with-grid mb-5px">
+                                                <p class="small-font-size black remove-bottom">Бескаркасные арочные навесы - М1.</p>
+                                            </a>
+                                        </li>
+                                        <li class="carousel-slide" style="width: 220px;">
+                                            <a href="{{ path('angary') }}">
+                                                <img src="{{ asset('assets/img/content/angary/beskarkasnye-metallicheskie-navesy-dvojnye.jpg') }}" alt=""
+                                                     class="sb_img scale-with-grid mb-5px">
+                                                <p class="small-font-size black remove-bottom">Бескаркасные металлические навесы
+                                                    (двойные) - М2.</p>
+                                            </a>
+                                        </li>
+                                        <li class="carousel-slide" style="width: 220px;">
+                                            <a href="{{ path('angary') }}">
+                                                <img src="{{ asset('assets/img/content/angary/beskarkasnye-arochnye-navesy-fundament-tortsy.jpg') }}" alt=""
+                                                     class="sb_img scale-with-grid mb-5px">
+                                                <p class="small-font-size black remove-bottom">Бескаркасные арочные навесы (фундамент,
+                                                    торцы) - М3.</p>
+                                            </a>
+                                        </li>
+                                        <li class="carousel-slide" style="width: 220px;">
+                                            <a href="{{ path('angary') }}">
+                                                <img src="{{ asset('assets/img/content/angary/tentovye-angary-universalnogo-tipa.jpg') }}" alt=""
+                                                     class="sb_img scale-with-grid mb-5px">
+                                                <p class="small-font-size black remove-bottom">Тентовые ангары универсального типа.</p>
+                                            </a>
+                                        </li>
+                                        <li class="carousel-slide" style="width: 220px;">
+                                            <a href="{{ path('angary') }}">
+                                                <img src="{{ asset('assets/img/content/angary/tentovye-angary-dlya-maloj-aviatsii.jpg') }}" alt=""
+                                                     class="sb_img scale-with-grid mb-5px">
+                                                <p class="small-font-size black remove-bottom">Тентовые ангары для малой авиации.</p>
+                                            </a>
+                                        </li>
+                                        <li class="carousel-slide" style="width: 220px;">
+                                            <a href="{{ path('angary') }}">
+                                                <img src="{{ asset('assets/img/content/angary/tentovye-angary-svinarniki-korovniki.jpg') }}" alt=""
+                                                     class="sb_img scale-with-grid mb-5px">
+                                                <p class="small-font-size black remove-bottom">Тентовые ангары - свинарники,
+                                                    коровники.</p>
+                                            </a>
+                                        </li>
+                                        <li class="carousel-slide" style="width: 220px;">
+                                            <a href="{{ path('angary') }}">
+                                                <img src="{{ asset('assets/img/content/angary/navesy-karkasno-tentovye.jpg') }}" alt=""
+                                                     class="sb_img scale-with-grid mb-5px">
+                                                <p class="small-font-size black remove-bottom">Навесы каркасно-тентовые.</p>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+
+                                </div>
+
+                            </section>
+
+                        </div>
+
+                        <!--/noindex-->
+
+                        {#<div class="widget" data-smallscreen="no">
+                            <a href="{{ path('selhoztehnika_show', {'url': 'sistema-parallelnogo-vozhdeniya-agronavigator'}) }}">
+                                <img src="{{ asset('assets/img/content/_sb/masha.jpg') }}" alt="" class="sb_img scale-with-grid">
+                            </a>
+                        </div>#}
+
+                    </aside>
+                    <!-- /Боковая колонка -->
+
+                </div><!-- /Макет с боковой колонкой справа -->
+
+            </div><!-- /1080 px -->
+
+            <div class="stripe bottom"><!-- Страйп (фоновая полоса) -->
+                <div class="container"><!-- 1080 px -->
+
+                    <!-- Функциональные тематические блоки с иконкой слева(средний размер) -->
+                    <section class="feature-boxes medium-col-space left-icon-box medium-icon">
+
+                        <div class="row">
+
+                            <div class="one-third columns">
+                                <article>
+                                    <i class="fa fa-flag fa-fw colored-text-1"></i>
+                                    <div>
+                                        <p class="small-font-size"><a href="{{ path('app_home_show', {'slug' : 'about'}) }}"
+                                                                      class="middle-font-size black">О компании</a><br/>(сферы
+                                            деятельности)
+                                        </p>
+                                    </div>
+                                </article>
+                            </div>
+
+                            <div class="one-third columns">
+                                <article>
+                                    <i class="fa fa-home fa-fw colored-text-1"></i>
+                                    <div>
+                                        <p class="small-font-size"><a href="{{ path('app_home_show', {'slug' : 'contacts'}) }}" class="middle-font-size black">Наши
+                                                координаты</a><br/>(точки продаж)
+                                        </p>
+                                    </div>
+                                </article>
+                            </div>
+
+                            <div class="one-third columns">
+                                <article>
+                                    <i class="fa fa-mobile-phone fa-fw colored-text-1"></i>
+
+                                    <div>
+                                        <p class="remove-bottom black">+7 &nbsp;(928)&nbsp; 212 - 22 - 19<br/>
+                                            +7 &nbsp;(928)&nbsp; 778 - 92 - 80</p>
+                                    </div>
+
+                                    <!--
+                                    <div>
+                                        <p class="remove-bottom black">+7 (928) 212-2219<span class="hide">, 778-9280</span><br />
+                                        +7 (863) 438-74-87<span class="hide">, 438-80-74</span></p>
+                                    </div>
+                                     -->
+
+                                </article>
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                    <!-- /Функциональные тематические блоки -->
+
+
+                    <span class="scroll-top">
+					<span class="arrow-top"></span>
+					<span>Наверх</span>
+            </span>
+
+
+                </div><!-- /1080 px -->
+            </div><!-- /Страйп (фоновая полоса) -->
+
+        </section><!-- /Содержимое страницы -->
+
+    </section><!-- /Средний блок (все, что между шапкой и подвалом) -->
+{% endblock %}

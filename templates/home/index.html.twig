@@ -1,26 +1,119 @@
 {% extends 'base.html.twig' %}
 
+{% set bodyClass = 'homepage' %}
+
 {% block title %}Сельхозтехника в Ростовской области, производитель АГРО-ТЕХ{% endblock %}
 
+{% block preloader %}
+    <div id="preloader">
+        <img id="preload-img" src="{{ asset('assets/img/logo_footer.png') }}">
+    </div>
+{% endblock %}
 
-{% block h1 %}Сельхозтехника в Ростовской области{% endblock %}
-{% block mainSlider %}
-        <div class="row mb-70px">
-            <section class="flexslider mb-10px" data-animation="fade" data-slideshow="yes"
-                     data-direction-nav="yes">
-                <ul class="slides">
-                    {% for tech in tech_serv.findAll() %}
-                    <li>
-                        <a href="{{ path('selhoztehnika_show', {'url': tech.url}) }}">
-                            <img src="{{ tech.image }}" alt="{{ tech.name }}">
-                        </a>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </section>
+{% block slider %}
+    <!-- Slider section -->
+    <div class="row m-0">
+        <div class="col-md-12 p-0">
+            <!-- Slick slider -->
+            <!--                To do: Check all points-->
+            <div class="single-slide">
+                <div>
+                    <img src="{{ asset('assets/img/content/proizvodstvo-selhoztehniki/agregat-pochvoobrabatyvayushiy.jpg') }}" alt="">
+                </div>
+                <div>
+                    <img src="{{ asset('assets/img/content/proizvodstvo-selhoztehniki/borona-pruzhinnaya.jpg') }}" alt="">
+                </div>
+                <div>
+                    <img src="{{ asset('assets/img/content/proizvodstvo-selhoztehniki/opryskivatel-pritsepnoi-op-22.jpg') }}" alt="">
+                </div>
+                <div>
+                    <img src="{{ asset('assets/img/content/proizvodstvo-selhoztehniki/razbrasyvateli-udobreniy.jpg') }}" alt="">
+                </div>
+            </div>
         </div>
-    {% endblock %}
+    </div>
+{% endblock %}
+
+
+
+{% block h1 %}
+    <h2 class="text-center bg-primary text-white line-height-18 my-3">
+        Наша Продукция
+    </h2>
+{% endblock %}
+
 {% block content %}
+    <!-- Products section -->
+    <div class="row m-0">
+        <div class="col-md-6 p-0 pb-5">
+            <h2 class="text-center bg-white sticky-top my-2">
+                <a href="{{ path('angary') }}">Ангары</a>
+            </h2>
+
+            <div class="row m-0">
+                {% for category in angar_category_serv.findAll() %}
+                    <div class="col-xl-6 pt-3">
+                        <!--To do: Add width in ccs or use row and col!-->
+                        <div class="card">
+                            <div class="more-info">
+                                <div class="more-info__center">
+                                    <a class="btn btn-dark" href="{{ path('angar_category_show', {'url' : category.url}) }}">
+                                        <span> Подробнее</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <img src="{{ asset(category.image) }}" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <h4 class="card-title">{{ category.name }}</h4>
+                                <p class="card-text">
+                                    {{ category.content }}
+                                </p>
+                                {#<a href="" class="btn btn-primary">Посмотреть</a>#}
+                                {#<a class="btn btn-primary" href="{{ path('angar_category_show', {'url' : category.url}) }}">Посмотреть</a>#}
+                            </div>
+                        </div>
+                    </div>
+
+                {% endfor %}
+
+            </div>
+        </div>
+
+        <div class="col-md-6 p-0 pb-5">
+            <h2 class="text-center bg-white sticky-top my-2">
+                <a href="{{ path('selhoztehnika') }}">Сельхозтехника</a>
+            </h2>
+
+            <div class="row m-0">
+
+                {% for category in tech_category_serv.findAll() %}
+                    <div class="col-xl-6 pt-3">
+                        <!--To do: Add width in ccs or use row and col!-->
+                        <div class="card">
+                            <div class="more-info">
+                                <div class="more-info__center">
+                                    <a class="btn btn-dark" href="{{ path('category', {'url' : category.url}) }}">
+                                        <span> Подробнее</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <img src="{{ asset(category.sideBarImage) }}" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ category.name }}</h5>
+                                {#<p class="card-text text-justify">
+                                    {{ category.content|length > 70 ? category.content|slice(0,70) ~ '...' : category.content }}
+                                </p>#}
+                                {#<a href="{{ path('category', {'url' : category.url}) }}" class="btn btn-primary">Посмотреть</a>#}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{#{% block content %}
     <h2 class="mb-40px">Сельскохозяйственная техника</h2>
 
     <blockquote class="mb-35px">
@@ -444,6 +537,6 @@
     </div>
 
 </div><!-- /full-width columns -->
-    {% endblock %}
+    {% endblock %}#}
 
 

@@ -10,20 +10,26 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * @Route("/angary")
- */
+
 class AngarController extends AbstractController
 {
     /**
-     * @Route("", name="angary", methods="GET")
+     * @Route("/manager/angary", name="angar_index", methods="GET")
      */
     public function index(AngarRepository $angarRepository): Response
+    {
+        return $this->render('angar/index.html.twig', ['angars' => $angarRepository->findAll()]);
+    }
+
+    /**
+     * @Route("/angary", name="angary", methods="GET")
+     */
+    public function indexAll(AngarRepository $angarRepository): Response
     {
         return $this->render('angar/types/angary.html.twig');
     }
     /**
-     * @Route("/postroennue", name="angar_show_all")
+     * @Route("/angary/postroennue", name="angar_show_all")
      */
     public function showAll(AngarRepository $angarRepository): Response
     {
@@ -32,7 +38,7 @@ class AngarController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="angar_new", methods="GET|POST")
+     * @Route("/manager/angary/new", name="angar_new", methods="GET|POST")
      */
     public function new(Request $request): Response
     {
@@ -55,7 +61,7 @@ class AngarController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="angar_show", methods="GET", requirements={"id" = "\d+"})
+     * @Route("/angary/{id}", name="angar_show", methods="GET", requirements={"id" = "\d+"})
      */
     public function show(Angar $angar): Response
     {
@@ -63,7 +69,7 @@ class AngarController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="angar_edit", methods="GET|POST")
+     * @Route("/manager/angary/{id}/edit", name="angar_edit", methods="GET|POST")
      */
     public function edit(Request $request, Angar $angar): Response
     {
@@ -83,7 +89,7 @@ class AngarController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="angar_delete", methods="DELETE")
+     * @Route("/manager/angary/{id}", name="angar_delete", methods="DELETE")
      */
     public function delete(Request $request, Angar $angar): Response
     {

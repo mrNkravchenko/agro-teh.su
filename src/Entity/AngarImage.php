@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\AngarImageRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
@@ -48,6 +49,11 @@ class AngarImage
      * @ORM\Column(type="boolean")
      */
     private $first;
+
+    /**
+     * @Assert\Image(mimeTypes={ "image/jpg", "image/jpeg", "image/gif", "image/png" })
+     */
+    private $image;
 
     public function getId(): ?int
     {
@@ -134,6 +140,22 @@ class AngarImage
     public function setFirst($first): void
     {
         $this->first = $first;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param mixed $image
+     */
+    public function setImage($image): void
+    {
+        $this->image = $image;
     }
 
 

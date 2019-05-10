@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\GalleryImage;
 use App\Form\GalleryImageType;
 use App\Repository\GalleryImageRepository;
+use App\Service\FileUploader;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,6 +16,8 @@ class GalleryImageController extends AbstractController
 {
     /**
      * @Route("/gallery/images", name="gallery_image_index", methods="GET")
+     * @param GalleryImageRepository $galleryImageRepository
+     * @return Response
      */
     public function index(GalleryImageRepository $galleryImageRepository): Response
     {
@@ -42,17 +45,31 @@ class GalleryImageController extends AbstractController
 
     /**
      * @Route("/gallery/image/new", name="gallery_image_new", methods="GET|POST")
+     * @param Request $request
+     * @param FileUploader $fileUploader
+     * @return Response
      */
-    public function new(Request $request): Response
+    public function new(Request $request, FileUploader $fileUploader): Response
     {
+        $fileUploader->setParticularPath('gallery/');
         $galleryImage = new GalleryImage();
         $form = $this->createForm(GalleryImageType::class, $galleryImage);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($galleryImage);
-            $em->flush();
+
+            $files = $galleryImage->getImage();
+            foreach ($files as $file) {
+                $fileParams = $fileUploader->upload($file);
+                $galleryImage->setName($fileParams['name']);
+                $galleryImage->setNameMd5($fileParams['name_md5']);
+                $galleryImage->setPath('assets/img/gallery/');
+                $galleryImage->setPathThumbnail('assets/img/gallery/thumbnail');
+                $em->persist($galleryImage);
+                $em->flush();
+            }
+
 
             return $this->redirectToRoute('gallery_image_index');
         }

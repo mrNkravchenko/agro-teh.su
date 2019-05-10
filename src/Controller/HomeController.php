@@ -7,6 +7,7 @@ use function dump;
 use function exif_imagetype;
 use function file_exists;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use function var_dump;
 
@@ -21,7 +22,7 @@ class HomeController extends AbstractController
         $techsCategory = $this->getDoctrine()->getRepository('App:TechCategory')->findAll();
 
         return $this->render('home/index.html.twig', [
-            'title' => 'Сельхозтехника в Ростовской области, производитель АГРО-ТЕХ',
+            'title' => 'Сельхозтехника в Ростовской области, бескаркасные ангары, производитель АГРО-ТЕХ',
             'techs' => $techs,
             'techsCategory' => $techsCategory,
 
@@ -29,7 +30,7 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/{slug}", name="app_home_show", requirements={"slug"="voprosy-po-stroitelstvu-angarov-selhoztehnike|about|callback|contacts|politika-konfidencialnosti"})
+     * @Route("/{slug}", name="app_home_show", requirements={"slug"="voprosy-po-stroitelstvu-angarov-selhoztehnike|about|contacts|politika-konfidencialnosti"})
      * @param $slug
      *
      * @return \Symfony\Component\HttpFoundation\Response

@@ -1,0 +1,18 @@
+body {
+  //background: red;
+}
+.page {
+  background: grey;
+}
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  height: 50px;
+  width: 50px;
+}
+.article {
+  width: 350px;
+}
+
+.articleIndex {
+  width: 200px;
+}

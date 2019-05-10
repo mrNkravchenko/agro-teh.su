@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+{#<!-- Yandex.Metrika counter -->
+<script type="text/javascript">var yaParams = {ip: "<? echo $_SERVER['REMOTE_ADDR'];?>"};</script>
+<script type="text/javascript">(function (d, w, c) {
+        (w[c] = w[c] || []).push(function () {
+            try {
+                w.yaCounter47365036 = new Ya.Metrika2({
+                    id: 47365036,
+                    params: window.yaParams,
+                    clickmap: true,
+                    trackLinks: true,
+                    accurateTrackBounce: true,
+                    webvisor: true,
+                    ut: "noindex"
+                });
+            } catch (e) {
+            }
+        });
+        var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () {
+            n.parentNode.insertBefore(s, n);
+        };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/tag.js";
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else {
+            f();
+        }
+    })(document, window, "yandex_metrika_callbacks2"); </script>
+<noscript>
+    <div><img src="https://mc.yandex.ru/watch/47365036?ut=noindex" style="position:absolute; left:-9999px;" alt=""/>
+    </div>
+</noscript>
+<!-- /Yandex.Metrika counter -->#}
+
+<!--[if IE 8 ]>
+<html class="ie ie8 no-js" lang="ru"> <![endif]-->
+<!--[if IE 9 ]>
+<html class="ie ie9 no-js" lang="ru"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html class="no-js" lang="ru"><!--<![endif]-->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="max-age=43200, must-revalidate">
+    <meta http-equiv="Cache-Control" content="max-age=43200, proxy-revalidate">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="shortcut icon" href="{{ asset('assets/img/favicon.ico') }}" type="image/x-icon">
+    <title>{% block title %}{% endblock %}</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- CSS -->
+    {% block stylesheets %}
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+    {% endblock %}
+
+
+    <!-- Java Script -->
+    <script>document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, 'js');</script>
+    <!--[if lt IE 9]>
+    <script src="{{ asset('assets/js/html5shiv.js') }}"></script><![endif]-->
+
+</head>
+
+<body>
+{% set techs = tech_serv.findAll() %}
+{% set techs_category = tech_category_serv.findAll() %}
+{#{% include 'header.html.twig' with {'techs': techs, 'techs_category': techs_category}%}#}
+<header id="header"><!-- Шапка сайта -->
+
+    <div class="container-fluid"><!-- 1080 px -->
+        {% if is_granted("ROLE_ADMIN") %}
+            <div class="row">
+                <div class="col-xs-12">
+                    <nav id="navigation"><!-- Блок навигации в шапке сайта -->
+
+                        <div id="primary-nav">
+
+                            <ul id="main-menu">
+
+                                <li><a href="{{ path('address_index') }}">
+                                        <span class="uppercase">Адреса</span>
+                                    </a>
+                                </li>
+                                <li><a href="{{ path('angar_category_index') }}">
+                                        <span class="uppercase">Категории Ангаров</span>
+                                    </a>
+                                </li>
+                                <li><a href="{{ path('angar_index') }}">
+                                        <span class="uppercase">Ангары</span>
+                                    </a>
+                                </li>
+                                <li><a href="{{ path('angar_image_index') }}">
+                                        <span class="uppercase">Изображения ангаров</span>
+                                    </a>
+                                </li>
+                                <li><a href="{{ path('costumer_index') }}">
+                                        <span class="uppercase">Заказчики ангаров</span>
+                                    </a>
+                                </li>
+                                <li><a href="{{ path('gallery_image_index') }}">
+                                        <span class="uppercase">Изображения галереи</span>
+                                    </a>
+                                </li>
+                                <li><a href="{{ path('selhoztehnika_index') }}">
+                                        <span class="uppercase">СХ/Техника</span>
+                                    </a>
+                                </li>
+                                <li><a href="{{ path('tech_category_index') }}">
+                                        <span class="uppercase">Категории СХ/Техники</span>
+                                    </a>
+                                </li>
+                                <li><a href="{{ path('complectation_index') }}">
+                                        <span class="uppercase">Комплектации</span>
+                                    </a>
+                                </li>
+                                <li><a href="{{ path('articles_index') }}">
+                                        <span class="uppercase">Статьи</span>
+                                    </a>
+                                </li>
+
+                            </ul><!-- /main-menu -->
+
+                        </div><!-- /primary-nav -->
+
+                    </nav><!-- /Блок навигации в шапке сайта -->
+                </div>
+            </div>
+        {% endif %}
+
+        <div class="row">
+
+            <div class="col-lg-2 col-md-2" id="logo"><!-- Лого -->
+                <a href="/"><img src="{{ asset('assets/img/logo.png') }}" alt="АГРО-ТЕХ"></a>
+            </div>
+            <div class="col-lg-10 col-md-10">
+                <nav id="navigation"><!-- Блок навигации в шапке сайта -->
+
+                    <div id="primary-nav">
+
+                        <ul id="main-menu">
+
+                            <li><a href="{{ path('app_home') }}">
+                                    <span class="uppercase">Главная</span>
+                                </a>
+                            </li>
+
+                            <li class="hides"><a
+                                        href="{{ path('app_home_show', {'slug': 'about'}) }}">
+                                    <span class="uppercase">О компании</span>
+                                </a>
+                            </li>
+
+                            <li class="sf-mega-parent cursor_text">
+                                <a href="{{ path('selhoztehnika') }}">
+                                    <span class="uppercase cursor_text">Сельхозтехника</span>
+                                </a>
+                                <div class="sf-mega">
+                                    <div class="sf-mega-table">
+                                        {% for category in techs_category %}
+                                            {#{{ dump() }}#}
+                                            <div class="sf-mega-section width-210px">
+                                                <p class="pmenu colored-text-1 mb-15px">{{ category.name }}</p>
+                                                <ul class="arrow-list">
+
+                                                    {% for tech in tech_serv.findBy({category: {
+                                                        'id': category.id
+                                                    } }) %}
+                                                        <li>
+                                                            <a href="{{ path('selhoztehnika_show', {'url': tech.url}) }}">
+                                                                {{ tech.shortName }}
+                                                            </a>
+                                                        </li>
+                                                    {% endfor %}
+
+                                                </ul>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+
+                                </div>
+                            </li>
+
+                            <li class="sf-mega-parent cursor_text">
+                                <a href="{{ path('angary') }}">
+                                    <span class="uppercase">Ангары</span>
+                                </a>
+                                <div class="sf-mega">
+                                    <div class="sf-mega-table">
+                                        <div class="sf-mega-section width-210px">
+                                            <a href="{{ path('angar_show_all') }}">
+                                                <p class="pmenu colored-text-1 mb-15px">Построенные ангары</p>
+                                            </a>
+                                        </div>
+                                        <div class="sf-mega-section width-210px">
+                                            <a href="{{ path('gallery') }}">
+                                                <p class="pmenu colored-text-1 mb-15px">Галлерея Рабочих моментов</p>
+                                            </a>
+                                        </div>
+                                        <div class="sf-mega-section width-210px">
+                                            <a href="{{ path('angar_category_index') }}">
+                                                <p class="pmenu colored-text-1 mb-15px">Категории Ангаров</p>
+                                            </a>
+                                            {% for category in angar_category_serv.findAll() %}
+                                                {#{{ dump(category) }}#}
+
+
+                                                <ul class="arrow-list">
+                                                    <li>
+                                                        <a href="{{ path('angar_category_show', {'url' : category.url}) }}">{{ category.name }}</a>
+                                                    </li>
+
+
+                                                </ul>
+                                            {% endfor %}
+                                        </div>
+
+                                    </div>
+                                    {#<ul class="arrow-list">
+                                        <li>
+                                            <a href="{{ path('angar_show_all') }}">Построенные Ангары</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('gallery') }}">
+                                                Галлерея Рабочих моментов
+                                            </a>
+                                        </li>
+                                    </ul>#}
+                                </div>
+                            </li>
+
+                            <li><a href="{{ path('app_home_show', {'slug' : 'contacts'}) }}">
+                                    <span class="uppercase">Контакты</span>
+                                </a>
+                            </li>
+
+
+                            <li class="hidden"><a
+                                        href="{{ path('app_home_show', {'slug' : 'voprosy-po-stroitelstvu-angarov-selhoztehnike'}) }}">
+                                    <span class="uppercase">Обратный звонок</span>
+                                </a>
+                            </li>
+
+                        </ul><!-- /main-menu -->
+
+                    </div><!-- /primary-nav -->
+
+                </nav><!-- /Блок навигации в шапке сайта -->
+            </div>
+
+
+
+        </div><!-- /full-width columns -->
+
+    </div><!-- /container 1080px -->
+
+</header><!-- /Шапка сайта -->
+{% block main %}
+{% endblock %}
+
+{#<footer id="footer" class="blank"></footer><!-- Подвал -->
+
+<footer id="footer-bottom">
+
+    <div class="container-fluid"><!-- 1080 px -->
+        <div class="row">
+            <div class="col-lg-9 col-md-9">
+
+                <ul class="footer-nav clearfix"><!-- Меню в подвале -->
+                    <li><a href="{{ path('angary') }}">Ангары</a></li>
+                    {% for category in tech_category_serv.findAll() %}
+                        <li><a href="{{ path('category', {'url' : category.url}) }}">{{ category.name }}</a></li>
+                    {% endfor %}
+                </ul>
+                <ul class="links clearfix align-left">
+                    <li>
+                        Данный сайт не является публичной офертой и носит исключительно информационный характер
+                    </li>
+                </ul>
+                <!--<div class="row clearfix">
+                    <p class="text-on-centre small-font-size links">
+
+                    </p>
+                </div>-->
+
+            </div>
+
+            <div class="col-lg-3 col-md-3">
+                <ul class="links clearfix">
+                    <li>© 2008-2018 ООО "АГРО-ТЕХ"</li>
+                    <li><a href="{{ path('app_home_show', {'slug' : 'politika-konfidencialnosti'}) }}">Политика конфиденциальности</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+    </div><!-- /1080 px -->
+
+</footer><!-- /Подвал -->#}
+{#{% include 'footer.html.twig' %}#}
+{% block javascripts %}
+    <!-- Яндекс карты АПИ -->
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script src="{{ asset('build/app.js') }}"></script>
+
+{% endblock %}
+
+
+
+
+
+
+<div id="zvonok" class="hidden">
+    <img src="{{ asset('assets/img/line.png') }}" alt=""/>
+    <div id="zvonok_inner" class="">
+        <p class="psevdo_h2 mb-15px">
+            Нужна помощь?
+        </p>
+        <p class="mb-25px">
+            Оставьте контактный телефон.<br/>Позвоним в течении 5 минут.
+        </p>
+        <p>
+            <a href="{{ path('app_home_show', {'slug' : 'callback'}) }}" class="button large colored">Звоним?</a>
+        </p>
+    </div>
+</div>
+
+</body>
+</html>

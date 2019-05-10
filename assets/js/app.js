@@ -12,19 +12,170 @@ require('../css/app.css');
 
 // const jQuery = require('jquery');
 const $ = require('jquery');
+const _ = require('lodash');
+const Swal = require('sweetalert2');
+require('./helper');
+require('bootstrap');
+require('@fortawesome/fontawesome-free/js/all.min');
+require('slick-carousel');
 require('flexslider');
-require('./jquery.carousel.min');
-require('./jquery.easing.min');
-require('./custom');
+// require('./jquery.carousel.min');
+// require('./jquery.easing.min');
+// require('./custom');
 require('jquery.scrollto');
 require ('jquery.kladr/jquery.kladr.min');
 require('./mapGenerator');
-require('bootstrap');
+require('./sendEmail');
 
 
 import '@fancyapps/fancybox';
 
+//SLICK SLIDER
 
+$('.single-slide').slick(
+    {
+        //Large screen options To do: ???
+        infinite: false,
+        arrows: false,
+        dots: false,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        mobileFirst: true,
+
+        adaptiveHeight: true,
+
+        //Adaptive options To do: Change values
+        responsive: [{
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 3,
+                infinite: true
+            }
+        }, {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 2,
+                dots: true
+            }
+        }, {
+            breakpoint: 300,
+            settings: "unslick" // destroys slick
+        }]
+
+    });
+
+$('.article-slide').slick({
+    dots: false,
+    infinite: true,
+    adaptiveHeight: true,
+    draggable: true,
+    autoplay: true,
+    speed: 300,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    responsive: [
+        {
+            breakpoint: 1440,
+            settings: {
+                autoplay: true,
+                draggable: true,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: false
+            }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                autoplay: true,
+                draggable: true,
+                slidesToShow: 2,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                draggable: true,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 479,
+            settings: 'unslick'
+        }
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+    ]
+});
+
+$('.tech-image-slide').slick({
+    prevArrow: '<button type="button" class="slick-prev bg-primary">Previous</button>',
+    nextArrow: '<button type="button" class="slick-next bg-primary">Next</button>',
+    dots: true,
+    infinite: true,
+    adaptiveHeight: true,
+    draggable: true,
+    autoplay: true,
+    speed: 300,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    responsive: [
+        {
+            breakpoint: 1440,
+            settings: {
+                autoplay: true,
+                draggable: true,
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: true
+            }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                autoplay: true,
+                draggable: true,
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                draggable: true,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 479,
+            settings: 'unslick'
+        }
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+    ]
+});
+
+$('.tech-image').fancybox({
+    arrows: true,
+    buttons: [
+        // "zoom",
+        //"share",
+        // "slideShow",
+        // "fullScreen",
+        //"download",
+        // "thumbs",
+        "close"
+    ],
+});
 
 $('[data-fancybox="gallery"]').fancybox({
     // Options will go here
@@ -505,4 +656,257 @@ $('a[data-toggle="tab"]').click(function (e) {
     $(this).tab('show');
 })*/
 
+/*DELIVERY DATA*/
+
+function City(country, region, tZoneId, cityId) {
+    this.country = country;
+    this.region = region;
+    this.tZoneId = tZoneId;
+    this.cityId = cityId;
+    this.url = getUrlCode;
+    function getUrlCode() {
+        return "&RLAND=" + this.country +"&RZONE=" + this.tZoneId +"&RCODE=" + this.cityId + "&RREGIO=" + this.region;
+    }
+}
+
+function Good(length, width, height, weight, volume, price) {
+    this.length = parseFloat(length);
+    this.width = parseFloat(width);
+    this.height = parseFloat(height);
+    this.weight = weight;
+    this.volume = parseFloat(volume);
+    this.price = price;
+    this.url = getUrlCode;
+    function getUrlCode() {
+        return "&I_DELIVER=0&I_PICK_UP=1&WEIGHT=" + this.weight + "&VOLUME=" + this.volume + "&LENGTH=" + this.length*100 + "&WIDTH=" + this.width*100 + "&HEIGHT=" + this.height*100 + "&SLAND=RU&SZONE=0000006110&SCODE=610001100000&SREGIO=61&PRICE=" + this.price + "&I_HAVE_DOC=1";
+    }
+}
+
+const table = $('#good_dimentions');
+
+
+const deliveryGood = new Good(table.data('length'), table.data('width'), table.data('height'), table.data('weight'), table.data('volume'), table.data('price'));
+const deliveryCity = new City();
+
+reqestToKitBd("get_city_list");
+
+$('input[list="cityListKit"]').on('change input', function(){
+    if ($(this).val() != '') {
+        $('.send-kit').removeAttr('disabled');
+    } else {
+        $('.send-kit').prop('disabled', true);
+    }
+});
+
+$(".send-kit").on("click", function () {
+
+    reqestToKitBd("is_city", "&city=" + $('input[list="cityListKit"]').val());
+    $('.send-kit').loader('on');
+
+});
+
+
+
+
+function reqestToKitBd(functionName, functionParams) {
+    // console.log(functionParams);
+
+    let data;
+
+    if (functionParams === undefined) {
+        data = {"f": "&f=" + functionName};
+    }
+    else data = {"f": "&f=" + functionName+functionParams};
+
+    jQuery.ajax({
+        url: "/api/getTechDelivery",
+        type: "get",
+        dataType: "json",
+        data: data,
+        success: function (answer) {
+
+            handler(functionName, answer);
+
+        },
+        error: function (answer) {
+
+        }
+
+    });
+}
+
+function handler(actionName, answer) {
+    const response = JSON.parse(answer);
+
+
+    switch (actionName) {
+        case "get_city_list":
+
+
+            const cities = response['CITY'];
+
+
+            for (let key in cities) {
+
+                $("#cityListKit").append("<option value='" + cities[key].NAME + "' data-id='" + cities[key].ID + "' data-region='" + cities[key].REGION + "' data-tzone='" + cities[key].TZONEID + "' data-country='" + cities[key].COUNTRY + "' ></option>");
+
+            }
+            break;
+
+        case "is_city":
+
+            if (response !== 0) {
+
+                const city = response[0].split(":");
+                deliveryCity.country = city[0];
+                deliveryCity.region = city[1];
+                deliveryCity.tZoneId = city[2];
+                deliveryCity.cityId = city[3];
+
+                if (deliveryGood.volume != undefined) {
+                    reqestToKitBd("price_order", deliveryGood.url() + deliveryCity.url());
+                }
+
+            }
+            break;
+        case "price_order":
+            console.log(response);
+
+            $('.send-kit').loader('off');
+
+            if (response.PRICE.TOTAL > 0) {
+
+                /*changeFormField("#daysOfDelivery", response.DAYS);
+                changeFormField("#priceOfDeliveryKit", response.PRICE.TOTAL + " рублей");*/
+
+                changeTableField(".daysOfDelivery__td", response.DAYS);
+                changeTableField(".priceOfDeliveryKit__td", response.PRICE.TOTAL + " рублей");
+
+
+                // $("#daysOfDelivery").val(answer.DAYS);
+                // $("#priceOfDeliveryKit").val(answer.PRICE.TOTAL + " рублей");
+
+                console.log($(".answerKit"));
+
+                // $(".answerKit").fadeIn("slow");
+                $(".answerKit").show("slow");
+
+            }
+
+    }
+}
+
+
+/*$("#goodsList").on("change", function () {
+
+
+    var name_product = jQuery(this).val();
+
+
+    jQuery.ajax({
+        url: "/php/requestFromDb.php",
+        type: "post",
+        dataType: "json",
+        data: {"result": "param", "name_product": name_product},
+        success: function (answer) {
+
+            // console.log(answer);
+
+            deliveryGood.length = answer.length;
+            deliveryGood.width = answer.width;
+            deliveryGood.height = answer.height;
+            deliveryGood.weight = answer.weight;
+            deliveryGood.volume = answer.volume;
+            deliveryGood.price = answer.price;
+
+
+            // данные для формы
+
+            /!*changeFormField("#goodsLength", answer.length);
+            changeFormField("#goodsWidth", answer.width);
+            changeFormField("#goodsHeight", answer.height);
+            changeFormField("#goodsWeight", answer.weight);
+            changeFormField("#volumeOfGood", answer.volume);*!/
+
+            // данные для таблицы
+
+            changeTableField(".goodsLength__td", answer.length);
+            changeTableField(".goodsWidth__td", answer.width);
+            changeTableField(".goodsHeight__td", answer.height);
+            changeTableField(".goodsWeight__td", answer.weight);
+            changeTableField(".volumeOfGood__td", answer.volume);
+
+            // $(".goodsParams__table").fadeIn("slow");
+            $("div.goodsList").removeClass("full-width")
+                .addClass("one-half");
+            $(".goodsParams__table").removeClass("fantome");
+            $(".cityListKit").removeClass("fantome");
+
+            // changeFormField("#priceOfGood", answer.price);
+
+        }
+    });
+
+});*/
+
+
+function changeFormField(fieldName, value) {
+    document.querySelector(fieldName).value = value;
+    // jQuery('"' + fieldName + '"').val(value);
+}
+
+function changeTableField(fieldName, value) {
+    $(fieldName).text(value);
+    // jQuery('"' + fieldName + '"').val(value);
+}
+
+/*PRELOADER*/
+
+window.onload = function () {
+    var loader = document.getElementById("preloader");
+    if (loader) {
+        setTimeout(function () {
+
+            loader.style.display = "none";
+        }, 100)
+    }
+
+};
+
+function closeModal() {
+    document.getElementById('modal_window').style.display = "none";
+}
+
+$(document).ready(()=>{
+
+    /*SIDE MENU*/
+    $('p[data-toggle="collapse"]').on('click', function () {
+        const element = $(this);
+        const sign = element.children('svg');
+        //toggle plus minus
+        if (sign.hasClass('fa-plus')) {
+            sign
+                .removeClass('fa-plus')
+                .addClass('fa-minus');
+        } else {
+            sign
+                .removeClass('fa-minus')
+                .addClass('fa-plus');
+        }
+    });
+
+    $('[data-toggle="tooltip"]').tooltip();
+
+    const menu = $('#menu-group-1');
+
+    _.forEach(menu.find('a'), (a)=>{
+        if ($('body').hasClass($(a).data('initial'))) {
+            const parents = $(a).parents('p');
+            parents.trigger('click');
+            $(a).css({color: 'red'});
+            console.log(parents);
+        }
+    });
+
+});
 

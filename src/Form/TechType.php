@@ -17,6 +17,7 @@ use App\Repository\TechCategoryRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 
@@ -34,9 +35,9 @@ class TechType extends AbstractType
             ])
             ->add('url')
             ->add('title')
-            ->add('image')
-            ->add('small_image')
-            ->add('mng_image')
+            ->add('image_bin', FileType::class, ['label' => 'Главное Изображение', 'data_class' => null, 'required' => true])
+            ->add('small_image_bin', FileType::class, ['label' => 'Изображение в категории', 'data_class' => null, 'required' => true])
+            ->add('mng_image_bin', FileType::class, ['label' => 'Изображение в многограннике', 'data_class' => null, 'required' => true])
             ->add('name')
             ->add('short_name')
             ->add('price')

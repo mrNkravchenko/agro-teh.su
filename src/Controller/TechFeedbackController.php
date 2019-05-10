@@ -12,12 +12,14 @@ use Symfony\Component\Routing\Annotation\Route;
 use function var_dump;
 
 /**
- * @Route("/feedback/tech")
+ * @Route("/manager/feedback/tech")
  */
 class TechFeedbackController extends AbstractController
 {
     /**
      * @Route("/", name="tech_feedback_index", methods="GET")
+     * @param TechFeedbackRepository $techFeedbackRepository
+     * @return Response
      */
     public function index(TechFeedbackRepository $techFeedbackRepository): Response
     {

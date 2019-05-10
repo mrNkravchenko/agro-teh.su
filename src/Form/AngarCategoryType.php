@@ -13,6 +13,7 @@ class AngarCategoryType extends AbstractType
     {
         $builder
             ->add('name')
+            ->add('content')
             ->add('url')
             ->add('image')
             ->add('small_image')

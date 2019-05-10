@@ -22,6 +22,11 @@ class AngarCategory
     private $name;
 
     /**
+     * @ORM\Column(type="text")
+     */
+    private $content;
+
+    /**
      * @ORM\Column(type="string", length=255)
      */
     private $url;
@@ -152,5 +157,21 @@ class AngarCategory
     public function setAngars($angars): void
     {
         $this->angars = $angars;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
+
+    /**
+     * @param mixed $content
+     */
+    public function setContent($content): void
+    {
+        $this->content = $content;
     }
 }

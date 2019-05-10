@@ -1,328 +1,561 @@
-{% extends 'layout.html.twig' %}
-{% block main %}
-    <section id="main"><!-- Средний блок (все, что между шапкой и подвалом) -->
+<!doctype html>
+<html lang="ru">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Cache-Control" content="max-age=43200, must-revalidate">
+    <meta http-equiv="Cache-Control" content="max-age=43200, proxy-revalidate">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="shortcut icon" href="{{ asset('assets/img/favicon.ico') }}" type="image/x-icon">
 
-        <section id="page-title"><!-- Заголовок страницы -->
+    {% block stylesheets %}
+        {#<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">#}
+        {#<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">#}
+        <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+        {% if styles is defined %}
+            <link rel="stylesheet" href="{{ asset(styles) }}">
+        {% endif %}
+    {% endblock %}
 
-            <div class="grid-bg">
-                <div class="container-fluid"><!-- 1080 px -->
+    <title>{% block title %}{{ title is defined ? title : "АГРО-ТЕХ" }}{% endblock %}</title>
+</head>
+{% block body %}
+    <body class="{{ bodyClass is defined? bodyClass : '' }}">
+    {% block preloader %}{% endblock %}
+    {% set techs = tech_serv.findAll() %}
+    {% set techs_category = tech_category_serv.findAll() %}
+    {% set articles = articles_serv.findAll() %}
+    {% if is_granted("ROLE_ADMIN") %}
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light py-0 sticky-top">
 
-                    <div class="full-width columns">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!--                        To do: Add dropdown-->
+                    <ul class="navbar-nav mr-auto">
 
-                        <ul class="phone-line clearfix">
+                        <li class="nav-item"><a class="nav-link" href="{{ path('address_index') }}">
+                                <span class="uppercase">Адреса</span>
+                            </a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="{{ path('angar_category_index') }}">
+                                <span class="uppercase">Категории Ангаров</span>
+                            </a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="{{ path('angar_index') }}">
+                                <span class="uppercase">Ангары</span>
+                            </a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="{{ path('angar_image_index') }}">
+                                <span class="uppercase">Изображения ангаров</span>
+                            </a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="{{ path('costumer_index') }}">
+                                <span class="uppercase">Заказчики ангаров</span>
+                            </a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="{{ path('gallery_image_index') }}">
+                                <span class="uppercase">Изображения галереи</span>
+                            </a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="{{ path('selhoztehnika_index') }}">
+                                <span class="uppercase">СХ/Техника</span>
+                            </a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="{{ path('tech_category_index') }}">
+                                <span class="uppercase">Категории СХ/Техники</span>
+                            </a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="{{ path('complectation_index') }}">
+                                <span class="uppercase">Комплектации</span>
+                            </a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="{{ path('articles_index') }}">
+                                <span class="uppercase">Статьи</span>
+                            </a>
+                        </li>
 
-                            <!--
-                            <img src="_/i/icon.png"  width="32" height="32" class="ic" alt="">
-                            -->
-                            +7 (928) 212-22-19
-                            <!--
-                                (863) 438-74-87, 438-80-74
-                            -->
+                    </ul>
 
+                </div>
+            </nav>
+        </div>
+    {% endif %}
+    <div class="container-fluid p-0 page">
+        <!-- Top link section -->
+        <div class="row bg-primary m-0 py-1">
+            <div class="col-md-4">
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                        <a href="" class="text-light" id="our-coordinates">Наши координаты (точки продаж)</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-8">
+                <ul class="list-unstyled d-flex flex-wrap justify-content-around m-0">
+                    <li class="">
+                        <a href="tel:89282122219" class="text-light">+7 (928) 212-22-19</a>
+                    </li>
+                    <li class="">
+                        <a href="mailto:mail@agro-teh.su" class="text-light">mail@agro-teh.su</a>
+                    </li>
+                    <li class="">
+                        {#<a class="btn btn-light btn-outline-success my-2 my-sm-0" id="callback" role="button" data-toggle="modal" data-target="#callback">Обратный звонок</a>#}
+                        <a class="btn btn-light btn-outline-success my-2 my-sm-0" role="button" data-toggle="modal" data-target="#callback">Обратный звонок</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Navbar section -->
+        <div class="row m-0">
+            <div class="col-md-12 p-0">
+                <!--To do: Info - manual navbar-->
+                <!--To do: Change # in href-->
+                <nav class="navbar navbar-expand-lg navbar-light bg-dark py-0 sticky-top">
+                    <a href="/" class="navbar-brand pt-0 m-lg-0">
+                        <img src="{{ asset('assets/img/logo.png') }}" alt="АГРО-ТЕХ" width="159" height="92">
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <!--                        To do: Add dropdown-->
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a href="/" class="nav-link text-white">Главная</a>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ангары</a>
+
+                                <div class="dropdown-menu">
+                                    {% for category in angar_category_serv.findAll() %}
+                                        <a class="dropdown-item" href="{{ path('angar_category_show', {'url' : category.url}) }}">{{ category.name }}</a>
+                                    {% endfor %}
+                                </div>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Сельхозтехника</a>
+                                <div class="dropdown-menu">
+
+                                    {% for category in techs_category %}
+                                        <a class="dropdown-item" href="{{ path('category', {'url': category.url}) }}">{{ category.name }}</a>
+                                    {% endfor %}
+                                </div>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="#" class="nav-link text-white">Запасные части</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link text-white">Услуги</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link text-white">Лизинг</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link text-white">Контакты</a>
+                            </li>
                         </ul>
 
-                        <h1 class="h1 clearfix">{% block h1 %}{% endblock %}</h1>
+                        <form class="form-inline my-2 my-md-0">
+                            <input class="form-control mr-sm-2 searchInput" placeholder="Поиск" aria-label="Поиск" type="text">
+                            <button class="btn btn-light btn-outline-success my-2 my-sm-0">Поиск</button>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+        </div>
 
-                    </div><!-- /full-width columns -->
+        {% block slider %}
 
-                </div><!-- /container 1080px -->
-            </div><!-- /grid-bg -->
+        {% endblock %}
 
-        </section><!-- /Заголовок страницы -->
+        <!-- Main section -->
+        <div class="row m-0 main-content">
+            <!-- Left catalog menu section -->
+            <!--            To do: Add dropdown-->
+            <div class="d-xs-none d-sm-none d-md-none d-lg-block col-lg-2 p-0">
+                <ul class="list-unstyled list-group sticky-top" id="menu-group-1">
+                    <li class="list-group-item">
+                        <p class="mt-2 mb-2" data-toggle="collapse" data-parent="#menu-group-1" href="#sub-item-1" style="cursor: pointer">
+                            <i class="fas fa-plus"></i>
+                            <span><a href="{{ path('angary') }}" data-toggle="tooltip" data-placement="right" title="Перейти в раздел Ангары">Ангары</a></span>
+                        </p>
 
-        <section id="page-content" class="sidebar-layout"><!-- Содержимое страницы -->
+                        <ul class="collapse list-unstyled list-group pl-4" id="sub-item-1">
+                            {% for category in angar_category_serv.findAll()  %}
+                                <li>
+                                    <a href="{{ path('angar_category_show', {'url' : category.url}) }}" data-toggle="tooltip" data-placement="right" title="Перейти в раздел {{ category.name }}">{{ category.name }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
 
-            <div class="container"><!-- 1080 px -->
+                    <li class="list-group-item">
+                        <p class="mt-2 mb-2" data-toggle="collapse" data-parent="#menu-group-1" href="#sub-item-8" style="cursor: pointer">
+                            <i class="fas fa-plus"></i>
+                            <a href="{{ path('selhoztehnika') }}" data-initial="selhoztehnika" data-toggle="tooltip" data-placement="right" title="Перейти в раздел Сельхозтехника">Сельхозтехника</a>
+                        </p>
 
-                <div class="columns-wrapper sb-right"><!-- Макет с боковой колонкой справа -->
+                        <ul class="collapse list-unstyled pl-4" id="sub-item-8">
 
-                    <!-- Основной контент страницы (левый блок) -->
-                    <section id="main-content" class="three-fourths columns page-left-col"><!-- 840 px -->
-                        <div class="full-width columns">
-
-                            {% block mainSlider %}{% endblock %}
-
-
-                            {% block content %}{% endblock %}
-                            <!----------------------------------------------------------------------------------------------------------------------------------------------->
-
-                            <div class="clear mb-70px"></div>
-
-                            <div class="full-width columns">
-                                <div class="info-box light gradient no-border bx_shadow">
-                                    <p class="psevdo_h2 text-on-centre mb-5px">Обратный звонок</p>
-                                    <p class="text-on-centre mb-25px">в течении 5 минут - работаем&nbsp;с&nbsp;8-00&nbsp;до&nbsp;17-00</p>
-
-                                    <!-- Форма -->
-                                    <form method="post" id="comment-form" class="form">
-                                        <div>
-                                            <input name="tlfn" type="text" maxlength="18" value="" placeholder="Номер телефона"
-                                                   pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" required/>
-                                        </div>
-                                        <div>
-                                    <textarea name="message" maxlength="100" placeholder="Что интересует?"
-                                              required></textarea>
-                                        </div>
-
-                                        <div class="fantome">
-                                            <input name="your-name" type="text" value="" id="your-name"
-                                                   placeholder="Контактное лицо"/>
-                                        </div>
-
-                                        <div class="fantome">
-                                            <input id="your-city" name="your-city" type="text" value="" placeholder="Город"/>
-                                        </div>
-
-                                        <div id="submit-button">
-                                            <input name="submit" type="submit" value="Отправить"
-                                                   class="button large colored mb-25px"
-                                                   onclick="document.getElementById('your-city').value = 'TGN';">
-                                        </div>
-
-                                    </form>
-                                    <!-- /Форма -->
-
-                                    <!-- Оповещение формы -->
-                                    <?=(!empty($message))? ''.$message.'': ''?>
-                                    <!-- /Оповещение формы -->
-
-                                </div>
-                            </div><!-- /full-width columns -->
-
-                    </section><!-- /840 px -->
-                    <!-- /Основной контент страницы (левый блок) -->
-
-                    <!-- Боковая колонка (правая) -->
-                    <aside id="sidebar" class="one-fourth columns page-right-col">
-                        {% for category in tech_category_serv.findAll() %}
-                            <div class="widget remove-bottom" data-smallscreen="no">
-                                <a href="{{ path('category', {'url': category.url }) }}" title="{{ category.name }}">
-                                    <img src="/{{ category.sideBarImage }}" alt="{{ category.name }}" class="sb_img scale-with-grid remove-bottom">
-                                </a>
-                            </div>
-
-                            <!-- Меню в боковой колонке -->
-                            <div class="widget separator mb-50px" data-smallscreen="no">
-                                <!-- показывать ли на мобильных устройствах: "yes" или "no" -->
-                                <ul class="side-menu large-font-size rc">
-                                    <li><a href="{{ path('category', {'url' : category.url}) }}">
-                                            <span>{{ category.name }}</span>
-                                        </a></li>
-                                    {% for tech in tech_serv.findBy({category: {
-                                        'id': category.id
-                                    } }) %}
+                            {% for category in techs_category %}
+                                <p class="mt-1 mb-1" data-toggle="collapse" data-parent="#menu-group-1" href="#sub-item-2{{ loop.index }}" style="cursor: pointer">
+                                    <i class="fas fa-plus"></i>
+                                    <a href="{{ path('category', {'url': category.url}) }}" data-toggle="tooltip" data-placement="right" title="Перейти в раздел {{ category.name }}" data-initial="{{ category.url }}">{{ category.name }}</a>
+                                </p>
+                                <ul class="collapse list-unstyled pl-4" id="sub-item-2{{ loop.index }}">
+                                    {% for tech in tech_serv.findBy({category: {'id': category.id} }) %}
                                         <li>
-                                            <a href="{{ path('selhoztehnika_show', {'url': tech.url}) }}">
+                                            <a href="{{ path('selhoztehnika_show', {'url': tech.url}) }}" data-initial="{{ tech.url }}">
                                                 {{ tech.shortName }}
                                             </a>
                                         </li>
 
                                     {% endfor %}
                                 </ul>
-                            </div>
-                            <!--  ----------------------------------------------------------------------------------------------------------  -->
-                        {% endfor %}
+                            {% endfor %}
 
-                        <div class="widget" data-smallscreen="no">
-                            <a href="{{ path('angary') }}">
-                                <img src="{{ asset('assets/img/content/_sb/angary.jpg') }}" alt="" class="sb_img scale-with-grid mb-70px">
-                            </a>
+                        </ul>
+
+                    </li>
+                    <li class="list-group-item">
+                        <a href="#">Запасные части</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="#">Услуги</a>
+                    </li>
+                </ul>
+
+            </div>
+
+            <!-- Main content section -->
+            <div class="col-lg-10 p-0">
+                {% block h1 %}
+
+                {% endblock %}
+
+
+                {% block content %}
+
+                {% endblock %}
+
+                <!-- News section -->
+                <div class="row m-0 my-5 bg-transparent">
+                    <div class="col-md-12 p-0 px-5">
+                        <h2 class="text-center my-3 line-height-18 text-white bg-primary">
+                            Полезная информация
+                        </h2>
+
+                        <!-- Slick slider -->
+                        <!-- To do: Check all point-->
+                        <div class="article-slide">
+                            {% for article in articles  %}
+                                <article class="card border-0 px-3 articleIndex bg-transparent">
+                                    <div class="more-info bg-white px-3">
+                                        <div class="">
+                                            <p class="card-text">
+                                                {{ article.description }}
+                                            </p>
+                                            <p class="card-text">
+                                                <a href="{{ path('articles_show', {'id' : article.id}) }}">Читать далее</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <a href="{{ path('articles_show', {'id' : article.id}) }}">
+                                        <img src="{{ asset(article.image) }}" class="card-img-top" alt="{{ article.name }}">
+                                    </a>
+
+                                    <div class="card-body mt-3">
+                                        <h4 class="card-title text-center">
+                                            {{ article.name }}
+                                        </h4>
+                                    </div>
+                                </article>
+                            {% endfor %}
+
                         </div>
+                    </div>
+                </div>
 
-                        <div class="widget" data-smallscreen="no">
-                            <a href="{{ path('selhoztehnika_show', {'url' : 'sistema-parallelnogo-vozhdeniya-agronavigator'}) }}">
-                                <img src="{{ asset('assets/img/content/_sb/wm.jpg') }}" alt="" class="sb_img scale-with-grid mb-70px">
-                            </a>
-                        </div>
+                <!-- User form section -->
+                <div class="row m-0 my-2 callback">
+                    <div class="col-md-12 p-3">
+                        <h2 class="text-center my-3">Заказать обратный звонок</h2>
 
-                        <div class="widget" data-smallscreen="no">
-                            <a href="{{ path('category', {'url' : 'rasprodazha-selhoztehniki'}) }}">
-                                <img src="{{ asset('assets/img/content/_sb/rasprodazha-selhoztehniki.jpg') }}" alt="" class="sb_img scale-with-grid mb-70px">
-                            </a>
-                        </div>
-
-
-                        <a href="{{ path('articles') }}">
-                            <img src="{{ asset('assets/img/content/agronomu/agronom.jpg') }}" alt="" class="sb_img scale-with-grid mb-80px">
-                        </a>
-
-                        <!--noindex-->
-
-                        <div class="widget mb-50px" data-smallscreen="no">
-
-                            <section class="carousel-container testimonials-holder">
-
-                                <div class="carousel-frame">
-
-                                    <ul style="width: 960px; height: auto; left: -720px; transition: left 0.3s ease-in-out 0s;"
-                                        class="testimonials-carousel clearfix carousel-slider initiated" data-autoplay="5000"
-                                        data-circular="yes">
-
-                                        <li class="carousel-slide" style="width: 220px;">
-                                            <a href="{{ path('angary') }}">
-                                                <img src="{{ asset('assets/img/content/angary/angary-zernohranilishha-ovoshhehranilishha-sklady.jpg') }}" alt=""
-                                                     class="sb_img scale-with-grid mb-5px">
-                                                <p class="small-font-size black remove-bottom">Зернохранилища, овощехранилища,
-                                                    склады.</p>
-                                            </a>
-                                        </li>
-                                        <li class="carousel-slide" style="width: 220px;">
-                                            <a href="{{ path('angary') }}">
-                                                <img src="{{ asset('assets/img/content/angary/angary-aviatsionnye.jpg') }}" alt=""
-                                                     class="sb_img scale-with-grid mb-5px">
-                                                <p class="small-font-size black remove-bottom">Ангары авиационные.</p>
-                                            </a>
-                                        </li>
-                                        <li class="carousel-slide" style="width: 220px;">
-                                            <a href="{{ path('angary') }}">
-                                                <img src="{{ asset('assets/img/content/angary/angary-svinarniki-korovniki-ptichniki.jpg') }}" alt=""
-                                                     class="sb_img scale-with-grid mb-5px">
-                                                <p class="small-font-size black remove-bottom">Свинарники, коровники, птичники.</p>
-                                            </a>
-                                        </li>
-                                        <li class="carousel-slide" style="width: 220px;">
-                                            <a href="{{ path('angary') }}">
-                                                <img src="{{ asset('assets/img/content/angary/beskarkasnye-arochnye-navesy.jpg') }}" alt=""
-                                                     class="sb_img scale-with-grid mb-5px">
-                                                <p class="small-font-size black remove-bottom">Бескаркасные арочные навесы - М1.</p>
-                                            </a>
-                                        </li>
-                                        <li class="carousel-slide" style="width: 220px;">
-                                            <a href="{{ path('angary') }}">
-                                                <img src="{{ asset('assets/img/content/angary/beskarkasnye-metallicheskie-navesy-dvojnye.jpg') }}" alt=""
-                                                     class="sb_img scale-with-grid mb-5px">
-                                                <p class="small-font-size black remove-bottom">Бескаркасные металлические навесы
-                                                    (двойные) - М2.</p>
-                                            </a>
-                                        </li>
-                                        <li class="carousel-slide" style="width: 220px;">
-                                            <a href="{{ path('angary') }}">
-                                                <img src="{{ asset('assets/img/content/angary/beskarkasnye-arochnye-navesy-fundament-tortsy.jpg') }}" alt=""
-                                                     class="sb_img scale-with-grid mb-5px">
-                                                <p class="small-font-size black remove-bottom">Бескаркасные арочные навесы (фундамент,
-                                                    торцы) - М3.</p>
-                                            </a>
-                                        </li>
-                                        <li class="carousel-slide" style="width: 220px;">
-                                            <a href="{{ path('angary') }}">
-                                                <img src="{{ asset('assets/img/content/angary/tentovye-angary-universalnogo-tipa.jpg') }}" alt=""
-                                                     class="sb_img scale-with-grid mb-5px">
-                                                <p class="small-font-size black remove-bottom">Тентовые ангары универсального типа.</p>
-                                            </a>
-                                        </li>
-                                        <li class="carousel-slide" style="width: 220px;">
-                                            <a href="{{ path('angary') }}">
-                                                <img src="{{ asset('assets/img/content/angary/tentovye-angary-dlya-maloj-aviatsii.jpg') }}" alt=""
-                                                     class="sb_img scale-with-grid mb-5px">
-                                                <p class="small-font-size black remove-bottom">Тентовые ангары для малой авиации.</p>
-                                            </a>
-                                        </li>
-                                        <li class="carousel-slide" style="width: 220px;">
-                                            <a href="{{ path('angary') }}">
-                                                <img src="{{ asset('assets/img/content/angary/tentovye-angary-svinarniki-korovniki.jpg') }}" alt=""
-                                                     class="sb_img scale-with-grid mb-5px">
-                                                <p class="small-font-size black remove-bottom">Тентовые ангары - свинарники,
-                                                    коровники.</p>
-                                            </a>
-                                        </li>
-                                        <li class="carousel-slide" style="width: 220px;">
-                                            <a href="{{ path('angary') }}">
-                                                <img src="{{ asset('assets/img/content/angary/navesy-karkasno-tentovye.jpg') }}" alt=""
-                                                     class="sb_img scale-with-grid mb-5px">
-                                                <p class="small-font-size black remove-bottom">Навесы каркасно-тентовые.</p>
-                                            </a>
-                                        </li>
-
-                                    </ul>
-
+                        <form role="form" action="{{ path('callback') }}" method="post" class="json needs-validation" novalidate>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="InputPhone">
+                                            Номер телефона
+                                        </label>
+                                        <input type="tel" class="form-control" name="phone" id="InputPhone" data-validation="no-empty" required/>
+                                        <div class="invalid-feedback">
+                                            Пожалуйста введите номер телефона
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="InputEmail">
+                                            Email (необязательно)
+                                        </label>
+                                        <input type="email" class="form-control" name="email" id="InputEmail" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="InputName">
+                                            Контактное лицо
+                                        </label>
+                                        <input type="text" class="form-control" name="name" id="InputName" required/>
+                                        <div class="invalid-feedback">
+                                            Пожалуйста введите свое имя
+                                        </div>
+                                    </div>
                                 </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="comment">
+                                            Что интересует?
+                                        </label>
+                                        <textarea class="form-control" rows="5" name="comment" id="comment" required></textarea>
+                                        <div class="invalid-feedback">
+                                            Необходимо оставить коментарий
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="checkbox" name="agree" id="agree" placeholder="" required />
+                                        <label for="agree" class="small">
+                                            Я прочитал(a) и согласен(а) с <a href="#">условиями конфиденциальности</a>
+                                        </label>
+                                        <div class="invalid-feedback">
+                                            Необходимо согласится с условиями
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary send-email">
+                                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" hidden></span>
+                                        <span data-type="title" data-ready="Отправить" data-request="Отправка...">Отправить</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                            </section>
+        <!-- Footer section -->
+        <div class="container-fluid bg-white p-0">
+            <div class="row bg-dark m-0 p-3">
+                <div class="col-md-6 p-0">
+                    <div class="row m-0">
+                        <div class="col-md-6 d-flex flex-column justify-content-between align-items-center">
+                            <img src="{{ asset('assets/img/logo_footer.png') }}" alt="АГРО-ТЕХ" width="139" height="130">
 
+                            <p class="text-light small">© 2008-{{ "now"|date("Y") }} ООО "АГРО-ТЕХ"</p>
                         </div>
-
-                        <!--/noindex-->
-
-                        <div class="widget" data-smallscreen="no">
-                            <a href="{{ path('selhoztehnika_show', {'url': 'sistema-parallelnogo-vozhdeniya-agronavigator'}) }}">
-                                <img src="{{ asset('assets/img/content/_sb/masha.jpg') }}" alt="" class="sb_img scale-with-grid">
-                            </a>
+                        <div class="col-md-6">
+                            <span class="text-light">Меню</span>
+                            <nav class="nav flex-column small">
+                                <a class="nav-link active py-0 text-light" href="#">Главная</a>
+                                <a class="nav-link py-0 text-light" href="#">О компании</a>
+                                <a class="nav-link py-0 text-light" href="#">Ангары</a>
+                                <a class="nav-link py-0 text-light" href="">Сельхозтехника</a>
+                                <a class="nav-link py-0 text-light" href="#">Запасные части</a>
+                                <a class="nav-link py-0 text-light" href="#">Услуги</a>
+                                <a class="nav-link py-0 text-light" href="#">Лизинг</a>
+                                <a class="nav-link py-0 text-light" href="#">Агроному на заметку</a>
+                                <a class="nav-link py-0 text-light" href="#">Контакты</a>
+                            </nav>
                         </div>
+                    </div>
+                </div>
+                <div class="col-md-6 p-0 pl-3">
+                    <h4 class="text-light">Контактная информация</h4>
+                    <div>
+                        <a class="text-light" href="tel:89282122219">+7 (928) 212-22-19</a>
+                    </div>
+                    <div>
+                        <a class="text-light" href="mailto:mail@agro-teh.su">mail@agro-teh.su</a>
+                    </div>
 
-                    </aside>
-                    <!-- /Боковая колонка -->
+                    <address class="text-light">
+                        <strong>ООО "АГРО-ТЕХ"</strong> <br>
+                        347939, Россия, Ростовская область, Таганрог, ул. Пархоменко, 19
+                    </address>
 
-                </div><!-- /Макет с боковой колонкой справа -->
+                    <p>
+                        <a class="text-light small" href="#">Политика конфиденциальности</a>
+                    </p>
+                </div>
+                <p class="text-light small mb-0 mt-2">Данный сайт не является публичной офертой и носит исключительно информационный характер</p>
+            </div>
+        </div>
 
-            </div><!-- /1080 px -->
 
-            <div class="stripe bottom"><!-- Страйп (фоновая полоса) -->
-                <div class="container"><!-- 1080 px -->
+        {#<div class="modal" id="callback" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="row m-0 my-2 callback">
+                <div class="col-md-12 p-3">
+                    <h2 class="text-center my-3">Заказать обратный звонок</h2>
 
-                    <!-- Функциональные тематические блоки с иконкой слева(средний размер) -->
-                    <section class="feature-boxes medium-col-space left-icon-box medium-icon">
-
+                    <form role="form" action="{{ path('callback') }}" method="post" class="json needs-validation" novalidate>
                         <div class="row">
-
-                            <div class="one-third columns">
-                                <article>
-                                    <i class="fa fa-flag fa-fw colored-text-1"></i>
-                                    <div>
-                                        <p class="small-font-size"><a href="{{ path('app_home_show', {'slug' : 'about'}) }}"
-                                                                      class="middle-font-size black">О компании</a><br/>(сферы
-                                            деятельности)
-                                        </p>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="InputPhone">
+                                        Номер телефона
+                                    </label>
+                                    <input type="tel" class="form-control" name="phone" id="InputPhone" data-validation="no-empty" required/>
+                                    <div class="invalid-feedback">
+                                        Пожалуйста введите номер телефона
                                     </div>
-                                </article>
+                                </div>
+                                <div class="form-group">
+                                    <label for="InputEmail">
+                                        Email (необязательно)
+                                    </label>
+                                    <input type="email" class="form-control" name="email" id="InputEmail" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="InputName">
+                                        Контактное лицо
+                                    </label>
+                                    <input type="text" class="form-control" name="name" id="InputName" required/>
+                                    <div class="invalid-feedback">
+                                        Пожалуйста введите свое имя
+                                    </div>
+                                </div>
                             </div>
-
-                            <div class="one-third columns">
-                                <article>
-                                    <i class="fa fa-home fa-fw colored-text-1"></i>
-                                    <div>
-                                        <p class="small-font-size"><a href="{{ path('app_home_show', {'slug' : 'contacts'}) }}" class="middle-font-size black">Наши
-                                                координаты</a><br/>(точки продаж)
-                                        </p>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="comment">
+                                        Что интересует?
+                                    </label>
+                                    <textarea class="form-control" rows="5" name="comment" id="comment" required></textarea>
+                                    <div class="invalid-feedback">
+                                        Необходимо оставить коментарий
                                     </div>
-                                </article>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" name="agree" id="agree" placeholder="" required />
+                                    <label for="agree" class="small">
+                                        Я прочитал(a) и согласен(а) с <a href="#">условиями конфиденциальности</a>
+                                    </label>
+                                    <div class="invalid-feedback">
+                                        Необходимо согласится с условиями
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary send-email">
+                                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" hidden></span>
+                                    <span data-type="title">Отправить</span>
+                                </button>
                             </div>
-
-                            <div class="one-third columns">
-                                <article>
-                                    <i class="fa fa-mobile-phone fa-fw colored-text-1"></i>
-
-                                    <div>
-                                        <p class="remove-bottom black">+7 &nbsp;(928)&nbsp; 212 - 22 - 19<br/>
-                                            +7 &nbsp;(928)&nbsp; 778 - 92 - 80</p>
-                                    </div>
-
-                                    <!--
-                                    <div>
-                                        <p class="remove-bottom black">+7 (928) 212-2219<span class="hide">, 778-9280</span><br />
-                                        +7 (863) 438-74-87<span class="hide">, 438-80-74</span></p>
-                                    </div>
-                                     -->
-
-                                </article>
-                            </div>
-
                         </div>
+                    </form>
+                </div>
+            </div>
+        </div>#}
 
-                    </section>
+    </div>
 
-                    <!-- /Функциональные тематические блоки -->
+    <!-- Modal -->
+    <div class="modal fade" id="callback" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Заказать обратный звонок</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form role="form" action="{{ path('callback') }}" method="post" class="json needs-validation" novalidate>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="InputPhone">
+                                        Номер телефона
+                                    </label>
+                                    <input type="tel" class="form-control" name="phone" id="InputPhone" data-validation="no-empty" required/>
+                                    <div class="invalid-feedback">
+                                        Пожалуйста введите номер телефона
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="InputEmail">
+                                        Email (необязательно)
+                                    </label>
+                                    <input type="email" class="form-control" name="email" id="InputEmail" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="InputName">
+                                        Контактное лицо
+                                    </label>
+                                    <input type="text" class="form-control" name="name" id="InputName" required/>
+                                    <div class="invalid-feedback">
+                                        Пожалуйста введите свое имя
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="comment">
+                                        Что интересует?
+                                    </label>
+                                    <textarea class="form-control" rows="5" name="comment" id="comment" required></textarea>
+                                    <div class="invalid-feedback">
+                                        Необходимо оставить коментарий
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" name="agree" id="agree" placeholder="" required />
+                                    <label for="agree" class="small">
+                                        Я прочитал(a) и согласен(а) с <a href="#">условиями конфиденциальности</a>
+                                    </label>
+                                    <div class="invalid-feedback">
+                                        Необходимо согласится с условиями
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary send-email">
+                                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" hidden></span>
+                                    <span data-type="title" data-ready="Отправить" data-request="Отправка...">Отправить</span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                {#<div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                    <button type="submit" class="btn btn-primary send-email">
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" hidden></span>
+                        <span data-type="title">Отправить</span>
+                    </button>
+                </div>#}
+            </div>
+        </div>
+    </div>
 
 
-                    <span class="scroll-top">
-					<span class="arrow-top"></span>
-					<span>Наверх</span>
-            </span>
+    {% block javascripts %}
+        <!-- Яндекс карты АПИ -->
+        <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+        {#<script src="https://www.google.com/recaptcha/api.js?render=6LfUvKEUAAAAAE69avndcaHZP0OD55IeOYOanmaA"></script>
+        <script>
+            grecaptcha.ready(function() {
+                grecaptcha.execute('6LfUvKEUAAAAAE69avndcaHZP0OD55IeOYOanmaA', {action: 'homepage'}).then(function(token) {
+
+                });
+            });
+        </script>#}
+        <script src="{{ asset('build/app.js') }}"></script>
+
+    {% endblock %}
 
 
-                </div><!-- /1080 px -->
-            </div><!-- /Страйп (фоновая полоса) -->
-
-        </section><!-- /Содержимое страницы -->
-
-    </section><!-- /Средний блок (все, что между шапкой и подвалом) -->
+    </body>
 {% endblock %}
+
+</html>
