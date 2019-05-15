@@ -149,16 +149,16 @@
                             </li>
 
                             <li class="nav-item">
-                                <a href="#" class="nav-link text-white">Запасные части</a>
+                                <a href="{{ path('spare_parts_show_all') }}" class="nav-link text-white">Запасные части</a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link text-white">Услуги</a>
+                                <a href="{{ path('app_home_show', {'slug': 'services'}) }}" class="nav-link text-white">Услуги</a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link text-white">Лизинг</a>
+                                <a href="{{ path('app_home_show', {'slug': 'leasing'}) }}" class="nav-link text-white">Лизинг</a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link text-white">Контакты</a>
+                                <a href="{{ path('app_home_show', {'slug': 'contacts'}) }}" class="nav-link text-white">Контакты</a>
                             </li>
                         </ul>
 
@@ -225,10 +225,10 @@
 
                     </li>
                     <li class="list-group-item">
-                        <a href="#">Запасные части</a>
+                        <a href="{{ path('spare_parts_show_all') }}">Запасные части</a>
                     </li>
                     <li class="list-group-item">
-                        <a href="#">Услуги</a>
+                        <a href="{{ path('app_home_show', {'slug': 'services'}) }}">Услуги</a>
                     </li>
                 </ul>
 
@@ -245,43 +245,9 @@
 
                 {% endblock %}
 
-                <!-- News section -->
-                <div class="row m-0 my-5 bg-transparent">
-                    <div class="col-md-12 p-0 px-5">
-                        <h2 class="text-center my-3 line-height-18 text-white bg-primary">
-                            Полезная информация
-                        </h2>
+                {% block bottom_slider %}
 
-                        <!-- Slick slider -->
-                        <!-- To do: Check all point-->
-                        <div class="article-slide">
-                            {% for article in articles  %}
-                                <article class="card border-0 px-3 articleIndex bg-transparent">
-                                    <div class="more-info bg-white px-3">
-                                        <div class="">
-                                            <p class="card-text">
-                                                {{ article.description }}
-                                            </p>
-                                            <p class="card-text">
-                                                <a href="{{ path('articles_show', {'id' : article.id}) }}">Читать далее</a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <a href="{{ path('articles_show', {'id' : article.id}) }}">
-                                        <img src="{{ asset(article.image) }}" class="card-img-top" alt="{{ article.name }}">
-                                    </a>
-
-                                    <div class="card-body mt-3">
-                                        <h4 class="card-title text-center">
-                                            {{ article.name }}
-                                        </h4>
-                                    </div>
-                                </article>
-                            {% endfor %}
-
-                        </div>
-                    </div>
-                </div>
+                {% endblock %}
 
                 <!-- User form section -->
                 <div class="row m-0 my-2 callback">
@@ -329,7 +295,7 @@
                                     <div class="form-group">
                                         <input type="checkbox" name="agree" id="agree" placeholder="" required />
                                         <label for="agree" class="small">
-                                            Я прочитал(a) и согласен(а) с <a href="#">условиями конфиденциальности</a>
+                                            Я прочитал(a) и согласен(а) с <a href="{{ path('app_home_show', {'slug' : 'politika-konfidencialnosti'}) }}">условиями конфиденциальности</a>
                                         </label>
                                         <div class="invalid-feedback">
                                             Необходимо согласится с условиями
@@ -362,13 +328,13 @@
                             <nav class="nav flex-column small">
                                 <a class="nav-link active py-0 text-light" href="#">Главная</a>
                                 <a class="nav-link py-0 text-light" href="#">О компании</a>
-                                <a class="nav-link py-0 text-light" href="#">Ангары</a>
-                                <a class="nav-link py-0 text-light" href="">Сельхозтехника</a>
-                                <a class="nav-link py-0 text-light" href="#">Запасные части</a>
-                                <a class="nav-link py-0 text-light" href="#">Услуги</a>
-                                <a class="nav-link py-0 text-light" href="#">Лизинг</a>
+                                <a class="nav-link py-0 text-light" href="{{ path('angary') }}">Ангары</a>
+                                <a class="nav-link py-0 text-light" href="{{ path('selhoztehnika') }}">Сельхозтехника</a>
+                                <a class="nav-link py-0 text-light" href="{{ path('spare_parts_show_all') }}">Запасные части</a>
+                                <a class="nav-link py-0 text-light" href="{{ path('app_home_show', {'slug': 'services'}) }}">Услуги</a>
+                                <a class="nav-link py-0 text-light" href="{{ path('app_home_show', {'slug': 'leasing'}) }}">Лизинг</a>
                                 <a class="nav-link py-0 text-light" href="#">Агроному на заметку</a>
-                                <a class="nav-link py-0 text-light" href="#">Контакты</a>
+                                <a class="nav-link py-0 text-light" href="{{ path('app_home_show', {'slug': 'contacts'}) }}">Контакты</a>
                             </nav>
                         </div>
                     </div>
@@ -388,7 +354,7 @@
                     </address>
 
                     <p>
-                        <a class="text-light small" href="#">Политика конфиденциальности</a>
+                        <a class="text-light small" href="{{ path('app_home_show', {'slug' : 'politika-konfidencialnosti'}) }}">Политика конфиденциальности</a>
                     </p>
                 </div>
                 <p class="text-light small mb-0 mt-2">Данный сайт не является публичной офертой и носит исключительно информационный характер</p>
@@ -513,7 +479,7 @@
                                 <div class="form-group">
                                     <input type="checkbox" name="agree" id="agree" placeholder="" required />
                                     <label for="agree" class="small">
-                                        Я прочитал(a) и согласен(а) с <a href="#">условиями конфиденциальности</a>
+                                        Я прочитал(a) и согласен(а) с <a href="{{ path('app_home_show', {'slug' : 'politika-konfidencialnosti'}) }}">условиями конфиденциальности</a>
                                     </label>
                                     <div class="invalid-feedback">
                                         Необходимо согласится с условиями

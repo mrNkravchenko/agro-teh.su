@@ -61,6 +61,13 @@ class Costumer
      */
     private $updated;
 
+    public function __construct()
+    {
+        $timeZone = new \DateTimeZone('Europe/Moscow');
+        $this->created = new \DateTime('now', $timeZone);
+        $this->updated = new \DateTime('now', $timeZone);
+    }
+
     public function getId(): ?int
     {
         return $this->id;

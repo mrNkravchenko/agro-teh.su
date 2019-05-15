@@ -1,415 +1,566 @@
 {% extends 'base.html.twig' %}
+
+{% set bodyClass = 'contacts' %}
+
 {% block title %}Контактные данные ООО АГРО-ТЕХ{% endblock %}
-{% block h1 %}Контактные данные{% endblock %}
+
+{% block h1 %}
+    <h2 class="text-center bg-primary text-white line-height-18 my-3">
+        Контактные данные
+    </h2>
+{% endblock %}
+
 {% block content %}
-    <p class="psevdo_h2">
-        Офис в Таганроге
-    </p>
-    <p>
-        347939, Россия, Ростовская область, Таганрог, ул. Пархоменко, 19.
-    </p>
-    <p class="large-font-size  mb-10px">
-        +7 (8634) 32-32-13, 38-80-74, 38-74-87, 36-34-09, 43-13-34
-    </p>
+    <div class="row m-0">
+        <div class="col">
+            <h3>
+                Офис в Таганроге
+            </h3>
+            <address>
+                347939, Россия, Ростовская область, Таганрог, ул. Пархоменко, 19.
+            </address>
+            <p>
+                +7 (8634) 32-32-13, 38-80-74, 38-74-87, 36-34-09, 43-13-34
+            </p>
+            <p>
+                Электронная почта:
+                <a href="mailto:mail@agro-teh.su">mail@agro-teh.su</a>
+            </p>
 
-    <p class="mb-30px">
-        <span class="small-font-size">Электронная почта:</span>
-        <a href="mailto:mail@agro-teh.su" target="_blank"> mail@agro-teh.su </a>
-    </p>
+            <p class="mb-5">
+                Подпишитесь на нас: &nbsp;&nbsp; <a href="https://vk.com/agro_tech_taganrog" target="_blank"><i class="fab fa-vk fa-3x" style="color: #597da3"></i></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://www.youtube.com/channel/UCFQtfrqxmxUxfuGm7MrFM_g" target="_blank"><i class="fab fa-youtube fa-3x" style="color: #c4302b"></i></a>
+            </p>
+
+            <!-- Map -->
+            <div class="yandex-map mb-5">
+                <script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=o8Kax8kPnbvBIgBSGO7in_xeBQBw3p6U&width=100%&height=400&lang=ru_RU&sourceType=constructor"></script>
+            </div>
+
+            <h5>Схема проезда</h5>
+
+            <div id="accordion" role="tablist" class="mb-4">
+                <div class="card">
+                    <div class="card-header" role="tab" id="headingOne">
+                        <h5 class="mb-0">
+                            <a data-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" class="collapsed">
+                                Офис ООО "АГРО-ТЕХ" в Таганроге
+                            </a>
+                        </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne" style="">
+                        <div class="card-body">
+                            <!--                                        To do: change references -->
+                            <p>
+                                347939, Россия, Ростовская область,<br>
+                                Таганрог, улица Пархоменко, дом 19
+                                <a href="{{ asset('_/i/map.png') }}" target="_blank" data-rel="prettyPhoto" title="Схема расположения офиса компании"> (расположение).</a>
+                            </p>
+                            <p>
+                                Предложенный
+                                <a href="https://maps.yandex.ru/-/CVbWzW9b" target="_blank">маршрут</a>
+                                предполагает движение по объездной дороге с въездом со стороны Мариупольского шоссе.
+                            </p>
+                            <p>
+                                На легковом автомобиле также будет удобен
+                                <a href="https://maps.yandex.ru/-/CVbWzS-V" target="_blank"> маршрут</a>
+                                , пролегающий через Николаевское шоссе.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" role="tab" id="headingTwo">
+                        <h5 class="mb-0">
+                            <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Производственная база ООО "АГРО-ТЕХ"
+                            </a>
+                        </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" style="">
+                        <div class="card-body">
+                            <p>
+                                347939, Россия, Ростовская область,<br>
+                                Таганрог, Мариупольское шоссе, 71 (переулок 21-й Мариупольский).
+                            </p>
+                            <p>
+                                Расстояние от перекрестка с круговым движением до поворота на переулок 21-й Мариупольский составляет 4,5 км.
+                            </p>
+                            <p>
+                                По
+                                <a href="http://maps.yandex.ru/-/CVbWzN7C" target="_blank"> пути следования</a>
+                                находится заправочная станция (справа), от нее 250 метров, после чего поворот направо.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--                        To do: Add map for every address-->
+            {#<h3>Офис в Ростове-на-Дону</h3>
+            <address>
+                344093, Россия, Ростовская область, Ростов-на-Дону, ул. Травяная, 26.
+            </address>
+            <p>
+                +7 (928) 212-22-19, 778-92-80
+            </p>
+            <p>
+                Офисное помещение по адресу:  ул. Травяная, 26 - временно находится на реконструкции!<br>
+                Контактные телефоны работают в штатном режиме. Звоните!
+            </p>#}
+            <div class="mb-4">
+                <h3 class="text-center">Ростовская область</h3>
+                <h4>Зерноградский район</h4>
+                <div class="row">
+                    <div class="col">
+                        <address>
+                            п. Экспериментальный, ул. Придорожная, 47а
+                        </address>
+                        <p>
+                            +7 (928) 155-25-30 <br>
+                            +7 (86359) 6-36-73, 6-36-75, 6-37-18, 4-07-50, 4-07-49
+                        </p>
+                    </div>
+                    <div class="col">
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A0a8e0cd0cd45e51cecb8f64690a00ccf606ef6a970522f627b87ba8dea1f7d62&amp;width=100%25&amp;height=200&amp;lang=ru_RU&amp;scroll=true"></script>
+                    </div>
+                </div>
 
 
+                <h4>Кагальницкий район</h4>
+                <div class="row">
+                    <div class="col">
+                        <address>
+                            п. Мокрый Батай, ул. Зеленая, 9
+                        </address>
+                        <p>
+                            +7 (928) 756-80-03, 035-19-44
+                        </p>
+                    </div>
+                    <div class="col">
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A535c6b2e7936e11728a09a685bc419c10d6efd8946e7766538b0b6e965b646e7&amp;width=100%25&amp;height=240&amp;lang=ru_RU&amp;scroll=true"></script>
+                    </div>
+                </div>
 
-    <noscript><div class="mb-50px"></div></noscript>
+                <h4>Аксайский район</h4>
+                <div class="row">
+                    <div class="col">
+                        <address>
+                            х. Ленина. (1084-й км автомагистрали М-4 Дон-2)
+                        </address>
+                        <p>
+                            +7 (863) 210-06-90, 210-06-85, +7 (928) 908-05-03, +7 (928) 103-22-22
+                        </p>
+                    </div>
+                    <div class="col">
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A299350355cbacea179a858a9f5d80327f67488d75f12f02aa0b07733c7c8712a&amp;width=100%25&amp;height=240&amp;lang=ru_RU&amp;scroll=true"></script>
+                    </div>
+                </div>
+            </div>
+            <div class="md-4">
+                <h3 class="text-center">Краснодарский край</h3>
+                <h4>Краснодар</h4>
+                <div class="row">
+                    <div class="col">
+                        <address>
+                            ул. Круговая, 54
+                        </address>
+                        <p>
+                            +7 (918) 682-06-22, (961) 536-77-82 <br>
+                            +7 (861) 222-78-21, 222-78-24, 222-82-89
+                        </p>
+                    </div>
+                    <div class="col">
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A0f0e344868985fffbac54a478593572ed1a745e05a7552b747491c9c4bb5a0f4&amp;width=100%25&amp;height=240&amp;lang=ru_RU&amp;scroll=true"></script>
+                    </div>
+                </div>
 
-    <p class="mb-30px">
-        Подпишитесь на нас: &nbsp;&nbsp; <a href="https://vk.com/agro_tech_taganrog" target="_blank"><i class="fab fa-vk fa-3x" style="color: #597da3"></i></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://www.youtube.com/channel/UCFQtfrqxmxUxfuGm7MrFM_g" target="_blank"><i class="fab fa-youtube fa-3x"></i></a>
-    </p>
+                <div class="row">
+                    <div class="col">
+                        <address>
+                            ул. Уральская, 230
+                        </address>
+                        <p>
+                            +7 (928) 212-22-19, (928) 928-77-80
+                        </p>
+                    </div>
+                    <div class="col">
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aa3d6c4dcdc37be073a8cf4b3e21402a00eeb2b6c360d337604fd864f1e9a931d&amp;width=100%25&amp;height=240&amp;lang=ru_RU&amp;scroll=true"></script>
+                    </div>
+                </div>
 
 
-    <noscript><div class="hidden"></noscript>
-    <!-- Map -->
-    <div class="yandex-map mb-20px bx_shadow">
-        <script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=o8Kax8kPnbvBIgBSGO7in_xeBQBw3p6U&width=100%&height=400&lang=ru_RU&sourceType=constructor"></script>
+                <h4>Курганинск</h4>
+                <div class="row">
+                    <div class="col">
+                        <address>
+                            шс. Армавирское, 1
+                        </address>
+                        <p>
+                            +7 (918) 471-33-70 <br>
+                            +7 (86147) 2-93-42, 2-93-43, 2-93-44
+                        </p>
+                    </div>
+                    <div class="col">
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ae531a12c4e9a1edac573b1dd9e85261b614b3f9855c1c192d402ed9cf8c27d2b&amp;width=500&amp;height=240&amp;lang=ru_RU&amp;scroll=true"></script>
+                    </div>
+                </div>
+
+
+                <h4>Тимашевск</h4>
+                <div class="row">
+                    <div class="col">
+                        <address>
+                            ул. Промышленная, 3а
+                        </address>
+                        <p>
+                            +7 (918) 345-59-67, 372-88-12, 264-07-19, (928) 207-62-95 <br>
+                            +7 (86130) 4-16-26, 4-17-36, 4-20-38, 4-37-13, 4-17-94
+                        </p>
+                    </div>
+                    <div class="col">
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Afe6692ef292d3074cdb0f87ededbf3ef411dc08536edf465eab1d49795227749&amp;width=500&amp;height=240&amp;lang=ru_RU&amp;scroll=true"></script>
+                    </div>
+                </div>
+
+
+                <h4>Тихорецк</h4>
+                <div class="row">
+                    <div class="col">
+                        <address>
+                            пос. Парковый, промзона 25
+                        </address>
+                        <p>
+                            +7 (918) 289-22-99, 536-12-98, (928) 044-43-44
+                        </p>
+                    </div>
+                    <div class="col">
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Add7888edc75cf80afdfadba60ed20b768fc96f70cb182a02210025ebf720fecd&amp;width=100%25&amp;height=240&amp;lang=ru_RU&amp;scroll=true"></script>
+                    </div>
+                </div>
+
+
+                <h4>Темрюкский район</h4>
+                <div class="row">
+                    <div class="col">
+                        <address>
+                            х. Белый, ул. Гаражная, 1
+                        </address>
+                        <p>
+                            +7 (918) 028-64-54 <br>
+                            +7 (861) 220-44-49
+                        </p>
+                    </div>
+                    <div class="col">
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aa2b3363747d049b6ee8c6717dd0f43ee382178089f87a4491191b4d8ae0b611c&amp;width=100%25&amp;height=240&amp;lang=ru_RU&amp;scroll=true"></script>
+                    </div>
+                </div>
+
+
+                <h4>Тбилисский район</h4>
+                <div class="row">
+                    <div class="col">
+                        <address>
+                            ст. Тбилисская, ул. Переездная, д.78
+                        </address>
+                        <p>
+                            +7 (918) 951-47-00, 439-30-30 <br>
+                            +7 (86158) 3-77-32, 3-77-23, 2-64-40, 3-77-07
+                        </p>
+                    </div>
+                    <div class="col">
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A4f44edf5c9a6b06af4e4c9cf1dc3dcb9c0e433a9a45bf730874c2fa410aea0c0&amp;width=100%25&amp;height=240&amp;lang=ru_RU&amp;scroll=true"></script>
+                    </div>
+                </div>
+
+
+                <h4>Курганинский район</h4>
+                <div class="row">
+                    <div class="col">
+                        <address>
+                            ст. Михайловская, ул. Зорько, 4а
+                        </address>
+                        <p>
+                            +7 (918) 391-14-96, (961) 539-00-21 <br>
+                            +7 (989) 284-95-01, 284-95-02
+                        </p>
+                    </div>
+                    <div class="col">
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aa875e0bb65746cd5e7e31690fe12de9d9912438144b601132d56930290cd2c32&amp;width=100%25&amp;height=240&amp;lang=ru_RU&amp;scroll=true"></script>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <h3 class="text-center">Ставропольский край</h3>
+                <h4>Ставрополь</h4>
+                <div class="row">
+                    <div class="col">
+                        <address>
+                            ул. Батайская, 3
+                        </address>
+                        <p>
+                            +7 (903) 418-79-31, (928) 630-92-22 <br>
+                            +7 (865) 532-02-66, 532-02-65, 532-02-67, 238-68-27, 238-68-28, 295-83-00, 295-84-00
+                        </p>
+                    </div>
+                    <div class="col">
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A394ade6869b24319b081189c716426225b913a585c4cf9105b2455cca3b32e02&amp;width=100%25&amp;height=240&amp;lang=ru_RU&amp;scroll=true"></script>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <address>
+                            ул. Коломийцева, 39г
+                        </address>
+                        <p>
+                            +7 (962) 440-09-29, (962) 440-09-24 <br>
+                            +7 (8652) 40-09-29, 40-09-24
+                        </p>
+                    </div>
+                    <div class="col">
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A6139051291f5d15cdf169db429e9b82fd2ab386aa2dd0a65856d619e2de090f3&amp;width=100%25&amp;height=240&amp;lang=ru_RU&amp;scroll=true"></script>
+                    </div>
+                </div>
+
+
+                <h4>
+                    Шпаковский район
+                </h4>
+                <div class="row">
+                    <div class="col">
+                        <address>
+                            с. Верхнерусское, заезд Тупиковый, 4
+                        </address>
+                        <p>
+                            +7 (968) 271-36-70 <br>
+                            +7 (865) 242-90-50, 242-90-60, 532-03-32, 532-08-30, 233-09-14, 295-38-30, 295-33-32
+                        </p>
+                    </div>
+                    <div class="col">
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A1f7a965bdc896f4a9e6d81aa781ed3e3e4cf27b6037f405fe0073597456dd4d4&amp;width=100%25&amp;height=240&amp;lang=ru_RU&amp;scroll=true"></script>
+                    </div>
+                </div>
+
+
+                <h4>Михайловск</h4>
+                <div class="row">
+                    <div class="col">
+                        <address>
+                            ул. Никонова, 60
+                        </address>
+                        <p>
+                            +7 (928) 304-90-50 <br>
+                            +7 (86553) 2-32-51, 2-33-96, 2-30-93
+                        </p>
+                    </div>
+                    <div class="col">
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ac202c3f02f966e208d4facf35dbe8ae96bea5fb15c03b6cd1183e1b6a558589a&amp;width=100%25&amp;height=240&amp;lang=ru_RU&amp;scroll=true"></script>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-center">Кабардино-Балкарская республика</h3>
+                <h4>Прохладный</h4>
+                <div class="row">
+                    <div class="col">
+                        <address>
+                            ул. Головко, 94
+                        </address>
+                        <p>
+                            +7 (988) 928-90-06 <br>
+                            +7 (86631) 4-68-23, 4-68-20, 4-68-31, 7-16-85, 4-68-21
+                        </p>
+                    </div>
+                    <div class="col">
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Adba7a61adede04b24a62298ad9728386c9d6cd715a53d47bd16f1d5c86555830&amp;width=100%25&amp;height=240&amp;lang=ru_RU&amp;scroll=true"></script>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-center">Воронежская область</h3>
+                <h4>Воронеж</h4>
+                <div class="row">
+                    <div class="col">
+                        <address>
+                            ул. Дорожная 36
+                        </address>
+                        <p>
+                            +7 (952) 556-17-22 <br>
+                            +7 (473) 272-44-75, 276-30-88, 272-44-60
+                        </p>
+                    </div>
+                    <div class="col">
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ad636920da93e809535a6f8f5e049bcb4164ea7da42c8113ebe79c985e9a35f43&amp;width=100%25&amp;height=240&amp;lang=ru_RU&amp;scroll=true"></script>
+                    </div>
+                </div>
+
+
+                <h4>Богучарский район</h4>
+                <div class="row">
+                    <div class="col">
+                        <address>
+                            с. Дьяченково, ул. Вишневая, 3
+                        </address>
+                        <p>
+                            +7 (47366) 5-61-41, 2-01-81
+                        </p>
+                    </div>
+                    <div class="col">
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ab6fcd151cde23759580645911e7c69ce9d902580e4a99051517d3f45f096a7b8&amp;width=100%25&amp;height=240&amp;lang=ru_RU&amp;scroll=true"></script>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-center">Волгоградская область</h3>
+                <h4>Волжский</h4>
+                <div class="row">
+                    <div class="col">
+                        <address>
+                            Автодорога №6, строение 6Б
+                        </address>
+                        <p>
+                            +7 (960) 890-48-88, 890-53-56, (917) 832-95-70 <br>
+                            +7 (8443) 44-55-00, 34-21-66
+                        </p>
+                    </div>
+                    <div class="col">
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aee6fe613896321be972a325ead71a4ba190c46d0e011a74115de9e78a3f0e4c3&amp;width=100%25&amp;height=240&amp;lang=ru_RU&amp;scroll=true"></script>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-center">Липецкая область</h3>
+                <h4>Липецк</h4>
+                <div class="row">
+                    <div class="col">
+                        <address>
+                            ул. Агрономическая, 1
+                        </address>
+                        <p>
+                            +7 (905) 683-49-95, 683-49-98 <br>
+                            +7 (4742) 55-50-87, 55-50-87
+                        </p>
+                    </div>
+                    <div class="col">
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A0a47b83b4ea13ddcd5c2e773b34109ffaf1ba58e1def65da3f94efe240e9df03&amp;width=100%25&amp;height=240&amp;lang=ru_RU&amp;scroll=true"></script>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-center">Рязанская область</h3>
+                <h4>Старожиловский район</h4>
+                <div class="row">
+                    <div class="col">
+                        <address>
+                            пос. Старожилово, ул. Железнодорожная, 18
+                        </address>
+                        <p>
+                            +7 (960) 572-33-26 <br>
+                            +7 (49151) 2-92-82, 2-99-14, 2-99-27
+                        </p>
+                    </div>
+                    <div class="col">
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A7fccbe06300074638fb7691d3fcf8e8e10c48481c17bede1acc65be44ef533c8&amp;width=100%25&amp;height=240&amp;lang=ru_RU&amp;scroll=true"></script>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-center">Орловская область</h3>
+                <h4>Орел</h4>
+                <div class="row">
+                    <div class="col">
+                        <address>
+                            шс. Московское, 137
+                        </address>
+                        <p>
+                            +7 (910) 748-84-67
+                            +7 (4862) 49-51-77
+                        </p>
+                    </div>
+                    <div class="col">
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A208b4877d077d430520913e0a7eefe2715f996be3e04349ea7585e9461c9f0e2&amp;width=100%25&amp;height=240&amp;lang=ru_RU&amp;scroll=true"></script>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <address>
+                            ул. Раздольная, 10а
+                        </address>
+                        <p>
+                            +7 (920) 088-48-48 <br>
+                            +7 (4862) 76-45-16, 76-12-49, 44-12-44, 44-13-44, 42-22-58
+                        </p>
+                    </div>
+                    <div class="col">
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A5ebd7c93741d0299bfec5620c0df8d07410fc838098990a7702a9864251e9ae3&amp;width=100%25&amp;height=240&amp;lang=ru_RU&amp;scroll=true"></script>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-center">Тамбовская область</h3>
+                <h4>Ржаксинский район</h4>
+                <div class="row">
+                    <div class="col">
+                        <address>
+                            рп. Ржакса, ул. Свердлова, 1б
+                        </address>
+                        <p>
+                            +7 (920) 470-01-05 <br>
+                            +7 (4752) 48-53-67, 48-51-82
+                        </p>
+                    </div>
+                    <div class="col">
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A183fce2f684d9c0659a6a2111cbd6bfb1a7ce8e5d34a2ec5f145e926b7f98f5e&amp;width=100%25&amp;height=240&amp;lang=ru_RU&amp;scroll=true"></script>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-center">Курская область</h3>
+                <h4>Курск</h4>
+                <div class="row">
+                    <div class="col">
+                        <address>
+                            ул. Магистральный пр-д, 18т
+                        </address>
+                        <p>
+                            +7 (908) 125-31-42 <br>
+                            +7 (4712) 38-56-70, 77-03-06, 77-03-09
+                        </p>
+                    </div>
+                    <div class="col">
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A975c5f9675dcbe53eba34143987924b0f60076131dd915efe5f50ee78eb54805&amp;width=100%25&amp;height=240&amp;lang=ru_RU&amp;scroll=true"></script>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-center">Саратовская область</h3>
+                <h4>Саратовский район</h4>
+                <div class="row">
+                    <div class="col">
+                        <address>
+                            пос. Дубки, пав. 8
+                        </address>
+                        <p>
+                            +7 (903) 338-38-66, (937) 978-49-03
+                        </p>
+                    </div>
+                    <div class="col">
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ab103545efd0fcf66ae2db64f45d24186ea087f6959f522609dd1fe7f5fc43bc3&amp;width=100%25&amp;height=240&amp;lang=ru_RU&amp;scroll=true"></script>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
-
-
-    <p class="large-font-size  mb-20px">
-        Схема проезда
-    </p>
-
-    <section class="toggle mb-70px">
-        <div class="toggle-trigger"><a href="#"><p>Офис ООО "АГРО-ТЕХ" в Таганроге</p></a></div>
-        <div style="display: none;" class="toggle-container">
-            <div class="content">
-                <p>
-                    347939, Россия, Ростовская область,
-                    <br />
-                    Таганрог, улица Пархоменко, дом 19 <a href="{{ asset('assets/img/map.png') }}" data-rel="prettyPhoto" title="Схема расположения офиса компании"> (расположение).</a>
-                </p>
-                <p>
-                    Предложенный <a href="http://maps.yandex.ru/-/CVbWzW9b" target="_blank">маршрут</a>
-                    предполагает движение по объездной дороге с въездом со стороны Мариупольского шоссе.
-                </p>
-                <p>
-                    На легковом автомобиле также будет удобен
-                    <a href="http://maps.yandex.ru/-/CVbWzS-V" target="_blank">
-                        маршрут</a>, пролегающий через Николаевское шоссе.
-                </p>
-            </div>
-        </div>
-        <div class="toggle-trigger"><a href="#"><p>Производственная база ООО "АГРО-ТЕХ"</p></a></div>
-        <div style="display: none;" class="toggle-container">
-            <div class="content">
-                <p>
-                    347939, Россия, Ростовская область,
-                    <br />
-                    Таганрог, Мариупольское шоссе, 71 (переулок 21-й Мариупольский).
-                </p>
-                <p>
-                    Расстояние от перекрестка с круговым движением до поворота
-                    на переулок 21-й Мариупольский составляет 4,5 км.
-                </p>
-                <p>
-                    По <a href="http://maps.yandex.ru/-/CVbWzN7C" target="_blank">
-                        пути следования</a>
-                    находится заправочная станция (справа), от нее 250 метров,
-                    после чего поворот направо.
-                </p>
-            </div>
-        </div>
-    </section>
-    <noscript></div></noscript><!-- /hidden-->
-
-    <p class="psevdo_h2">
-        Офис в Ростове-на-Дону
-    </p>
-
-    <p>
-        344093, Россия, Ростовская область, Ростов-на-Дону, ул. Травяная, 26.
-    </p>
-    <p class="large-font-size  mb-25px">
-        +7 (928) 212-22-19, 778-92-80
-    </p>
-
-    <blockquote class="mb-100px">
-        <p class="dark-black remove-bottom">
-								<span class="small-font-size">
-									Офисное помещение по адресу:&nbsp; ул. Травяная, 26 -  <span class="colored-text-2"> временно находится на реконструкции!</span>
-								</span>
-        </p>
-        <p class="small-font-size dark-black remove-bottom">
-								<span class="small-font-size">
-									Контактные телефоны работают в штатном режиме. Звоните!
-								</span>
-        </p>
-    </blockquote>
-
-
-    <h2 class="mb-10px">Ростовская область</h2>
-
-    <hr class="divider-line colored mb-50px">
-
-    <p class="large-font-size colored-text-1">
-        Зерноградский район
-    </p>
-    <p>
-        п. Экспериментальный, ул. Придорожная, 47а
-    </p>
-    <p class="mb-20px">
-        +7 (928) 155-25-30<br />
-        +7 (86359) 6-36-73, 6-36-75, 6-37-18, 4-07-50, 4-07-49
-    </p>
-    <hr class="divider-line dotted colored mb-20px">
-    <p class="large-font-size colored-text-1">
-        Кагальницкий район
-    </p>
-    <p>
-        п. Мокрый Батай, ул. Зеленая, 9
-    </p>
-    <p class="mb-20px">
-        +7 (928) 756-80-03, 035-19-44
-    </p>
-    <hr class="divider-line dotted colored mb-20px">
-    <p class="large-font-size colored-text-1">
-        Аксайский район
-    </p>
-    <p>
-        х. Ленина. (1084-й км автомагистрали М-4 Дон-2)
-    </p>
-    <p class="mb-70px">
-        +7 (863) 210-06-90, 210-06-85, +7 (928) 908-05-03, +7 (928) 103-22-22
-    </p>
-
-    <h2 class="mb-10px">Краснодарский край</h2>
-    <hr class="divider-line colored mb-50px">
-
-    <p class="large-font-size colored-text-1">
-        Краснодар
-    </p>
-    <p>
-        ул. Круговая, 54
-    </p>
-    <p class="mb-20px">
-        +7 (918) 682-06-22, (961) 536-77-82<br />
-        +7 (861) 222-78-21, 222-78-24, 222-82-89
-    </p>
-    <p>
-        ул. Уральская, 230
-    </p>
-    <p class="mb-20px">
-        +7 (928) 212-22-19, (928) 928-77-80
-    </p>
-    <hr class="divider-line dotted colored mb-20px">
-    <p class="large-font-size colored-text-1">
-        Курганинск
-    </p>
-    <p>
-        шс. Армавирское, 1
-    </p>
-    <p class="mb-20px">
-        +7 (918) 471-33-70<br />
-        +7 (86147) 2-93-42, 2-93-43, 2-93-44
-    </p>
-    <hr class="divider-line dotted colored mb-20px">
-    <p class="large-font-size colored-text-1">
-        Тимашевск
-    </p>
-    <p>
-        ул. Промышленная, 3а
-    </p>
-    <p class="mb-20px">
-        +7 (918) 345-59-67, 372-88-12, 264-07-19, (928) 207-62-95<br />
-        +7 (86130) 4-16-26, 4-17-36, 4-20-38, 4-37-13, 4-17-94
-    </p>
-    <hr class="divider-line dotted colored mb-20px">
-    <p class="large-font-size colored-text-1">
-        Тихорецк
-    </p>
-    <p>
-        пос. Парковый, промзона 25
-    </p>
-    <p class="mb-20px">
-        +7 (918) 289-22-99, 536-12-98, (928) 044-43-44
-    </p>
-    <hr class="divider-line dotted colored mb-20px">
-    <p class="large-font-size colored-text-1">
-        Темрюкский район
-    </p>
-    <p>
-        х. Белый, ул. Гаражная, 1
-    </p>
-    <p class="mb-20px">
-        +7 (918) 028-64-54<br />
-        +7 (861) 220-44-49
-    </p>
-    <hr class="divider-line dotted colored mb-20px">
-    <p class="large-font-size colored-text-1">
-        Тбилисский район
-    </p>
-    <p>
-        ст. Тбилисская, ул. Переездная, д.78
-    </p>
-    <p class="mb-20px">
-        +7 (918) 951-47-00, 439-30-30<br />
-        +7 (86158) 3-77-32, 3-77-23, 2-64-40, 3-77-07
-    </p>
-    <hr class="divider-line dotted colored mb-20px">
-    <p class="large-font-size colored-text-1">
-        Курганинский район
-    </p>
-    <p>
-        ст. Михайловская, ул. Зорько, 4а
-    </p>
-    <p class="mb-70px">
-        +7 (918) 391-14-96, (961) 539-00-21<br />
-        +7 (989) 284-95-01, 284-95-02
-    </p>
-
-    <h2 class="mb-10px">Ставропольский край</h2>
-    <hr class="divider-line colored mb-50px">
-
-    <p class="large-font-size colored-text-1">
-        Ставрополь
-    </p>
-
-    <p>
-        ул. Батайская, 3
-    </p>
-    <p class="mb-20px">
-        +7 (903) 418-79-31, (928) 630-92-22<br />
-        +7 (865) 532-02-66, 532-02-65, 532-02-67, 238-68-27, 238-68-28, 295-83-00, 295-84-00
-    </p>
-
-    <p>
-        ул. Коломийцева, 39г
-    </p>
-    <p class="mb-20px">
-        +7 (962) 440-09-29, (962) 440-09-24	<br />
-        +7 (8652) 40-09-29, 40-09-24
-    </p>
-
-    <hr class="divider-line dotted colored mb-20px">
-    <p class="large-font-size colored-text-1">
-        Шпаковский район
-    </p>
-    <p>
-        с. Верхнерусское, заезд Тупиковый, 4
-    </p>
-    <p class="mb-20px">
-        +7 (968) 271-36-70<br />
-        +7 (865) 242-90-50, 242-90-60, 532-03-32, 532-08-30, 233-09-14, 295-38-30, 295-33-32
-    </p>
-    <hr class="divider-line dotted colored mb-20px">
-    <p class="large-font-size colored-text-1">
-        Михайловск
-    </p>
-    <p>
-        ул. Никонова, 60
-    </p>
-    <p class="mb-70px">
-        +7 (928) 304-90-50<br />
-        +7 (86553) 2-32-51, 2-33-96, 2-30-93
-    </p>
-
-    <p class="psevdo_h2 mb-10px">Кабардино-Балкарская республика</p>
-    <hr class="divider-line colored mb-50px">
-
-    <p class="large-font-size colored-text-1">
-        Прохладный
-    </p>
-    <p>
-        ул. Головко, 94
-    </p>
-    <p class="mb-70px">
-        +7 (988) 928-90-06<br />
-        +7 (86631) 4-68-23, 4-68-20, 4-68-31, 7-16-85, 4-68-21
-    </p>
-
-    <p class="psevdo_h2 mb-10px">Воронежская область</p>
-    <hr class="divider-line colored mb-50px">
-
-    <p class="large-font-size colored-text-1">
-        Воронеж
-    </p>
-    <p>
-        ул. Дорожная 36
-    </p>
-    <p class="mb-20px">
-        +7 (952) 556-17-22<br />
-        +7 (473) 272-44-75, 276-30-88, 272-44-60
-    </p>
-    <hr class="divider-line dotted colored mb-20px">
-    <p class="large-font-size colored-text-1">
-        Богучарский район
-    </p>
-    <p>
-        с. Дьяченково, ул. Вишневая, 3
-    </p>
-    <p class="mb-70px">
-        +7 (47366) 5-61-41, 2-01-81
-    </p>
-
-    <p class="psevdo_h2 mb-10px">Волгоградская область</p>
-    <hr class="divider-line colored mb-50px">
-
-    <p class="large-font-size colored-text-1">
-        Волжский
-    </p>
-    <p>
-        Автодорога №6, строение 6Б
-    </p>
-    <p class="mb-70px">
-        +7 (960) 890-48-88, 890-53-56, (917) 832-95-70<br />
-        +7 (8443) 44-55-00, 34-21-66
-    </p>
-
-    <p class="psevdo_h2 mb-10px">Липецкая область</p>
-    <hr class="divider-line colored mb-50px">
-
-    <p class="large-font-size colored-text-1">
-        Липецк
-    </p>
-    <p>
-        ул. Агрономическая, 1
-    </p>
-    <p class="mb-70px">
-        +7 (905) 683-49-95, 683-49-98<br />
-        +7 (4742) 55-50-87, 55-50-87
-    </p>
-
-    <p class="psevdo_h2 mb-10px">Рязанская область</p>
-    <hr class="divider-line colored mb-50px">
-
-    <p class="large-font-size colored-text-1">
-        Старожиловский район
-    </p>
-    <p>
-        пос. Старожилово, ул. Железнодорожная, 18
-    </p>
-    <p class="mb-70px">
-        +7 (960) 572-33-26<br />
-        +7 (49151) 2-92-82, 2-99-14, 2-99-27
-    </p>
-
-    <p class="psevdo_h2 mb-10px">Орловская область</p>
-    <hr class="divider-line colored mb-50px">
-
-    <p class="large-font-size colored-text-1">
-        Орел
-    </p>
-    <p>
-        шс. Московское, 137
-    </p>
-    <p class="mb-20px">
-        +7 (910) 748-84-67<br />
-        +7 (4862) 49-51-77
-    </p>
-    <p>
-        ул. Раздольная, 10а
-    </p>
-    <p class="mb-70px">
-        +7 (920) 088-48-48<br />
-        +7 (4862) 76-45-16, 76-12-49, 44-12-44, 44-13-44, 42-22-58
-    </p>
-
-    <p class="psevdo_h2 mb-10px">Тамбовская область</p>
-    <hr class="divider-line colored mb-50px">
-
-    <p class="large-font-size colored-text-1">
-        Ржаксинский район
-    </p>
-    <p>
-        рп. Ржакса, ул. Свердлова, 1б
-    </p>
-    <p class="mb-70px">
-        +7 (920) 470-01-05<br />
-        +7 (4752) 48-53-67, 48-51-82
-    </p>
-
-    <p class="psevdo_h2 mb-10px">Курская область</p>
-    <hr class="divider-line colored mb-50px">
-
-    <p class="large-font-size colored-text-1">
-        Курск
-    </p>
-    <p>
-        ул. Магистральный пр-д, 18т
-    </p>
-    <p class="mb-70px">
-        +7 (908) 125-31-42<br />
-        +7 (4712) 38-56-70, 77-03-06, 77-03-09
-    </p>
-
-    <p class="psevdo_h2 mb-10px">Саратовская область</p>
-    <hr class="divider-line colored mb-50px">
-
-    <p class="large-font-size colored-text-1">
-        Саратовский район
-    </p>
-    <p>
-        пос. Дубки, пав. 8
-    </p>
-    <p>
-        +7 (903) 338-38-66, (937) 978-49-03
-    </p>
 {% endblock %}

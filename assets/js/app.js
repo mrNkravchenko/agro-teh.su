@@ -163,6 +163,56 @@ $('.tech-image-slide').slick({
         // instead of a settings object
     ]
 });
+$('.tech-spare-slide').slick({
+    prevArrow: '<button type="button" class="slick-prev bg-primary">Previous</button>',
+    nextArrow: '<button type="button" class="slick-next bg-primary">Next</button>',
+    dots: true,
+    infinite: true,
+    adaptiveHeight: true,
+    draggable: true,
+    autoplay: true,
+    speed: 300,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    responsive: [
+        {
+            breakpoint: 1440,
+            settings: {
+                autoplay: true,
+                draggable: true,
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: true
+            }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                autoplay: true,
+                draggable: true,
+                slidesToShow: 2,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 2,
+                draggable: true,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 479,
+            settings: 'unslick'
+        }
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+    ]
+});
+
 
 $('.tech-image').fancybox({
     arrows: true,

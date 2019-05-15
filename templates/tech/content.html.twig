@@ -33,7 +33,7 @@
     <div class="row m-0 p-3">
         <div class="tab-content col-12" id="myTabContent">
             <div class="tab-pane fade show active" id="performance" role="tabpanel" aria-labelledby="performance-tab">
-                <table>
+                <table class="table table-sm table-bordered">
                     {% for row in table %}
                         <tr>
                             {% if row[0] is defined %}
@@ -58,7 +58,7 @@
 
                 <div class="col-sm-12">
                     <span>
-                        Цена в базовой комплектации - <span>{{ price|number_format(0, ".", ",") }}</span> рублей;
+                        Цена в базовой комплектации - <span>{{ price|number_format(0, ".", ",") }}</span> рублей
                     </span>
                 </div>
 
@@ -180,7 +180,7 @@
         </div>
     </div>
 
-    <div class="align-center mb-20"><a href="#" class="button large colored">Купить или узнать больше информаци</a></div>
+    <div class="col text-center"><a data-tech-id="{{ tech.id }}" role="button" data-toggle="modal" data-target="#callback" class="btn btn-danger text-white">Купить или узнать больше информаци</a></div>
 
     <div class="row m-0 my-5 bg-transparent">
         <div class="col-md-12 p-0 px-5">
@@ -215,6 +215,38 @@
             </div>
 
 
+        </div>
+    </div>
+
+    <div class="row m-0 my-5 bg-transparent">
+        <div class="col-md-12 p-0 px-5">
+            <h3 class="text-center my-3 text-white bg-primary">
+                Запасные части
+            </h3>
+            {#{{ dump(tech.spareParts.images.toArray) }}#}
+
+            <!-- Slick slider -->
+            <!-- To do: Check all point-->
+            <div class="tech-spare-slide">
+                {% for spare in tech.spareParts  %}
+                    <div class="card px-3 bg-transparent border-0">
+                        <div class="more-info">
+                            <div class="more-info__center">
+                                <a class="btn btn-dark" href="{{ path('spare_parts_show', {'id' : spare.id}) }}">
+                                    <span> Подробнее</span>
+                                </a>
+                            </div>
+                        </div>
+                        <img src="{{ asset(spare.images.first.pathThumbnail ~ '' ~ spare.images.first.nameMd5) }}" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ spare.title }}</h5>
+                            <p class="card-text">
+                                Цена -  {{ spare.price|number_format(0, ".", ",") }} рублей
+                            </p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
 

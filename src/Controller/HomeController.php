@@ -30,7 +30,7 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/{slug}", name="app_home_show", requirements={"slug"="voprosy-po-stroitelstvu-angarov-selhoztehnike|about|contacts|politika-konfidencialnosti"})
+     * @Route("/{slug}", name="app_home_show", requirements={"slug"="voprosy-po-stroitelstvu-angarov-selhoztehnike|about|contacts|politika-konfidencialnosti|services|leasing"})
      * @param $slug
      *
      * @return \Symfony\Component\HttpFoundation\Response

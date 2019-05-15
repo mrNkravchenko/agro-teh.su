@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SpareParts{% endblock %}
+
+{% block body %}
+    <h1>SpareParts</h1>
+
+    {#{{ dump(spare_part.getTechs) }}
+    {% for item in spare_part.getTechs %}
+        {{ dump(item.getName()) }}
+    {% endfor %}#}
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ spare_part.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ spare_part.title }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ spare_part.description }}</td>
+            </tr>
+            <tr>
+                <th>Created</th>
+                <td>{{ spare_part.created ? spare_part.created|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Updated</th>
+                <td>{{ spare_part.updated ? spare_part.updated|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('spare_parts_index') }}">back to list</a>
+
+    <a href="{{ path('spare_parts_edit', {'id': spare_part.id}) }}">edit</a>
+
+    {{ include('spare_parts/_delete_form.html.twig') }}
+{% endblock %}

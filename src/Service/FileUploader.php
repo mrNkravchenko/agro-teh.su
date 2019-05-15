@@ -34,7 +34,10 @@ class FileUploader
         try {
             $file->move($this->getTargetDirectory(), $fileNameMD5);
             if ($this->withThumbnail) {
-                $this->createThumbnail($this->getTargetDirectory(). $fileNameMD5, $this->getTargetDirectory() . 'thumbnail/' . $fileName, 320, 213);
+                if (!file_exists($this->getTargetDirectory() . 'thumbnail')) {
+                    mkdir($this->getTargetDirectory() . 'thumbnail', 0777, true);
+                }
+                $this->createThumbnail($this->getTargetDirectory(). $fileNameMD5, $this->getTargetDirectory() . 'thumbnail/' . $fileNameMD5, 320, 213);
             }
         } catch (FileException $e) {
             // ... handle exception if something happens during file upload

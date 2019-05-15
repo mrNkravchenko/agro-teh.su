@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SparePartsImage index{% endblock %}
+
+{% block body %}
+    <h1>SparePartsImage index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Name_md5</th>
+                <th>Path</th>
+                <th>Path_thumbnail</th>
+                <th>First</th>
+                <th>Created</th>
+                <th>Updated</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for spare_parts_image in spare_parts_images %}
+            <tr>
+                <td>{{ spare_parts_image.id }}</td>
+                <td>{{ spare_parts_image.name }}</td>
+                <td>{{ spare_parts_image.nameMd5 }}</td>
+                <td>{{ spare_parts_image.path }}</td>
+                <td>{{ spare_parts_image.pathThumbnail }}</td>
+                <td>{{ spare_parts_image.first ? 'Yes' : 'No' }}</td>
+                <td>{{ spare_parts_image.created ? spare_parts_image.created|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ spare_parts_image.updated ? spare_parts_image.updated|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('spare_parts_image_show', {'id': spare_parts_image.id}) }}">show</a>
+                    <a href="{{ path('spare_parts_image_edit', {'id': spare_parts_image.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('spare_parts_image_new') }}">Create new</a>
+{% endblock %}

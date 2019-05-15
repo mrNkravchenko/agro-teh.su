@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use function dump;
@@ -119,6 +120,12 @@ class Tech
     private $complectation;
 
     /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\SpareParts", mappedBy="techs")
+     * @var Collection
+     */
+    private $spareParts;
+
+    /**
      * @ORM\OneToOne(targetEntity="App\Entity\Dimensions", mappedBy="tech")
      */
     private $dimentions;
@@ -148,6 +155,11 @@ class Tech
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $created;
+
+    public function __construct()
+    {
+        $this->spareParts = new ArrayCollection();
+    }
 
     /**
      * @return mixed
@@ -538,6 +550,22 @@ class Tech
     public function setMngImageBin($mng_image_bin): void
     {
         $this->mng_image_bin = $mng_image_bin;
+    }
+
+    /**
+     * @return Collection
+     */
+    public function getSpareParts(): Collection
+    {
+        return $this->spareParts;
+    }
+
+    /**
+     * @param Collection $spareParts
+     */
+    public function setSpareParts(Collection $spareParts): void
+    {
+        $this->spareParts = $spareParts;
     }
 
 }

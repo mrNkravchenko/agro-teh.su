@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SpareParts index{% endblock %}
+
+{% block body %}
+    <h1>SpareParts index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Created</th>
+                <th>Updated</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for spare_part in spare_parts %}
+            <tr>
+                <td>{{ spare_part.id }}</td>
+                <td>{{ spare_part.title }}</td>
+                <td>{{ spare_part.description }}</td>
+                <td>{{ spare_part.created ? spare_part.created|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ spare_part.updated ? spare_part.updated|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('spare_parts_show', {'id': spare_part.id}) }}">show</a>
+                    <a href="{{ path('spare_parts_edit', {'id': spare_part.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('spare_parts_new') }}">Create new</a>
+{% endblock %}
