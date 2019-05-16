@@ -83,8 +83,6 @@ class TechController extends AbstractController
             return $this->redirectToRoute('selhoztehnika_show', ['url' => $url]);
         }
 
-        dump($tech->getSpareParts());
-
 //        $createFeedbackView = $this->renderView('tech_feedback/_form.html.twig', ['form' => $createFeedback->createView()]);
 
         $content = $this->renderView('tech/content.html.twig', [
