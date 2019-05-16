@@ -135,6 +135,8 @@
                                     {% for category in angar_category_serv.findAll() %}
                                         <a class="dropdown-item" href="{{ path('angar_category_show', {'url' : category.url}) }}">{{ category.name }}</a>
                                     {% endfor %}
+                                    <a class="dropdown-item" href="{{ path('angar_show_all') }}">Построенные ангары</a>
+                                    <a class="dropdown-item" href="{{ path('gallery') }}">Фото рабочих моментов</a>
                                 </div>
                             </li>
 
@@ -193,6 +195,12 @@
                                     <a href="{{ path('angar_category_show', {'url' : category.url}) }}" data-toggle="tooltip" data-placement="right" title="Перейти в раздел {{ category.name }}">{{ category.name }}</a>
                                 </li>
                             {% endfor %}
+                            <li>
+                                <a href="{{ path('angar_show_all') }}" data-toggle="tooltip" data-placement="right" title="Перейти в раздел Построенные ангары">Построенные ангары</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('gallery') }}" data-toggle="tooltip" data-placement="right" title="Перейти в раздел Фото рабочих моментов">Фото рабочих моментов</a>
+                            </li>
                         </ul>
                     </li>
 

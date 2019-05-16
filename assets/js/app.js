@@ -38,8 +38,8 @@ $('.single-slide').slick(
         infinite: false,
         arrows: false,
         dots: false,
-        speed: 500,
-        slidesToShow: 3,
+        speed: 600,
+        slidesToShow: 2,
         slidesToScroll: 1,
         autoplay: true,
         mobileFirst: true,
@@ -50,13 +50,13 @@ $('.single-slide').slick(
         responsive: [{
             breakpoint: 1024,
             settings: {
-                slidesToShow: 3,
+                slidesToShow: 2,
                 infinite: true
             }
         }, {
             breakpoint: 600,
             settings: {
-                slidesToShow: 2,
+                slidesToShow: 1,
                 dots: true
             }
         }, {

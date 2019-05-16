@@ -1,6 +1,3 @@
-body {
-  //background: red;
-}
 .page {
   background: grey;
 }
@@ -12,7 +9,6 @@ body {
 .article {
   width: 350px;
 }
-
 .articleIndex {
   width: 200px;
 }

@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Angar;
 use App\Form\AngarType;
+use App\Repository\AngarCategoryRepository;
 use App\Repository\AngarRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -24,9 +25,9 @@ class AngarController extends AbstractController
     /**
      * @Route("/angary", name="angary", methods="GET")
      */
-    public function indexAll(AngarRepository $angarRepository): Response
+    public function indexAll(AngarRepository $angarRepository, AngarCategoryRepository $angarCategoryRepository): Response
     {
-        return $this->render('angar/types/angary.html.twig');
+        return $this->render('angar/types/all_types.html.twig', ['angars' => $angarRepository->findAll(), 'categories' => $angarCategoryRepository->findAll()]);
     }
     /**
      * @Route("/angary/postroennue", name="angar_show_all")

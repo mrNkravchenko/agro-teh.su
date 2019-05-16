@@ -1,105 +1,128 @@
-{% extends 'base_angar.html.twig' %}
+{% extends 'base.html.twig' %}
 {% block title %}
     Бескаркасное арочное строительство, особенности и плюсы
 {% endblock %}
-{% block h1 %}Бескаркасное арочное строительство{% endblock %}
-{% block mainSlider %}
-    <img src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/beskarkasnoe-arochnoe-stroitelstvo.jpg') }}" alt="Бескаркасное арочное строительство" class="scale-with-grid mb-50px">
+{% block h1 %}
+    <h2 class="text-center bg-primary text-white line-height-18 my-3">
+        Бескаркасное арочное строительство
+    </h2>
+{% endblock %}
+{% block slider %}
+    <div class="row">
+        <div class="col-sm-12"
+             style="background-image: url({{ asset('assets/img/content/stroitelstvo-angarov/postroennye/beskarkasnoe-arochnoe-stroitelstvo.jpg') }});
+                     background-repeat: no-repeat;
+                     background-size: cover;
+                     background-position: center;
+                     filter: blur(8px);
+                     -webkit-filter: blur(8px);">
+            <img style="opacity: 0" src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/beskarkasnoe-arochnoe-stroitelstvo.jpg') }}" alt="Бескаркасное арочное строительство" class="img-fluid m-auto">
+        </div>
+        <img {#style="opacity: 0"#} src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/beskarkasnoe-arochnoe-stroitelstvo.jpg') }}" alt="Бескаркасное арочное строительство" class="img-fluid m-auto" style="position: absolute; left: 25%">
+    </div>
+
 {% endblock %}
 {% block content %}
-    <blockquote class="mb-35px">
-        <p class="dark-black remove-bottom">
-            В качестве исходного материала мы используем рулонную сталь, защищенную оцинкованным или полимерным покрытием. Ее толщина составляет 0,7-1,4 мм. Именно из нее мы изготовим конструктивные элементы для последующего монтажа.
-        </p>
-    </blockquote>
+    <div class="">
+        <div class="col-sm-12">
+            <blockquote class="mb-4">
+                <p class="dark-black remove-bottom">
+                    В качестве исходного материала мы используем рулонную сталь, защищенную оцинкованным или полимерным покрытием. Ее толщина составляет 0,7-1,4 мм. Именно из нее мы изготовим конструктивные элементы для последующего монтажа.
+                </p>
+            </blockquote>
 
-    <div class="info-box light gradient no-border mb-35px">
-        <p class="middle-font-size remove-bottom">
-            На строительную площадку мы доставляем оборудование, на котором производим арочные секции шириной от 12 до 28 метров - выбранные параметры зависят от климатических условий в районе эксплуатации будущего сооружения и потребностей заказчика.
-        </p>
+            <div class="info-box light gradient no-border mb-35px">
+                <p class="middle-font-size remove-bottom">
+                    На строительную площадку мы доставляем оборудование, на котором производим арочные секции шириной от 12 до 28 метров - выбранные параметры зависят от климатических условий в районе эксплуатации будущего сооружения и потребностей заказчика.
+                </p>
+            </div>
+
+            <blockquote class="mb-35px">
+                <p class="dark-black remove-bottom">
+                    Применяемое оборудование может успешно совмещать два соседних технологических процесса. Наши машины умеют одновременно создавать прямую панель и изгибать другое готовое изделие. Получается, что для производства конструктивных элементов мы тратим вдвое меньше времени.
+                </p>
+            </blockquote>
+
+            <img src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/mashina-dlya-beskarkasnogo-stroitelstva.jpg') }}" alt="Машина для бескаркасного строительства" class="m-3" align="left">
+
+
+
+            <div class="info-box colored-1 rounded mb-35px">
+                <p class="middle-font-size remove-bottom">
+                    Создаваемый нами профиль – изначально несущий, поэтому при строительстве не возникает потребности в дополнительном каркасе.
+                </p>
+            </div>
+
+            <blockquote class="mb-35px">
+                <p class="dark-black remove-bottom">
+                    Панели формируются со скоростью 18 метров в минуту. Из стального рулона шириной 600 мм сначала получаются прямые "П-образные" изделия. Затем происходит процесс их превращения в дугообразные арочные элементы путем изгиба в специальном гибочном механизме. Полученные изогнутые панели скрепляются друг с другом посредством фальцевых соединений.
+                </p>
+            </blockquote>
+
+            <div class="info-box light gradient no-border mb-35px">
+                <p class="middle-font-size remove-bottom">
+                    Фальцевые замки создаются специальным электрическим закаточным устройством. Теперь арочные панели надежно соединены в секции. В каждую секцию могут войти от 3 до 5 панелей. Осталось, используя автокран, установить арочные конструкции на заранее подготовленный фундамент, после чего их закрепляют между собой с помощью всё того же закаточного устройства.
+                </p>
+            </div>
+
+            <img src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/arochnye-paneli-faltsevye-zamki.jpg') }}" alt="Арочные панели, фальцевые замки" class="m-3" align="left">
+
+            <blockquote class="mb-35px">
+                <p class="dark-black remove-bottom">
+                    Полученные соединения абсолютно герметичны, поэтому при создании бескаркасных ангаров не нужны ни уплотнительные материалы, ни заклепки, ни болты или гайки. Более того, отсутствие тяжелых крепежных элементов и каркаса, делающих сооружение массивным, позволяет обходиться менее мощным фундаментом. В результате строительный процесс становится проще, быстрее и дешевле.
+                </p>
+            </blockquote>
+
+            <div class="info-box colored-1 rounded mb-35px">
+                <p class="middle-font-size remove-bottom">
+                    По желанию заказчика наша компания возводит сооружения любой длины (с шириной пролетов от 12 до 28 метров). Этот факт значительно повышает уровень востребованности наших работ.
+                </p>
+            </div>
+
+            <blockquote class="mb-35px">
+                <p class="dark-black remove-bottom">
+                    При бескаркасном методе строительства не используются тяжелые опоры, крепеж и прочие элементы, утяжеляющие конструкцию. Каркасные же сооружения имеют значительный вес, поэтому и фундамент под них заливается такой, который способен выдержать нагрузку.
+                </p>
+            </blockquote>
+
+            <img src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/beskarkasnoe-arochnoe-sooruzhenie.jpg') }}" alt="Бескаркасное арочное сооружение" class="m-3" align="left">
+
+            <div class="info-box light gradient no-border mb-35px">
+                <p class="middle-font-size remove-bottom">
+                    Легким бескаркасным арочным сооружениям такая основа не нужна. Это обстоятельство является одним из факторов удешевления стоимости выполняемых работ.
+                </p>
+            </div>
+
+            <blockquote class="mb-35px">
+                <p class="dark-black remove-bottom">
+                    Строительство становится проще, расход материалов снижается, а темпы возведения объектов повышаются.
+                </p>
+            </blockquote>
+
+            <div class="info-box light gradient no-border mb-50px">
+                <p class="middle-font-size mb-20px">
+                    Под бескаркасную конструкцию можно использовать следующие виды фундаментов:
+                </p>
+
+                <ul class="check-list colored remove-bottom">
+                    <li>на винтовых сваях;</li>
+                    <li>на колоннах;</li>
+                    <li>буйковый;</li>
+                    <li>ленточный;</li>
+                    <li>и другие.</li>
+                </ul>
+            </div>
+
+            <img src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/fundament-arochnogo-angara.jpg') }}" alt="Фундамент арочного ангара" class="m-3">
+
+            <blockquote class="mb-35px">
+                <p class="dark-black remove-bottom">
+                    Выбор той или иной разновидности фундамента для каждого конкретного объекта определяется характеристиками почвы на месте возведения объекта, сроками выполнения работ и пожеланиями самого заказчика.
+                </p>
+            </blockquote>
+
+            <div class="align-center"><a href="{{ path('angary') }}#beskarkasnoe-arochnoe-stroitelstvo" class="button large colored">Вернуться в раздел</a></div>
+        </div>
     </div>
 
-    <blockquote class="mb-35px">
-        <p class="dark-black remove-bottom">
-            Применяемое оборудование может успешно совмещать два соседних технологических процесса. Наши машины умеют одновременно создавать прямую панель и изгибать другое готовое изделие. Получается, что для производства конструктивных элементов мы тратим вдвое меньше времени.
-        </p>
-    </blockquote>
-
-    <img src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/mashina-dlya-beskarkasnogo-stroitelstva.jpg') }}" alt="Машина для бескаркасного строительства" class="scale-with-grid mb-50px">
-
-    <div class="info-box colored-1 rounded mb-35px">
-        <p class="middle-font-size remove-bottom">
-            Создаваемый нами профиль – изначально несущий, поэтому при строительстве не возникает потребности в дополнительном каркасе.
-        </p>
-    </div>
-
-    <blockquote class="mb-35px">
-        <p class="dark-black remove-bottom">
-            Панели формируются со скоростью 18 метров в минуту. Из стального рулона шириной 600 мм сначала получаются прямые "П-образные" изделия. Затем происходит процесс их превращения в дугообразные арочные элементы путем изгиба в специальном гибочном механизме. Полученные изогнутые панели скрепляются друг с другом посредством фальцевых соединений.
-        </p>
-    </blockquote>
-
-    <div class="info-box light gradient no-border mb-35px">
-        <p class="middle-font-size remove-bottom">
-            Фальцевые замки создаются специальным электрическим закаточным устройством. Теперь арочные панели надежно соединены в секции. В каждую секцию могут войти от 3 до 5 панелей. Осталось, используя автокран, установить арочные конструкции на заранее подготовленный фундамент, после чего их закрепляют между собой с помощью всё того же закаточного устройства.
-        </p>
-    </div>
-
-    <img src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/arochnye-paneli-faltsevye-zamki.jpg') }}" alt="Арочные панели, фальцевые замки" class="scale-with-grid mb-50px">
-
-    <blockquote class="mb-35px">
-        <p class="dark-black remove-bottom">
-            Полученные соединения абсолютно герметичны, поэтому при создании бескаркасных ангаров не нужны ни уплотнительные материалы, ни заклепки, ни болты или гайки. Более того, отсутствие тяжелых крепежных элементов и каркаса, делающих сооружение массивным, позволяет обходиться менее мощным фундаментом. В результате строительный процесс становится проще, быстрее и дешевле.
-        </p>
-    </blockquote>
-
-    <div class="info-box colored-1 rounded mb-35px">
-        <p class="middle-font-size remove-bottom">
-            По желанию заказчика наша компания возводит сооружения любой длины (с шириной пролетов от 12 до 28 метров). Этот факт значительно повышает уровень востребованности наших работ.
-        </p>
-    </div>
-
-    <blockquote class="mb-35px">
-        <p class="dark-black remove-bottom">
-            При бескаркасном методе строительства не используются тяжелые опоры, крепеж и прочие элементы, утяжеляющие конструкцию. Каркасные же сооружения имеют значительный вес, поэтому и фундамент под них заливается такой, который способен выдержать нагрузку.
-        </p>
-    </blockquote>
-
-    <img src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/beskarkasnoe-arochnoe-sooruzhenie.jpg') }}" alt="Бескаркасное арочное сооружение" class="scale-with-grid mb-50px">
-
-    <div class="info-box light gradient no-border mb-35px">
-        <p class="middle-font-size remove-bottom">
-            Легким бескаркасным арочным сооружениям такая основа не нужна. Это обстоятельство является одним из факторов удешевления стоимости выполняемых работ.
-        </p>
-    </div>
-
-    <blockquote class="mb-35px">
-        <p class="dark-black remove-bottom">
-            Строительство становится проще, расход материалов снижается, а темпы возведения объектов повышаются.
-        </p>
-    </blockquote>
-
-    <div class="info-box light gradient no-border mb-50px">
-        <p class="middle-font-size mb-20px">
-            Под бескаркасную конструкцию можно использовать следующие виды фундаментов:
-        </p>
-
-        <ul class="check-list colored remove-bottom">
-            <li>на винтовых сваях;</li>
-            <li>на колоннах;</li>
-            <li>буйковый;</li>
-            <li>ленточный;</li>
-            <li>и другие.</li>
-        </ul>
-    </div>
-
-    <img src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/fundament-arochnogo-angara.jpg') }}" alt="Фундамент арочного ангара" class="scale-with-grid mb-50px">
-
-    <blockquote class="mb-35px">
-        <p class="dark-black remove-bottom">
-            Выбор той или иной разновидности фундамента для каждого конкретного объекта определяется характеристиками почвы на месте возведения объекта, сроками выполнения работ и пожеланиями самого заказчика.
-        </p>
-    </blockquote>
-
-    <div class="align-center"><a href="{{ path('angary') }}#beskarkasnoe-arochnoe-stroitelstvo" class="button large colored">Вернуться в раздел</a></div>
 {% endblock %}

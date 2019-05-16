@@ -15,8 +15,8 @@ final class Version20190119150120 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-//        $this->addSql('ALTER TABLE user ADD api_key VARCHAR(50) NOT NULL');
-//        $this->addSql('CREATE UNIQUE INDEX UNIQ_8D93D649C912ED9D ON user (api_key)');
+        $this->addSql('ALTER TABLE user ADD api_key VARCHAR(50) NOT NULL');
+        $this->addSql('CREATE UNIQUE INDEX UNIQ_8D93D649C912ED9D ON user (api_key)');
     }
 
     public function down(Schema $schema) : void

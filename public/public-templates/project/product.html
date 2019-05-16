@@ -217,15 +217,68 @@
                 </ul>
             </div>
 
-            <div class="row m-0 p-3 bg-dark">
-                <div class="tab-content" id="myTabContent">
+            <div class="row m-0 p-3 text-justify">
+                <div class="tab-content mb-3" id="myTabContent">
                     <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, possimus?
                     </div>
                     <div class="tab-pane fade" id="designwork" role="tabpanel" aria-labelledby="designwork-tab">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquid animi, architecto,
-                        beatae distinctio illo illum iusto laborum odit quibusdam, vitae voluptates? Ab amet error hic
-                        molestias neque, quod ut!
+
+
+                        <h5>
+                            Устройство и работа
+                        </h5>
+
+                        <blockquote>
+                            <p>
+                                ОП-22 работает в комплекте с тракторами МТЗ № 80/82 и класса 0,6-0,9, сила тяги которых составляет 6-9 кН.
+                                Привод его насоса осуществляется карданным валом 10.016.2000-03.04, присоединенным к тракторному валу отбора
+                                мощности.
+                            </p>
+                        </blockquote>
+
+                        <div class="info-box light gradient no-border mb-35px">
+                            <p class="middle-font-size remove-bottom">
+                                В состав полевого штангового опрыскивателя входит горизонтальная рама, на которой закреплена полиэтиленовая
+                                емкость. В неё через горловину заливают подготовленные к распылению растворы химикатов. В задней части ОП-22
+                                установлена ещё одна рама, оснащенная по бокам вертикальными трубами.
+                            </p>
+                        </div>
+
+                        <blockquote class="mb-35px">
+                            <p class="dark-black remove-bottom">
+                                По её вертикальным стойкам перемещаются шарниры крепления колесно-опорной штанги, которая состоит из
+                                основных и концевых секций, расположенных с правой и левой стороны.
+                            </p>
+                        </blockquote>
+
+                        <p class="middle-font-size mb-35px">
+                            Там, где соединяются между собой основные и концевые секции, расположены колесные опоры.
+                        </p>
+
+                        <blockquote class="mb-35px">
+                            <p class="dark-black remove-bottom">
+                                С помощью шарниров секции штанги могут быть переведены в транспортное или рабочее положение, в котором они
+                                надежно фиксируются.
+                            </p>
+                        </blockquote>
+
+                        <div class="info-box colored-1 rounded mb-35px">
+                            <p class="middle-font-size remove-bottom">
+                                Штангу можно регулировать и в вертикальном направлении, если это необходимо в связи с высотой обрабатываемых
+                                культур.
+                                Штанга может регулироваться по высоте в диапазоне 60-125 см при шаге в 15 см.
+                            </p>
+                        </div>
+
+                        <blockquote class="mb-35px">
+                            <p class="dark-black remove-bottom">
+                                Благодаря подпружиненным самоориентирующимся рычажным подвескам конструкция обладает высокой маневренностью
+                                как при движении, так и при вхождении в поворот.
+                            </p>
+                        </blockquote>
+
+
                     </div>
                     <div class="tab-pane fade" id="configurationsprices" role="tabpanel" aria-labelledby="configurationsprices-tab">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis consectetur deserunt
@@ -241,12 +294,98 @@
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, possimus?
                     </div>
                     <div class="tab-pane fade show active" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, possimus?
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                            Написать отзыв
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Оставьте ваш отзыв</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">×</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <input type="text" class="form-control mb-3" id="headerUserReview" placeholder="Заголовок отзыва">
+                                            <textarea type="text" class="form-control w-100 mb-3" id="userReviewText" rows="10" required placeholder="* Текст отзыва"></textarea>
+                                            <input type="text" class="form-control mb-3" id=userName" required placeholder="* Ваше имя">
+
+                                            <p class="small text-right">* - обязательные поля</p>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Отменить</button>
+                                        <button type="button" class="btn btn-primary">Отправить отзыв</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card w-100 mt-3">
+                            <div class="card-header text-right">
+                                <strong>Имя</strong> 07.05.2019
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate dolorum ea eos
+                                    exercitationem, explicabo harum iste maiores possimus quidem? Beatae dolor, ex expedita
+                                    incidunt laudantium magnam nostrum quis quod rerum!
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="card w-100 mt-3">
+                            <div class="card-header text-right">
+                                <strong>Имя</strong> 07.05.2019
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="card w-100 mt-3">
+                            <div class="card-header text-right">
+                                <strong>Имя</strong> 07.05.2019
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur enim fuga maiores
+                                    minus sapiente tempora? Cumque deleniti enim, et ex facere harum itaque iure laboriosam
+                                    non numquam odit officia praesentium, quam, quasi quia rerum sapiente soluta tenetur
+                                    ullam vel veniam vero voluptatibus. Ad asperiores cumque debitis excepturi, inventore
+                                    molestiae neque non nostrum numquam officiis praesentium quidem rem repellat ullam velit
+                                    vero vitae? Beatae deserunt dicta dolorem ea eaque, est eveniet ex excepturi
+                                    exercitationem expedita explicabo fugiat hic illo in ipsum labore laboriosam magnam
+                                    maiores modi mollitia nesciunt officiis quaerat quasi repellat repellendus sit sunt,
+                                    totam unde vel veniam vitae voluptas!
+                                </p>
+                            </div>
+                        </div>
+
+                        <!--                    <div class="card w-100 mb-3">-->
+                        <!--                        <div class="card-body">-->
+                        <!--                            <p class="card-text">-->
+                        <!--                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate dolorum ea eos-->
+                        <!--                                exercitationem, explicabo harum iste maiores possimus quidem? Beatae dolor, ex expedita-->
+                        <!--                                incidunt laudantium magnam nostrum quis quod rerum!-->
+                        <!--                            </p>-->
+                        <!--                        </div>-->
+                        <!--                        <div class="card-footer text-right">-->
+                        <!--                            <strong>Имя</strong> 07.05.2019-->
+                        <!--                        </div>-->
+                        <!--                    </div>-->
                     </div>
                 </div>
             </div>
 
-            <div class="row p-3 m-0">
+            <div class="row p-3 m-0 bg-danger">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores, dolores, eius ex, illum inventore modi neque officiis quod saepe voluptas voluptates. Corporis laboriosam maxime minus officiis omnis qui voluptates.
             </div>
 

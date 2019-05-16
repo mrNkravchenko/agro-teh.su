@@ -50,7 +50,7 @@
                 <a href="{{ path('angary') }}">Ангары</a>
             </h2>
 
-            <div class="row m-0">
+            <div class="row m-0 justify-content-around">
                 {% for category in angar_category_serv.findAll() %}
                     <div class="col-xl-6 pt-3">
                         <!--To do: Add width in ccs or use row and col!-->
@@ -79,7 +79,7 @@
             </div>
         </div>
 
-        <div class="col-md-6 p-0 pb-5">
+        <div class="col-md-6 p-0 pb-5 justify-content-around">
             <h2 class="text-center bg-white sticky-top my-2">
                 <a href="{{ path('selhoztehnika') }}">Сельхозтехника</a>
             </h2>
