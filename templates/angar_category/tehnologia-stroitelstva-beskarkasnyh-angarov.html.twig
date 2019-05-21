@@ -1,121 +1,144 @@
 {% extends 'base.html.twig' %}
-{% block title %}Технология строительства бескаркасных ангаров арочного типа{% endblock %}
-{% block h1 %}Технология строительства бескаркасных ангаров{% endblock %}
-{% block mainSlider %}
-    <img src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/tehnologiya-stroitelstva-beskarkasnyh-angarov.jpg') }}" alt="Технология строительства бескаркасных ангаров" class="scale-with-grid mb-50px">
+{% block title %}
+    Технология строительства бескаркасных ангаров арочного типа
+{% endblock %}
+{% block h1 %}
+    <h2 class="text-center bg-primary text-white line-height-18 my-3">
+        Технология строительства бескаркасных ангаров
+    </h2>
+{% endblock %}
+{% block slider %}
+    <div class="row">
+        <div class="col-sm-12"
+             style="background-image: url({{ asset('assets/img/content/stroitelstvo-angarov/postroennye/beskarkasnoe-arochnoe-stroitelstvo.jpg') }});
+                     background-repeat: no-repeat;
+                     background-size: cover;
+                     background-position: center;
+                     filter: blur(8px);
+                     -webkit-filter: blur(8px);">
+            <img style="opacity: 0" src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/beskarkasnoe-arochnoe-stroitelstvo.jpg') }}" alt="Бескаркасное арочное строительство" class="img-fluid m-auto">
+        </div>
+        <img {#style="opacity: 0"#} src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/beskarkasnoe-arochnoe-stroitelstvo.jpg') }}" alt="Бескаркасное арочное строительство" class="img-fluid m-auto" style="position: absolute; left: 25%">
+    </div>
+
 {% endblock %}
 {% block content %}
-    <blockquote class="mb-35px">
-        <p class="dark-black remove-bottom">
-            Возведение бескаркасного ангара осуществляется одновременно с изготовлением арочных панелей, которые являются основой будущего объекта. Весь этот процесс происходит рядом со стройплощадкой.
-        </p>
-    </blockquote>
+    <div class="">
+        <div class="col-sm-12">
+            <blockquote class="mb-35px">
+                <p class="dark-black remove-bottom">
+                    Возведение бескаркасного ангара осуществляется одновременно с изготовлением арочных панелей, которые являются основой будущего объекта. Весь этот процесс происходит рядом со стройплощадкой.
+                </p>
+            </blockquote>
 
-    <div class="info-box light gradient no-border mb-35px">
-        <p class="middle-font-size remove-bottom">
-            Рабочее оборудование разворачивается на выровненной в горизонтальной плоскости площадке. Здесь же устанавливаются приемные столы для панелей.
-        </p>
+            <div class="info-box light gradient no-border mb-35px">
+                <p class="middle-font-size remove-bottom">
+                    Рабочее оборудование разворачивается на выровненной в горизонтальной плоскости площадке. Здесь же устанавливаются приемные столы для панелей.
+                </p>
+            </div>
+
+            <blockquote class="mb-35px">
+                <p class="dark-black remove-bottom">
+                    Для работы установки необходим переменный ток с напряжением в сети 380 В. Если строительство ведётся в удаленной от электросетей местности, ситуация разрешается применением дизельного генератора. Средняя потребляемая мощность оборудования около 15 кВт. В экономичном режиме (когда прокатный и гибочный стан работают раздельно) потребление мощности электродвигателей снижается до 7,5 кВт.
+                </p>
+            </blockquote>
+
+            <div class="info-box light gradient no-border mb-35px">
+                <p class="middle-font-size remove-bottom">
+                    Рулон металла для формирования панелей имеет массу до 4 тонн, ширину 600±2 мм и толщину до 1,4 мм. Рулон устанавливают в разматыватель и заправляют в крепления прокатного стана. Получившийся при прокате профиль отрубают гильотиной. Весь процесс выполняется оператором с помощью пульта управления.
+                </p>
+            </div>
+
+            <blockquote class="mb-35px">
+                <p class="dark-black remove-bottom">
+                    Далее прямая панель попадает в гибочный механизм. Радиус будущей арки задаётся при помощи двух штурвалов и может быть откорректирован после сравнения результата первого изгиба с контрольным образцом. После пробных пусков бригада (общий состав – от 5 человек) готова приступить к работе.
+                </p>
+            </blockquote>
+
+            <img src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/arochnyi-profil-dlya-vozvedeniya-angarov.jpg') }}" alt="Арочный профиль для возведения ангаров" class="scale-with-grid mb-50px">
+
+            <div class="info-box light gradient no-border mb-35px">
+                <p class="middle-font-size remove-bottom">
+                    Для возведения бескаркасного сооружения нужно изготовить достаточное количество прямых панелей, после чего превратить их в арочные. Обе эти операции можно выполнять отдельно или совместить.
+                </p>
+            </div>
+
+            <blockquote class="mb-35px">
+                <p class="dark-black remove-bottom">
+                    Полученные панели завальцовывают между собой с помощью закаточной машинки, которая образует герметичный шов.
+                </p>
+            </blockquote>
+
+            <div class="info-box light gradient no-border mb-50px">
+                <p class="middle-font-size remove-bottom">
+                    Арочная секция состоит из пяти скрепленных между собой панелей, потому и получила название "пятерка". Внутри арки вставляют полосы из металла, на которых потом можно закрепить, например, осветительные приборы.
+                </p>
+            </div>
+
+            <img src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/arochnaya-sektsiya-iz-pyati-paneley.jpg') }}" alt="Арочная секция из пяти панелей" class="scale-with-grid mb-50px">
+
+            <blockquote class="mb-35px">
+                <p class="dark-black remove-bottom">
+                    "Пятерку" устанавливают на основу будущего фундамента, закрепляя на ней. Фундамент под строение может быть ленточным, буронабивным или другого типа. К первой "пятерке" привальцовывается следующая, пока объект не достигнет нужной длины.
+                </p>
+            </blockquote>
+
+            <div class="info-box light gradient no-border mb-35px">
+                <p class="middle-font-size remove-bottom">
+                    Торцы сооружения закрывают прямыми панелями, в которые монтируются окна, ворота, калитки, вентиляционные клапаны.
+                </p>
+            </div>
+
+            <blockquote class="mb-35px">
+                <p class="dark-black remove-bottom">
+                    В зависимости от климата в регионе эксплуатации и от предназначения, строение может нуждаться в утеплении.
+                </p>
+            </blockquote>
+
+            <img src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/uteplenie-angarov-penopoliurenanom.jpg') }}" alt="Утепление ангаров пенополиуретаном" class="scale-with-grid mb-50px">
+
+            <div class="info-box light gradient no-border mb-35px">
+                <p class="middle-font-size mb-20px">
+                    Мы предлагаем несколько видов утепления объекта:
+                </p>
+
+                <ul class="check-list colored remove-bottom">
+                    <li>применение традиционной эковаты;</li>
+                    <li>напыление слоя пенополиуретана;</li>
+                    <li>использование других материалов.</li>
+                </ul>
+            </div>
+
+            <blockquote class="mb-35px">
+                <p class="dark-black remove-bottom">
+                    Чаще всего применяется пенополиуретан - имея отличную герметичность и адгезию, он прослужит очень долго - сберегая внутреннюю температуру помещения и эффективно поглощая звуки.
+                </p>
+            </blockquote>
+
+            <div class="info-box light gradient no-border mb-50px">
+                <p class="middle-font-size remove-bottom">
+                    При выполнении работ по напылению, мы используем высококачественное зарубежное оборудование.
+                </p>
+            </div>
+
+
+            <img src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/polikarbonatnye-okna-na-kupole.jpg') }}" alt="Поликарбонатные окна на куполе" class="scale-with-grid mb-50px">
+
+
+            <blockquote class="mb-35px">
+                <p class="dark-black remove-bottom">
+                    Идя навстречу пожеланиям заказчиков, мы устанавливаем окна из поликарбоната по арочной схеме, ворота и тамбуры - нужных размеров и в требуемом количестве.
+                </p>
+            </blockquote>
+
+            <div class="info-box light gradient no-border mb-35px">
+                <p class="middle-font-size remove-bottom">
+                    По необходимости возводим внутри ангара бытовые помещения. Также может быть установлено дополнительное освещение, смонтированы вентиляционная и отопительная системы.
+                </p>
+            </div>
+
+            <div class="align-center"><a href="{{ path('angary') }}" class="button large colored">Вернуться в раздел</a></div>
+        </div>
     </div>
 
-    <blockquote class="mb-35px">
-        <p class="dark-black remove-bottom">
-            Для работы установки необходим переменный ток с напряжением в сети 380 В. Если строительство ведётся в удаленной от электросетей местности, ситуация разрешается применением дизельного генератора. Средняя потребляемая мощность оборудования около 15 кВт. В экономичном режиме (когда прокатный и гибочный стан работают раздельно) потребление мощности электродвигателей снижается до 7,5 кВт.
-        </p>
-    </blockquote>
-
-    <div class="info-box light gradient no-border mb-35px">
-        <p class="middle-font-size remove-bottom">
-            Рулон металла для формирования панелей имеет массу до 4 тонн, ширину 600±2 мм и толщину до 1,4 мм. Рулон устанавливают в разматыватель и заправляют в крепления прокатного стана. Получившийся при прокате профиль отрубают гильотиной. Весь процесс выполняется оператором с помощью пульта управления.
-        </p>
-    </div>
-
-    <blockquote class="mb-35px">
-        <p class="dark-black remove-bottom">
-            Далее прямая панель попадает в гибочный механизм. Радиус будущей арки задаётся при помощи двух штурвалов и может быть откорректирован после сравнения результата первого изгиба с контрольным образцом. После пробных пусков бригада (общий состав – от 5 человек) готова приступить к работе.
-        </p>
-    </blockquote>
-
-    <img src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/arochnyi-profil-dlya-vozvedeniya-angarov.jpg') }}" alt="Арочный профиль для возведения ангаров" class="scale-with-grid mb-50px">
-
-    <div class="info-box light gradient no-border mb-35px">
-        <p class="middle-font-size remove-bottom">
-            Для возведения бескаркасного сооружения нужно изготовить достаточное количество прямых панелей, после чего превратить их в арочные. Обе эти операции можно выполнять отдельно или совместить.
-        </p>
-    </div>
-
-    <blockquote class="mb-35px">
-        <p class="dark-black remove-bottom">
-            Полученные панели завальцовывают между собой с помощью закаточной машинки, которая образует герметичный шов.
-        </p>
-    </blockquote>
-
-    <div class="info-box light gradient no-border mb-50px">
-        <p class="middle-font-size remove-bottom">
-            Арочная секция состоит из пяти скрепленных между собой панелей, потому и получила название "пятерка". Внутри арки вставляют полосы из металла, на которых потом можно закрепить, например, осветительные приборы.
-        </p>
-    </div>
-
-    <img src="{{ asset('-assets/img/content/stroitelstvo-angarov/postroennye/arochnaya-sektsiya-iz-pyati-paneley.jpg') }}" alt="Арочная секция из пяти панелей" class="scale-with-grid mb-50px">
-
-    <blockquote class="mb-35px">
-        <p class="dark-black remove-bottom">
-            "Пятерку" устанавливают на основу будущего фундамента, закрепляя на ней. Фундамент под строение может быть ленточным, буронабивным или другого типа. К первой "пятерке" привальцовывается следующая, пока объект не достигнет нужной длины.
-        </p>
-    </blockquote>
-
-    <div class="info-box light gradient no-border mb-35px">
-        <p class="middle-font-size remove-bottom">
-            Торцы сооружения закрывают прямыми панелями, в которые монтируются окна, ворота, калитки, вентиляционные клапаны.
-        </p>
-    </div>
-
-    <blockquote class="mb-35px">
-        <p class="dark-black remove-bottom">
-            В зависимости от климата в регионе эксплуатации и от предназначения, строение может нуждаться в утеплении.
-        </p>
-    </blockquote>
-
-    <img src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/uteplenie-angarov-penopoliurenanom.jpg') }}" alt="Утепление ангаров пенополиуретаном" class="scale-with-grid mb-50px">
-
-    <div class="info-box light gradient no-border mb-35px">
-        <p class="middle-font-size mb-20px">
-            Мы предлагаем несколько видов утепления объекта:
-        </p>
-
-        <ul class="check-list colored remove-bottom">
-            <li>применение традиционной эковаты;</li>
-            <li>напыление слоя пенополиуретана;</li>
-            <li>использование других материалов.</li>
-        </ul>
-    </div>
-
-    <blockquote class="mb-35px">
-        <p class="dark-black remove-bottom">
-            Чаще всего применяется пенополиуретан - имея отличную герметичность и адгезию, он прослужит очень долго - сберегая внутреннюю температуру помещения и эффективно поглощая звуки.
-        </p>
-    </blockquote>
-
-    <div class="info-box light gradient no-border mb-50px">
-        <p class="middle-font-size remove-bottom">
-            При выполнении работ по напылению, мы используем высококачественное зарубежное оборудование.
-        </p>
-    </div>
-
-
-    <img src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/polikarbonatnye-okna-na-kupole.jpg') }}" alt="Поликарбонатные окна на куполе" class="scale-with-grid mb-50px">
-
-
-    <blockquote class="mb-35px">
-        <p class="dark-black remove-bottom">
-            Идя навстречу пожеланиям заказчиков, мы устанавливаем окна из поликарбоната по арочной схеме, ворота и тамбуры - нужных размеров и в требуемом количестве.
-        </p>
-    </blockquote>
-
-    <div class="info-box light gradient no-border mb-35px">
-        <p class="middle-font-size remove-bottom">
-            По необходимости возводим внутри ангара бытовые помещения. Также может быть установлено дополнительное освещение, смонтированы вентиляционная и отопительная системы.
-        </p>
-    </div>
-
-    <div class="align-center"><a href="{{ path('angary') }}#tehnologia-stroitelstva-beskarkasnyh-angarov" class="button large colored">Вернуться в раздел</a></div>
 {% endblock %}

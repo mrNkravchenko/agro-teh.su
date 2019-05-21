@@ -1,57 +1,80 @@
 {% extends 'base.html.twig' %}
-{% block title %}Арочые ангары - бескаркасные и каркасно-тентовые{% endblock %}
-{% block h1 %}Арочые ангары{% endblock %}
-{% block mainSlider %}
-    <img src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/arochnye-angary.jpg') }}" alt="Арочные ангары" class="scale-with-grid mb-50px">
+{% block title %}
+    Арочые ангары - бескаркасные и каркасно-тентовые
+{% endblock %}
+{% block h1 %}
+    <h2 class="text-center bg-primary text-white line-height-18 my-3">
+        Арочые ангары
+    </h2>
+{% endblock %}
+{% block slider %}
+    <div class="row">
+        <div class="col-sm-12"
+             style="background-image: url({{ asset('assets/img/content/stroitelstvo-angarov/postroennye/beskarkasnoe-arochnoe-stroitelstvo.jpg') }});
+                     background-repeat: no-repeat;
+                     background-size: cover;
+                     background-position: center;
+                     filter: blur(8px);
+                     -webkit-filter: blur(8px);">
+            <img style="opacity: 0" src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/beskarkasnoe-arochnoe-stroitelstvo.jpg') }}" alt="Бескаркасное арочное строительство" class="img-fluid m-auto">
+        </div>
+        <img {#style="opacity: 0"#} src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/beskarkasnoe-arochnoe-stroitelstvo.jpg') }}" alt="Бескаркасное арочное строительство" class="img-fluid m-auto" style="position: absolute; left: 25%">
+    </div>
+
 {% endblock %}
 {% block content %}
-    <blockquote class="mb-35px">
-        <p class="dark-black remove-bottom">
-            Возведение арочных ангаров становится в России все более распространенным видом быстрого и экономичного строительства. В зависимости от используемой технологии они могут быть каркасными либо бескаркасными.
-        </p>
-    </blockquote>
+    <div class="">
+        <div class="col-sm-12">
+            <blockquote class="mb-35px">
+                <p class="dark-black remove-bottom">
+                    Возведение арочных ангаров становится в России все более распространенным видом быстрого и экономичного строительства. В зависимости от используемой технологии они могут быть каркасными либо бескаркасными.
+                </p>
+            </blockquote>
 
-    <div class="info-box colored-1 rounded mb-35px">
-        <p class="middle-font-size remove-bottom">
-            Каркасная технология строительства предполагает установку несущей металлоконструкции, как правило, состоящей из сборно-разборных элементов. Таким образом, сначала монтируется каркас, а уже на него крепится различный материал, выполняющий роль обшивки.
-        </p>
+            <div class="info-box colored-1 rounded mb-35px">
+                <p class="middle-font-size remove-bottom">
+                    Каркасная технология строительства предполагает установку несущей металлоконструкции, как правило, состоящей из сборно-разборных элементов. Таким образом, сначала монтируется каркас, а уже на него крепится различный материал, выполняющий роль обшивки.
+                </p>
+            </div>
+
+            <blockquote class="mb-35px">
+                <p class="dark-black remove-bottom">
+                    Сейчас наиболее широкое распространение получили каркасно-тентовые ангары, из-за наличия недорогой и очень прочной водонепроницаемой ткани.
+                </p>
+            </blockquote>
+
+            <img src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/tentovye-arochnye-angary.jpg') }}" alt="Тентовые арочные ангары" class="scale-with-grid mb-50px">
+
+            <div class="info-box colored-1 rounded mb-35px">
+                <p class="middle-font-size remove-bottom">
+                    Второй большой сегмент рынка быстровозводимых зданий и сооружений занимают бескаркасные арочные конструкции. Их особенность в возведении из деформированных специальным образом профилированных металлических арок.
+                </p>
+            </div>
+
+            <blockquote class="mb-35px">
+                <p class="dark-black remove-bottom">
+                    Профиль является несущим уже сам по себе, поэтому не требует предварительного монтажа каркаса.
+                </p>
+            </blockquote>
+
+            <div class="info-box light gradient no-border mb-35px">
+                <p class="middle-font-size mb-20px">
+                    Бескаркасные и, отчасти, каркасно-тентовые арочные сооружения имеют очень широкий диапазон использования в качестве:
+                </p>
+
+                <ul class="check-list colored remove-bottom">
+                    <li>офисных зданий и торговых центров;</li>
+                    <li>производственных помещений различного назначения;</li>
+                    <li>складов, ремонтных цехов, гаражей;</li>
+                    <li>животноводческих комплексов (свинарников, телятников, птичников и др.);</li>
+                    <li>хранилищ сельскохозяйственной продукции (зернохранилищ, овощехранилищ, картофелехранилищ и т.п.);</li>
+                    <li>навесов для хранения сельхозтехники, сенохранилищ;</li>
+                    <li>спортивных сооружений, выставочных павильонов и других объектов социально-бытового комплекса.</li>
+                </ul>
+            </div>
+
+            <div class="align-center"><a href="{{ path('angary') }}" class="button large colored">Вернуться в раздел</a></div>
+        </div>
     </div>
 
-    <blockquote class="mb-35px">
-        <p class="dark-black remove-bottom">
-            Сейчас наиболее широкое распространение получили каркасно-тентовые ангары, из-за наличия недорогой и очень прочной водонепроницаемой ткани.
-        </p>
-    </blockquote>
-
-    <img src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/tentovye-arochnye-angary.jpg') }}" alt="Тентовые арочные ангары" class="scale-with-grid mb-50px">
-
-    <div class="info-box colored-1 rounded mb-35px">
-        <p class="middle-font-size remove-bottom">
-            Второй большой сегмент рынка быстровозводимых зданий и сооружений занимают бескаркасные арочные конструкции. Их особенность в возведении из деформированных специальным образом профилированных металлических арок.
-        </p>
-    </div>
-
-    <blockquote class="mb-35px">
-        <p class="dark-black remove-bottom">
-            Профиль является несущим уже сам по себе, поэтому не требует предварительного монтажа каркаса.
-        </p>
-    </blockquote>
-
-    <div class="info-box light gradient no-border mb-35px">
-        <p class="middle-font-size mb-20px">
-            Бескаркасные и, отчасти, каркасно-тентовые арочные сооружения имеют очень широкий диапазон использования в качестве:
-        </p>
-
-        <ul class="check-list colored remove-bottom">
-            <li>офисных зданий и торговых центров;</li>
-            <li>производственных помещений различного назначения;</li>
-            <li>складов, ремонтных цехов, гаражей;</li>
-            <li>животноводческих комплексов (свинарников, телятников, птичников и др.);</li>
-            <li>хранилищ сельскохозяйственной продукции (зернохранилищ, овощехранилищ, картофелехранилищ и т.п.);</li>
-            <li>навесов для хранения сельхозтехники, сенохранилищ;</li>
-            <li>спортивных сооружений, выставочных павильонов и других объектов социально-бытового комплекса.</li>
-        </ul>
-    </div>
-
-    <div class="align-center"><a href="{{ path('angary') }}#arochnye-angary" class="button large colored">Вернуться в раздел</a></div>
 {% endblock %}
