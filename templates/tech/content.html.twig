@@ -1,4 +1,11 @@
 <div class="tech-wrapper">
+    {% if is_granted("ROLE_ADMIN") %}
+        <div class="row">
+            <div class="col-12">
+                <a href="{{ path('selhoztehnika_update', {'url' : tech.url}) }}" class="btn btn-primary">Редактировать</a>
+            </div>
+        </div>
+    {% endif %}
     <div class="row m-0">
         {#<div class="col-md-12">
             <img src="{{ asset(tech.image) }}" class="img-fluid" alt="Responsive image">
