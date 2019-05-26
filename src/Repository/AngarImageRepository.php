@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Entity\Angar;
 use App\Entity\AngarImage;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use phpDocumentor\Reflection\Types\This;
@@ -63,6 +64,16 @@ class AngarImageRepository extends ServiceEntityRepository
             $image->setFirst(true);
         }
 
+    }
+
+    /**
+     * @param Angar $angar
+     * @return AngarImage|null
+     */
+    public function getFirstImage(AngarImage $angar)
+    {
+        $firstImage = $this->findOneBy(['first' => true, 'angar' => $angar->getId()]);
+        return $firstImage;
     }
 
     /*public function getFirstImageOfAngar()

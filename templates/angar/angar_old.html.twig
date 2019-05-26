@@ -1,0 +1,118 @@
+{% extends 'base_angar.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    {{ parent() }}
+{% endblock %}
+
+{% block title %}
+    {{ angar.getCategory.getName }}, Ширина - {{ angar.getWidth }}м, Длина - {{ angar.getLength }}м, построенный ООО "АГРО-ТЕХ" в {{ angar.getAddress.getRegion }}
+    {{ angar.getAddress.getRegionIndex }}
+    {{ angar.getAddress.getCity }}
+    {{ angar.getAddress.getDistrict }} район
+{% endblock %}
+{% block h1 %}
+    {{ angar.getCategory.getName }}, Ширина - {{ angar.getWidth }}м, Длина - {{ angar.getLength }}м
+{% endblock %}
+
+{% block content %}
+
+    <div class="row hangar_descriptions">
+        <div class="hangar_dimentions">
+
+            <div class="hangars__type h2 alert-info info-box">
+
+                    {{ angar.getCategory.getName }}
+                {% if is_granted("ROLE_ADMIN") %}
+                    <a href="{{ path('angar_edit', {'id':angar.getId()}) }}" class="btn btn-primary pull-right margin-left-medium" role="button">Редактировать</a>
+                {% endif %}
+                <a href="{{ path('angar_show_all') }}" class="btn btn-primary pull-right" role="button">Все ангары</a>
+
+            </div>
+            <div class="hangars__dimentions">
+                <p>Ширина: {{ angar.getWidth }} м,</p>
+                <p>Длина: {{ angar.getLength }} м</p>
+            </div>
+            <p>Место строительства: </p>
+            <div class="hangars__address">
+                <address>
+                    {{ angar.getAddress.getRegion }}
+                    {{ angar.getAddress.getRegionIndex }}
+                    {{ angar.getAddress.getCity }}
+                    {{ angar.getAddress.getDistrict }} район
+                </address>
+            </div>
+            <div class="hangars__costumers">
+                <p>
+                    Заказчик:
+                    {{ angar.getCostumer.getTitle }}
+                </p>
+            </div>
+            {#<div class="hangars__date_of_bilding">
+                <p>Дата строительства: {{ angar.date_of_bilding }}</p>
+            </div>#}
+
+        </div>
+
+    <div class="row hangar_images">
+
+        {#{% if session.role == 3 or session.role == 2 %}
+            <div class="col-lg-1 col-md-2 col-sm-3 col-xs-4 thumb hangars__item">
+
+                <form action="/admin/uploadFiles" method="post" enctype="multipart/form-data">
+                    <div class="field">
+                        <div class="alert-warning">
+                            <p>последнее фото <span>{{ lastItem.name }}</span></p>
+                        </div>
+                        <label>Добавить изображение</label>
+                        <input type="file" name="file[]" multiple accept="image/*">
+                        <input type="text" name="hangar_id" hidden value="{{ hangar.hangar_id }}">
+                        #}{#<input type="submit">#}{#
+                    </div>
+                    <div class="tooltip" style="display: none;"><b></b><span></span></div>
+                    <input type="submit" value="Добавить">
+                </form>
+
+            </div>
+        {% endif %}#}
+
+        {% for items in angar.getImages %}
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 thumb hangars__item">
+
+                <a data-fancybox="gallery" href="{{ items.path }}{{ items.nameMd5 }}">
+                    <img class="img-responsive" src="{{ items.pathThumbnail }}{{ items.nameMd5 }}" alt="">
+                </a>
+                {#{% if session.role == 3 or session.role == 2 %}
+                    <a href="/hangars/deleteImage?hangarId={{ hangar.hangar_id }}&id={{ items.id }}&name_md5={{ items.name_md5 }}">удалить</a>
+
+                    <a href="/hangars/setFirstImage?hangarId={{ hangar.hangar_id }}&id={{ items.id }}">сделать главной</a>
+                {% endif %}#}
+
+                {#<div class="thumbnail">
+                    <img src="{{ items.path }}{{ items.name_md5 }}" alt="..." class="img-responsive">
+                </div>#}
+
+                {% if is_granted("ROLE_ADMIN") %}
+                    {% if items.getFirst() %}
+                        <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+                    {% else %}
+                        <a href="{{ path('angar_image_set_first', {'id' : items.getId()}) }}"><span class="glyphicon glyphicon-unchecked" aria-hidden="true"></span></a>
+                    {% endif %}
+                {% endif %}
+            </div>
+        {% endfor %}
+
+
+    </div>
+
+
+
+
+
+
+    </div>
+    <div class="row">
+        <div id="hangarMap" style="width: 100%; height: 400px"></div>
+    </div>
+{% endblock %}

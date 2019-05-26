@@ -71,7 +71,7 @@ function init(){
                 textForHangars += $.trim($(parent).children('.hangars__type').text()) + ', ';
                 textForHangars += $.trim($(parent).children('.hangars__dimentions').text()) + ', ';
                 textForHangars += $.trim($(parent).children('.hangars__address').text()) + ', ';
-                textForHangars += $.trim($(parent).children('.hangars__costumers').text()) + ', ';
+                textForHangars += $.trim($(parent).children('.hangars__costumers').text()) /*+ ', '*/;
 
                 var oneOfHangar = new Query('https://geocode-maps.yandex.ru/1.x/', {'geocode': hangarAddress, 'format': 'json'}, textForHangars, textForHangars);
 

@@ -45,7 +45,9 @@ class AngarCategoryController extends AbstractController
     }
 
     /**
-     * @Route("/angary/category/{url}", name="angar_category_show", methods="GET", requirements={"url"="zernohranolisha|ovoshehranalisha|angary-dlya-krs|navesy|aviaangary|tentovye-angary|remont-krysh"})
+     * @Route("/angary/category/{url}", name="angar_category_show", methods="GET")
+     * @param AngarCategory $angarCategory
+     * @return Response
      */
     public function show(AngarCategory $angarCategory): Response
     {
@@ -53,7 +55,9 @@ class AngarCategoryController extends AbstractController
     }
 
     /**
-     * @Route("/angary/category/{type}", name="angary_types")
+     * @Route("/angary/{type}", name="angary_types", methods="GET", requirements={"type"="uteplenie-penopoliuretanom|tehnologia-stroitelstva-beskarkasnyh-angarov|stroitelstvo-zernohranilishh-i-ovoshehranilishh|stroitelstvo-zernohranilish|preimushhestva-beskarkasnogo-stroitelstva|karkasnye-i-beskarkasnye-angary|beskarkasnoe-arochnoe-stroitelstvo|aviatsionnye-angary|arochnye-angary-istoriya|arochnye-angary"})
+     * @param $type
+     * @return Response
      */
     public function showTypes($type)
     {

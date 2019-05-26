@@ -1,59 +1,39 @@
-{% extends 'base_angar.html.twig' %}
+{% extends 'base.html.twig' %}
 
-{% block stylesheets %}
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    {{ parent() }}
+{% set bodyClass = 'gallery' %}
+
+{% set title = 'Строительство быстровозводимых бескаркасных арочных ангаров, рабочие моменты ООО "АГРО-ТЕХ" при строительстве ангаров и навесов' %}
+
+{% block h1 %}
+    <h1 class="text-center bg-primary text-white line-height-18 my-3">
+        Галерея рабочих моментов
+    </h1>
 {% endblock %}
 
-{% block title %}Галлерея АГРО-ТЕХ{% endblock %}
-{% block h1 %}Галлерея АГРО-ТЕХ{% endblock %}
+{% block slider %}
+    <div class="row">
+        <div class="col-sm-12"
+             style="background-image: url({{ asset('assets/img/content/stroitelstvo-angarov/postroennye/002.jpg') }});
+                     background-repeat: no-repeat;
+                     background-size: cover;
+                     background-position: bottom;
+                     filter: blur(8px);
+                     -webkit-filter: blur(8px);">
+            <img style="opacity: 0" src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/002.jpg') }}" alt="Бескаркасное арочное строительство" class="img-fluid m-auto">
+        </div>
+        <img {#style="opacity: 0"#} src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/002.jpg') }}" alt="Бескаркасное арочное строительство" class="img-fluid m-auto" style="position: absolute; left: 25%">
+    </div>
+
+{% endblock %}
+
 {% block content %}
-
-<div class="row gallery">
-    {#TODO сделать для админа#}
-    {#{% if session.role == 3 or session.role == 2 %}
-        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb hangars__item">
-
-            <form action="/admin/uploadGallery" method="post" enctype="multipart/form-data">
-                <div class="field">
-                    <div class="alert-warning">
-                        <p>последнее фото <span>{{ lastItem.name }}</span></p>
-                    </div>
-                    <label>Добавить изображение</label>
-                    <input type="file" name="file[]" multiple accept="image/*">
-                    #}{#<input type="submit">#}{#
-                </div>
-                <div class="tooltip" style="display: none;"><b></b><span></span></div>
-                <input type="submit" value="Добавить">
-            </form>
-
-        </div>
-    {% endif %}#}
-    {% for item in gallery %}
-        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb hangars__item">
-
-            <a data-fancybox="gallery" href="{{ item.getPath }}{{ item.getNameMd5 }}">
-                <img class="img-responsive" src="{{ item.getPathThumbnail }}{{ item.getNameMd5 }}" alt="">
-            </a>
-            {#{% if session.role == 3 or session.role == 2 %}
-                <a href="/gallery/deleteImage?id={{ items.id }}&name_md5={{ items.name_md5 }}">удалить</a>
-            {% endif %}#}
-
-            {#<div class="thumbnail">
-                <img src="{{ items.path }}{{ items.name_md5 }}" alt="..." class="img-responsive">
-            </div>#}
-        </div>
-    {% endfor %}
-
-</div>
-
+    <div class="row m-0 pb-3 justify-content-around gallery">
+        {% for item in gallery %}
+            <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb hangars__item">
+                <a data-fancybox="gallery" href="{{ item.getPath }}{{ item.getNameMd5 }}">
+                    <img class="img-thumbnail" src="{{ item.getPathThumbnail }}{{ item.getNameMd5 }}" alt="">
+                </a>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
-
-
-
-
-
-
-
-
-

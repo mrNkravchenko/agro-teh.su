@@ -30,11 +30,11 @@ class AngarController extends AbstractController
         return $this->render('angar/types/all_types.html.twig', ['angars' => $angarRepository->findAll(), 'categories' => $angarCategoryRepository->findAll()]);
     }
     /**
-     * @Route("/angary/postroennue", name="angar_show_all")
+     * @Route("/angary/postroennue", name="angar_show_all", )
      */
     public function showAll(AngarRepository $angarRepository): Response
     {
-        return $this->render('angar/postroennue.html.twig', ['angary' => $angarRepository->findAll()]);
+        return $this->render('angar/postroennue.html.twig', ['angars' => $angarRepository->findAll()]);
 
     }
 
@@ -62,7 +62,7 @@ class AngarController extends AbstractController
     }
 
     /**
-     * @Route("/angary/{id}", name="angar_show", methods="GET", requirements={"id" = "\d+"})
+     * @Route("/angary/postroennue/{id}", name="angar_show", methods="GET", requirements={"id" = "\d+"})
      */
     public function show(Angar $angar): Response
     {

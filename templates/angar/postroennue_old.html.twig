@@ -1,0 +1,153 @@
+{#<div class="hangars">
+    {% for items in hangars %}
+    <a href="/hangars/show?hangar_id={{ items.hangar_id }}">
+        <div class="hangars__item">
+            <div class="hangars__images">
+                <img src="{{ items.path }}" alt="">
+            </div>
+            <div class="hangars__type">
+                <p>
+                    {{ items.type }}
+                </p>
+            </div>
+            <div class="hangars__dimentions">
+                <p>Ширина: {{ items.width }} м</p>
+                <p>Длина: {{ items.length }} м</p>
+            </div>
+            <div class="hangars__address">
+                <address>
+                    {{ items.address }}
+                </address>
+            </div>
+            <div class="hangars__costumers">
+                <p>
+                    {{ items.title }}
+                </p>
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+    #}{#{{ dump(hangars) }}#}{#
+    #}{#{{ dump(session) }}#}{#
+</div>#}
+
+{% extends 'base_angar.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    {{ parent() }}
+{% endblock %}
+
+{% block title %}Ангары и Навесы, построенные фирмой АГРО-ТЕХ{% endblock %}
+{% block h1 %}Наши работы{% endblock %}
+{% block content %}
+
+
+<div class="hangars">
+
+    {% for angar in angary %}
+        <div class="hangar row thumbnail mb-20px rounded panel panel-info">
+            <div class="panel-title bg-info">
+                <p class="text-center">{{ angar.getWidth }} х {{ angar.getLength }} - {{ angar.getAddress.getCity }}</p>
+            </div>
+            <div class="col-lg-4">
+                <div class="thumb center-block">
+
+                    {#<a #}{#data-fancybox="gallery"#}{# href="{{ items.path }}">
+
+                    </a>#}
+                    {% for image in angar.getImages %}
+                        {#{{ dump(image.getFirst) }}#}
+
+                        {% if image.getFirst %}
+                            <img class="img-responsive" src="{{ image.getPathThumbnail }}{{ image.getNameMd5 }}" alt="" {#style="width: 320px; height: 213px;"#}>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="hangars__type">
+                    <p>
+                        {{ angar.getCategory.getName }}
+                    </p>
+                </div>
+
+                <div class="hangars__dimentions">
+                    <p>Ширина: {{ angar.getWidth }} м</p>
+                    <p>Длина: {{ angar.getLength }} м</p>
+                </div>
+                <div class="hangars__address">
+                    <address>
+                        {{ angar.getAddress.getRegion }}
+                        {{ angar.getAddress.getRegionIndex }}
+                        {{ angar.getAddress.getCity }}
+                        {{ angar.getAddress.getDistrict }} район
+                    </address>
+                </div>
+                <div class="hangars__costumers">
+                    <p>
+                        {{ angar.getCostumer.getTitle }}
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-2 media">
+                <p><a href="{{ path('angar_show', {'id' : angar.getId | number_format }) }}" class="btn btn-primary media-middle" role="button">Подробнее</a></p>
+            </div>
+        </div>
+        {#<div class="col-lg-4 col-sm-6 col-md-6 hangars__item">
+            <div class="thumbnail">
+
+                <div class="thumb center-block">
+
+                    #}{#<a #}{##}{#data-fancybox="gallery"#}{##}{# href="{{ items.path }}">
+
+                    </a>#}{#
+                    {% for image in angar.getImages %}
+                    #}{#{{ dump(image.getFirst) }}#}{#
+
+                        {% if image.getFirst %}
+                            <img class="img-responsive" src="{{ image.getPathThumbnail }}{{ image.getNameMd5 }}" alt="" #}{#style="width: 320px; height: 213px;"#}{#>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+
+
+
+                #}{#<img src="{{ items.path }}" alt="..." class="img-responsive" style="height: 240px;">#}{#
+                <div class="caption">
+
+                    <div class="hangars__type">
+                        <p>
+                            {{ angar.getCategory.getName }}
+                        </p>
+                    </div>
+
+                    <div class="hangars__dimentions">
+                        <p>Ширина: {{ angar.getWidth }} м</p>
+                        <p>Длина: {{ angar.getLength }} м</p>
+                    </div>
+                    <div class="hangars__address">
+                        <address>
+                            {{ angar.getAddress.getRegion }}
+                            {{ angar.getAddress.getRegionIndex }}
+                            {{ angar.getAddress.getCity }}
+                            {{ angar.getAddress.getDistrict }} район
+                        </address>
+                    </div>
+                    <div class="hangars__costumers">
+                        <p>
+                            {{ angar.getCostumer.getTitle }}
+                        </p>
+                    </div>
+
+                    <p><a href="{{ path('angar_show', {'id' : angar.getId | number_format }) }}" class="btn btn-primary" role="button">Подробнее</a></p>
+                </div>
+            </div>
+        </div>#}
+    {% endfor %}
+</div>
+<div class="row">
+    <div id="hangarsMap" style="width: 100%; height: 400px"></div>
+</div>
+
+{% endblock %}

@@ -23,7 +23,7 @@ class ArticlesController extends AbstractController
      */
     public function showAll(ArticlesRepository $articlesRepository): Response
     {
-        return $this->render('articles/index.html.twig', ['articles' => $articlesRepository->findAll()]);
+        return $this->render('articles/articles.html.twig', ['articles' => $articlesRepository->findAll()]);
     }
 
     /**
@@ -82,7 +82,7 @@ class ArticlesController extends AbstractController
      */
     public function show(Articles $article): Response
     {
-        return $this->render('articles/show.html.twig', ['article' => $article]);
+        return $this->render('articles/article.html.twig', ['article' => $article]);
     }
 
     /**

@@ -1,174 +1,197 @@
-{% extends 'base_angar.html.twig' %}
-{% block title %}Строительство зернохранилищ по цене от 2500 руб, спешите!{% endblock %}
-{% block h1 %}Строительство зернохранилищ{% endblock %}
-{% block mainSlider %}
-    <img src="{{ asset('/assets/img/content/stroitelstvo-angarov/zerno/stroitelstvo-zernohranilishh.jpg') }}" alt="Строительство зернохранилищ" class="scale-with-grid mb-50px">
+{% extends 'base.html.twig' %}
+{% block title %}
+    Строительство зернохранилищ по цене от 2500 руб, спешите!
+{% endblock %}
+{% block h1 %}
+    <h1 class="text-center bg-primary text-white line-height-18 my-3">
+        Строительство зернохранилищ
+    </h1>
+{% endblock %}
+{% block slider %}
+    <div class="row">
+        <div class="col-sm-12"
+             style="background-image: url({{ asset('assets/img/content/stroitelstvo-angarov/postroennye/beskarkasnoe-arochnoe-stroitelstvo.jpg') }});
+                     background-repeat: no-repeat;
+                     background-size: cover;
+                     background-position: center;
+                     filter: blur(8px);
+                     -webkit-filter: blur(8px);">
+            <img style="opacity: 0" src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/beskarkasnoe-arochnoe-stroitelstvo.jpg') }}" alt="Бескаркасное арочное строительство" class="img-fluid m-auto">
+        </div>
+        <img {#style="opacity: 0"#} src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/beskarkasnoe-arochnoe-stroitelstvo.jpg') }}" alt="Бескаркасное арочное строительство" class="img-fluid m-auto" style="position: absolute; left: 25%">
+    </div>
+
 {% endblock %}
 {% block content %}
-    <div class="info-box colored-1 rounded mb-35px">
-        <p class="middle-font-size remove-bottom">
-            В 2016 году производители зерновых культур в Ростовской области смогли собрать свыше 11 млн тонн зерна. Одной только пшеницы было собрано более 9 млн тонн.
-        </p>
+    <div class="">
+        <div class="col-sm-12">
+            <div class="info-box colored-1 rounded mb-35px">
+                <p class="middle-font-size remove-bottom">
+                    В 2016 году производители зерновых культур в Ростовской области смогли собрать свыше 11 млн тонн зерна. Одной только пшеницы было собрано более 9 млн тонн.
+                </p>
+            </div>
+
+            <blockquote class="mb-35px">
+                <p class="dark-black remove-bottom">
+                    Цифры впечатляют. Тем не менее, получить большой урожай – это только половина успеха. Нужно суметь правильно сохранить зерно, чтобы оно не испортилось и не потеряло свои товарные качества.
+                </p>
+            </blockquote>
+
+            <div class="info-box light gradient no-border mb-70px">
+                <p class="middle-font-size remove-bottom">
+                    В наследство от Советского Союза осталось множество зернотоков, которые далеко не всегда соответствуют современным требованиям. Многие из них устарели и начали разрушаться, пропуская внутрь помещения губительную для зерна влагу. Из-за этого на стенах появляется грибок и плесень, повышается риск неконтролируемого размножения болезнетворных микробов и проникновения в зерносклады грызунов.
+                </p>
+            </div>
+
+            <p class="psevdo_h2 mb-40px">
+                Выход из сложившейся ситуации
+            </p>
+
+            <blockquote class="mb-35px">
+                <p class="dark-black remove-bottom">
+                    Строительство зернохранилищ компанией "АГРО-ТЕХ" проводится по существующим санитарно-гигиеническим нормам, чтобы сооружения были долговечными, технологичными, помогали хранить зерновые культуры на протяжении длительного периода.
+                </p>
+            </blockquote>
+
+            <img src="{{ asset('assets/img/content/stroitelstvo-angarov/zerno/vozvedenie-zernoskladov.jpg') }}" alt="Возведение зерноскладов" class="scale-with-grid mb-50px">
+
+            <div class="info-box colored-1 rounded mb-70px">
+                <p class="middle-font-size remove-bottom">
+                    При разработке проекта нашими специалистами используются нормы технического проектирования, в которых указаны требования к будущей конструкции.
+                </p>
+            </div>
+
+            <p class="psevdo_h2 mb-40px">
+                Требования
+            </p>
+
+            <div class="info-box light gradient no-border mb-35px">
+                <p class="middle-font-size remove-bottom">
+                    Согласно НТП-93, в хранилище обязательно должны быть установки для проветривания и кондиционирования помещения холодным воздухом, перемешивающие установки, устройства для обеззараживания зерна.
+                </p>
+            </div>
+
+            <blockquote class="mb-35px">
+                <p class="dark-black remove-bottom">
+                    Очень важно периодически проверять предельные нормы наличия фунгицидов в воздухе зернохранилища.
+                </p>
+            </blockquote>
+
+            <img src="{{ asset('assets/img/content/stroitelstvo-angarov/zerno/zernohranilishha.jpg') }}" alt="Зернохранилища" class="scale-with-grid mb-50px">
+
+            <div class="info-box light gradient no-border mb-35px">
+                <p class="middle-font-size remove-bottom">
+                    Также нужно позаботиться о механизации процесса обеззараживания зерна. Для определения качества товара в зерноскладе используется ГОСТ 3040-55. При погрузке и выгрузке зерна риск повреждения продукции должен быть сведен к минимуму.
+                </p>
+            </div>
+
+            <blockquote class="mb-35px">
+                <p class="dark-black remove-bottom">
+                    Необходимо оборудовать помещения для хранения продукции бункерами для отходов.
+                </p>
+            </blockquote>
+
+            <div class="info-box colored-1 rounded mb-70px">
+                <p class="middle-font-size remove-bottom">
+                    Температура в зернотоках не регламентируется правилами и нормами. Исключение составляют только помещения для обеззараживания – в них температура не должна опускаться ниже +5 градусов.
+                </p>
+            </div>
+
+
+            <p class="psevdo_h2 mb-40px">
+                Образуется ли конденсат?
+            </p>
+
+            <div class="info-box light gradient no-border mb-50px">
+                <p class="middle-font-size remove-bottom">
+                    При строительстве бескаркасных зернохранилищ используют стальной профильный лист с полимерным или оцинкованным покрытием. Однако бытует мнение, что возведение арочных зернотоков из рулонной оцинкованной стали может привести к появлению конденсата при дневном повышении температуры после холодных ночей.
+                </p>
+            </div>
+
+            <img src="{{ asset('assets/img/content/stroitelstvo-angarov/zerno/stroitelstvo-beskarkasnyh-zernohranilishh.jpg') }}" alt="Строительство бескаркасных зернохранилищ" class="scale-with-grid mb-50px">
+
+            <blockquote class="mb-35px">
+                <p class="dark-black remove-bottom">
+                    Также встречаются совершенно необоснованные утверждения, что конденсат выделяется в объемах, способных привести к увлажнению зерна и его порче.
+                </p>
+            </blockquote>
+
+
+            <div class="info-box colored-1 rounded mb-70px">
+                <p class="middle-font-size remove-bottom">
+                    Истиной здесь является лишь тот факт, что зерносклады даже в холодное время года не требуют обогрева. Все остальное - неверно, так как при использовании бетонного или асфальтного пола появление конденсата в больших количествах невозможно. Более того, система вентиляции воздуха сводит все риски практически к нулю.
+                </p>
+            </div>
+
+            <p class="psevdo_h2 mb-40px">
+                Поликарбонатный профиль
+            </p>
+
+            <blockquote class="mb-35px">
+                <p class="dark-black remove-bottom">
+                    Стальные профлисты мы можем дополнить вставками, выполненными из прозрачного поликарбоната. Высокая светопроницаемость этого материала позволит сэкономить на электрическом освещении в дневное время.
+                </p>
+            </blockquote>
+
+            <img src="{{ asset('assets/img/content/stroitelstvo-angarov/zerno/polikarbonatnyi-profil-v-zernohranilishhah.jpg') }}" alt="Поликарбонатный профиль в зернохранилищах" class="scale-with-grid mb-50px">
+
+            <div class="info-box colored-1 rounded mb-70px">
+                <p class="middle-font-size remove-bottom">
+                    Поликарбонатный профиль хорошо стыкуется со стальным, что обеспечивает высокий уровень герметичности. Поликарбонат не разрушается при колебаниях температуры, не пропускает ультрафиолетовое излучение.
+                </p>
+            </div>
+
+            <p class="psevdo_h2 mb-40px">
+                Дополнительные возможности
+            </p>
+
+            <div class="info-box light gradient no-border mb-50px">
+                <p class="middle-font-size remove-bottom">
+                    В зернохранилище может реализовываться функция обеззараживания зерна с помощью температуры и газа, но для этой цели потребуется дополнительное оборудование и наличие свободной площади.
+                </p>
+            </div>
+
+            <img src="{{ asset('assets/img/content/stroitelstvo-angarov/zerno/zernosklad.jpg') }}" alt="Зерносклад" class="scale-with-grid mb-50px">
+
+            <blockquote class="mb-70px">
+                <p class="dark-black remove-bottom">
+                    Урожай хранят двумя основными способами: россыпью или же в таре. Если потребуется, то помещение можно разделить на несколько различных секций для хранения различных зерновых культур.
+                </p>
+            </blockquote>
+
+
+
+            <p class="psevdo_h2 mb-40px">
+                Вывод
+            </p>
+
+            <blockquote class="mb-35px">
+                <p class="dark-black remove-bottom">
+                    Хранилища для зерна должны отличаться высокой вместительностью, при проектировании следует предусмотреть возможность реконструкции, усовершенствования и переоборудования в будущем.
+                </p>
+            </blockquote>
+
+            <img src="{{ asset('assets/img/content/stroitelstvo-angarov/zerno/hranilishha-dlya-zerna.jpg') }}" alt="Хранилища для зерна" class="scale-with-grid mb-50px">
+
+            <div class="info-box colored-1 rounded mb-35px">
+                <p class="middle-font-size remove-bottom">
+                    Помещения должны быть герметичными, устойчивыми к резким перепадам температуры. Строительный материал, из которого возводятся конструкции, должен выдерживать регулярные санитарные обработки и быть устойчивым к различным микробиологическим культурам.
+                </p>
+            </div>
+
+            <blockquote class="mb-35px">
+                <p class="dark-black remove-bottom">
+                    И последнее - накопленный опыт, современные материалы и инновационные технологии, применяемые при строительстве зернохранилищ специалистами ООО "АГРО-ТЕХ", помогают добиться высокого уровня сохранности сельскохозяйственной продукции на протяжении всего периода хранения зерновых культур.
+                </p>
+            </blockquote>
+
+
+            <div class="align-center mb-35px">
+                <a href="{{ path('angary') }}" class="button large colored bx_shadow">
+                    Стоимость строительства
+                </a>
+            </div>
+        </div>
     </div>
 
-    <blockquote class="mb-35px">
-        <p class="dark-black remove-bottom">
-            Цифры впечатляют. Тем не менее, получить большой урожай – это только половина успеха. Нужно суметь правильно сохранить зерно, чтобы оно не испортилось и не потеряло свои товарные качества.
-        </p>
-    </blockquote>
-
-    <div class="info-box light gradient no-border mb-70px">
-        <p class="middle-font-size remove-bottom">
-            В наследство от Советского Союза осталось множество зернотоков, которые далеко не всегда соответствуют современным требованиям. Многие из них устарели и начали разрушаться, пропуская внутрь помещения губительную для зерна влагу. Из-за этого на стенах появляется грибок и плесень, повышается риск неконтролируемого размножения болезнетворных микробов и проникновения в зерносклады грызунов.
-        </p>
-    </div>
-
-    <p class="psevdo_h2 mb-40px">
-        Выход из сложившейся ситуации
-    </p>
-
-    <blockquote class="mb-35px">
-        <p class="dark-black remove-bottom">
-            Строительство зернохранилищ компанией "АГРО-ТЕХ" проводится по существующим санитарно-гигиеническим нормам, чтобы сооружения были долговечными, технологичными, помогали хранить зерновые культуры на протяжении длительного периода.
-        </p>
-    </blockquote>
-
-    <img src="{{ asset('assets/img/content/stroitelstvo-angarov/zerno/vozvedenie-zernoskladov.jpg') }}" alt="Возведение зерноскладов" class="scale-with-grid mb-50px">
-
-    <div class="info-box colored-1 rounded mb-70px">
-        <p class="middle-font-size remove-bottom">
-            При разработке проекта нашими специалистами используются нормы технического проектирования, в которых указаны требования к будущей конструкции.
-        </p>
-    </div>
-
-    <p class="psevdo_h2 mb-40px">
-        Требования
-    </p>
-
-    <div class="info-box light gradient no-border mb-35px">
-        <p class="middle-font-size remove-bottom">
-            Согласно НТП-93, в хранилище обязательно должны быть установки для проветривания и кондиционирования помещения холодным воздухом, перемешивающие установки, устройства для обеззараживания зерна.
-        </p>
-    </div>
-
-    <blockquote class="mb-35px">
-        <p class="dark-black remove-bottom">
-            Очень важно периодически проверять предельные нормы наличия фунгицидов в воздухе зернохранилища.
-        </p>
-    </blockquote>
-
-    <img src="{{ asset('assets/img/content/stroitelstvo-angarov/zerno/zernohranilishha.jpg') }}" alt="Зернохранилища" class="scale-with-grid mb-50px">
-
-    <div class="info-box light gradient no-border mb-35px">
-        <p class="middle-font-size remove-bottom">
-            Также нужно позаботиться о механизации процесса обеззараживания зерна. Для определения качества товара в зерноскладе используется ГОСТ 3040-55. При погрузке и выгрузке зерна риск повреждения продукции должен быть сведен к минимуму.
-        </p>
-    </div>
-
-    <blockquote class="mb-35px">
-        <p class="dark-black remove-bottom">
-            Необходимо оборудовать помещения для хранения продукции бункерами для отходов.
-        </p>
-    </blockquote>
-
-    <div class="info-box colored-1 rounded mb-70px">
-        <p class="middle-font-size remove-bottom">
-            Температура в зернотоках не регламентируется правилами и нормами. Исключение составляют только помещения для обеззараживания – в них температура не должна опускаться ниже +5 градусов.
-        </p>
-    </div>
-
-
-    <p class="psevdo_h2 mb-40px">
-        Образуется ли конденсат?
-    </p>
-
-    <div class="info-box light gradient no-border mb-50px">
-        <p class="middle-font-size remove-bottom">
-            При строительстве бескаркасных зернохранилищ используют стальной профильный лист с полимерным или оцинкованным покрытием. Однако бытует мнение, что возведение арочных зернотоков из рулонной оцинкованной стали может привести к появлению конденсата при дневном повышении температуры после холодных ночей.
-        </p>
-    </div>
-
-    <img src="{{ asset('assets/img/content/stroitelstvo-angarov/zerno/stroitelstvo-beskarkasnyh-zernohranilishh.jpg') }}" alt="Строительство бескаркасных зернохранилищ" class="scale-with-grid mb-50px">
-
-    <blockquote class="mb-35px">
-        <p class="dark-black remove-bottom">
-            Также встречаются совершенно необоснованные утверждения, что конденсат выделяется в объемах, способных привести к увлажнению зерна и его порче.
-        </p>
-    </blockquote>
-
-
-    <div class="info-box colored-1 rounded mb-70px">
-        <p class="middle-font-size remove-bottom">
-            Истиной здесь является лишь тот факт, что зерносклады даже в холодное время года не требуют обогрева. Все остальное - неверно, так как при использовании бетонного или асфальтного пола появление конденсата в больших количествах невозможно. Более того, система вентиляции воздуха сводит все риски практически к нулю.
-        </p>
-    </div>
-
-    <p class="psevdo_h2 mb-40px">
-        Поликарбонатный профиль
-    </p>
-
-    <blockquote class="mb-35px">
-        <p class="dark-black remove-bottom">
-            Стальные профлисты мы можем дополнить вставками, выполненными из прозрачного поликарбоната. Высокая светопроницаемость этого материала позволит сэкономить на электрическом освещении в дневное время.
-        </p>
-    </blockquote>
-
-    <img src="{{ asset('assets/img/content/stroitelstvo-angarov/zerno/polikarbonatnyi-profil-v-zernohranilishhah.jpg') }}" alt="Поликарбонатный профиль в зернохранилищах" class="scale-with-grid mb-50px">
-
-    <div class="info-box colored-1 rounded mb-70px">
-        <p class="middle-font-size remove-bottom">
-            Поликарбонатный профиль хорошо стыкуется со стальным, что обеспечивает высокий уровень герметичности. Поликарбонат не разрушается при колебаниях температуры, не пропускает ультрафиолетовое излучение.
-        </p>
-    </div>
-
-    <p class="psevdo_h2 mb-40px">
-        Дополнительные возможности
-    </p>
-
-    <div class="info-box light gradient no-border mb-50px">
-        <p class="middle-font-size remove-bottom">
-            В зернохранилище может реализовываться функция обеззараживания зерна с помощью температуры и газа, но для этой цели потребуется дополнительное оборудование и наличие свободной площади.
-        </p>
-    </div>
-
-    <img src="{{ asset('assets/img/content/stroitelstvo-angarov/zerno/zernosklad.jpg') }}" alt="Зерносклад" class="scale-with-grid mb-50px">
-
-    <blockquote class="mb-70px">
-        <p class="dark-black remove-bottom">
-            Урожай хранят двумя основными способами: россыпью или же в таре. Если потребуется, то помещение можно разделить на несколько различных секций для хранения различных зерновых культур.
-        </p>
-    </blockquote>
-
-
-
-    <p class="psevdo_h2 mb-40px">
-        Вывод
-    </p>
-
-    <blockquote class="mb-35px">
-        <p class="dark-black remove-bottom">
-            Хранилища для зерна должны отличаться высокой вместительностью, при проектировании следует предусмотреть возможность реконструкции, усовершенствования и переоборудования в будущем.
-        </p>
-    </blockquote>
-
-    <img src="{{ asset('assets/img/content/stroitelstvo-angarov/zerno/hranilishha-dlya-zerna.jpg') }}" alt="Хранилища для зерна" class="scale-with-grid mb-50px">
-
-    <div class="info-box colored-1 rounded mb-35px">
-        <p class="middle-font-size remove-bottom">
-            Помещения должны быть герметичными, устойчивыми к резким перепадам температуры. Строительный материал, из которого возводятся конструкции, должен выдерживать регулярные санитарные обработки и быть устойчивым к различным микробиологическим культурам.
-        </p>
-    </div>
-
-    <blockquote class="mb-35px">
-        <p class="dark-black remove-bottom">
-            И последнее - накопленный опыт, современные материалы и инновационные технологии, применяемые при строительстве зернохранилищ специалистами ООО "АГРО-ТЕХ", помогают добиться высокого уровня сохранности сельскохозяйственной продукции на протяжении всего периода хранения зерновых культур.
-        </p>
-    </blockquote>
-
-
-    <div class="align-center mb-35px">
-        <a href="{{ path('angary') }}" class="button large colored bx_shadow">
-            Стоимость строительства
-        </a>
-    </div>
 {% endblock %}

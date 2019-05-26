@@ -15,7 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class GalleryImageController extends AbstractController
 {
     /**
-     * @Route("/gallery/images", name="gallery_image_index", methods="GET")
+     * @Route("/manager/gallery/images", name="gallery_image_index", methods="GET")
      * @param GalleryImageRepository $galleryImageRepository
      * @return Response
      */
@@ -44,7 +44,7 @@ class GalleryImageController extends AbstractController
     }
 
     /**
-     * @Route("/gallery/image/new", name="gallery_image_new", methods="GET|POST")
+     * @Route("/manager/gallery/image/new", name="gallery_image_new", methods="GET|POST")
      * @param Request $request
      * @param FileUploader $fileUploader
      * @return Response
@@ -81,7 +81,7 @@ class GalleryImageController extends AbstractController
     }
 
     /**
-     * @Route("/gallery/image/{id}", name="gallery_image_show", methods="GET")
+     * @Route("/manager/gallery/image/{id}", name="gallery_image_show", methods="GET")
      */
     public function show(GalleryImage $galleryImage): Response
     {
@@ -89,7 +89,7 @@ class GalleryImageController extends AbstractController
     }
 
     /**
-     * @Route("/gallery/image/{id}/edit", name="gallery_image_edit", methods="GET|POST")
+     * @Route("/manager/gallery/image/{id}/edit", name="gallery_image_edit", methods="GET|POST")
      */
     public function edit(Request $request, GalleryImage $galleryImage): Response
     {
@@ -109,7 +109,7 @@ class GalleryImageController extends AbstractController
     }
 
     /**
-     * @Route("/gallery/image/{id}", name="gallery_image_delete", methods="DELETE")
+     * @Route("/manager/gallery/image/{id}", name="gallery_image_delete", methods="DELETE")
      */
     public function delete(Request $request, GalleryImage $galleryImage): Response
     {
