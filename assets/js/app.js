@@ -26,9 +26,28 @@ require('jquery.scrollto');
 require ('jquery.kladr/jquery.kladr.min');
 require('./mapGenerator');
 require('./sendEmail');
-
+require('trumbowyg');
 
 import '@fancyapps/fancybox';
+
+$.trumbowyg.svgPath = '/assets/img/icons.svg';
+
+$('.html_redactor').trumbowyg({
+    btns: [
+        ['viewHTML'],
+        ['undo', 'redo'], // Only supported in Blink browsers
+        ['formatting'],
+        ['strong', 'em', 'del'],
+        ['superscript', 'subscript'],
+        ['link'],
+        ['insertImage'],
+        ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
+        ['unorderedList', 'orderedList'],
+        ['horizontalRule'],
+        ['removeformat'],
+        ['fullscreen']
+    ]
+});
 
 //SLICK SLIDER
 

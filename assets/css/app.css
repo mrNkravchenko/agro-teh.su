@@ -26,3 +26,4 @@
 @import "page/home.css";
 @import "page/tech/view.css";
 @import "base.css";
+@import "~trumbowyg/dist/ui/trumbowyg.min.css";
