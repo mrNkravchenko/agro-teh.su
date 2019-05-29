@@ -10,6 +10,7 @@ namespace App\Form;
 
 
 
+use App\Entity\Dimensions;
 use App\Entity\Performance;
 use App\Entity\TechCategory;
 
@@ -17,6 +18,7 @@ use App\Repository\TechCategoryRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -46,6 +48,8 @@ class TechType extends AbstractType
             ->add('description', TextareaType::class, ['attr' =>  ['class' => 'form-control html_redactor', 'rows' => 10, 'cols' => 30]])
             ->add('manual', TextareaType::class, ['attr' =>  ['class' => 'form-control html_redactor', 'rows' => 10, 'cols' => 30]])
             ->add('performance', TextareaType::class, ['attr' =>  ['class' => 'form-control', 'rows' => 10, 'cols' => 30]])
+            ->add('dimentions', DimensionsType::class)
+//            ->add('dimentions')
             ->add('save', SubmitType::class);
     }
 

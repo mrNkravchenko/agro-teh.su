@@ -34,8 +34,6 @@ class Tech
      */
     private $category;
 
-
-
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank()

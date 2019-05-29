@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dimensions{% endblock %}
+
+{% block body %}
+    <h1>Dimensions</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ dimension.id }}</td>
+            </tr>
+            <tr>
+                <th>Width</th>
+                <td>{{ dimension.width }}</td>
+            </tr>
+            <tr>
+                <th>Height</th>
+                <td>{{ dimension.height }}</td>
+            </tr>
+            <tr>
+                <th>Length</th>
+                <td>{{ dimension.length }}</td>
+            </tr>
+            <tr>
+                <th>Volume</th>
+                <td>{{ dimension.volume }}</td>
+            </tr>
+            <tr>
+                <th>Weight</th>
+                <td>{{ dimension.weight }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('dimensions_index') }}">back to list</a>
+
+    <a href="{{ path('dimensions_edit', {'id': dimension.id}) }}">edit</a>
+
+    {{ include('dimensions/_delete_form.html.twig') }}
+{% endblock %}
