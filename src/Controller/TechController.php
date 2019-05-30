@@ -268,6 +268,8 @@ class TechController extends AbstractController
             $fileUploader->setWithThumbnail(false);
             $imageMngUpload = $fileUploader->upload($imageMng);
             $tech->setMngImage('assets/img/content/_mng/'.$imageMngUpload['name_md5']);
+            $dimension = $tech->getDimentions();
+            $dimension->setTech($tech);
 
             $this->getDoctrine()->getManager()->flush();
 

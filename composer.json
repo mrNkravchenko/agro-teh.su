@@ -10,7 +10,7 @@
         "ext-iconv": "*",
         "doctrine/doctrine-bundle": "^1.9",
         "fancyapps/fancybox": "^2.1",
-        "friendsofsymfony/user-bundle": "~2.0",
+//        "friendsofsymfony/user-bundle": "~2.0",
         "guzzlehttp/guzzle": "^6.3",
         "sensio/framework-extra-bundle": "^5.2",
         "sensiolabs/security-checker": "^5.0",
