@@ -21,6 +21,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use function time;
@@ -62,6 +63,8 @@ class TechController extends AbstractController
             ->setMethod('POST')
             /*->add('tech', EntityType::class, ['class'=> Tech::class])*/
             ->add('feedback', TextareaType::class/*, ['label' => 'Ваш отзыв']*/)
+            ->add('title', TextType::class/*, ['label' => 'Ваш отзыв']*/)
+            ->add('name', TextType::class/*, ['label' => 'Ваш отзыв']*/)
             ->add('save', SubmitType::class, ['label' => 'Оставить отзыв'])
             ->getForm();
 

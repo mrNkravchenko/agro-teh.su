@@ -21,6 +21,18 @@ class TechFeedback
      * @ORM\Column(type="text")
      * @Assert\NotBlank()
      */
+    private $name;
+
+    /**
+     * @ORM\Column(type="text")
+     * @Assert\NotBlank()
+     */
+    private $title;
+
+    /**
+     * @ORM\Column(type="text")
+     * @Assert\NotBlank()
+     */
     private $feedback;
 
     /**
@@ -110,5 +122,37 @@ class TechFeedback
     public function setTech($tech): void
     {
         $this->tech = $tech;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param mixed $name
+     */
+    public function setName($name): void
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @param mixed $title
+     */
+    public function setTitle($title): void
+    {
+        $this->title = $title;
     }
 }

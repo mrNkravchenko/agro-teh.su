@@ -13,6 +13,8 @@ class TechFeedbackType extends AbstractType
     {
         $builder
             ->add('feedback')
+            ->add('name')
+            ->add('title')
             ->add('created')
             ->add('liked')
             ->add('not_liked')
