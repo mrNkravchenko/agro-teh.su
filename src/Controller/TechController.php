@@ -274,7 +274,10 @@ class TechController extends AbstractController
             $dimension = $tech->getDimentions();
             $dimension->setTech($tech);
 
-            $this->getDoctrine()->getManager()->flush();
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($tech);
+            $em->persist($dimension);
+            $em->flush();
 
             return $this->redirectToRoute('selhoztehnika_show', ['url' => $tech->getUrl()]);
         }
