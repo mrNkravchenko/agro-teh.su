@@ -12,11 +12,11 @@ class DimensionsType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('length')
             ->add('width')
             ->add('height')
-            ->add('length')
-            ->add('volume')
             ->add('weight')
+            ->add('volume')
             ->add('tech')
         ;
     }
