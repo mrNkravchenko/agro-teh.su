@@ -23,8 +23,8 @@
 {% block body %}
     <body class="{{ bodyClass is defined? bodyClass : '' }}">
     {% block preloader %}{% endblock %}
-    {% set techs = tech_serv.findAll() %}
-    {% set techs_category = tech_category_serv.findAll() %}
+    {% set techs = tech_serv.findBy([], {'short_name': 'asc'}) %}
+    {% set techs_category = tech_category_serv.findAll()|sort %}
     {% set articles = articles_serv.findAll() %}
     {% if is_granted("ROLE_ADMIN") %}
         <div class="container-fluid">
@@ -238,7 +238,7 @@
                                     <a href="{{ path('category', {'url': category.url}) }}" data-toggle="tooltip" data-placement="right" title="Перейти в раздел {{ category.name }}" data-initial="{{ category.url }}">{{ category.name }}</a>
                                 </p>
                                 <ul class="collapse list-unstyled pl-4" id="sub-item-2{{ loop.index }}">
-                                    {% for tech in tech_serv.findBy({category: {'id': category.id} }) %}
+                                    {% for tech in tech_serv.findBy({category: {'id': category.id} }, {'short_name': 'asc'}) %}
                                         <li>
                                             <a href="{{ path('selhoztehnika_show', {'url': tech.url}) }}" data-initial="{{ tech.url }}">
                                                 {{ tech.shortName }}
