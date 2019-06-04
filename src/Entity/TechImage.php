@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\TechImageRepository")
@@ -33,9 +34,18 @@ class TechImage
     private $created;
 
     /**
-     * @ORM\Column(type="boolean", nullable=true)
+     * @ORM\Column(type="boolean", nullable=true, options={"default" : 1})
      */
     private $is_slider;
+
+    private $image;
+
+    public function __construct()
+    {
+        $timeZone = new \DateTimeZone('Europe/Moscow');
+        $this->created = new \DateTime('now', $timeZone);
+        $this->is_slider = true;
+    }
 
     public function getId(): ?int
     {
@@ -50,18 +60,6 @@ class TechImage
     public function setPath(string $path): self
     {
         $this->path = $path;
-
-        return $this;
-    }
-
-    public function getTechId(): ?int
-    {
-        return $this->tech_id;
-    }
-
-    public function setTechId(int $tech_id): self
-    {
-        $this->tech_id = $tech_id;
 
         return $this;
     }
@@ -104,5 +102,21 @@ class TechImage
     public function setTech($tech): void
     {
         $this->tech = $tech;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param mixed $image
+     */
+    public function setImage($image): void
+    {
+        $this->image = $image;
     }
 }

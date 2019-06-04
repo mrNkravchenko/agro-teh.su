@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TechImage index{% endblock %}
+
+{% block body %}
+    <h1>TechImage index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Path</th>
+                <th>Created</th>
+                <th>Is_slider</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tech_image in tech_images %}
+            <tr>
+                <td>{{ tech_image.id }}</td>
+                <td>{{ tech_image.path }}</td>
+                <td>{{ tech_image.created ? tech_image.created|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ tech_image.isSlider ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('tech_image_show', {'id': tech_image.id}) }}">show</a>
+                    <a href="{{ path('tech_image_edit', {'id': tech_image.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('tech_image_new') }}">Create new</a>
+{% endblock %}
