@@ -159,41 +159,6 @@
             <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
 
                 <div class="row m-0 p-3">
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#feedbacks">
-                        Написать отзыв
-                    </button>
-
-                    <!-- Modal -->
-                    <div class="modal" id="feedbacks" tabindex="-1" role="dialog" aria-labelledby="feedbacksLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Оставьте ваш отзыв</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">×</span>
-                                    </button>
-                                </div>
-                                {{ form_start(form_feedback) }}
-                                <div class="modal-body">
-                                    <div class="alert-danger">
-                                        {{ form_errors(form_feedback) }}
-                                    </div>
-                                        {{ form_widget(form_feedback.title, {'attr' : {'class' : "form-control mb-3", 'id': 'headerUserReview', 'placeholder' : 'Заголовок отзыва'}}) }}
-                                        {{ form_widget(form_feedback.feedback, {'attr' : {'class' : "form-control w-100 mb-3", 'id' : 'userReviewText', 'rows' : 10, 'placeholder' : "* Текст отзыва"}}) }}
-                                        {{ form_widget(form_feedback.name, {'attr' : {'class' : "form-control mb-3", 'id': 'userName', 'placeholder' : '* Ваше имя'}}) }}
-
-                                        <p class="small text-right">* - обязательные поля</p>
-
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Отменить</button>
-                                    {{ form_widget(form_feedback.save, {'attr' : {'class' : 'btn btn-primary'}}) }}
-                                </div>
-                                {{ form_end(form_feedback) }}
-                            </div>
-                        </div>
-                    </div>
 
                     {% if feedbacks | length > 0 %}
                         {% for feedback in feedbacks %}
@@ -211,10 +176,48 @@
 
                         {% endfor %}
                     {% else %}
-                        <div>
+                        <div class="col-12">
                             Для данного товара нет отзыва, хотите оставить отзыв?
                         </div>
                     {% endif %}
+
+                    <div class="col-12 m-3">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#feedbacks">
+                            Написать отзыв
+                        </button>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal" id="feedbacks" tabindex="-1" role="dialog" aria-labelledby="feedbacksLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Оставьте ваш отзыв</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                {{ form_start(form_feedback) }}
+                                <div class="modal-body">
+                                    <div class="alert-danger">
+                                        {{ form_errors(form_feedback) }}
+                                    </div>
+                                    {{ form_widget(form_feedback.title, {'attr' : {'class' : "form-control mb-3", 'id': 'headerUserReview', 'placeholder' : 'Заголовок отзыва'}}) }}
+                                    {{ form_widget(form_feedback.feedback, {'attr' : {'class' : "form-control w-100 mb-3", 'id' : 'userReviewText', 'rows' : 10, 'placeholder' : "* Текст отзыва"}}) }}
+                                    {{ form_widget(form_feedback.name, {'attr' : {'class' : "form-control mb-3", 'id': 'userName', 'placeholder' : '* Ваше имя'}}) }}
+
+                                    <p class="small text-right">* - обязательные поля</p>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Отменить</button>
+                                    {{ form_widget(form_feedback.save, {'attr' : {'class' : 'btn btn-primary'}}) }}
+                                </div>
+                                {{ form_end(form_feedback) }}
+                            </div>
+                        </div>
+                    </div>
 
 
                 </div>

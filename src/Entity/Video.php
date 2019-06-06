@@ -37,17 +37,24 @@ class Video
      */
     private $updated;
 
+    public function __construct()
+    {
+        $timeZone = new \DateTimeZone('Europe/Moscow');
+        $this->created = new \DateTime('now', $timeZone);
+        $this->updated = new \DateTime('now', $timeZone);
+    }
+
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getTech(): ?int
+    public function getTech()
     {
         return $this->tech;
     }
 
-    public function setTech(int $tech): self
+    public function setTech($tech): self
     {
         $this->tech = $tech;
 

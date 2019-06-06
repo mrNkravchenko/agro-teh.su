@@ -13,8 +13,6 @@ class VideoType extends AbstractType
     {
         $builder
             ->add('video')
-            ->add('created')
-            ->add('updated')
             ->add('tech')
         ;
     }
