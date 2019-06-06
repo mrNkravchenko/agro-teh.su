@@ -291,4 +291,32 @@ class TechController extends AbstractController
     {
 
     }
+
+    /**
+     * @Route("/api/getTechDelivery", name="get_tech_delivery")
+     * @param Request $request
+     *
+     * @return \Symfony\Component\HttpFoundation\JsonResponse
+     * @throws \Exception
+     */
+    public function getTechDelivery(Request $request)
+    {
+        $params = $request->get('f');
+        if (!empty($params)) {
+            $url = "https://tk-kit.com/API.1.1?token={$_ENV['KIT_API_TOKEN']}" . $params;
+            $ch = curl_init($url);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            $result = curl_exec($ch);
+            $info = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            $error = curl_error($ch);
+            curl_close($ch);
+//            var_dump($result);
+//            die;
+            return $this->json($result, 200, ['Content-Type' => 'application/json; charset=utf8']);
+//            return $result;
+        } else return $this->json(false, 404);
+    }
+
 }
