@@ -240,7 +240,7 @@
                     {% for slide in slider  %}
                         <div class="px-2">
                             <a class="tech-image" href="{{ asset(slide.path) }}">
-                                <img  src="{{ asset(slide.path) }}" class="card-img-top" alt="{{ tech.name }}">
+                                <img src="{{ asset(slide.path) }}" class="card-img-top" alt="{{ tech.name }}" style="max-height: 300px">
                             </a>
                         </div>
                     {% endfor %}
