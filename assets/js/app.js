@@ -142,7 +142,7 @@ $('.tech-image-slide').slick({
     draggable: true,
     autoplay: true,
     speed: 300,
-    slidesToShow: 2,
+    slidesToShow: 3,
     slidesToScroll: 1,
     responsive: [
         {
@@ -150,7 +150,7 @@ $('.tech-image-slide').slick({
             settings: {
                 autoplay: true,
                 draggable: true,
-                slidesToShow: 2,
+                slidesToShow: 3,
                 slidesToScroll: 1,
                 infinite: true,
                 dots: true
