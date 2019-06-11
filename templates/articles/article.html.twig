@@ -7,21 +7,6 @@
         {{ article.name }}
     </h1>
 {% endblock %}
-{% block slider %}
-    <div class="row">
-        <div class="col-sm-12"
-             style="background-image: url({{ asset('assets/img/content/stroitelstvo-angarov/postroennye/beskarkasnoe-arochnoe-stroitelstvo.jpg') }});
-                     background-repeat: no-repeat;
-                     background-size: cover;
-                     background-position: center;
-                     filter: blur(8px);
-                     -webkit-filter: blur(8px);">
-            <img style="opacity: 0" src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/beskarkasnoe-arochnoe-stroitelstvo.jpg') }}" alt="Бескаркасное арочное строительство" class="img-fluid m-auto">
-        </div>
-        <img {#style="opacity: 0"#} src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/beskarkasnoe-arochnoe-stroitelstvo.jpg') }}" alt="Бескаркасное арочное строительство" class="img-fluid m-auto" style="position: absolute; left: 25%">
-    </div>
-
-{% endblock %}
 {% block content %}
     <div class="">
         <div class="col-sm-12">

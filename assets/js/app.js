@@ -964,7 +964,33 @@ $(document).ready(()=>{
         }
     });
 
-    $('[data-toggle="tooltip"]').tooltip();
+    const checkWindowWidth = ()=>{
+        if (window.innerWidth > 420) {
+            $('[data-toggle="tooltip"]').tooltip();
+        }
+
+        if (window.innerWidth < 600) {
+            $('.single-slide').hide();
+            console.log(window);
+        } else {
+            $('.single-slide').show();
+        }
+    };
+
+    const checkWindowHeight = ()=>{
+        const body = document.body;
+        const html = document.documentElement;
+        const height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+    };
+    checkWindowWidth();
+    checkWindowHeight();
+
+
+
+    $(window).resize(function() {
+        checkWindowWidth();
+        checkWindowHeight();
+    });
 
     const menu = $('#menu-group-1');
 

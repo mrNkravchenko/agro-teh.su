@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block slider %}
+    <div class="row m-0">
+        <div class="col-lg-12"
+             style="background-image: url({{ asset('assets/img/content/stroitelstvo-angarov/postroennye/002.jpg') }});
+                     background-repeat: no-repeat;
+                     background-size: cover;
+                     background-position: center;
+                     /*filter: blur(8px);
+                     -webkit-filter: blur(8px);*/">
+            <img style="opacity: 0" src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/002.jpg') }}" alt="Бескаркасное арочное строительство" class="img-fluid m-auto hidden">
+        </div>
+        {#<img #}{#style="opacity: 0"#}{# src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/002.jpg') }}" alt="Бескаркасное арочное строительство" class="img-fluid m-auto" style="position: absolute; left: 25%">#}
+        {#<img #}{#style="opacity: 0"#}{# src="{{ asset('assets/img/content/stroitelstvo-angarov/postroennye/002.jpg') }}" alt="Бескаркасное арочное строительство" class="img-fluid hidden">#}
+    </div>
+
+{% endblock %}
