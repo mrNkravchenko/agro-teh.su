@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PartnerTech index{% endblock %}
+
+{% block body %}
+    <h1>PartnerTech index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Url</th>
+                <th>Content</th>
+                <th>Image</th>
+                <th>Small_image</th>
+                <th>Price</th>
+                <th>Short_name</th>
+                <th>Short_description</th>
+                <th>Created</th>
+                <th>Updated</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for partner_tech in partner_teches %}
+            <tr>
+                <td>{{ partner_tech.id }}</td>
+                <td>{{ partner_tech.name }}</td>
+                <td>{{ partner_tech.url }}</td>
+                <td>{{ partner_tech.content }}</td>
+                <td>{{ partner_tech.image }}</td>
+                <td>{{ partner_tech.smallImage }}</td>
+                <td>{{ partner_tech.price }}</td>
+                <td>{{ partner_tech.shortName }}</td>
+                <td>{{ partner_tech.shortDescription }}</td>
+                <td>{{ partner_tech.created ? partner_tech.created|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ partner_tech.updated ? partner_tech.updated|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('partner_tech_show', {'url': partner_tech.url}) }}">show</a>
+                    <a href="{{ path('partner_tech_edit', {'url': partner_tech.url}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="12">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('partner_tech_new') }}">Create new</a>
+{% endblock %}

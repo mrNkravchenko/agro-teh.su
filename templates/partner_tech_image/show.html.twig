@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PartnerTechImage{% endblock %}
+
+{% block body %}
+    <h1>PartnerTechImage</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ partner_tech_image.id }}</td>
+            </tr>
+            <tr>
+                <th>Path</th>
+                <td>{{ partner_tech_image.path }}</td>
+            </tr>
+            <tr>
+                <th>Is_slider</th>
+                <td>{{ partner_tech_image.isSlider ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Created</th>
+                <td>{{ partner_tech_image.created ? partner_tech_image.created|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('partner_tech_image_index') }}">back to list</a>
+
+    <a href="{{ path('partner_tech_image_edit', {'id': partner_tech_image.id}) }}">edit</a>
+
+    {{ include('partner_tech_image/_delete_form.html.twig') }}
+{% endblock %}

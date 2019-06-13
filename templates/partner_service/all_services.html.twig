@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% set bodyClass = 'partners partners-services ' %}
+
+{% block h1 %}
+    <h2 class="text-center bg-success text-white line-height-18 my-3">
+        {{ h1 }}
+    </h2>
+{% endblock %}
+
+{% block content %}
+    <div class="row px-2">
+        {% for service in partner_services %}
+            <div class="col-md-4 pt-3">
+                <!--To do: Add width in ccs or use row and col!-->
+                <div class="card">
+                    <div class="more-info">
+                        <div class="more-info__center">
+                            <a class="btn btn-dark" href="{{ path('partner_service_show_one', {'url' : service.url}) }}">
+                                <span> Подробнее</span>
+                            </a>
+                        </div>
+                    </div>
+                    <img src="{{ asset(service.smallImage) }}" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ service.name }}</h5>
+                        {#<p class="card-text text-justify">
+                            {{ category.content|length > 70 ? category.content|slice(0,70) ~ '...' : category.content }}
+                        </p>#}
+                        {#<a href="{{ path('category', {'url' : category.url}) }}" class="btn btn-primary">Посмотреть</a>#}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+
+    </div>
+
+{% endblock %}
+
+

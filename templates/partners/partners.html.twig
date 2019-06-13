@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+{% set bodyClass = 'partners' %}
+
+{% block title %}Партнеры ООО "АГРО-ТЕХ", Ростовская область{% endblock %}
+
+{% block h1 %}
+    <h2 class="text-center bg-primary text-white line-height-18 my-3">
+        Наши Партнеры
+    </h2>
+{% endblock %}
+
+{% block content %}
+    <!-- Products section -->
+    <div class="row m-0">
+        <div class="col-md-6 p-0 pb-5">
+            <h2 class="text-center bg-white sticky-top my-2">
+                <a href="{{ path('partners_techs') }}">Техника</a>
+            </h2>
+
+            <div class="row m-0 justify-content-around">
+                {#{% for tech in pertners_tech_serv.findBy([], ['short_name' : 'asc']) %}#}
+                {% for tech in partners_techs %}
+                    <div class="col-xl-6 pt-3">
+                        <!--To do: Add width in ccs or use row and col!-->
+                        <div class="card">
+                            <div class="more-info">
+                                <div class="more-info__center">
+                                    <a class="btn btn-dark" href="{{ path('partner_tech_show_one', {'url' : tech.url}) }}">
+                                        <span> Подробнее</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <img src="{{ asset(tech.image) }}" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <h4 class="card-title">{{ tech.name }}</h4>
+                                <p class="card-text text-justify">
+                                    {{ (tech.shortDescription| striptags) | length > 70 ? tech.shortDescription|striptags |slice(0,70) ~ '...' : tech.shortDescription |striptags }}
+                                </p>
+                                {#<a href="" class="btn btn-primary">Посмотреть</a>#}
+                                {#<a class="btn btn-primary" href="{{ path('angar_category_show', {'url' : category.url}) }}">Посмотреть</a>#}
+                            </div>
+                        </div>
+                    </div>
+
+                {% endfor %}
+
+            </div>
+        </div>
+
+        <div class="col-md-6 p-0 pb-5 justify-content-around">
+            <h2 class="text-center bg-white sticky-top my-2">
+                <a href="{{ path('partners_services') }}">Услуги</a>
+            </h2>
+
+            <div class="row m-0">
+                {% for service in partners_services %}
+                {#{% for service in pertners_service_serv.findBy([], ['short_name' : 'asc']) %}#}
+                    <div class="col-xl-6 pt-3">
+                        <!--To do: Add width in ccs or use row and col!-->
+                        <div class="card">
+                            <div class="more-info">
+                                <div class="more-info__center">
+                                    <a class="btn btn-dark" href="{{ path('partner_service_show_one', {'url' : service.url}) }}">
+                                        <span> Подробнее</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <img src="{{ asset(service.image) }}" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ service.name }}</h5>
+                                <p class="card-text text-justify">
+                                    {{ (service.shortDescription| striptags) | length > 70 ? service.shortDescription|striptags |slice(0,70) ~ '...' : service.shortDescription |striptags }}
+                                </p>
+                                {#<a href="{{ path('category', {'url' : category.url}) }}" class="btn btn-primary">Посмотреть</a>#}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

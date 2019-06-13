@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PartnerTech{% endblock %}
+
+{% block body %}
+    <h1>PartnerTech</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ partner_tech.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ partner_tech.name }}</td>
+            </tr>
+            <tr>
+                <th>Url</th>
+                <td>{{ partner_tech.url }}</td>
+            </tr>
+            <tr>
+                <th>Content</th>
+                <td>{{ partner_tech.content }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ partner_tech.image }}</td>
+            </tr>
+            <tr>
+                <th>Small_image</th>
+                <td>{{ partner_tech.smallImage }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ partner_tech.price }}</td>
+            </tr>
+            <tr>
+                <th>Short_name</th>
+                <td>{{ partner_tech.shortName }}</td>
+            </tr>
+            <tr>
+                <th>Short_description</th>
+                <td>{{ partner_tech.shortDescription }}</td>
+            </tr>
+            <tr>
+                <th>Created</th>
+                <td>{{ partner_tech.created ? partner_tech.created|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Updated</th>
+                <td>{{ partner_tech.updated ? partner_tech.updated|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('partner_tech_index') }}">back to list</a>
+
+    <a href="{{ path('partner_tech_edit', {'id': partner_tech.id}) }}">edit</a>
+
+    {{ include('partner_tech/_delete_form.html.twig') }}
+{% endblock %}

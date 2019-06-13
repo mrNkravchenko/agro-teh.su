@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PartnerServiceImage index{% endblock %}
+
+{% block body %}
+    <h1>PartnerServiceImage index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for partner_service_image in partner_service_images %}
+            <tr>
+                <td>{{ partner_service_image.id }}</td>
+                <td>
+                    <a href="{{ path('partner_service_image_show', {'id': partner_service_image.id}) }}">show</a>
+                    <a href="{{ path('partner_service_image_edit', {'id': partner_service_image.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="2">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('partner_service_image_new') }}">Create new</a>
+{% endblock %}

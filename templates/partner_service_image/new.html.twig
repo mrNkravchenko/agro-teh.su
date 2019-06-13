@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New PartnerServiceImage{% endblock %}
+
+{% block body %}
+    <h1>Create new PartnerServiceImage</h1>
+
+    {{ include('partner_service_image/_form.html.twig') }}
+
+    <a href="{{ path('partner_service_image_index') }}">back to list</a>
+{% endblock %}
