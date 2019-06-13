@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/manager/partner/tech/image")
+ * @Route("/manager/partner/tech-image")
  */
 class PartnerTechImageController extends AbstractController
 {

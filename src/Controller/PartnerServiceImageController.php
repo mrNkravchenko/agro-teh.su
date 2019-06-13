@@ -15,7 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class PartnerServiceImageController extends AbstractController
 {
     /**
-     * @Route("/manager/partner/service/image/", name="partner_service_image_index", methods="GET")
+     * @Route("/manager/partner/service-image/", name="partner_service_image_index", methods="GET")
      * @param PartnerServiceImageRepository $partnerServiceImageRepository
      * @return Response
      */
