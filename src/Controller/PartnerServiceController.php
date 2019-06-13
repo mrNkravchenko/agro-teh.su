@@ -60,7 +60,7 @@ class PartnerServiceController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="partner_service_new", methods="GET|POST")
+     * @Route("/manager/partner/service/new", name="partner_service_new", methods="GET|POST")
      * @param Request $request
      * @param FileUploader $fileUploader
      * @return Response
