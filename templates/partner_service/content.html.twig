@@ -2,7 +2,7 @@
     {% if is_granted("ROLE_ADMIN") %}
         <div class="row">
             <div class="col-12">
-                <a href="{{ path('partner_service_edit', {'url' : service.url}) }}" class="btn btn-primary">Редактировать</a>
+                <a href="{{ path('partner_service_edit', {'id' : service.id}) }}" class="btn btn-primary">Редактировать</a>
             </div>
         </div>
     {% endif %}

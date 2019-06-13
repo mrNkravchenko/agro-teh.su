@@ -21,8 +21,8 @@
                 <td>{{ partner_service.name }}</td>
                 <td>{{ partner_service.shortName }}</td>
                 <td>
-                    <a href="{{ path('partner_service_show', {'url': partner_service.url}) }}">show</a>
-                    <a href="{{ path('partner_service_edit', {'url': partner_service.url}) }}">edit</a>
+                    <a href="{{ path('partner_service_show', {'id': partner_service.id}) }}">show</a>
+                    <a href="{{ path('partner_service_edit', {'id': partner_service.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}

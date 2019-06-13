@@ -37,8 +37,8 @@
                 <td>{{ partner_tech.created ? partner_tech.created|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ partner_tech.updated ? partner_tech.updated|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
-                    <a href="{{ path('partner_tech_show', {'url': partner_tech.url}) }}">show</a>
-                    <a href="{{ path('partner_tech_edit', {'url': partner_tech.url}) }}">edit</a>
+                    <a href="{{ path('partner_tech_show', {'id': partner_tech.id}) }}">show</a>
+                    <a href="{{ path('partner_tech_edit', {'id': partner_tech.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}

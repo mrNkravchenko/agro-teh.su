@@ -118,7 +118,7 @@ class PartnerServiceController extends AbstractController
     }
 
     /**
-     * @Route("/manager/partner/service/{url}/edit", name="partner_service_edit", methods="GET|POST")
+     * @Route("/manager/partner/service/{id}/edit", name="partner_service_edit", methods="GET|POST")
      */
     public function edit(Request $request, PartnerService $partnerService, FileUploader $fileUploader): Response
     {
@@ -157,7 +157,7 @@ class PartnerServiceController extends AbstractController
     }
 
     /**
-     * @Route("/manager/partner/service/{url}", name="partner_service_delete", methods="DELETE")
+     * @Route("/manager/partner/service/{id}", name="partner_service_delete", methods="DELETE")
      */
     public function delete(Request $request, PartnerService $partnerService): Response
     {

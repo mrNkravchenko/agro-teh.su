@@ -112,7 +112,7 @@ class PartnerTechController extends AbstractController
     }
 
     /**
-     * @Route("/manager/partner/tech/{url}", name="partner_tech_show", methods="GET")
+     * @Route("/manager/partner/tech/{id}", name="partner_tech_show", methods="GET")
      * @param PartnerTech $partnerTech
      * @return Response
      */
@@ -122,7 +122,7 @@ class PartnerTechController extends AbstractController
     }
 
     /**
-     * @Route("/manager/partner/tech/{url}/edit", name="partner_tech_edit", methods="GET|POST")
+     * @Route("/manager/partner/tech/{id}/edit", name="partner_tech_edit", methods="GET|POST")
      * @param Request $request
      * @param PartnerTech $partnerTech
      * @param FileUploader $fileUploader
