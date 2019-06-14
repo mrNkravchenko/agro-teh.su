@@ -27,10 +27,10 @@ class PartnerServiceImage
     private $is_slider;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\PartnerTech", inversedBy="slider")
+     * @ORM\ManyToOne(targetEntity="App\Entity\PartnerService", inversedBy="slider")
      * @ORM\JoinColumn(nullable=true)
      */
-    private $tech;
+    private $service;
 
     private $image;
 
@@ -83,17 +83,17 @@ class PartnerServiceImage
     /**
      * @return mixed
      */
-    public function getTech()
+    public function getService()
     {
-        return $this->tech;
+        return $this->service;
     }
 
     /**
-     * @param mixed $tech
+     * @param mixed $service
      */
-    public function setTech($tech): void
+    public function setService($service): void
     {
-        $this->tech = $tech;
+        $this->service = $service;
     }
 
     /**

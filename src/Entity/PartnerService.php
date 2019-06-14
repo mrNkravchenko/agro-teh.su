@@ -68,7 +68,7 @@ class PartnerService
     private $short_description;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\PartnerTechImage", mappedBy="tech")
+     * @ORM\OneToMany(targetEntity="App\Entity\PartnerServiceImage", mappedBy="service")
      */
     private $slider;
 

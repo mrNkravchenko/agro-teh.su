@@ -37,8 +37,8 @@ class PartnerServiceImageController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $tech = $partnerServiceImage->getTech();
-            $fileUploader->setParticularPath('content/partners/services/'.$tech->getUrl().'/');
+            $service = $partnerServiceImage->getService();
+            $fileUploader->setParticularPath('content/partners/services/'.$service->getUrl().'/');
             $images = $partnerServiceImage->getImage();
 
             $em = $this->getDoctrine()->getManager();
@@ -47,9 +47,9 @@ class PartnerServiceImageController extends AbstractController
 
             foreach ($images as $image) {
                 $partnerServiceImage = new PartnerServiceImage();
-                $partnerServiceImage->setTech($tech);
+                $partnerServiceImage->setService($service);
                 $fileParams = $fileUploader->upload($image);
-                $partnerServiceImage->setPath('assets/img/content/partners/services/'.$tech->getUrl().'/'.$fileParams['name_md5']);
+                $partnerServiceImage->setPath('assets/img/content/partners/services/'.$service->getUrl().'/'.$fileParams['name_md5']);
                 $partnerServiceImage->setCreated($dateTime);
                 $partnerServiceImage->setIsSlider(true);
                 $em->persist($partnerServiceImage);
