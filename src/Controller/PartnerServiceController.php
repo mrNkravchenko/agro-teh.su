@@ -144,7 +144,7 @@ class PartnerServiceController extends AbstractController
 
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('partner_service_edit', ['url' => $partnerService->getUrl()]);
+            return $this->redirectToRoute('partner_service_edit', ['id' => $partnerService->getId()]);
         }
 
         return $this->render('partner_service/edit.html.twig', [

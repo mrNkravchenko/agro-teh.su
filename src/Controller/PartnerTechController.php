@@ -154,7 +154,7 @@ class PartnerTechController extends AbstractController
 
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('partner_tech_edit', ['url' => $partnerTech->getUrl()]);
+            return $this->redirectToRoute('partner_tech_edit', ['id' => $partnerTech->getId()]);
         }
 
         return $this->render('partner_tech/edit.html.twig', [
