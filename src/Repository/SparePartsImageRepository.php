@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Entity\SpareParts;
 use App\Entity\SparePartsImage;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
@@ -61,5 +62,15 @@ class SparePartsImageRepository extends ServiceEntityRepository
             $image->setFirst(true);
         }
 
+    }
+
+    /**
+     * @param SparePartsImage $spare
+     * @return SparePartsImage|null
+     */
+    public function getFirstImage(SparePartsImage $spare)
+    {
+        $firstImage = $this->findOneBy(['first' => true, 'spare_id' => $spare->getId()]);
+        return $firstImage;
     }
 }

@@ -1,6 +1,6 @@
 {% extends 'angar.layout.html.twig' %}
 
-{% set bodyClass = angar.getCategory.getUrl %}
+{% set bodyClass = 'angary ' ~angar.getCategory.getUrl %}
 
 {% set title = angar.getCategory.getName~', Ширина - '~angar.getWidth~'м, Длина - '~angar.getLength~'м, построенный ООО "АГРО-ТЕХ" в '~angar.getAddress.getRegion~ ' '
     ~angar.getAddress.getRegionIndex~ ' '

@@ -1,0 +1,78 @@
+<div class="tech-wrapper">
+    {% if is_granted("ROLE_ADMIN") %}
+        <div class="row">
+            <div class="col-12">
+                <a href="{{ path('spare_parts_edit', {'id' : spare_part.id}) }}" class="btn btn-primary">Редактировать</a>
+            </div>
+        </div>
+    {% endif %}
+    <div class="row m-0">
+        {#<div class="col-md-12">
+            <img src="{{ asset(tech.image) }}" class="img-fluid" alt="Responsive image">
+        </div>#}
+        <img src="{{ asset(spare_part.images.first.pathThumbnail ~ '' ~ spare_part.images.first.nameMd5) }}" class="img-fluid m-auto" style="max-height: 460px" alt="{{ spare_part.title }}">
+
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <p>
+                Цена - <span>{{ spare_part.price }}</span> рублей
+            </p>
+           {{ spare_part.description | raw }}
+        </div>
+    </div>
+
+    <div class="col text-center pb-3"><a data-tech-id="{{ spare_part.id }}" role="button" data-toggle="modal" data-target="#callback" class="btn btn-danger text-white">Купить или узнать больше информации</a></div>
+
+    {% for items in spare_part.images %}
+
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 thumb hangars__item">
+
+            <a data-fancybox="gallery" href="{{ items.path }}{{ items.nameMd5 }}">
+                <img class="img-thumbnail m-2" src="{{ items.pathThumbnail }}{{ items.nameMd5 }}" alt="">
+            </a>
+
+            {% if is_granted("ROLE_ADMIN") %}
+                {% if items.getFirst() %}
+                    <i class="far fa-check-square"></i>
+                {% else %}
+                    <a class="text-dark" href="{{ path('spare_part_image_set_first', {'id' : items.getId()}) }}"><i class="far fa-square"></i></a>
+                {% endif %}
+            {% endif %}
+        </div>
+    {% endfor %}
+
+    {% if spare_part.techs is not empty %}
+        <div class="row m-0 my-5 bg-transparent">
+            <div class="col-md-12 p-0 px-5">
+                <h3 class="text-center my-3 text-white bg-primary">
+                    Подходит на следующую технику
+                </h3>
+
+                <!-- Slick slider -->
+                <!-- To do: Check all point-->
+                <div class="tech-spare-slide">
+                    {% for tech in spare_part.techs  %}
+                        <div class="card px-3 bg-transparent border-0">
+                            <div class="more-info">
+                                <div class="more-info__center">
+                                    <a class="btn btn-dark" href="{{ path('selhoztehnika_show', {'url' : tech.url}) }}">
+                                        <span> Подробнее</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <img src="{{ asset(tech.image) }}" class="card-img-top" alt="{{ tech.name }}" style="max-height: 300px">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ tech.name }}</h5>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+
+
+</div>

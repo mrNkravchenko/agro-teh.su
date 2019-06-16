@@ -104,4 +104,18 @@ class SparePartsImageController extends AbstractController
 
         return $this->redirectToRoute('spare_parts_image_index');
     }
+
+    /**
+     * @Route("/{id}/first", name="spare_part_image_set_first", methods="GET|POST")
+     * @param SparePartsImage $sparePartImage
+     *
+     * @return Response
+     */
+    public function setFirst(SparePartsImage $sparePartsImage): Response
+    {
+        $em = $this->getDoctrine()->getManager();
+        $em->getRepository(SparePartsImage::class)->setFirstImage($sparePartsImage);
+        $em->flush();
+        return $this->redirectToRoute('spare_parts_show', ['id' => $sparePartsImage->getSpare()->getId()]);
+    }
 }

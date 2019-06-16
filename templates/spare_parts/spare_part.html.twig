@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% set bodyClass = 'spare-parts ' ~ spare_part.id %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block h1 %}
+    <h2 class="text-center bg-success text-white line-height-18 my-3">
+        {{ spare_part.title }}
+    </h2>
+{% endblock %}
+
+{% block content %}
+    {{ content | raw }}
+{% endblock %}

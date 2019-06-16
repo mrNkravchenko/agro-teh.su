@@ -55,11 +55,18 @@ class SparePartsController extends AbstractController
     }
 
     /**
-     * @Route("/manager/spare/parts/{id}", name="_show", methods="GET")
+     * @Route("/spare-parts/{id}", name="_show", methods="GET")
+     * @param SpareParts $sparePart
+     * @return Response
      */
     public function show(SpareParts $sparePart): Response
     {
-        return $this->render('spare_parts/show.html.twig', ['spare_part' => $sparePart]);
+        $content = $this->renderView('spare_parts/content.html.twig', ['spare_part' => $sparePart]);
+        return $this->render('spare_parts/spare_part.html.twig', [
+            'spare_part' => $sparePart,
+            'content' => $content,
+            'title' => 'Запасные части для сельхозтехники, '.$sparePart->getTitle() . ' купить в ООО "АГРО-ТЕХ"'
+        ]);
     }
 
     /**

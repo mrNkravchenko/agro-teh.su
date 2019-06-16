@@ -234,20 +234,20 @@
                     <li class="list-group-item">
                         <p class="mt-2 mb-2" data-toggle="collapse" data-parent="#menu-group-1" href="#sub-item-1" style="cursor: pointer">
                             <i class="fas fa-plus"></i>
-                            <span><a href="{{ path('angary') }}" data-toggle="tooltip" data-placement="right" title="Перейти в раздел Ангары">Ангары</a></span>
+                            <span><a href="{{ path('angary') }}" data-toggle="tooltip" data-placement="right" data-initial="angary" title="Перейти в раздел Ангары">Ангары</a></span>
                         </p>
 
                         <ul class="collapse list-unstyled list-group pl-4" id="sub-item-1">
                             {% for category in angar_category_serv.findAll()  %}
                                 <li>
-                                    <a href="{{ path('angar_category_show', {'url' : category.url}) }}" data-toggle="tooltip" data-placement="right" title="Перейти в раздел {{ category.name }}">{{ category.name }}</a>
+                                    <a href="{{ path('angar_category_show', {'url' : category.url}) }}" data-toggle="tooltip" data-placement="right" data-initial="{{ category.url }}"  title="Перейти в раздел {{ category.name }}">{{ category.name }}</a>
                                 </li>
                             {% endfor %}
                             <li>
-                                <a href="{{ path('angar_show_all') }}" data-toggle="tooltip" data-placement="right" title="Перейти в раздел Построенные ангары">Построенные ангары</a>
+                                <a href="{{ path('angar_show_all') }}" data-toggle="tooltip" data-placement="right" data-initial="postroennue" title="Перейти в раздел Построенные ангары">Построенные ангары</a>
                             </li>
                             <li>
-                                <a href="{{ path('gallery') }}" data-toggle="tooltip" data-placement="right" title="Перейти в раздел Фото рабочих моментов">Фото рабочих моментов</a>
+                                <a href="{{ path('gallery') }}" data-toggle="tooltip" data-placement="right" data-initial="gallery" title="Перейти в раздел Фото рабочих моментов">Фото рабочих моментов</a>
                             </li>
                         </ul>
                     </li>
@@ -281,10 +281,10 @@
 
                     </li>
                     <li class="list-group-item">
-                        <a href="{{ path('spare_parts_show_all') }}">Запасные части</a>
+                        <a href="{{ path('spare_parts_show_all') }}" data-initial="spare-parts">Запасные части</a>
                     </li>
                     <li class="list-group-item">
-                        <a href="{{ path('app_home_show', {'slug': 'services'}) }}">Услуги</a>
+                        <a href="{{ path('app_home_show', {'slug': 'services'}) }}" data-initial="services">Услуги</a>
                     </li>
                     <li class="list-group-item">
                         <p class="mt-2 mb-2" data-toggle="collapse" data-parent="#menu-group-1" href="#sub-item-20" style="cursor: pointer">
