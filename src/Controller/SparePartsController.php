@@ -64,6 +64,9 @@ class SparePartsController extends AbstractController
 
     /**
      * @Route("/manager/spare/parts/{id}/edit", name="_edit", methods="GET|POST")
+     * @param Request $request
+     * @param SpareParts $sparePart
+     * @return Response
      */
     public function edit(Request $request, SpareParts $sparePart): Response
     {

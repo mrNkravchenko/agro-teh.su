@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/manager/spare/parts/image", name="spare_parts_image")
+ * @Route("/manager/spare/parts-image", name="spare_parts_image")
  */
 class SparePartsImageController extends AbstractController
 {

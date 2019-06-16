@@ -8,6 +8,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Tetranz\Select2EntityBundle\Form\Type\Select2EntityType;
 
 class SparePartsType extends AbstractType
 {
@@ -20,8 +21,9 @@ class SparePartsType extends AbstractType
                 'class'        => Tech::class,
                 'choice_label' => 'name',
                 'label'        => 'choice techs',
-                'expanded'     => true,
+                'expanded'     => false,
                 'multiple'     => true,
+                'attr'         => ['class' => 'form-control', 'size' => 30],
             ])
             ->add('price')
         ;

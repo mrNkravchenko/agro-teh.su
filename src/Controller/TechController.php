@@ -6,6 +6,7 @@ namespace App\Controller;
 use App\Entity\Tech;
 use App\Entity\TechFeedback;
 use App\Form\TechFeedbackType;
+use App\Form\TechPartType;
 use App\Form\TechType;
 use App\Repository\TechRepository;
 use App\Service\FileUploader;
@@ -287,6 +288,58 @@ class TechController extends AbstractController
         return $this->render('tech/new.html.twig', ['content' => $content]);
 
     }
+
+    /**
+     * @Route("/manager/tech/update-part/{url}", name="selhoztehnika_update_part")
+     * @param Request $request
+     * @param Tech $tech
+     * @param FileUploader $fileUploader
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     */
+    public function editPart(Request $request, Tech $tech, FileUploader $fileUploader)
+    {
+        $tech->setPerformance($tech->getToStringPerformance());
+        $form = $this->createForm(TechPartType::class, $tech);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $dateTime = \DateTime::createFromFormat('Y-m-d H:i:s', date('Y-m-d H:i:s'));
+
+            $performance = $tech->getPerformance();
+
+            // translate to Object and pack to JSON
+            if (isset($performance)){
+
+                $performance = explode(';', $performance);
+                $performanceArr = [];
+                foreach ($performance as $string) {
+                    $row = explode(':', $string);
+                    $performanceKey = trim(strip_tags($row[0]));
+                    $performanceValue = trim(isset($row[1])? strip_tags($row[1]) : null);
+                    if ($performanceValue) {
+                        array_push($performanceArr, [$performanceKey => $performanceValue]);
+                    } else if ($performanceKey){
+                        array_push($performanceArr, [$performanceKey]);
+                    }
+                }
+                $performanceJSON = json_encode($performanceArr);
+                $tech->setPerformance($performanceJSON);
+            }
+            $tech->setUpdated($dateTime);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($tech);
+            $em->flush();
+
+            return $this->redirectToRoute('selhoztehnika_show', ['url' => $tech->getUrl()]);
+        }
+
+        $content = $this->renderView('tech/create.html.twig', ['form' => $form->createView()]);
+
+        return $this->render('tech/new.html.twig', ['content' => $content]);
+
+    }
+
     public function delete(Request $request, Tech $id)
     {
 
