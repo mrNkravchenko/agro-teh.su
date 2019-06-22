@@ -23,7 +23,7 @@ class SparePartsType extends AbstractType
                 'label'        => 'choice techs',
                 'expanded'     => false,
                 'multiple'     => true,
-                'attr'         => ['class' => 'form-control', 'size' => 30],
+                'attr'         => ['class' => 'form-control at-select2', 'size' => 30,],
             ])
             ->add('price')
         ;

@@ -27,6 +27,8 @@ require ('jquery.kladr/jquery.kladr.min');
 require('./mapGenerator');
 require('./sendEmail');
 require('trumbowyg');
+require('./page/spare-parts/index');
+require('select2');
 
 import '@fancyapps/fancybox';
 
@@ -626,6 +628,8 @@ $('.flexslider').flexslider({
 
 });
 
+$('.at-select2').select2();
+
 $(function () {
     /*
     ->add('region')
@@ -999,8 +1003,48 @@ $(document).ready(()=>{
             const parents = $(a).parents('p');
             parents.trigger('click');
             $(a).css({color: 'red'});
-            console.log(parents);
         }
+    });
+
+
+    function request(url = '', type = 'get', dataType = 'json', data = {}, success, error, elem) {
+        $.ajax({
+            url: url,
+            type: type,
+            dataType: dataType,
+            data: data,
+            success: function (answer) {
+                if (typeof (success) == 'function') {
+                    success(answer, elem);
+                }
+            },
+            error: function (answer) {
+                if (typeof (error) == 'function') {
+                    error(answer, elem);
+                }
+            }
+        });
+    }
+
+// TODO PAGE SCRIPTS
+
+    function successFilter(value, elem) {
+        $('#innerContent').html(value);
+        $(elem).removeClass('btn-animation');
+        $(elem).children().prop('disabled', false);
+    }
+    function errorFilter(value, elem) {
+        console.log(value);
+        $(elem).removeClass('btn-animation');
+        $(elem).children().prop('disabled', false);
+    }
+
+    $('#selectFilterTechs').on('change', (e)=>{
+        const elem = e.target;
+        const parent = $(elem).parents('div.form-group');
+        parent.addClass('btn-animation');
+        $(elem).prop('disabled', true);
+        request('/spare-parts/filter', 'get', 'json', {tech_id : $(elem).val()}, successFilter, errorFilter, parent);
     });
 
 });

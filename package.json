@@ -42,6 +42,7 @@
     "jquery.scrollto": "^2.1.2",
     "lodash": "^4.17.11",
     "popper.js": "^1.14.5",
+    "select2": "^4.0.7",
     "selectnav.js": "^0.1.0",
     "slick-carousel": "^1.8.1",
     "sweetalert2": "^8.10.0",

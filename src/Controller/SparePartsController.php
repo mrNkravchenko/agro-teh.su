@@ -5,7 +5,9 @@ namespace App\Controller;
 use App\Entity\SpareParts;
 use App\Form\SparePartsType;
 use App\Repository\SparePartsRepository;
+use App\Repository\TechRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -28,7 +30,8 @@ class SparePartsController extends AbstractController
      */
     public function showAll(SparePartsRepository $sparePartsRepository): Response
     {
-        return $this->render('spare_parts/spare_parts.html.twig', ['spare_parts' => $sparePartsRepository->findAll()]);
+        $innerContent = $this->renderView('spare_parts/all_parts_content.html.twig', ['spare_parts' => $sparePartsRepository->findAll()]);
+        return $this->render('spare_parts/spare_parts.html.twig', ['innerContent' => $innerContent]);
     }
 
     /**
@@ -67,6 +70,27 @@ class SparePartsController extends AbstractController
             'content' => $content,
             'title' => 'Запасные части для сельхозтехники, '.$sparePart->getTitle() . ' купить в ООО "АГРО-ТЕХ"'
         ]);
+    }
+
+    /**
+     * @Route("/spare-parts/filter", name="_show", methods="GET")
+     * @param Request $request
+     * @param SparePartsRepository $sparePartsRepository
+     * @return JsonResponse
+     */
+    public function showFilter(Request $request, SparePartsRepository $sparePartsRepository, TechRepository $techRepository): JsonResponse
+    {
+        $filterParams = $request->query->all();
+        $techId = isset($filterParams['tech_id']) ? (int) $filterParams['tech_id'] : 0;
+        $data = $sparePartsRepository->getBy(['tech_id' => $techId]);
+
+        if ($data) {
+            $content = $content = $this->renderView('spare_parts/all_parts_content.html.twig', ['spare_parts' => $data]);
+            return $this->json($content);
+        } else {
+            return $this->json([], 404);
+        }
+
     }
 
     /**

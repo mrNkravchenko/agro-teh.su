@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\SpareParts;
+use App\Entity\Tech;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
@@ -47,4 +48,40 @@ class SparePartsRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function getBy($condition = [], $orderBy = [], $limit = null, $offset = null)
+    {
+//        $techName = Tech::class;
+        $techName = "Techs";
+//        $spareName = SpareParts::class;
+        $spareName = 'SpareParts';
+        $qb = $this->createQueryBuilder($spareName);
+
+        if (!empty($condition['tech_id'])) {
+            $qb->leftJoin("$spareName.techs", $techName);
+            $qb->andWhere("$techName.id = :tech_id");
+            $qb->setParameter('tech_id', $condition['tech_id']);
+        }
+
+        if (!empty($orderBy)) {
+            foreach ($orderBy as $key => $order) {
+                if ($key === 'short_name' && in_array(strtolower($order), ['asc', 'desc'])) {
+                    $qb->addOrderBy($key, $order);
+                }
+            }
+        }
+
+        if($limit) {
+            $qb->setMaxResults($limit);
+        }
+        if($offset) {
+            $qb->setFirstResult($offset);
+        }
+
+
+
+        return $qb->getQuery()->getResult();
+
+    }
+
 }

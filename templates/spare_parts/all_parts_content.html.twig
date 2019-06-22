@@ -1,0 +1,26 @@
+{% block innerContent %}
+    <div class="row px-2">
+        {#{{ dump(spare_parts) }}#}
+        {% for spare in spare_parts %}
+            <div class="col-md-4 pt-3">
+                <!--To do: Add width in ccs or use row and col!-->
+                <div class="card">
+                    <div class="more-info">
+                        <div class="more-info__center">
+                            <a class="btn btn-dark" href="{{ path('spare_parts_show', {'id' : spare.id}) }}">
+                                <span> Подробнее</span>
+                            </a>
+                        </div>
+                    </div>
+                    <img src="{{ asset(spare.images.first.pathThumbnail ~ '' ~ spare.images.first.nameMd5) }}" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ spare.title }}</h5>
+                        <p class="card-text">
+                            Цена -  {{ spare.price|number_format(0, ".", ",") }} рублей
+                        </p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
