@@ -1035,6 +1035,7 @@ $(document).ready(()=>{
     }
     function errorFilter(value, elem) {
         console.log(value);
+        $('#innerContent').html();
         $(elem).removeClass('btn-animation');
         $(elem).children().prop('disabled', false);
     }
