@@ -73,7 +73,7 @@ class SparePartsController extends AbstractController
     }
 
     /**
-     * @Route("/spare-parts/filter", name="_show", methods="GET")
+     * @Route("/spare-parts/filter", name="_show_filter", methods="GET")
      * @param Request $request
      * @param SparePartsRepository $sparePartsRepository
      * @return JsonResponse
