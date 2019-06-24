@@ -56,6 +56,11 @@ class Address
     private $angar;
 
     /**
+     * @ORM\OneToOne(targetEntity="App\Entity\Costumer", mappedBy="address")
+     */
+    private $costumer;
+
+    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $coordinate;
@@ -184,5 +189,21 @@ class Address
     public function getFullAddress()
     {
         return $this->getRegion() . ' ' . $this->getRegionIndex() . ' ' . $this->getCity() . ' ' . $this->getDistrict() . ' ' . $this->getStreet() . ' ' . $this->getBuilding() . ' ' . $this->getZip();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCostumer()
+    {
+        return $this->costumer;
+    }
+
+    /**
+     * @param mixed $costumer
+     */
+    public function setCostumer($costumer): void
+    {
+        $this->costumer = $costumer;
     }
 }

@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Address;
 use App\Entity\Angar;
+use App\Entity\AngarCategory;
 use App\Entity\Costumer;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
@@ -18,6 +19,12 @@ class AngarType extends AbstractType
             ->add('width')
             ->add('length')
             ->add('square')
+            ->add('category',EntityType::class, [
+                'class' => AngarCategory::class,
+                'choice_label' => function ($category) {
+                    return $category->getName();
+                }
+            ])
             ->add('costumer', EntityType::class, [
                 'class' => Costumer::class,
                 'choice_label' => function ($costumer) {

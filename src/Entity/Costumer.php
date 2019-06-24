@@ -46,10 +46,9 @@ class Costumer
     private $angars;
 
     /**
-     *@ORM\Column(type="integer")
-     * @ORM\OneToOne(targetEntity="App\Entity\Address", inversedBy="id")
+     * @ORM\OneToOne(targetEntity="App\Entity\Address", inversedBy="costumer")
      */
-    private $address_id;
+    private $address;
 
     /**
      * @ORM\Column(type="datetime")
@@ -176,16 +175,16 @@ class Costumer
     /**
      * @return mixed
      */
-    public function getAddressId()
+    public function getAddress()
     {
-        return $this->address_id;
+        return $this->address;
     }
 
     /**
-     * @param mixed $address_id
+     * @param $address
      */
-    public function setAddressId($address_id): void
+    public function setAddress($address): void
     {
-        $this->address_id = $address_id;
+        $this->address = $address;
     }
 }

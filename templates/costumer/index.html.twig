@@ -29,7 +29,7 @@
                 <td>{{ costumer.contacts }}</td>
                 <td>{{ costumer.email }}</td>
                 <td>{{ costumer.phone }}</td>
-                <td>{{ costumer.addressId }}</td>
+                <td>{{ costumer.address.getFullAddress }}</td>
                 <td>{{ costumer.created ? costumer.created|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ costumer.updated ? costumer.updated|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
