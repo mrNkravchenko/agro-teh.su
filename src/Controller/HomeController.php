@@ -30,7 +30,7 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/{slug}", name="app_home_show", requirements={"slug"="voprosy-po-stroitelstvu-angarov-selhoztehnike|about|contacts|politika-konfidencialnosti|services|leasing"})
+     * @Route("/{slug}", name="app_home_show", requirements={"slug":"about|contacts|politika-konfidencialnosti|services|leasing"})
      * @param $slug
      *
      * @return \Symfony\Component\HttpFoundation\Response
@@ -43,10 +43,6 @@ class HomeController extends AbstractController
             $template = 'home/'.$slug.'.html.twig';
             return $this->render($template);
         }
-        elseif ($slug === 'voprosy-po-stroitelstvu-angarov-selhoztehnike'){
-            return $this->render('home/callback.html.twig');
-        }
-        else return $this->render('404.html.twig');
 
 
     }

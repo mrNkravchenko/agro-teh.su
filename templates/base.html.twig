@@ -125,7 +125,7 @@
             <div class="col-md-4">
                 <ul class="list-inline">
                     <li class="list-inline-item">
-                        <a href="" class="text-light" id="our-coordinates">Наши координаты (точки продаж)</a>
+                        <a href="{{ path('app_home_show', {'slug': 'contacts'}) }}" class="text-light" id="our-coordinates">Наши координаты (точки продаж)</a>
                     </li>
                 </ul>
             </div>
@@ -140,9 +140,9 @@
                     <li class="h3">
                         <a href="mailto:mail@agro-teh.su" class="text-light">mail@agro-teh.su</a>
                     </li>
-                    <li class="">
+                    <li>
                         {#<a class="btn btn-light btn-outline-success my-2 my-sm-0" id="callback" role="button" data-toggle="modal" data-target="#callback">Обратный звонок</a>#}
-                        <a class="btn btn-light btn-outline-success my-2 my-sm-0" role="button" data-toggle="modal" data-target="#callback">Обратный звонок</a>
+                        <button class="btn btn-light btn-outline-success my-2 my-sm-0" role="button" data-toggle="modal" data-target="#callback">Обратный звонок</button>
                     </li>
                 </ul>
             </div>
@@ -426,14 +426,14 @@
                         <div class="col-md-6">
                             <span class="text-light">Меню</span>
                             <nav class="nav flex-column small">
-                                <a class="nav-link active py-0 text-light" href="#">Главная</a>
+                                <a class="nav-link active py-0 text-light" href="{{ path('app_home') }}">Главная</a>
                                 <a class="nav-link py-0 text-light" href="#">О компании</a>
                                 <a class="nav-link py-0 text-light" href="{{ path('angary') }}">Ангары</a>
                                 <a class="nav-link py-0 text-light" href="{{ path('selhoztehnika') }}">Сельхозтехника</a>
                                 <a class="nav-link py-0 text-light" href="{{ path('spare_parts_show_all') }}">Запасные части</a>
                                 <a class="nav-link py-0 text-light" href="{{ path('app_home_show', {'slug': 'services'}) }}">Услуги</a>
                                 <a class="nav-link py-0 text-light" href="{{ path('app_home_show', {'slug': 'leasing'}) }}">Лизинг</a>
-                                <a class="nav-link py-0 text-light" href="#">Агроному на заметку</a>
+                                <a class="nav-link py-0 text-light" href="{{ path('articles') }}">Агроному на заметку</a>
                                 <a class="nav-link py-0 text-light" href="{{ path('app_home_show', {'slug': 'contacts'}) }}">Контакты</a>
                             </nav>
                         </div>
