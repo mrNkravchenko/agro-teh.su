@@ -1,4 +1,33 @@
 <!doctype html>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter47365036 = new Ya.Metrika2({
+                    id:47365036,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    webvisor:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/tag.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks2");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/47365036" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 <html lang="ru">
 <head>
     <!-- Required meta tags -->
@@ -7,6 +36,7 @@
     <meta http-equiv="Cache-Control" content="max-age=43200, must-revalidate">
     <meta http-equiv="Cache-Control" content="max-age=43200, proxy-revalidate">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="yandex-verification" content="7ad9b828584747df"/>
     <link rel="shortcut icon" href="{{ asset('assets/img/favicon.ico') }}" type="image/x-icon">
 
     {% block stylesheets %}
@@ -354,7 +384,7 @@
                     <div class="col-md-12 p-3">
                         <h2 class="text-center my-3">Заказать обратный звонок</h2>
 
-                        <form role="form" action="{{ path('callback') }}" method="post" class="json needs-validation" novalidate>
+                        <form role="form" action="{{ path('callback') }}" method="post" class="json needs-validation" novalidate onsubmit="yaCounter47365036.reachGoal('FORMA', function () {console.log('Данные успешно отправлены')}); console.log('submit')">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -458,6 +488,11 @@
                     </p>
                 </div>
                 <p class="text-light small mb-0 mt-2">Данный сайт не является публичной офертой и носит исключительно информационный характер</p>
+                <!-- Yandex.Metrika informer -->
+                <a href="https://metrika.yandex.ru/stat/?id=47365036&amp;from=informer"
+                   target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/47365036/3_0_FFFFFFFF_EFEFEFFF_0_pageviews"
+                                                       style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" class="ym-advanced-informer" data-cid="47365036" data-lang="ru" /></a>
+                <!-- /Yandex.Metrika informer -->
             </div>
         </div>
 
@@ -538,7 +573,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form role="form" action="{{ path('callback') }}" method="post" class="json needs-validation" novalidate>
+                    <form role="form" action="{{ path('callback') }}" method="post" class="json needs-validation" novalidate onsubmit="yaCounter47365036.reachGoal('FORMA', function () {console.log('Данные успешно отправлены')}); console.log('submit')">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -617,6 +652,11 @@
             });
         </script>#}
         <script src="{{ asset('build/app.js') }}"></script>
+        <script>
+            jQuery(document).on('yaCounter47365036inited', function () {
+                console.log('счетчик yaCounter47365036 можно использовать');
+            });
+        </script>
 
     {% endblock %}
 
