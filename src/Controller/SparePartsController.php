@@ -58,7 +58,7 @@ class SparePartsController extends AbstractController
     }
 
     /**
-     * @Route("/spare-parts/{id}", name="_show", methods="GET")
+     * @Route("/spare-parts/{id}", name="_show", methods="GET", requirements={"id":"\d+"})
      * @param SpareParts $sparePart
      * @return Response
      */
@@ -78,7 +78,7 @@ class SparePartsController extends AbstractController
      * @param SparePartsRepository $sparePartsRepository
      * @return JsonResponse
      */
-    public function showFilter(Request $request, SparePartsRepository $sparePartsRepository, TechRepository $techRepository): JsonResponse
+    public function showFilter(Request $request, SparePartsRepository $sparePartsRepository): JsonResponse
     {
         $filterParams = $request->query->all();
         $techId = isset($filterParams['tech_id']) ? (int) $filterParams['tech_id'] : 0;
