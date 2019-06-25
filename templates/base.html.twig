@@ -212,10 +212,10 @@
                             </li>
                         </ul>
 
-                        <form class="form-inline my-2 my-md-0">
+                        {#<form class="form-inline my-2 my-md-0">
                             <input class="form-control mr-sm-2 searchInput" placeholder="Поиск" aria-label="Поиск" type="text">
                             <button class="btn btn-light btn-outline-success my-2 my-sm-0">Поиск</button>
-                        </form>
+                        </form>#}
                     </div>
                 </nav>
             </div>
@@ -427,7 +427,7 @@
                             <span class="text-light">Меню</span>
                             <nav class="nav flex-column small">
                                 <a class="nav-link active py-0 text-light" href="{{ path('app_home') }}">Главная</a>
-                                <a class="nav-link py-0 text-light" href="#">О компании</a>
+                                <a class="nav-link py-0 text-light" href="{{ path('app_home_show', {'slug': 'about'}) }}">О компании</a>
                                 <a class="nav-link py-0 text-light" href="{{ path('angary') }}">Ангары</a>
                                 <a class="nav-link py-0 text-light" href="{{ path('selhoztehnika') }}">Сельхозтехника</a>
                                 <a class="nav-link py-0 text-light" href="{{ path('spare_parts_show_all') }}">Запасные части</a>
