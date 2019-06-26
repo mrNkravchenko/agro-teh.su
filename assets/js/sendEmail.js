@@ -21,6 +21,26 @@ $(document).ready(()=>{
                 data[name] = value;
             });
 
+            let userVerifed = false;
+
+            grecaptcha.execute('6LfUvKEUAAAAAE69avndcaHZP0OD55IeOYOanmaA', {action: 'social'})
+                .then(function(token) {
+                    const Api = new SendApi({
+                        method:'post',
+                        dataType: 'json',
+                        data: {token:token},
+                        url: '/verify-user',
+                        success: (answer)=>{
+                            if (answer.status) {
+                                userVerifed = true;
+                            }
+                        },
+                        error: (answer) => {
+                        }
+                    });
+                    Api.send();
+                });
+
             const Api = new SendApi({
                 method:'post',
                 dataType: 'json',
@@ -63,7 +83,19 @@ $(document).ready(()=>{
                     });
             }
             });
-            Api.send();
+
+            if (userVerifed) {
+                Api.send();
+            } else {
+                Swal.fire({
+                    type: 'error',
+                    title: 'Ваше сообщение не отправлено',
+                    text: 'Система определила Вас как робота',
+                    confirmButtonText: 'Закрыть'
+                });
+            }
+
+
 
         }
 
