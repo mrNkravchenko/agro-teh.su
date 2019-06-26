@@ -671,10 +671,10 @@
                             data: {token:token},
                             url: '/verify-user',
                             success: (answer)=>{
-                                console.log(answer);
+                                answer.status ? window.userIsVerify = true : window.userIsVerify = false;
                             },
                             error: (answer) => {
-                               console.log(answer);
+                                window.userIsVerify = false;
                             }
                         });
                         Api.send();

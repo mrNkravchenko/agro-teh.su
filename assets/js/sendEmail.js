@@ -25,78 +25,72 @@ $(document).ready(()=>{
 
             grecaptcha.execute('6LfUvKEUAAAAAE69avndcaHZP0OD55IeOYOanmaA', {action: 'social'})
                 .then(function(token) {
-                    const Api = new SendApi({
+                    const veryfyApi = new SendApi({
                         method:'post',
                         dataType: 'json',
                         data: {token:token},
                         url: '/verify-user',
                         success: (answer)=>{
                             if (answer.status) {
-                                userVerifed = true;
+                                const Api = new SendApi({
+                                    method:'post',
+                                    dataType: 'json',
+                                    data: data,
+                                    url: '/callback',
+                                    success: (answer)=>{
+                                        button.loader('off');
+
+
+                                        if (answer.status) {
+                                            Swal.fire({
+                                                type: 'success',
+                                                title: 'Ваше сообщение отправлено',
+                                                text: 'Мы с Вами свяжемся в ближайшее время',
+                                                confirmButtonText: 'Закрыть'
+                                            });
+                                            $(form).removeClass('was-validated');
+                                            form.reset();
+
+                                            if (isModal) {
+                                                self.parents('.modal').modal('hide');
+                                            }
+
+                                        } else {
+                                            Swal.fire({
+                                                type: 'error',
+                                                title: 'Ваше сообщение не отправлено',
+                                                text: answer.message,
+                                                confirmButtonText: 'Закрыть'
+                                            });
+                                        }
+
+                                    },
+                                    error: (answer) => {
+                                        Swal.fire({
+                                            type: 'error',
+                                            title: 'Ваше сообщение не отправлено',
+                                            text: 'Попробуте снова в ближайшее время',
+                                            confirmButtonText: 'Закрыть'
+                                        });
+                                    }
+                                });
+
+                                Api.send();
+
+                            } else {
+                                Swal.fire({
+                                    type: 'error',
+                                    title: 'Ваше сообщение не отправлено',
+                                    text: 'Система определила Вас как робота',
+                                    confirmButtonText: 'Закрыть'
+                                });
                             }
                         },
                         error: (answer) => {
                         }
                     });
-                    Api.send();
+                    veryfyApi.send();
                 });
-
-            const Api = new SendApi({
-                method:'post',
-                dataType: 'json',
-                data: data,
-                url: '/callback',
-                success: (answer)=>{
-                    button.loader('off');
-
-
-                    if (answer.status) {
-                        Swal.fire({
-                            type: 'success',
-                            title: 'Ваше сообщение отправлено',
-                            text: 'Мы с Вами свяжемся в ближайшее время',
-                            confirmButtonText: 'Закрыть'
-                        });
-                        $(form).removeClass('was-validated');
-                        form.reset();
-
-                        if (isModal) {
-                            self.parents('.modal').modal('hide');
-                        }
-
-                    } else {
-                        Swal.fire({
-                            type: 'error',
-                            title: 'Ваше сообщение не отправлено',
-                            text: answer.message,
-                            confirmButtonText: 'Закрыть'
-                        });
-                    }
-
-                },
-                error: (answer) => {
-                    Swal.fire({
-                        type: 'error',
-                        title: 'Ваше сообщение не отправлено',
-                        text: 'Попробуте снова в ближайшее время',
-                        confirmButtonText: 'Закрыть'
-                    });
-            }
-            });
-
-            if (userVerifed) {
-                Api.send();
-            } else {
-                Swal.fire({
-                    type: 'error',
-                    title: 'Ваше сообщение не отправлено',
-                    text: 'Система определила Вас как робота',
-                    confirmButtonText: 'Закрыть'
-                });
-            }
-
-
-
         }
 
     })
