@@ -46,7 +46,7 @@ class EmailController extends AbstractController
                     ->setBody(
                         $this->renderView(
                         // templates/emails/registration.html.twig
-                            'email/test.html.twig',
+                            'email/callback.html.twig',
                             [
                                 'name' => $name,
                                 'phone' => $phone,
