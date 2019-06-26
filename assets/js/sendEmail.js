@@ -48,7 +48,7 @@ $(document).ready(()=>{
                         Swal.fire({
                             type: 'error',
                             title: 'Ваше сообщение не отправлено',
-                            text: 'Попробуте снова в ближайшее время',
+                            text: answer.message,
                             confirmButtonText: 'Закрыть'
                         });
                     }
