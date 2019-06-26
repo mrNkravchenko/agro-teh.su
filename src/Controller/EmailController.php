@@ -39,7 +39,7 @@ class EmailController extends AbstractController
             return $this->json(['status' => 0, 'params' => $params, 'message' => 'В имени не допустимы не кириллические символы']);
         }
 
-        if (preg_match('/fuck/ig', $comment)) {
+        if (preg_match('/fuck/i', $comment)) {
             return $this->json(['status' => 0, 'params' => $params, 'message' => 'В сообщении не допустимы нецензурные выражения']);
         }
 
