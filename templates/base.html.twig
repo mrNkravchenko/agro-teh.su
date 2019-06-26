@@ -645,14 +645,6 @@
 
         {#gpoogle capcha#}
         <script src="https://www.google.com/recaptcha/api.js?render=6LfUvKEUAAAAAE69avndcaHZP0OD55IeOYOanmaA"></script>
-        <script>
-            grecaptcha.ready(function() {
-                grecaptcha.execute('6LfUvKEUAAAAAE69avndcaHZP0OD55IeOYOanmaA', {action: 'homepage'})
-                    .then(function(token) {
-                        console.log(token);
-                    });
-            });
-        </script>
         <!-- Яндекс карты АПИ -->
         <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
         {#<script src="https://www.google.com/recaptcha/api.js?render=6LfUvKEUAAAAAE69avndcaHZP0OD55IeOYOanmaA"></script>
@@ -667,6 +659,26 @@
         <script>
             jQuery(document).on('yaCounter47365036inited', function () {
                 console.log('счетчик yaCounter47365036 можно использовать');
+            });
+        </script>
+        <script>
+            grecaptcha.ready(function() {
+                grecaptcha.execute('6LfUvKEUAAAAAE69avndcaHZP0OD55IeOYOanmaA', {action: 'homepage'})
+                    .then(function(token) {
+                        const Api = new SendApi({
+                            method:'post',
+                            dataType: 'json',
+                            data: {token:token},
+                            url: '/verify-user',
+                            success: (answer)=>{
+                                console.log(answer);
+                            },
+                            error: (answer) => {
+                               console.log(answer);
+                            }
+                        });
+                        Api.send();
+                    });
             });
         </script>
 

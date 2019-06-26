@@ -28,7 +28,6 @@ class EmailController extends AbstractController
         $phone = $params['phone'];
         $email = $params['email'];
         $comment = $params['comment'];
-        $token = $params['token'];
         $page = isset($params['page']) ?? $params['page'];
         $type = isset($params['type']) ? $params['type'] : 'callback';
         $sender = isset($params['sender'])? $params['sender'] : 'no-reply@agro-teh.su';
@@ -42,30 +41,6 @@ class EmailController extends AbstractController
 
         if (preg_match('/fuck/ig', $comment)) {
             return $this->json(['status' => 0, 'params' => $params, 'message' => 'В сообщении не допустимы нецензурные выражения']);
-        }
-
-
-        $url = "https://www.google.com/recaptcha/api/siteverify";
-        $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, [
-            'secret'=>$_ENV['reCAPTCHA_SECRET_KEY'],
-            'response' => $token,
-            'remoteip' => $request->getClientIp()
-        ]);
-        $result = curl_exec($ch);
-        $info = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        $error = curl_error($ch);
-        curl_close($ch);
-
-
-        if (!$result) {
-            if (!json_decode($result, true)['success']) {
-                return $this->json(['status' => 0, 'params' => $params, 'result' => $result, 'message' => 'Google Капча не подтвержена']);
-            }
         }
 
 

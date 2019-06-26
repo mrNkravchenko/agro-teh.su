@@ -46,4 +46,39 @@ class HomeController extends AbstractController
 
 
     }
+
+    /**
+     * @Route("/verify-user", name="verify-user", methods="POST")
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\JsonResponse
+     */
+    public function verifyUser(Request $request)
+    {
+
+        $params = $request->request->all();
+        $token = $params['token'];
+
+        $url = "https://www.google.com/recaptcha/api/siteverify";
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, [
+            'secret'=>$_ENV['reCAPTCHA_SECRET_KEY'],
+            'response' => $token,
+            'remoteip' => $request->getClientIp()
+        ]);
+        $result = curl_exec($ch);
+        $info = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        $error = curl_error($ch);
+        curl_close($ch);
+
+
+        if (!json_decode($result, true)['success']) {
+            return $this->json(['status' => 0, 'params' => $params, 'result' => $result, 'message' => 'Google Капча не подтвержена']);
+        } else {
+            return $this->json(['status' => 1, 'params' => $params, 'result' => $result, 'message' => 'Google Капча подтвержена']);
+        }
+    }
 }
