@@ -12,147 +12,147 @@ contacts:
     path: /contacts
     permanent: true
 
-razbrasyvateli-udobreniy:
+_razbrasyvateli-udobreniy:
   path: /razbrasyvateli-udobreniy.php
   controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
   defaults:
     path: /tech/razbrasyvatel-udobreniy-mvu-1100
     permanent: true
 
-angary:
+_angary:
   path: /angary.php
   controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
   defaults:
     path: /angary
     permanent: true
 
-borona-pruzhinnaya:
+_borona-pruzhinnaya:
   path: /borona-pruzhinnaya.php
   controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
   defaults:
     path: /tech/borona-pruzhinnaya
     permanent: true
 
-opryskivatel-navesnoi-on-12:
+_opryskivatel-navesnoi-on-12:
   path: /opryskivatel-navesnoi-on-12.php
   controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
   defaults:
     path: /tech/opryskivatel-navesnoi-on-12
     permanent: true
 
-podvoz-vody-zhku-kas:
+_podvoz-vody-zhku-kas:
   path: /podvoz-vody-zhku-kas.php
   controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
   defaults:
     path: /category/podvoz-vody-zhku-kas
     permanent: true
 
-pritsep-pozharnyi-ppv-2500:
+_pritsep-pozharnyi-ppv-2500:
   path: /pritsep-pozharnyi-ppv-2500.php
   controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
   defaults:
     path: /tech/pritsep-pozharnyi-ppv-2500
     permanent: true
 
-selhoztehnika:
+_selhoztehnika:
   path: /selhoztehnika.php
   controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
   defaults:
     path: /selhoztehnika/
     permanent: true
 
-kogda-i-kak-nastraivat-opryskivatel:
+_kogda-i-kak-nastraivat-opryskivatel:
   path: /kogda-i-kak-nastraivat-opryskivatel.php
   controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
   defaults:
     path: /articles/6
     permanent: true
 
-podkormka-ozimyh-azotnymi-udobreniyami:
+_podkormka-ozimyh-azotnymi-udobreniyami:
   path: /podkormka-ozimyh-azotnymi-udobreniyami.php
   controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
   defaults:
     path: /articles/26
     permanent: true
 
-sposoby-podkormki-ozimyh-kultur:
+_sposoby-podkormki-ozimyh-kultur:
   path: /sposoby-podkormki-ozimyh-kultur.php
   controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
   defaults:
     path: /articles/27
     permanent: true
 
-vybiraem-raspyliteli-dlya-opryskivatelya:
+_vybiraem-raspyliteli-dlya-opryskivatelya:
   path: /vybiraem-raspyliteli-dlya-opryskivatelya.php
   controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
   defaults:
     path: /articles/8
     permanent: true
 
-rekomendatsii-po-vyboru-opryskivatelya:
+_rekomendatsii-po-vyboru-opryskivatelya:
   path: /rekomendatsii-po-vyboru-opryskivatelya.php
   controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
   defaults:
     path: /articles/4
     permanent: true
 
-beskarkasnoe-arochnoe-stroitelstvo:
+_beskarkasnoe-arochnoe-stroitelstvo:
   path: /beskarkasnoe-arochnoe-stroitelstvo.php
   controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
   defaults:
     path: /angary/beskarkasnoe-arochnoe-stroitelstvo
     permanent: true
 
-stroitelstvo-zernohranilishh:
+_stroitelstvo-zernohranilishh:
   path: /stroitelstvo-zernohranilishh.php
   controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
   defaults:
     path: /angary/stroitelstvo-zernohranilishh-i-ovoshehranilishh
     permanent: true
 
-voprosy-po-stroitelstvu-angarov-selhoztehnike:
+_voprosy-po-stroitelstvu-angarov-selhoztehnike:
   path: /voprosy-po-stroitelstvu-angarov-selhoztehnike.php
   controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
   defaults:
     path: /
     permanent: true
 
-borona-rotatsionnaya65:
+_borona-rotatsionnaya65:
   path: /borona-rotatsionnaya65.php
   controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
   defaults:
     path: /tech/borona-rotatsionnaya-tip3
     permanent: true
 
-osobennosti-maloobemnogo-opriskivaniya:
+_osobennosti-maloobemnogo-opriskivaniya:
   path: /osobennosti-maloobemnogo-opriskivaniya.php
   controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
   defaults:
     path: /articles/54
     permanent: true
 
-zapasnyye-chasti:
+_zapasnyye-chasti:
   path: /zapasnyye-chasti.php
   controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
   defaults:
     path: /spare-parts
     permanent: true
 
-proizvodstvo-opryskivateley:
+_proizvodstvo-opryskivateley:
   path: /proizvodstvo-opryskivateley.php
   controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
   defaults:
     path: /articles/16
     permanent: true
 
-karkasnye-i-beskarkasnye-angary:
+_karkasnye-i-beskarkasnye-angary:
   path: /karkasnye-i-beskarkasnye-angary.php
   controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
   defaults:
     path: /karkasnye-i-beskarkasnye-angary
     permanent: true
 
-podvoz-vody:
+_podvoz-vody:
   path: /podvoz-vody.php
   controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
   defaults:
