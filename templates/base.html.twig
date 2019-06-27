@@ -201,9 +201,9 @@
                             </li>
 
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ангары</a>
+                                <a class="nav-link dropdown-toggle text-white" style="cursor: pointer" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ангары</a>
 
-                                <div class="dropdown-menu">
+                                <div class="dropdown-menu" style="z-index: 1030">
                                     {% for category in angar_category_serv.findAll() %}
                                         <a class="dropdown-item" href="{{ path('angar_category_show', {'url' : category.url}) }}">{{ category.name }}</a>
                                     {% endfor %}
@@ -214,7 +214,7 @@
 
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Сельхозтехника</a>
-                                <div class="dropdown-menu">
+                                <div class="dropdown-menu" style="z-index: 1030">
 
                                     {% for category in techs_category %}
                                         <a class="dropdown-item" href="{{ path('category', {'url': category.url}) }}">{{ category.name }}</a>
@@ -230,7 +230,7 @@
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Партнеры</a>
-                                <div class="dropdown-menu">
+                                <div class="dropdown-menu" style="z-index: 1030">
                                     <a class="dropdown-item" href="{{ path('partners_techs') }}">Техника</a>
                                     <a class="dropdown-item" href="{{ path('partners_services') }}">Услуги</a>
                                 </div>
@@ -488,11 +488,16 @@
                         <a class="text-light small" href="{{ path('app_home_show', {'slug' : 'politika-konfidencialnosti'}) }}">Политика конфиденциальности</a>
                     </p>
                 </div>
-                <p class="text-light small mb-0 mt-2">Данный сайт не является публичной офертой и носит исключительно информационный характер</p>
+                <div class="col-md-9">
+                    <p class="text-light small mb-0 mt-2">Данный сайт не является публичной офертой и носит исключительно информационный характер</p>
+                </div>
+
                 <!-- Yandex.Metrika informer -->
-                <a href="https://metrika.yandex.ru/stat/?id=47365036&amp;from=informer"
-                   target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/47365036/3_0_FFFFFFFF_EFEFEFFF_0_pageviews"
-                                                       style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" class="ym-advanced-informer" data-cid="47365036" data-lang="ru" /></a>
+                <div class="col-md-3">
+                    <a href="https://metrika.yandex.ru/stat/?id=47365036&amp;from=informer"
+                       target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/47365036/3_0_FFFFFFFF_EFEFEFFF_0_pageviews"
+                                                           style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" class="ym-advanced-informer" data-cid="47365036" data-lang="ru" /></a>
+                </div>
                 <!-- /Yandex.Metrika informer -->
             </div>
         </div>

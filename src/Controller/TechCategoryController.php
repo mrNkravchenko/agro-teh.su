@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\TechCategory;
 use App\Form\TechCategoryType;
 use App\Repository\TechCategoryRepository;
+use App\Service\FileUploader;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -26,9 +27,10 @@ class TechCategoryController extends AbstractController
     /**
      * @Route("/manager/tech/category/new", name="tech_category_new", methods="GET|POST")
      * @param Request $request
+     * @param FileUploader $fileUploader
      * @return Response
      */
-    public function new(Request $request): Response
+    public function new(Request $request, FileUploader $fileUploader): Response
     {
         $techCategory = new TechCategory();
         $form = $this->createForm(TechCategoryType::class, $techCategory);
@@ -36,15 +38,36 @@ class TechCategoryController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+
+            $dateTime = \DateTime::createFromFormat('Y-m-d H:i:s', date('Y-m-d H:i:s'));
+
+            $techCategory->setCreated($dateTime);
+            $techCategory->setUpdated($dateTime);
+
+            $imageSmall = $techCategory->getSmallImageBin();
+            $imageSideBar = $techCategory->getSideBarImageBin();
+
+            $fileUploader->setParticularPath('content/category/'.$techCategory->getId().'/');
+            $fileUploader->setWithThumbnail(false);
+            $imageSmallUpload = $fileUploader->upload($imageSmall);
+            $techCategory->setSmallImage('assets/img/content/category/'.$techCategory->getId().'/'.$imageSmallUpload['name_md5']);
+
+            $imageSideBarUpload = $fileUploader->upload($imageSideBar);
+            $techCategory->setSideBarImage('assets/img/content/category/'.$techCategory->getId().'/'.$imageSideBarUpload['name_md5']);
+
             $em->persist($techCategory);
             $em->flush();
 
             return $this->redirectToRoute('tech_category_index');
         }
 
+        $content = $this->renderView('tech_category/_form.html.twig', [
+            'form' => $form->createView(),
+        ]);
+
         return $this->render('tech_category/new.html.twig', [
             'tech_category' => $techCategory,
-            'form' => $form->createView(),
+            'content' => $content
         ]);
     }
 
@@ -58,21 +81,46 @@ class TechCategoryController extends AbstractController
 
     /**
      * @Route("/manager/tech/category/{id}/edit", name="tech_category_edit", methods="GET|POST")
+     * @param Request $request
+     * @param TechCategory $techCategory
+     * @param FileUploader $fileUploader
+     * @return Response
      */
-    public function edit(Request $request, TechCategory $techCategory): Response
+    public function edit(Request $request, TechCategory $techCategory, FileUploader $fileUploader): Response
     {
         $form = $this->createForm(TechCategoryType::class, $techCategory);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $dateTime = \DateTime::createFromFormat('Y-m-d H:i:s', date('Y-m-d H:i:s'));
+
+            $techCategory->setCreated($dateTime);
+            $techCategory->setUpdated($dateTime);
+
+            $imageSmall = $techCategory->getSmallImageBin();
+            $imageSideBar = $techCategory->getSideBarImageBin();
+
+            $fileUploader->setParticularPath('content/category/'.$techCategory->getId().'/');
+            $fileUploader->setWithThumbnail(false);
+            $imageSmallUpload = $fileUploader->upload($imageSmall);
+            $techCategory->setSmallImage('assets/img/content/category/'.$techCategory->getId().'/'.$imageSmallUpload['name_md5']);
+
+            $imageSideBarUpload = $fileUploader->upload($imageSideBar);
+            $techCategory->setSideBarImage('assets/img/content/category/'.$techCategory->getId().'/'.$imageSideBarUpload['name_md5']);
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('tech_category_edit', ['id' => $techCategory->getId()]);
         }
 
-        return $this->render('tech_category/edit.html.twig', [
-            'tech_category' => $techCategory,
+        $content = $this->renderView('tech_category/_form.html.twig', [
             'form' => $form->createView(),
+        ]);
+
+        return $this->render('tech_category/new.html.twig', [
+            'tech_category' => $techCategory,
+            'content' => $content
         ]);
     }
 

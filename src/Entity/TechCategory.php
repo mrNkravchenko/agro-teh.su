@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\TechCategoryRepository")
@@ -40,6 +41,16 @@ class TechCategory
      * @ORM\Column(type="string", length=255)
      */
     private $side_bar_image;
+
+    /**
+     * @Assert\Image(mimeTypes={ "image/jpg", "image/jpeg", "image/gif", "image/png" })
+     */
+    private $small_image_bin;
+
+    /**
+     * @Assert\Image(mimeTypes={ "image/jpg", "image/jpeg", "image/gif", "image/png" })
+     */
+    private $side_bar_image_bin;
 
     /**
      * @ORM\Column(type="text", nullable=true)
@@ -217,5 +228,37 @@ class TechCategory
     public function setDescription($description): void
     {
         $this->description = $description;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSmallImageBin()
+    {
+        return $this->small_image_bin;
+    }
+
+    /**
+     * @param mixed $small_image_bin
+     */
+    public function setSmallImageBin($small_image_bin): void
+    {
+        $this->small_image_bin = $small_image_bin;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSideBarImageBin()
+    {
+        return $this->side_bar_image_bin;
+    }
+
+    /**
+     * @param mixed $side_bar_image_bin
+     */
+    public function setSideBarImageBin($side_bar_image_bin): void
+    {
+        $this->side_bar_image_bin = $side_bar_image_bin;
     }
 }
