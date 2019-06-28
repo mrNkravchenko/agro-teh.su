@@ -252,15 +252,16 @@
             </div>
         </div>
 
-        {% block slider %}
+        <div id="top-slider" class="d-none d-xl-block">
+            {% block slider %}
 
-        {% endblock %}
-
+            {% endblock %}
+        </div>
         <!-- Main section -->
         <div class="row m-0 main-content">
             <!-- Left catalog menu section -->
             <!--            To do: Add dropdown-->
-            <div class="d-xs-none d-sm-none d-md-none d-lg-block col-lg-2 p-0">
+            <div class="d-none d-sm-none d-md-none d-lg-block col-lg-3 col-xl-2 p-0">
                 <ul class="list-unstyled list-group sticky-top" id="menu-group-1">
                     <li class="list-group-item">
                         <p class="mt-2 mb-2" data-toggle="collapse" data-parent="#menu-group-1" href="#sub-item-1" style="cursor: pointer">
@@ -366,7 +367,7 @@
             </div>
 
             <!-- Main content section -->
-            <div class="col-lg-10 p-0">
+            <div class="col-lg-9 col-xl-10 p-0">
                 {% block h1 %}
 
                 {% endblock %}
