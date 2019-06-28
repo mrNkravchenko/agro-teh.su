@@ -11,7 +11,7 @@
 {% endblock %}
 
 {% block slider %}
-    <div class="row">
+    <div class="row d-flex d-sm-none">
         <div class="col-sm-12"
              style="background-image: url({{ asset('assets/img/content/stroitelstvo-angarov/postroennye/002.jpg') }});
                      background-repeat: no-repeat;
@@ -30,8 +30,8 @@
     <div class="row m-0 pb-3 justify-content-around gallery">
         {% for item in gallery %}
             <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb hangars__item">
-                <a data-fancybox="gallery" href="{{ item.getPath }}{{ item.getNameMd5 }}">
-                    <img class="img-thumbnail" src="{{ item.getPathThumbnail }}{{ item.getNameMd5 }}" alt="">
+                <a data-fancybox="gallery" href="{{ asset(item.getPath~item.getNameMd5) }}">
+                    <img class="img-thumbnail" src="{{ asset(item.getPath~item.getNameMd5) }}" alt="">
                 </a>
             </div>
         {% endfor %}

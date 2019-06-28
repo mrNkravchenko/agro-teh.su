@@ -65,7 +65,7 @@ class GalleryImageController extends AbstractController
                 $galleryImage->setName($fileParams['name']);
                 $galleryImage->setNameMd5($fileParams['name_md5']);
                 $galleryImage->setPath('assets/img/gallery/');
-                $galleryImage->setPathThumbnail('assets/img/gallery/thumbnail');
+                $galleryImage->setPathThumbnail('assets/img/gallery/thumbnail/');
                 $em->persist($galleryImage);
                 $em->flush();
             }
