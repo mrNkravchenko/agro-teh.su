@@ -149,7 +149,7 @@ _karkasnye-i-beskarkasnye-angary:
   path: /karkasnye-i-beskarkasnye-angary.php
   controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
   defaults:
-    path: /karkasnye-i-beskarkasnye-angary
+    path: /angary/karkasnye-i-beskarkasnye-angary
     permanent: true
 
 _podvoz-vody:
@@ -157,4 +157,165 @@ _podvoz-vody:
   controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
   defaults:
     path: /tech/podvoz-vody
+    permanent: true
+
+_davlenie-i-ravnomernost-raspileniya-part2:
+  path: /davlenie-i-ravnomernost-raspileniya-part2.php
+  controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+  defaults:
+    path: /articles/45
+    permanent: true
+
+_o-razmere-kapel-part2:
+  path: /o-razmere-kapel-part2.php
+  controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+  defaults:
+    path: /articles/46
+    permanent: true
+
+_obrabotka-metalla:
+  path: /obrabotka-metalla.php
+  controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+  defaults:
+    path: /services
+    permanent: true
+
+_osobennosti-rashoda-rabochei-zhidkosti-part2:
+  path: /osobennosti-rashoda-rabochei-zhidkosti-part2.php
+  controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+  defaults:
+    path: /articles/53
+    permanent: true
+
+_chem-grozit-nesobludenie-skorostnogo-regima-part2:
+  path: /chem-grozit-nesobludenie-skorostnogo-regima-part2.php
+  controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+  defaults:
+    path: /articles/42
+    permanent: true
+
+_politika-konfidencialnosti:
+  path: /politika-konfidencialnosti.php
+  controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+  defaults:
+    path: /politika-konfidencialnosti
+    permanent: true
+
+_vneshnie-factori-part2:
+  path: /vneshnie-factori-part2.php
+  controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+  defaults:
+    path: /articles/39
+    permanent: true
+
+_agronomu-na-zametku:
+  path: /agronomu-na-zametku.php
+  controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+  defaults:
+    path: /agronomu-na-zametku
+    permanent: true
+
+_okzh:
+  path: /okzh.php
+  controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+  defaults:
+    path: /tech/okzh
+    permanent: true
+
+_sistema-parallelnogo-vozhdeniya-agronavigator:
+  path: /sistema-parallelnogo-vozhdeniya-agronavigator.php
+  controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+  defaults:
+    path: /tech/sistema-parallelnogo-vozhdeniya-agronavigator
+    permanent: true
+
+_grabli-voroshilki-senovoroshilka:
+  path: /grabli-voroshilki-senovoroshilka.php
+  controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+  defaults:
+    path: /tech/grabli-voroshilki-senovoroshilka
+    permanent: true
+
+_opryskivatel-ventilyatornyi-sadovyi:
+  path: /opryskivatel-ventilyatornyi-sadovyi.php
+  controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+  defaults:
+    path: /tech/opryskivatel-ventilyatornyi-sadovyi-600
+    permanent: true
+
+_otechestvennye-i-zarubezhnye-opryskivateli:
+  path: /otechestvennye-i-zarubezhnye-opryskivateli.php
+  controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+  defaults:
+    path: /articles/20
+    permanent: true
+
+_agregat-kombinirovannyi-diskovyi:
+  path: /agregat-kombinirovannyi-diskovyi.php
+  controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+  defaults:
+    path: /tech/agregat-kombinirovannyi-diskovyi
+    permanent: true
+
+_mashiny-dlya-vneseniya-udobreniy:
+  path: /mashiny-dlya-vneseniya-udobreniy.php
+  controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+  defaults:
+    path: /tech/mashiny-dlya-vneseniya-udobreniy
+    permanent: true
+
+_samohodnyi-razbrasyvatel-udobreniy:
+  path: /samohodnyi-razbrasyvatel-udobreniy.php
+  controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+  defaults:
+    path: /tech/samohodnyi-razbrasyvatel-udobreniy
+    permanent: true
+
+_leasing:
+  path: /leasing.php
+  controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+  defaults:
+    path: /leasing
+    permanent: true
+
+_o-kompanii-agro-teh:
+  path: /o-kompanii-agro-teh.php
+  controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+  defaults:
+    path: /about
+    permanent: true
+
+_opryskivatel-pritsepnoi-op-28:
+  path: /opryskivatel-pritsepnoi-op-28.php
+  controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+  defaults:
+    path: /tech/opryskivatel-pritsepnoi-op-28
+    permanent: true
+
+_smesi-v-bake-opryskivatelya:
+  path: /smesi-v-bake-opryskivatelya.php
+  controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+  defaults:
+    path: /articles/11
+    permanent: true
+
+_opryskivatel-pritsepnoi-ventilyatornyi-opv-2000:
+  path: /opryskivatel-pritsepnoi-ventilyatornyi-opv-2000.php
+  controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+  defaults:
+    path: /tech/opryskivatel-pritsepnoi-ventilyatornyi-opv-2000
+    permanent: true
+
+_osobennosti-protsessa-opryskivaniya:
+  path: /osobennosti-protsessa-opryskivaniya.php
+  controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+  defaults:
+    path: /articles/12
+    permanent: true
+
+_opryskivatel-gerbitsidnyi:
+  path: /opryskivatel-gerbitsidnyi.php
+  controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+  defaults:
+    path: /tech/opryskivatel-gerbitsidnyi
     permanent: true
