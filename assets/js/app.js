@@ -952,6 +952,15 @@ function closeModal() {
 
 $(document).ready(()=>{
 
+    /*MORE-INFO*/
+
+    $('.more-info').on('click', (e)=>{
+
+       const location = $(e.target).find('a').attr('href');
+       console.log(location);
+       document.location.replace(location);
+    });
+
     /*SIDE MENU*/
     $('p[data-toggle="collapse"]').on('click', function () {
         const element = $(this);
