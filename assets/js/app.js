@@ -23,7 +23,8 @@ require('flexslider');
 // require('./jquery.easing.min');
 // require('./custom');
 require('jquery.scrollto');
-require ('jquery.kladr/jquery.kladr.min');
+// require ('jquery.kladr/jquery.kladr.min');
+require ('./jquery-master/jquery.fias.min');
 require('./mapGenerator');
 require('./sendEmail');
 require('trumbowyg');
@@ -33,6 +34,13 @@ require('select2');
 import '@fancyapps/fancybox';
 
 $.trumbowyg.svgPath = '/assets/img/icons.svg';
+
+
+/*Yandex counter*/
+$(document).on('yaCounter47365036inited', function () {
+    console.log('счетчик yaCounter47365036 можно использовать');
+});
+
 
 $('.html_redactor').trumbowyg({
     btns: [
@@ -630,66 +638,72 @@ $('.flexslider').flexslider({
 
 $('.at-select2').select2();
 
-$(function () {
-    /*
-    ->add('region')
-            ->add('region_index')
-            ->add('city')
-            ->add('district')
-            ->add('street')
-            ->add('building')
-            ->add('zip')
-            ->add('coordinate')
-    * */
-    const $zip = $('[name="address[zip]"]'),
-        $region = $('[name="address[region]"]'),
-        $region_index = $('[name="address[region_index]"]'),
-        $district = $('[name="address[district]"]'),
-        $city = $('[name="address[city]"]'),
-        $street = $('[name="address[street]"]'),
-        $building = $('[name="address[building]"]');
 
-    const $tooltip = $('.tooltip');
+// KLADR
+(function () {
+    var $container = $(document.getElementById('address_multiple_fields'));
 
-    $.kladr.setDefault({
-        parentInput: '.js-form-address',
-        verify: true,
-        select: function (obj) {
-            setLabel($(this), obj.type);
-            $tooltip.hide();
-        },
-        check: function (obj) {
-            var $input = $(this);
+    var $tooltip = $('#tooltip');
 
-            if (obj) {
-                setLabel($input, obj.type);
+    var $zip = $container.find('[name="address[zip]"]'),
+        $region = $container.find('[name="address[region]"]'),
+        $region_index = $container.find('[name="address[region_index]"]'),
+        $district = $container.find('[name="address[district]"]'),
+        $city = $container.find('[name="address[city]"]'),
+        $street = $container.find('[name="address[street]"]'),
+        $building = $container.find('[name="address[building]"]');
+    $()
+        .add($region)
+        .add($district)
+        .add($city)
+        .add($street)
+        .add($building)
+        .fias({
+            parentInput: $container.find('.js-form-address'),
+            verify: true,
+            select: function (obj) {
+                console.log(obj);
+                if (obj.contentType === 'region') $region_index.val(obj.type);
+                if (obj.zip) $zip.val(obj.zip);//Обновляем поле zip
+                setLabel($(this), obj.type);
                 $tooltip.hide();
-            }
-            else {
-                showError($input, 'Введено неверно');
-            }
-        },
-        checkBefore: function () {
-            var $input = $(this);
+            },
+            check: function (obj) {
+                var $input = $(this);
 
-            if (!$.trim($input.val())) {
-                $tooltip.hide();
-                return false;
-            }
-        }
-    });
+                if (obj) {
+                    setLabel($input, obj.type);
+                    $tooltip.hide();
+                }
+                else {
+                    showError($input, 'Ошибка');
+                }
+            },
+            checkBefore: function () {
+                var $input = $(this);
 
-    $region.kladr('type', $.kladr.type.region);
-    $district.kladr('type', $.kladr.type.district);
-    $city.kladr('type', $.kladr.type.city);
-    $street.kladr('type', $.kladr.type.street);
-    $building.kladr('type', $.kladr.type.building);
+                if (!$.trim($input.val())) {
+                    $tooltip.hide();
+                    return false;
+                }
+            }
+        });
+
+    $region.fias('type', $.fias.type.region);
+    $district.fias('type', $.fias.type.district);
+    $city.fias('type', $.fias.type.city);
+    $street.fias('type', $.fias.type.street);
+    $building.fias('type', $.fias.type.building);
+
+    $district.fias('withParents', true);
+    $city.fias('withParents', true);
+    $street.fias('withParents', true);
 
     // Отключаем проверку введённых данных для строений
-    $building.kladr('verify', false);
+    $building.fias('verify', false);
 
     // Подключаем плагин для почтового индекса
-    $zip.kladrZip();
+    $zip.fiasZip($container);
 
     function setLabel($input, text) {
         text = text.charAt(0).toUpperCase() + text.substr(1).toLowerCase();
@@ -704,15 +718,16 @@ $(function () {
             inputHeight = $input.outerHeight();
 
         var tooltipHeight = $tooltip.outerHeight();
+        var tooltipWidth = $tooltip.outerWidth();
 
         $tooltip.css({
-            left: (inputOffset.left + inputWidth + 10) + 'px',
+            left: (inputOffset.left + inputWidth - tooltipWidth) + 'px',
             top: (inputOffset.top + (inputHeight - tooltipHeight) / 2 - 1) + 'px'
         });
 
-        $tooltip.show();
+        $tooltip.fadeIn();
     }
-});
+})();
 
 $('a[data-toggle="tab"]:first').tab('show');
 

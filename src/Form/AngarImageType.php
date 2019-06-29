@@ -19,12 +19,13 @@ class AngarImageType extends AbstractType
             ->add('name_md5')
             ->add('path')
             ->add('path_thumbnail')*/
-            ->add('image', FileType::class, ['label' => 'Изображение'])
-            ->add('first')
+            ->add('image', FileType::class, ['label' => 'Изображения', 'multiple' => true])
+//            ->add('first')
             ->add('angar', EntityType::class, [
                 'class' => Angar::class,
                 'choice_label' => function ($angar) {
-                    return $angar->getId();
+                    /**@var Angar $angar*/
+                    return $angar->getId() . ', '.$angar->getWidth() . ' x ' . $angar->getLength() . ' - ' . $angar->getSquare() . ' м2, ' . $angar->getAddress()->getFullAddress();
                 }
             ])
         ;

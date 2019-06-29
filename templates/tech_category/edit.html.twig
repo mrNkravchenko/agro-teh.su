@@ -2,12 +2,14 @@
 
 {% block title %}Edit TechCategory{% endblock %}
 
-{% block body %}
-    <h1>Edit TechCategory</h1>
+{% block content %}
+    <div class="col-12">
+        <h1>Edit TechCategory</h1>
 
-    {{ include('tech_category/_form.html.twig', {'button_label': 'Update'}) }}
+        {{ include('tech_category/_form.html.twig', {'button_label': 'Обновить'}) }}
 
-    <a href="{{ path('tech_category_index') }}">back to list</a>
+        <a class="btn btn-primary btn-sm mb-2" href="{{ path('tech_category_index') }}">Назад к списку</a>
 
-    {{ include('tech_category/_delete_form.html.twig') }}
+        {{ include('tech_category/_delete_form.html.twig') }}
+    </div>
 {% endblock %}

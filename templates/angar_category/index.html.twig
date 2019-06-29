@@ -3,10 +3,12 @@
 {% block title %}AngarCategory index{% endblock %}
 
 {% block content %}
-    <h1>AngarCategory index</h1>
+    <div class="col-12">
+        <h1>AngarCategory index</h1>
 
-    <table class="table">
-        <thead>
+        <a class="btn btn-sm btn-primary mb-2" href="{{ path('angar_category_new') }}">Создать</a>
+        <table class="table table-responsive">
+            <thead>
             <tr>
                 <th>Id</th>
                 <th>Name</th>
@@ -17,29 +19,28 @@
                 <th>Updated</th>
                 <th>actions</th>
             </tr>
-        </thead>
-        <tbody>
-        {% for angar_category in angar_categories %}
-            <tr>
-                <td>{{ angar_category.id }}</td>
-                <td>{{ angar_category.name }}</td>
-                <td>{{ angar_category.url }}</td>
-                <td>{{ angar_category.image }}</td>
-                <td>{{ angar_category.smallImage }}</td>
-                <td>{{ angar_category.created ? angar_category.created|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ angar_category.updated ? angar_category.updated|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('angar_category_show', {'url': angar_category.getUrl()}) }}">show</a>
-                    <a href="{{ path('angar_category_edit', {'id': angar_category.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="8">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('angar_category_new') }}">Create new</a>
+            </thead>
+            <tbody>
+            {% for angar_category in angar_categories %}
+                <tr>
+                    <td>{{ angar_category.id }}</td>
+                    <td>{{ angar_category.name }}</td>
+                    <td>{{ angar_category.url }}</td>
+                    <td>{{ angar_category.image }}</td>
+                    <td>{{ angar_category.smallImage }}</td>
+                    <td>{{ angar_category.created ? angar_category.created|date('Y-m-d H:i:s') : '' }}</td>
+                    <td>{{ angar_category.updated ? angar_category.updated|date('Y-m-d H:i:s') : '' }}</td>
+                    <td>
+                        <a class="btn btn-primary btn-sm mb-2" href="{{ path('angar_category_show', {'url': angar_category.getUrl()}) }}"><i class="fa fa-eye"></i></a>
+                        <a class="btn btn-primary btn-sm" href="{{ path('angar_category_edit', {'id': angar_category.id}) }}"><i class="fa fa-edit"></i></a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="8">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}

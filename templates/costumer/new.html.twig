@@ -2,10 +2,12 @@
 
 {% block title %}New Costumer{% endblock %}
 
-{% block body %}
-    <h1>Create new Costumer</h1>
+{% block content %}
+    <div class="col-12">
+        <h1>Create new Costumer</h1>
 
-    {{ include('costumer/_form.html.twig') }}
+        {{ include('costumer/_form.html.twig') }}
 
-    <a href="{{ path('costumer_index') }}">back to list</a>
+        <a class="btn btn-primary btn-sm mt-2" href="{{ path('costumer_index') }}">Назад к списку</a>
+    </div>
 {% endblock %}

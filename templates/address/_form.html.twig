@@ -1,4 +1,88 @@
+{#
 {{ form_start(form, {attr: {class: 'js-form-address'} }) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+<div class="row">
+    <div class="col-12">
+        <div class="field">
+            <label>Индекс</label>
+            {{ form_widget(form.zip, {attr: {placehplder: 'Будет определен автоматически'}}) }}
+        </div>
+        <div class="field">
+            <label>Регион</label>
+            {{ form_widget(form.region) }}
+        </div>
+        <div class="field">
+            <label>Индекс региона</label>
+            {{ form_widget(form.region_index) }}
+        </div>
+        <div class="field">
+            <label>Населенный пункт</label>
+            {{ form_widget(form.city) }}
+        </div>
+        <div class="field">
+            <label>Район</label>
+            {{ form_widget(form.district) }}
+        </div>
+        <div class="field">
+            <label>Улица</label>
+            {{ form_widget(form.street) }}
+        </div>
+        <div class="field">
+            <label>Дом</label>
+            {{ form_widget(form.building) }}
+        </div>
+        <div class="field">
+            <label>Координаты</label>
+            {{ form_widget(form.coordinate) }}
+        </div>
+    </div>
+</div>
+
+<div class="tooltip" style="display: none;"><b></b><span></span></div>
+    <button class="btn btn-primary mt-2">{{ button_label|default('Сохранить') }}</button>
 {{ form_end(form) }}
+#}
+
+<div id="address_multiple_fields">
+    {{ form_start(form, {attr: {class: 'js-form-address'} }) }}
+        <div class="flex row">
+            <div class="half col-6">
+                <div class="input form-group">
+                    <label>Индекс</label>
+                    {{ form_widget(form.zip, {attr: {class: 'form-control', placehplder: 'Будет определен автоматически'}}) }}
+                </div>
+                <div class="input form-group">
+                    <label>Область</label>
+                    {{ form_widget(form.region, {attr: {class: 'form-control'}}) }}
+                </div>
+                <div class="input form-group">
+                    <label>Индекс региона</label>
+                    {{ form_widget(form.region_index, {attr: {class: 'form-control'}}) }}
+                </div>
+                <div class="input form-group">
+                    <label>Регион / район</label>
+                    {{ form_widget(form.district, {attr: {class: 'form-control'}}) }}
+                </div>
+            </div>
+            <div class="half col-6">
+                <div class="input form-group">
+                    <label>Город / населенный пункт</label>
+                    {{ form_widget(form.city, {attr: {class: 'form-control'}}) }}
+                </div>
+                <div class="input form-group">
+                    <label>Улица</label>
+                    {{ form_widget(form.street, {attr: {class: 'form-control'}}) }}
+                </div>
+                <div class="input input_litl form-group">
+                    <label>Дом</label>
+                    {{ form_widget(form.building, {attr: {class: 'form-control'}}) }}
+                </div>
+                <div class="input form-group">
+                    <label>Координаты</label>
+                    {{ form_widget(form.coordinate, {attr: {class: 'form-control'}}) }}
+                </div>
+            </div>
+            <button class="btn btn-primary btn-sm mt-2">{{ button_label|default('Сохранить') }}</button>
+        </div>
+    {{ form_end(form) }}
+
+</div>

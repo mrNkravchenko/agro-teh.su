@@ -2,10 +2,12 @@
 
 {% block title %}New GalleryImage{% endblock %}
 
-{% block body %}
-    <h1>Create new GalleryImage</h1>
+{% block content %}
+    <div class="col-12">
+        <h1>Create new GalleryImage</h1>
 
-    {{ include('gallery_image/_form.html.twig') }}
+        {{ include('gallery_image/_form.html.twig') }}
 
-    <a href="{{ path('gallery_image_index') }}">back to list</a>
+        <a class="btn btn-primary btn-sm mb-2" href="{{ path('gallery_image_index') }}">Назад к списку</a>
+    </div>
 {% endblock %}

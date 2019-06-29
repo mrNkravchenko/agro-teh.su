@@ -41,17 +41,24 @@ class AngarImageController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $image = $angarImage->getImage();
 
+            $angar = $angarImage->getAngar();
             $fileUploader->setParticularPath('hangars/'.$angarImage->getAngar()->getId().'/');
-            $fileParams = $fileUploader->upload($image);
-            $angarImage->setName($fileParams['name']);
-            $angarImage->setNameMd5($fileParams['name_md5']);
-            $angarImage->setPath('assets/img/hangars/'.$angarImage->getAngar()->getId().'/');
-            $angarImage->setPathThumbnail('assets/img/hangars/'.$angarImage->getAngar()->getId().'/thumbnail/');
 
-            $em->persist($angarImage);
+            $em = $this->getDoctrine()->getManager();
+
+            $images = $angarImage->getImage();
+            foreach ($images as $image) {
+                $angarImage = new AngarImage();
+                $angarImage->setAngar($angar);
+                $angarImage->setFirst(false);
+                $fileParams = $fileUploader->upload($image);
+                $angarImage->setName($fileParams['name']);
+                $angarImage->setNameMd5($fileParams['name_md5']);
+                $angarImage->setPath('assets/img/hangars/'.$angarImage->getAngar()->getId().'/');
+                $angarImage->setPathThumbnail('assets/img/hangars/'.$angarImage->getAngar()->getId().'/thumbnail/');
+                $em->persist($angarImage);
+            }
             $em->flush();
 
             return $this->redirectToRoute('angar_image_index');

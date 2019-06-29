@@ -2,11 +2,14 @@
 
 {% block title %}GalleryImage index{% endblock %}
 
-{% block body %}
-    <h1>GalleryImage index</h1>
+{% block content %}
+    <div class="col-12">
+        <h1>GalleryImage index</h1>
 
-    <table class="table">
-        <thead>
+        <a class="btn btn-primary btn-sm mb-2" href="{{ path('gallery_image_new') }}">Создать</a>
+
+        <table class="table table-responsive">
+            <thead>
             <tr>
                 <th>Id</th>
                 <th>Name</th>
@@ -15,27 +18,26 @@
                 <th>Path_thumbnail</th>
                 <th>actions</th>
             </tr>
-        </thead>
-        <tbody>
-        {% for gallery_image in gallery_images %}
-            <tr>
-                <td>{{ gallery_image.id }}</td>
-                <td>{{ gallery_image.name }}</td>
-                <td>{{ gallery_image.nameMd5 }}</td>
-                <td>{{ gallery_image.path }}</td>
-                <td>{{ gallery_image.pathThumbnail }}</td>
-                <td>
-                    <a href="{{ path('gallery_image_show', {'id': gallery_image.id}) }}">show</a>
-                    <a href="{{ path('gallery_image_edit', {'id': gallery_image.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('gallery_image_new') }}">Create new</a>
+            </thead>
+            <tbody>
+            {% for gallery_image in gallery_images %}
+                <tr>
+                    <td>{{ gallery_image.id }}</td>
+                    <td>{{ gallery_image.name }}</td>
+                    <td>{{ gallery_image.nameMd5 }}</td>
+                    <td>{{ gallery_image.path }}</td>
+                    <td>{{ gallery_image.pathThumbnail }}</td>
+                    <td>
+                        <a class="btn btn-primary btn-sm mb-2" href="{{ path('gallery_image_show', {'id': gallery_image.id}) }}"><i class="fa fa-eye"></i></a>
+                        <a class="btn btn-primary btn-sm mb-2" href="{{ path('gallery_image_edit', {'id': gallery_image.id}) }}"><i class="fa fa-edit"></i></a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}

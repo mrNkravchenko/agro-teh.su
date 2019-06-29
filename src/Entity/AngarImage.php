@@ -50,9 +50,7 @@ class AngarImage
      */
     private $first;
 
-    /**
-     * @Assert\Image(mimeTypes={ "image/jpg", "image/jpeg", "image/gif", "image/png" })
-     */
+
     private $image;
 
     public function getId(): ?int

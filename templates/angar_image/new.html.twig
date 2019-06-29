@@ -2,10 +2,12 @@
 
 {% block title %}New AngarImage{% endblock %}
 
-{% block body %}
-    <h1>Create new AngarImage</h1>
+{% block content %}
+    <div class="col-12">
+        <h1>Create new AngarImage</h1>
 
-    {{ include('angar_image/_form.html.twig') }}
+        {{ include('angar_image/_form.html.twig') }}
 
-    <a href="{{ path('angar_image_index') }}">back to list</a>
+        <a class="btn btn-primary btn-sm mb-2" href="{{ path('angar_image_index') }}">Назад к списку</a>
+    </div>
 {% endblock %}

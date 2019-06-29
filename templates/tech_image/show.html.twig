@@ -2,11 +2,12 @@
 
 {% block title %}TechImage{% endblock %}
 
-{% block body %}
-    <h1>TechImage</h1>
+{% block content %}
+    <div class="col-12">
+        <h1>TechImage</h1>
 
-    <table class="table">
-        <tbody>
+        <table class="table">
+            <tbody>
             <tr>
                 <th>Id</th>
                 <td>{{ tech_image.id }}</td>
@@ -23,12 +24,13 @@
                 <th>Is_slider</th>
                 <td>{{ tech_image.isSlider ? 'Yes' : 'No' }}</td>
             </tr>
-        </tbody>
-    </table>
+            </tbody>
+        </table>
 
-    <a href="{{ path('tech_image_index') }}">back to list</a>
+        <a class="btn btn-primary btn-sm mb-2" href="{{ path('tech_image_index') }}">Назад к списку</a>
 
-    <a href="{{ path('tech_image_edit', {'id': tech_image.id}) }}">edit</a>
+        <a class="btn btn-primary btn-sm mb-2" href="{{ path('tech_image_edit', {'id': tech_image.id}) }}">Редактировать</a>
 
-    {{ include('tech_image/_delete_form.html.twig') }}
+        {{ include('tech_image/_delete_form.html.twig') }}
+    </div>
 {% endblock %}

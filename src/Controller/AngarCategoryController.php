@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\AngarCategory;
 use App\Form\AngarCategoryType;
 use App\Repository\AngarCategoryRepository;
+use App\Service\FileUploader;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,14 +24,34 @@ class AngarCategoryController extends AbstractController
 
     /**
      * @Route("/manager/angary/category/new", name="angar_category_new", methods="GET|POST")
+     * @param Request $request
+     * @param FileUploader $fileUploader
+     * @return Response
      */
-    public function new(Request $request): Response
+    public function new(Request $request, FileUploader $fileUploader): Response
     {
         $angarCategory = new AngarCategory();
         $form = $this->createForm(AngarCategoryType::class, $angarCategory);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $dateTime = \DateTime::createFromFormat('Y-m-d H:i:s', date('Y-m-d H:i:s'));
+
+            $angarCategory->setCreated($dateTime);
+            $angarCategory->setUpdated($dateTime);
+
+            $image = $angarCategory->getImageBin();
+
+            $fileUploader->setParticularPath('hangars-category/'.$angarCategory->getUrl().'/');
+            $fileParams = $fileUploader->upload($image);
+            $angarCategory->setImage('hangars-category/'.$angarCategory->getUrl().'/'.$fileParams['name_md5']);
+
+            $imageSmall = $angarCategory->getSmallImageBin();
+
+            $fileParams = $fileUploader->upload($imageSmall);
+            $angarCategory->setImage('hangars-category/'.$angarCategory->getUrl().'/'.$fileParams['name_md5']);
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($angarCategory);
             $em->flush();
@@ -72,13 +93,33 @@ class AngarCategoryController extends AbstractController
 
     /**
      * @Route("/manager/angary/category/{id}/edit", name="angar_category_edit", methods="GET|POST", requirements={"id" = "\d+"})
+     * @param Request $request
+     * @param AngarCategory $angarCategory
+     * @param FileUploader $fileUploader
+     * @return Response
      */
-    public function edit(Request $request, AngarCategory $angarCategory): Response
+    public function edit(Request $request, AngarCategory $angarCategory, FileUploader $fileUploader): Response
     {
         $form = $this->createForm(AngarCategoryType::class, $angarCategory);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $dateTime = \DateTime::createFromFormat('Y-m-d H:i:s', date('Y-m-d H:i:s'));
+
+            $angarCategory->setUpdated($dateTime);
+
+            $image = $angarCategory->getImageBin();
+
+            $fileUploader->setParticularPath('hangars-category/'.$angarCategory->getUrl().'/');
+            $fileParams = $fileUploader->upload($image);
+            $angarCategory->setImage('hangars-category/'.$angarCategory->getUrl().'/'.$fileParams['name_md5']);
+
+            $imageSmall = $angarCategory->getSmallImageBin();
+
+            $fileParams = $fileUploader->upload($imageSmall);
+            $angarCategory->setImage('hangars-category/'.$angarCategory->getUrl().'/'.$fileParams['name_md5']);
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('angar_category_edit', ['id' => $angarCategory->getId()]);

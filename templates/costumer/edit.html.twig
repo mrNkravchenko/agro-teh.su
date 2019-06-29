@@ -2,12 +2,14 @@
 
 {% block title %}Edit Costumer{% endblock %}
 
-{% block body %}
-    <h1>Edit Costumer</h1>
+{% block content %}
+    <div class="col-12">
+        <h1>Edit Costumer</h1>
 
-    {{ include('costumer/_form.html.twig', {'button_label': 'Update'}) }}
+        {{ include('costumer/_form.html.twig', {'button_label': 'Обновить'}) }}
 
-    <a href="{{ path('costumer_index') }}">back to list</a>
+        <a class="btn btn-primary btn-sm mb-2" href="{{ path('costumer_index') }}">Назад к списку</a>
 
-    {{ include('costumer/_delete_form.html.twig') }}
+        {{ include('costumer/_delete_form.html.twig') }}
+    </div>
 {% endblock %}

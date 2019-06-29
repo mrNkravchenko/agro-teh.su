@@ -2,60 +2,62 @@
 
 {% block title %}Tech index{% endblock %}
 
-{% block body %}
-    <h1>Tech index</h1>
+{% block content %}
+    <div class="col-12">
+        <h1>Tech index</h1>
 
-    <table class="table">
-        <thead>
-        <tr>
-            <th>Id</th>
-            <th>Category</th>
-            <th>Url</th>
-            <th>Title</th>
-            <th>Image</th>
-            <th>Small Image</th>
-            <th>Mng Image</th>
-            <th>Name</th>
-            <th>Short Name</th>
-            <th>Price</th>
-            <th>Description</th>
-            <th>Manual</th>
-            <th>Performance</th>
-            <th>Created</th>
-            <th>Updated</th>
-            <th>actions</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for tech in techs %}
-            <tr>
-                <td>{{ tech.id }}</td>
-                <td>{{ tech.category.getName() }}</td>
-                <td>{{ tech.url }}</td>
-                <td>{{ tech.title }}</td>
-                <td>{{ tech.image }}</td>
-                <td>{{ tech.getSmallImage() }}</td>
-                <td>{{ tech.getMngImage() }}</td>
-                <td>{{ tech.name }}</td>
-                <td>{{ tech.getShortName }}</td>
-                <td>{{ tech.price }}</td>
-                <td>{{ tech.description }}</td>
-                <td>{{ tech.getShortDescription }}</td>
-                <td>{{ tech.manual }}</td>
-                <td>{{ tech.created ? tech.created|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ tech.updated ? tech.updated|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('selhoztehnika_show', {'url': tech.url}) }}">show</a>
-                    <a href="{{ path('selhoztehnika_update', {'url': tech.url}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="16">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <a class="btn btn-primary btn-sm mb-2" href="{{ path('selhoztehnika_new') }}">Создать</a>
 
-    <a href="{{ path('selhoztehnika_new') }}">Create new</a>
+        <table class="table table-responsive">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Category</th>
+                <th>Url</th>
+                <th>Title</th>
+                <th>Image</th>
+                <th>Small Image</th>
+                <th>Mng Image</th>
+                <th>Name</th>
+                <th>Short Name</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Manual</th>
+                <th>Performance</th>
+                <th>Created</th>
+                <th>Updated</th>
+                <th>actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for tech in techs %}
+                <tr>
+                    <td>{{ tech.id }}</td>
+                    <td>{{ tech.category.getName() }}</td>
+                    <td>{{ tech.url }}</td>
+                    <td>{{ tech.title }}</td>
+                    <td>{{ tech.image }}</td>
+                    <td>{{ tech.getSmallImage() }}</td>
+                    <td>{{ tech.getMngImage() }}</td>
+                    <td>{{ tech.name }}</td>
+                    <td>{{ tech.getShortName }}</td>
+                    <td>{{ tech.price }}</td>
+                    <td>{{ tech.description }}</td>
+                    <td>{{ tech.getShortDescription }}</td>
+                    <td>{{ tech.manual }}</td>
+                    <td>{{ tech.created ? tech.created|date('Y-m-d H:i:s') : '' }}</td>
+                    <td>{{ tech.updated ? tech.updated|date('Y-m-d H:i:s') : '' }}</td>
+                    <td>
+                        <a class="btn btn-primary btn-sm mb-2" href="{{ path('selhoztehnika_show', {'url': tech.url}) }}"><i class="fa fa-eye"></i></a>
+                        <a class="btn btn-primary btn-sm mb-2" href="{{ path('selhoztehnika_update', {'url': tech.url}) }}"><i class="fa fa-edit"></i></a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="16">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}

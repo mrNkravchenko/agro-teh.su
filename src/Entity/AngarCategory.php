@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\AngarCategoryRepository")
@@ -38,6 +39,16 @@ class AngarCategory
      * @ORM\Column(type="string", length=255)
      */
     private $small_image;
+
+    /**
+     * @Assert\Image(mimeTypes={ "image/jpg", "image/jpeg", "image/gif", "image/png" })
+     */
+    private $image_bin;
+
+    /**
+     * @Assert\Image(mimeTypes={ "image/jpg", "image/jpeg", "image/gif", "image/png" })
+     */
+    private $small_image_bin;
     /**
      *
      * @ORM\OneToMany(targetEntity="App\Entity\Angar", mappedBy="category")
@@ -173,5 +184,37 @@ class AngarCategory
     public function setContent($content): void
     {
         $this->content = $content;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImageBin()
+    {
+        return $this->image_bin;
+    }
+
+    /**
+     * @param mixed $image_bin
+     */
+    public function setImageBin($image_bin): void
+    {
+        $this->image_bin = $image_bin;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSmallImageBin()
+    {
+        return $this->small_image_bin;
+    }
+
+    /**
+     * @param mixed $small_image_bin
+     */
+    public function setSmallImageBin($small_image_bin): void
+    {
+        $this->small_image_bin = $small_image_bin;
     }
 }
