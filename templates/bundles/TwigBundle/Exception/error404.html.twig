@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% set bodyClass = '404-error' %}
+
+{% block title %}
+    Страница не найдена
+{% endblock %}
+
+
+{% block content %}
+    <div>
+        <div class="justify-content-center">
+            <div class="col-md-12 text-center">
+                <span class="display-1 d-block text-danger">404</span>
+                <div class="mb-4 lead">К сожалению, запрошенная вами страница не найдена.</div>
+
+                <div class="text-justify">
+                    Ошибка могла произойти по нескольким причинам: <br>
+                    - Вы ввели неправильный адрес. <br>
+                    - Страница, на которую вы хотели зайти, устарела и была удалена. <br>
+                    - На сервере произошла ошибка. Если так, то мы уже знаем о ней и обязательно исправим.<br>
+                </div>
+
+                <div>
+                    <br>
+                    Вы можете перейти на главную страницу или выбрать нужный пункт в меню.
+                </div>
+
+                <a href="{{ path('app_home') }}" class="btn btn-link">Перейти на Главную</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
