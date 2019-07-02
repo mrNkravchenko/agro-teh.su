@@ -14,12 +14,14 @@
                 <article class="card border-0 px-3 articleIndex bg-transparent">
                     <div class="more-info bg-white px-3">
                         <div class="">
-                            <p class="card-text">
-                                {{ article.description }}
-                            </p>
-                            <p class="card-text">
-                                <a href="{{ path('articles_show', {'id' : article.id}) }}">Читать далее</a>
-                            </p>
+                            <a href="{{ path('articles_show', {'id' : article.id}) }}">
+                                <p class="card-text">
+                                    {{ article.description }}
+                                </p>
+                                <p class="card-text">
+                                    <a href="{{ path('articles_show', {'id' : article.id}) }}">Читать далее</a>
+                                </p>
+                            </a>
                         </div>
                     </div>
                     <a href="{{ path('articles_show', {'id' : article.id}) }}">

@@ -5,7 +5,7 @@ logout:
   path: /logout
 
 #redirect from the old site
-contacts:
+_contacts:
   path: /kontakty.php
   controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
   defaults:
