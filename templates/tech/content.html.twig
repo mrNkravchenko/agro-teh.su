@@ -207,15 +207,25 @@
                                 </div>
                                 {{ form_start(form_feedback) }}
                                 <div class="modal-body">
-                                    <div class="alert-danger">
+                                    {#<div class="alert-danger">
                                         {{ form_errors(form_feedback) }}
-                                    </div>
+                                    </div>#}
                                     {{ form_widget(form_feedback.title, {'attr' : {'class' : "form-control mb-3", 'id': 'headerUserReview', 'placeholder' : 'Заголовок отзыва'}}) }}
+                                    <div id="form_title_error" class="text-danger" style="display: none">
+                                        <p>
+                                            Ваш заголовок не должен содержать латинских и спец. символов
+                                        </p>
+                                    </div>
                                     <div class="alert-danger">
                                         {{ form_errors(form_feedback.title, {'attr' : {'class' : 'text-danger'}}) }}
                                     </div>
                                     {{ form_widget(form_feedback.feedback, {'attr' : {'class' : "form-control w-100 mb-3", 'id' : 'userReviewText', 'rows' : 10, 'placeholder' : "* Текст отзыва"}}) }}
                                     {{ form_widget(form_feedback.name, {'attr' : {'class' : "form-control mb-3", 'id': 'userName', 'placeholder' : '* Ваше имя'}}) }}
+                                    <div id="form_name_error" class="text-danger" style="display: none">
+                                        <p>
+                                            Ваше имя не должно содержать латинских и спец. символов
+                                        </p>
+                                    </div>
                                     <div class="alert-danger">
                                         {{ form_errors(form_feedback.name, {'attr' : {'class' : 'text-danger'}}) }}
                                     </div>
@@ -225,7 +235,11 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Отменить</button>
-                                    {{ form_widget(form_feedback.save, {'attr' : {'class' : 'btn btn-primary'}}) }}
+                                    {#{{ form_widget(form_feedback.save, {'attr' : {'class' : 'btn btn-primary'}}) }}#}
+                                    <button type="submit" class="btn btn-primary">
+                                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" hidden></span>
+                                        <span data-type="title" data-ready="Отправить" data-request="Отправка...">Отправить</span>
+                                    </button>
                                 </div>
                                 {{ form_end(form_feedback) }}
                             </div>

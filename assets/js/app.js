@@ -27,6 +27,7 @@ require('jquery.scrollto');
 require ('./jquery-master/jquery.fias.min');
 require('./mapGenerator');
 require('./sendEmail');
+require('./sendFeedback');
 require('trumbowyg');
 require('./page/spare-parts/index');
 require('select2');
@@ -1070,8 +1071,6 @@ $(document).ready(()=>{
         $(elem).prop('disabled', true);
         request('/spare-parts/filter', 'get', 'json', {tech_id : $(elem).val()}, successFilter, errorFilter, parent);
     });
-
-    console.log(window.techFeedbackError);
 
     if (window.techFeedbackError) {
         $('#reviews-tab').trigger('click');

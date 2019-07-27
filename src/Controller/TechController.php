@@ -66,7 +66,7 @@ class TechController extends AbstractController
             ->add('feedback', TextareaType::class/*, ['label' => 'Ваш отзыв']*/)
             ->add('title', TextType::class/*, ['label' => 'Ваш отзыв']*/)
             ->add('name', TextType::class/*, ['label' => 'Ваш отзыв']*/)
-            ->add('save', SubmitType::class, ['label' => 'Оставить отзыв'])
+//            ->add('save', SubmitType::class, ['label' => 'Оставить отзыв'])
             ->getForm();
 
         $createFeedback->handleRequest($request);
