@@ -113,6 +113,7 @@ class TechController extends AbstractController
             'slider' => $slider,
             'firstImagePath' => $firstImagePath,
             'content' => $content,
+            'formError' => $createFeedback->isSubmitted() && !$createFeedback->isValid()
         ]);
     }
 

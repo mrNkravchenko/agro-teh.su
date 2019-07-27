@@ -15,3 +15,11 @@
 {% block content %}
     {{ content | raw }}
 {% endblock %}
+
+{% block beforeScripts %}
+
+    <script>
+        window.techFeedbackError = {{ formError }};
+    </script>
+
+{% endblock %}

@@ -211,8 +211,14 @@
                                         {{ form_errors(form_feedback) }}
                                     </div>
                                     {{ form_widget(form_feedback.title, {'attr' : {'class' : "form-control mb-3", 'id': 'headerUserReview', 'placeholder' : 'Заголовок отзыва'}}) }}
+                                    <div class="alert-danger">
+                                        {{ form_errors(form_feedback.title, {'attr' : {'class' : 'text-danger'}}) }}
+                                    </div>
                                     {{ form_widget(form_feedback.feedback, {'attr' : {'class' : "form-control w-100 mb-3", 'id' : 'userReviewText', 'rows' : 10, 'placeholder' : "* Текст отзыва"}}) }}
                                     {{ form_widget(form_feedback.name, {'attr' : {'class' : "form-control mb-3", 'id': 'userName', 'placeholder' : '* Ваше имя'}}) }}
+                                    <div class="alert-danger">
+                                        {{ form_errors(form_feedback.name, {'attr' : {'class' : 'text-danger'}}) }}
+                                    </div>
 
                                     <p class="small text-right">* - обязательные поля</p>
 

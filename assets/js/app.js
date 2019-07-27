@@ -1071,5 +1071,12 @@ $(document).ready(()=>{
         request('/spare-parts/filter', 'get', 'json', {tech_id : $(elem).val()}, successFilter, errorFilter, parent);
     });
 
+    console.log(window.techFeedbackError);
+
+    if (window.techFeedbackError) {
+        $('#reviews-tab').trigger('click');
+        $('#feedbacks').modal('show');
+    }
+
 });
 

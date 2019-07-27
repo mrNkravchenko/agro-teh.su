@@ -10,6 +10,8 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class TechFeedback
 {
+    const CYRILLIC_PATTERN = '/^[\p{Cyrillic}\p{Common}]+$/u';
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -20,12 +22,20 @@ class TechFeedback
     /**
      * @ORM\Column(type="text")
      * @Assert\NotBlank()
+     * @Assert\Regex(
+     *     pattern="/^[\p{Cyrillic}\p{Common}]+$/u",
+     *     message="Ваше имя не должно содержать латинских символов"
+     * )
      */
     private $name;
 
     /**
      * @ORM\Column(type="text")
      * @Assert\NotBlank()
+     * @Assert\Regex(
+     *     pattern="/^[\p{Cyrillic}\p{Common}]+$/u",
+     *     message="Ваш заголовок не должен содержать латинских символов"
+     * )
      */
     private $title;
 
