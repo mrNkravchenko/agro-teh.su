@@ -2,7 +2,7 @@ import Swal from 'sweetalert2';
 const CYRILLIC_PATTERN = /[\u0400-\u04FF\d\s.\!\?\"\№\%\:\,\.\;\(\)]+$/gi;
 $(document).ready(()=>{
 
-    $('#form_name, #form_title').on('keyup change', function (e) {
+    $('#feedbacks #form_name, #feedbacks #form_title').on('keyup change', function (e) {
         const target = $(e.target);
         const errorClass = '#' + target.attr('id') + '_error';
         const submitButton = $('#feedbacks form button[type="submit"]');
