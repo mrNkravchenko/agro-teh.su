@@ -36,7 +36,7 @@
   "description": "",
   "dependencies": {
     "@fancyapps/fancybox": "^3.5.2",
-    "bootstrap": "<3.3.7",
+    "bootstrap": "<3.4.2",
     "jquery.kladr": "^2.2.2",
     "jquery.scrollto": "^2.1.2",
     "popper.js": "^1.14.5",
